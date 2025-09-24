@@ -1,0 +1,123 @@
+/* Değişkenler: Renkleri ve yazı tiplerini tek bir yerden kolayca değiştirmek için */
+:root {
+    --font-family-body: 'Inter', sans-serif;
+    --font-family-heading: 'Merriweather', serif;
+    --color-text: #333333;
+    --color-background: #FDFDFD;
+    --color-primary: #007BFF;
+    --color-meta: #777777;
+    --color-border: #EAEAEA;
+    --container-width: 800px;
+}
+
+/* Genel Sayfa Stilleri */
+body {
+    font-family: var(--font-family-body);
+    line-height: 1.7;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    margin: 0;
+    padding: 20px;
+}
+
+/* Google Fonts'tan modern ve okunaklı yazı tipleri */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Merriweather:wght@700&display=swap');
+
+/* Ana İçerik Konteyneri */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Header (Üst Kısım) */
+.site-header {
+    padding: 30px 0;
+    margin-bottom: 40px;
+    border-bottom: 2px solid var(--color-border);
+    text-align: center;
+}
+
+.site-header .site-title {
+    font-family: var(--font-family-heading);
+    font-size: 2.5rem;
+    margin: 0;
+    color: var(--color-text);
+}
+
+.site-header .site-title a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.site-header .site-tagline {
+    margin: 10px 0 0;
+    color: var(--color-meta);
+}
+
+/* Yazı Listesi (Ana Sayfa) */
+.post-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.post-card {
+    background-color: #fff;
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 2px solid var(--color-border);
+    border-radius: 8px;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.post-card:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.post-card-title {
+    font-family: var(--font-family-heading);
+    font-size: 1.8rem;
+    margin: 0 0 10px 0;
+}
+
+.post-card-title a {
+    text-decoration: none;
+    color: var(--color-text);
+    transition: color 0.2s;
+}
+
+.post-card-title a:hover {
+    color: var(--color-primary);
+}
+
+.post-meta {
+    font-size: 0.9rem;
+    color: var(--color-meta);
+    margin-bottom: 15px;
+}
+
+.post-excerpt {
+    margin-bottom: 20px;
+}
+
+.read-more-link {
+    display: inline-block;
+    font-weight: bold;
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.read-more-link:hover {
+    text-decoration: underline;
+}
+
+/* Footer (Alt Kısım) */
+.site-footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 30px 0;
+    border-top: 2px solid var(--color-border);
+    font-size: 0.9rem;
+    color: var(--color-meta);
+}

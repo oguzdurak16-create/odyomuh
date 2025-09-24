@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <header class="site-header">
+            <h1 class="site-title"><a href="/">ODYOMUH</a></h1>
+            <p class="site-tagline">Gezi, Bilgi, Gelecek. Hayata Dair Her Şey!</p>
+        </header>
+
+        <main>
+            {{ content | safe }}
+        </main>
+
+        <footer class="site-footer">
+            <p>&copy; 2025 ODYOMUH. Tüm hakları saklıdır.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

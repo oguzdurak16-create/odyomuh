@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  branch: main # Veya master kullanıyorsan master yaz
+
+media_folder: "_includes/assets/images" # Yüklenen resimlerin kaydedileceği yer
+public_folder: "/assets/images" # Resimlerin sitede görüneceği yol
+
+collections:
+  - name: "post" # Koleksiyonun adı (Eleventy'de kullandığımızla aynı)
+    label: "Yazılar" # Panelde görünecek isim
+    folder: "posts" # Yazıların bulunduğu klasör
+    create: true # Yeni yazı eklemeye izin ver
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Dosya adını otomatik oluştur (örn: 2025-09-24-yeni-yazim.md)
+    fields: # Yazı eklerken görünecek alanlar
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post.njk"}
+      - {label: "Başlık", name: "title", widget: "string"}
+      - {label: "Yayın Tarihi", name: "date", widget: "datetime"}
+      - {label: "Kategori", name: "category", widget: "string"}
+      - {label: "Önizleme Metni", name: "excerpt", widget: "text"}
+      - {label: "Etiket", name: "tags", widget: "hidden", default: "post"}
+      - {label: "İçerik", name: "body", widget: "markdown"}

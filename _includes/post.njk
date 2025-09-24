@@ -1,0 +1,17 @@
+---
+layout: base.njk
+---
+<article class="post-full">
+
+    <header class="post-full-header">
+        <p class="post-full-meta">{{ date | date('DD MMMM YYYY') }} | {{ category }}</p>
+        <h1 class="post-full-title">{{ title }}</h1>
+    </header>
+
+    <div class="post-full-content">
+        {{ content | safe }}
+    </div>
+
+    <a href="/" class="back-link">&larr; Tüm Yazılara Geri Dön</a>
+
+</article>
