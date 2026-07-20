@@ -1,22 +1,19 @@
-import { englishPosts } from '../data/en-posts';
-import { dailyEnglishPosts } from '../data/daily-2026-07-20';
+import { currentEnglishPosts, currentUpdateDate } from '../data/current-updates';
 import { englishTopics } from '../data/en-topics';
+import { allEnglishPosts } from '../lib/content-collections';
 import EnglishPostCard from './EnglishPostCard';
 
-function uniquePosts(items) {
-  const seen = new Set();
-  return items.filter((post) => {
-    const key = post.id || post.primaryPath;
-    if (!key || seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  });
+function formatDate(value) {
+  if (!value) return 'Latest research';
+  return new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric' }).format(new Date(value));
 }
 
 export default function ProfessionalEnglishHome() {
-  const allPosts = uniquePosts([...dailyEnglishPosts, ...englishPosts]).sort((a, b) => (b.published || '').localeCompare(a.published || ''));
-  const lead = dailyEnglishPosts[0] || allPosts[0];
-  const latest = allPosts.filter((post) => post.id !== lead.id && !dailyEnglishPosts.some((daily) => daily.id === post.id)).slice(0, 9);
+  const allPosts = allEnglishPosts();
+  const recentResearch = [...currentEnglishPosts].sort((a, b) => String(b.published || '').localeCompare(String(a.published || '')));
+  const lead = recentResearch[0] || allPosts[0];
+  const recentIds = new Set(recentResearch.map((post) => post.id));
+  const latest = allPosts.filter((post) => post.id !== lead?.id && !recentIds.has(post.id)).slice(0, 9);
 
   return (
     <div className="english-edition" lang="en">
@@ -26,30 +23,32 @@ export default function ProfessionalEnglishHome() {
           <h1>Ancient history without fake certainty.</h1>
           <p>Evidence-led archaeology, ancient texts, historical mysteries and long-form research for global readers.</p>
           <div className="english-hero-actions">
-            <a className="home-primary-action" href="#today-english">Today’s research</a>
+            <a className="home-primary-action" href="#latest-research">Latest research</a>
             <a className="home-secondary-action" href="/en/archive">Browse all articles</a>
           </div>
           <div className="english-trust-row"><span>Primary evidence first</span><span>Uncertainty labelled</span><span>Independent English archive</span></div>
         </div>
-        <a className="english-lead-card" href={lead.primaryPath}>
-          <img src={lead.image} alt={lead.title} width="1672" height="941" fetchPriority="high" />
-          <div className="english-card-shade" />
-          <div className="english-lead-card-content">
-            <span>{dailyEnglishPosts.some((post) => post.id === lead.id) ? 'Published today' : lead.labels?.[0]}</span>
-            <h2>{lead.title}</h2>
-            <p>{lead.description}</p>
-            <strong>Open the evidence file →</strong>
-          </div>
-        </a>
+        {lead ? (
+          <a className="english-lead-card" href={lead.primaryPath}>
+            <img src={lead.image} alt={lead.title} width="1672" height="941" fetchPriority="high" decoding="async" />
+            <div className="english-card-shade" />
+            <div className="english-lead-card-content">
+              <span>{recentIds.has(lead.id) ? 'New research' : lead.labels?.[0]}</span>
+              <h2>{lead.title}</h2>
+              <p>{lead.description}</p>
+              <strong>Open the evidence file →</strong>
+            </div>
+          </a>
+        ) : null}
       </section>
 
-      {dailyEnglishPosts.length ? (
-        <section className="english-stories-section" id="today-english">
+      {recentResearch.length ? (
+        <section className="english-stories-section" id="latest-research">
           <div className="home-section-heading">
-            <div><p className="eyebrow">New research · July 20, 2026</p><h2>Published today</h2></div>
+            <div><p className="eyebrow">Latest release · {formatDate(currentUpdateDate)}</p><h2>New research files</h2></div>
             <a className="section-text-link" href="/en/archive">Complete archive →</a>
           </div>
-          <div className="english-post-grid">{dailyEnglishPosts.map((post) => <EnglishPostCard post={post} key={post.id} />)}</div>
+          <div className="english-post-grid">{recentResearch.map((post) => <EnglishPostCard post={post} key={post.id} />)}</div>
         </section>
       ) : null}
 
@@ -70,7 +69,7 @@ export default function ProfessionalEnglishHome() {
             const count = allPosts.filter((post) => post.topic === topic.slug).length;
             return (
               <a className="english-topic-card" href={`/en/topic/${topic.slug}`} key={topic.slug}>
-                <img src={topic.image} alt="" width="640" height="360" loading="lazy" />
+                <img src={topic.image} alt="" width="640" height="360" loading="lazy" decoding="async" />
                 <div><span>{count} articles</span><h3>{topic.name}</h3><p>{topic.description}</p><strong>Explore topic →</strong></div>
               </a>
             );
