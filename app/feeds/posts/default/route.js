@@ -1,4 +1,5 @@
 import { posts, baseUrl } from '../../../site-data';
+import { dailyTurkishPosts } from '../../../../data/daily-2026-07-20';
 
 function stripHtml(value = '') {
   return String(value).replace(/<script[\s\S]*?<\/script>/gi, '').replace(/<style[\s\S]*?<\/style>/gi, '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
@@ -19,9 +20,21 @@ function toEntry(post) {
   };
 }
 
+function combinedPosts() {
+  const seen = new Set();
+  return [...dailyTurkishPosts, ...posts()]
+    .filter((post) => {
+      const key = post.id || post.primaryPath;
+      if (!key || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    })
+    .sort((a, b) => (b.published || '').localeCompare(a.published || ''));
+}
+
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const max = Number(searchParams.get('max-results') || 50);
-  const entries = posts().slice(0, Number.isFinite(max) ? max : 50).map(toEntry);
+  const entries = combinedPosts().slice(0, Number.isFinite(max) ? max : 50).map(toEntry);
   return Response.json({ feed: { title: { $t: 'ODYOMUH' }, entry: entries } });
 }
