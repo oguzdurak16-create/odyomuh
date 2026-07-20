@@ -1,0 +1,35 @@
+name: Validate ODYOMUH build
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: odyomuh-build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24.x'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund --prefer-online
+
+      - name: Validate English content
+        run: npm run content:check
+
+      - name: Production build
+        run: npm run build
