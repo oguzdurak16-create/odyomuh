@@ -1,5 +1,4 @@
-import { englishPosts } from '../../../../data/en-posts';
-import { dailyEnglishPosts } from '../../../../data/daily-2026-07-20';
+import { allEnglishPosts } from '../../../../lib/content-collections';
 import EnglishSearch from '../../../../components/EnglishSearch';
 
 export const metadata = {
@@ -9,19 +8,8 @@ export const metadata = {
   robots: { index: false, follow: true },
 };
 
-function uniquePosts(items) {
-  const seen = new Set();
-  return items.filter((post) => {
-    const key = post.id || post.primaryPath;
-    if (!key || seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  });
-}
-
 export default function EnglishSearchPage() {
-  const allPosts = uniquePosts([...dailyEnglishPosts, ...englishPosts]);
-  const searchable = allPosts.map(({ id, title, description, labels, topic, primaryPath, image }) => ({
+  const searchable = allEnglishPosts().map(({ id, title, description, labels, topic, primaryPath, image }) => ({
     id, title, description, labels, topic, primaryPath, image,
   }));
   return (
