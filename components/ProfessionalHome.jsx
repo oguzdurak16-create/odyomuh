@@ -1,5 +1,6 @@
-import { posts, labels, site, generatedArt } from '../app/site-data';
-import { dailyTurkishPosts } from '../data/daily-2026-07-20';
+import { posts, site, generatedArt } from '../app/site-data';
+import { currentTurkishPosts, currentUpdateDate } from '../data/current-updates';
+import { allTurkishPosts, allTurkishLabels } from '../lib/content-collections';
 import PostCard from './PostCard';
 
 const collections = [
@@ -18,7 +19,7 @@ const collections = [
   {
     title: 'Arkeoloji',
     description: 'Kazılar, yeni keşifler ve toprağın altından çıkan geçmişin izleri.',
-    href: '/search?q=arkeoloji',
+    href: '/label/Arkeoloji',
     image: generatedArt.excavationSite,
   },
   {
@@ -29,23 +30,19 @@ const collections = [
   },
 ];
 
-function uniquePosts(items) {
-  const seen = new Set();
-  return items.filter((post) => {
-    const key = post.id || post.primaryPath;
-    if (!key || seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  });
+function formatDate(value) {
+  if (!value) return 'Yeni araştırmalar';
+  return new Intl.DateTimeFormat('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(value));
 }
 
 export default function ProfessionalHome() {
-  const todayPosts = [...dailyTurkishPosts].sort((a, b) => (b.published || '').localeCompare(a.published || ''));
+  const recentResearch = [...currentTurkishPosts].sort((a, b) => String(b.published || '').localeCompare(String(a.published || '')));
   const archivePosts = posts();
-  const allPosts = uniquePosts([...todayPosts, ...archivePosts]).sort((a, b) => (b.published || '').localeCompare(a.published || ''));
-  const labelList = labels();
-  const lead = todayPosts[0] || allPosts[0];
-  const latest = allPosts.filter((post) => !todayPosts.some((daily) => daily.id === post.id)).slice(0, 9);
+  const allPosts = allTurkishPosts();
+  const labelList = allTurkishLabels();
+  const lead = recentResearch[0] || allPosts[0];
+  const recentIds = new Set(recentResearch.map((post) => post.id));
+  const latest = allPosts.filter((post) => !recentIds.has(post.id)).slice(0, 9);
   const editorPicks = archivePosts.slice(0, 3);
 
   return (
@@ -56,7 +53,7 @@ export default function ProfessionalHome() {
           <h1>Geçmişi yalnızca anlatmıyoruz. Kanıtlarıyla yeniden kuruyoruz.</h1>
           <p className="home-lead-copy">{site.description || 'ODYOMUH; tarih, arkeoloji, mitoloji ve güncel gelişmelerin tarihsel arka planını kaynak odaklı dosyalarda bir araya getirir.'}</p>
           <div className="home-hero-actions">
-            <a className="home-primary-action" href="#bugun-eklenenler">Bugünün dosyaları</a>
+            <a className="home-primary-action" href="#son-eklenenler">Son eklenen dosyalar</a>
             <a className="home-secondary-action" href="/p/tarih-kronolojisi.html">Kronolojiyi aç</a>
           </div>
           <div className="home-quick-links">
@@ -66,10 +63,10 @@ export default function ProfessionalHome() {
 
         {lead ? (
           <a className="home-lead-story" href={lead.primaryPath}>
-            <img src={lead.image} alt={lead.title} width="1672" height="941" fetchPriority="high" />
+            <img src={lead.image} alt={lead.title} width="1672" height="941" fetchPriority="high" decoding="async" />
             <div className="home-lead-story-shade" />
             <div className="home-lead-story-content">
-              <span>{todayPosts.some((post) => post.id === lead.id) ? 'Bugün eklendi' : (lead.labels?.[0] || 'Öne çıkan dosya')}</span>
+              <span>{recentIds.has(lead.id) ? 'Yeni araştırma' : (lead.labels?.[0] || 'Öne çıkan dosya')}</span>
               <h2>{lead.title}</h2>
               <p>{lead.description}</p>
               <strong>Dosyayı aç →</strong>
@@ -78,19 +75,19 @@ export default function ProfessionalHome() {
         ) : null}
       </section>
 
-      {todayPosts.length ? (
-        <section className="home-today-section" id="bugun-eklenenler">
+      {recentResearch.length ? (
+        <section className="home-today-section" id="son-eklenenler">
           <div className="home-today-heading">
             <div>
-              <p className="eyebrow">20 Temmuz 2026 · Yeni araştırmalar</p>
-              <h2>Bugün eklenen dosyalar</h2>
+              <p className="eyebrow">{formatDate(currentUpdateDate)} · Son yayınlar</p>
+              <h2>Yeni araştırma dosyaları</h2>
             </div>
-            <p>Yeni yazılar artık üstte sıkışmış bir bağlantı şeridinde değil, doğrudan okunabilir kapak kartlarıyla gösteriliyor.</p>
+            <p>En son eklenen Türkçe dosyalar kapak, özet ve doğrudan okuma bağlantısıyla burada yer alır.</p>
           </div>
           <div className="home-today-grid">
-            {todayPosts.map((post) => (
+            {recentResearch.map((post) => (
               <a className="home-today-card" href={post.primaryPath} key={post.id}>
-                <img src={post.image} alt={post.title} width="1672" height="941" />
+                <img src={post.image} alt={post.title} width="1672" height="941" decoding="async" />
                 <div className="home-today-card-content">
                   <span>{post.labels?.[0] || 'Yeni dosya'}</span>
                   <h3>{post.title}</h3>
@@ -104,11 +101,11 @@ export default function ProfessionalHome() {
 
       <section className="home-tools-row" aria-label="ODYOMUH araçları">
         <a className="home-tool-card" href="/p/tarih-kronolojisi.html">
-          <img src={generatedArt.explorerDesk} alt="Tarih kronolojisi" width="1672" height="941" loading="lazy" />
+          <img src={generatedArt.explorerDesk} alt="Tarih kronolojisi" width="1672" height="941" loading="lazy" decoding="async" />
           <div><span>ARAŞTIRMA ARACI</span><h2>Tarih Kronolojisi</h2><p>MÖ 9600’den günümüze uzanan 51 tarihsel olay.</p></div>
         </a>
         <a className="home-tool-card" href="/p/tarih-quiz.html">
-          <img src={generatedArt.ancientLibraryDesk} alt="Tarih quiz" width="1672" height="941" loading="lazy" />
+          <img src={generatedArt.ancientLibraryDesk} alt="Tarih quiz" width="1672" height="941" loading="lazy" decoding="async" />
           <div><span>ETKİLEŞİMLİ TEST</span><h2>Tarih Quiz</h2><p>125 soruluk havuzdan 10 soruluk hızlı bir tur.</p></div>
         </a>
       </section>
@@ -131,7 +128,7 @@ export default function ProfessionalHome() {
         <div className="home-collections-grid">
           {collections.map((collection) => (
             <a className="home-collection-card" href={collection.href} key={collection.title}>
-              <img src={collection.image} alt={collection.title} width="1672" height="941" loading="lazy" />
+              <img src={collection.image} alt={collection.title} width="1672" height="941" loading="lazy" decoding="async" />
               <div className="home-collection-shade" />
               <div className="home-collection-content"><h3>{collection.title}</h3><p>{collection.description}</p><strong>Keşfet →</strong></div>
             </a>
