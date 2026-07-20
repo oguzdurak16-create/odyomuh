@@ -1,40 +1,52 @@
 import '../globals.css';
 import '../editorial.css';
-import { site, pages, labels, baseUrl, generatedArt } from '../site-data';
+import { site, pages, baseUrl, generatedArt } from '../site-data';
+import { allTurkishLabels } from '../../lib/content-collections';
 import SiteChrome from '../../components/SiteChrome';
 
 const siteUrl = baseUrl || 'https://www.odyomuh.net';
-const siteDescription = site.settings?.blog_meta_description || site.description || 'Tarih, mitoloji ve kadim uygarlıklar üzerine dijital arşiv.';
+const siteDescription = site.settings?.blog_meta_description || site.description || 'Tarih, arkeoloji, mitoloji ve kadim uygarlıklar üzerine kaynak odaklı dijital arşiv.';
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  colorScheme: 'dark light',
+  themeColor: [
+    { media: '(prefers-color-scheme: dark)', color: '#120d09' },
+    { media: '(prefers-color-scheme: light)', color: '#fbf7f0' },
+  ],
+};
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: site.name,
   title: {
-    default: 'ODYOMUH | Tarih, Mitoloji ve Kadim Uygarlıklar',
+    default: 'ODYOMUH | Tarih, Arkeoloji ve Kadim Uygarlıklar',
     template: `%s | ${site.name}`,
   },
   description: siteDescription,
-  keywords: ['tarih', 'mitoloji', 'kadim uygarlıklar', 'arkeoloji', 'osmanlı tarihi', 'antik dünya', 'tarihi gizemler', 'İran', 'İsrail', 'Orta Doğu', 'Husiler', 'Şii Sünni farkı', 'Torino Kefeni DNA', 'Aquincum Roma yüzleri'],
-  authors: [{ name: site.name }],
+  keywords: ['tarih', 'arkeoloji', 'mitoloji', 'kadim uygarlıklar', 'antik tarih', 'Türk tarihi', 'tarihsel araştırma'],
+  authors: [{ name: site.name, url: siteUrl }],
   creator: site.name,
   publisher: site.name,
-  alternates: { canonical: '/', languages: { 'tr-TR': '/', 'en-US': '/en' } },
+  category: 'history',
+  alternates: { canonical: '/', languages: { 'tr-TR': '/', en: '/en', 'x-default': '/en' } },
   manifest: '/site.webmanifest',
   icons: { icon: '/favicon.ico', apple: '/img/logo-512x512.png' },
   openGraph: {
     locale: 'tr_TR',
     type: 'website',
     siteName: site.name,
-    title: 'ODYOMUH | Tarih, Mitoloji ve Kadim Uygarlıklar',
+    title: 'ODYOMUH | Tarih, Arkeoloji ve Kadim Uygarlıklar',
     description: siteDescription,
     url: siteUrl,
-    images: [{ url: generatedArt.explorerDesk, width: 1672, height: 941, alt: 'ODYOMUH tarih arşivi' }],
+    images: [{ url: generatedArt.explorerDesk, width: 1672, height: 941, alt: 'ODYOMUH tarih ve arkeoloji arşivi' }],
   },
   twitter: {
     card: 'summary_large_image',
     site: '@tarihdedektifi0',
     creator: '@tarihdedektifi0',
-    title: 'ODYOMUH | Tarih, Mitoloji ve Kadim Uygarlıklar',
+    title: 'ODYOMUH | Tarih, Arkeoloji ve Kadim Uygarlıklar',
     description: siteDescription,
     images: [generatedArt.explorerDesk],
   },
@@ -47,20 +59,34 @@ export const metadata = {
 
 export default function TurkishRootLayout({ children }) {
   const pageLinks = pages().slice(0, 8).map((page) => ({ id: page.id, title: page.title, primaryPath: page.primaryPath }));
-  const labelLinks = labels().slice(0, 8);
+  const labelLinks = allTurkishLabels().slice(0, 12);
+  const organizationId = `${siteUrl}/#organization`;
+  const websiteId = `${siteUrl}/#website`;
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       {
+        '@type': 'Organization',
+        '@id': organizationId,
+        name: site.name,
+        url: siteUrl,
+        logo: { '@type': 'ImageObject', url: `${siteUrl}/img/logo-512x512.png`, width: 512, height: 512 },
+        sameAs: [
+          'https://www.facebook.com/profile.php?id=61554477900461',
+          'https://instagram.com/tarihdedektifi0',
+          'https://www.youtube.com/@tarihdedektifi0',
+        ],
+      },
+      {
         '@type': 'WebSite',
-        '@id': `${siteUrl}/#website`,
+        '@id': websiteId,
         url: siteUrl,
         name: site.name,
         description: siteDescription,
         inLanguage: 'tr-TR',
+        publisher: { '@id': organizationId },
         potentialAction: { '@type': 'SearchAction', target: `${siteUrl}/search?q={search_term_string}`, 'query-input': 'required name=search_term_string' },
       },
-      { '@type': 'Organization', '@id': `${siteUrl}/#organization`, name: site.name, url: siteUrl, logo: `${siteUrl}/img/logo-512x512.png` },
     ],
   };
 
@@ -70,6 +96,7 @@ export default function TurkishRootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
+        <link rel="alternate" type="application/rss+xml" title="ODYOMUH Türkçe RSS" href="/feed.xml" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
       <body><SiteChrome site={{ name: site.name, description: siteDescription }} pages={pageLinks} labels={labelLinks}>{children}</SiteChrome></body>
