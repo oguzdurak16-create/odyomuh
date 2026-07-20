@@ -1,6 +1,7 @@
 import '../globals.css';
 import { site, baseUrl, generatedArt } from '../site-data';
 import SiteChrome from '../../components/SiteChrome';
+import DailyUpdateBanner from '../../components/DailyUpdateBanner';
 
 const siteUrl = baseUrl || 'https://www.odyomuh.net';
 const siteDescription = 'Evidence-led history, archaeology, ancient texts and historical mysteries for readers around the world.';
@@ -10,6 +11,7 @@ export const metadata = {
   applicationName: `${site.name} English`,
   title: { default: 'History, Archaeology and Ancient Mysteries | ODYOMUH English', template: '%s | ODYOMUH English' },
   description: siteDescription,
+  keywords: ['history', 'archaeology', 'ancient DNA', 'Turin Shroud DNA', 'Aquincum Roman faces', 'ancient mysteries'],
   alternates: { canonical: '/en', languages: { en: '/en', 'tr-TR': '/', 'x-default': '/en' } },
   icons: { icon: '/favicon.ico', apple: '/img/logo-512x512.png' },
   manifest: '/site.webmanifest',
@@ -61,6 +63,7 @@ export default function EnglishRootLayout({ children }) {
       </head>
       <body>
         <SiteChrome site={{ name: site.name, description: siteDescription }} pages={[]} labels={[]}>
+          <DailyUpdateBanner locale="en" />
           {children}
         </SiteChrome>
       </body>
