@@ -1,6 +1,6 @@
 {
   "name": "odyomuh-vercel",
-  "version": "2.7.0",
+  "version": "2.8.0",
   "private": true,
   "engines": {
     "node": "24.x"
@@ -8,8 +8,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "vercel-build": "npm run site:audit && npm run content:check && next build",
     "start": "next start",
-    "check": "npm run content:check && npm run build",
+    "check": "npm run site:audit && npm run content:check && npm run build",
+    "site:audit": "node scripts/check-site-integrity.mjs",
     "content:check": "node scripts/check-english-content.mjs"
   },
   "dependencies": {
