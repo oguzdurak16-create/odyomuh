@@ -1,13 +1,12 @@
-import { allItems, labels, baseUrl, generatedArt, canonicalLabel } from '../../../site-data';
-import { dailyTurkishPosts } from '../../../../data/daily-2026-07-20';
+import { baseUrl, generatedArt, canonicalLabel, site } from '../../../site-data';
+import { allTurkishLabels, postsForTurkishLabel } from '../../../../lib/content-collections';
 import PostCard from '../../../../components/PostCard';
 import { redirect } from 'next/navigation';
 
 const siteUrl = baseUrl || 'https://www.odyomuh.net';
 
 export function generateStaticParams() {
-  const dailyLabels = dailyTurkishPosts.flatMap((post) => post.labels || []);
-  return [...new Set([...labels(), ...dailyLabels])].map((label) => ({ label }));
+  return allTurkishLabels().map((label) => ({ label }));
 }
 
 export async function generateMetadata({ params }) {
@@ -15,16 +14,18 @@ export async function generateMetadata({ params }) {
   const rawLabel = decodeURIComponent(resolvedParams.label);
   const label = canonicalLabel(rawLabel);
   const canonical = `/label/${encodeURIComponent(label)}`;
-  const description = `${label} etiketiyle yayınlanan ODYOMUH tarih, mitoloji ve uygarlık yazıları.`;
+  const items = postsForTurkishLabel(label);
+  const description = `${label} etiketiyle yayınlanan ${items.length} ODYOMUH tarih, mitoloji, arkeoloji ve uygarlık yazısı.`;
   return {
     title: `${label} yazıları`,
     description,
     alternates: { canonical },
+    robots: { index: items.length >= 2, follow: true },
     openGraph: {
       title: `${label} yazıları | ODYOMUH`,
       description,
       url: `${siteUrl}${canonical}`,
-      images: [{ url: generatedArt.explorerDesk, width: 1672, height: 941, alt: `${label} yazıları` }],
+      images: [{ url: items[0]?.image || generatedArt.explorerDesk, width: 1672, height: 941, alt: `${label} yazıları` }],
     },
   };
 }
@@ -35,20 +36,30 @@ export default async function LabelPage({ params }) {
   const label = canonicalLabel(rawLabel);
   if (label !== rawLabel) redirect(`/label/${encodeURIComponent(label)}`);
 
-  const standardItems = allItems().filter((item) => item.type === 'POST' && (item.labels || []).includes(label));
-  const dailyItems = dailyTurkishPosts.filter((item) => (item.labels || []).map(canonicalLabel).includes(label));
-  const seen = new Set();
-  const items = [...dailyItems, ...standardItems]
-    .filter((item) => {
-      const key = item.id || item.primaryPath;
-      if (!key || seen.has(key)) return false;
-      seen.add(key);
-      return true;
-    })
-    .sort((a, b) => (b.published || '').localeCompare(a.published || ''));
+  const items = postsForTurkishLabel(label);
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: `${label} yazıları`,
+    description: `${label} başlığındaki ODYOMUH araştırma dosyaları.`,
+    url: `${siteUrl}/label/${encodeURIComponent(label)}`,
+    inLanguage: 'tr-TR',
+    isPartOf: { '@type': 'WebSite', name: site.name, url: siteUrl },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: items.length,
+      itemListElement: items.map((post, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: post.title,
+        url: `${siteUrl}${post.primaryPath}`,
+      })),
+    },
+  };
 
   return (
     <div className="label-page-shell">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <header className="modern-page-hero">
         <p className="eyebrow">Konu arşivi</p>
         <h1>{label}</h1>
