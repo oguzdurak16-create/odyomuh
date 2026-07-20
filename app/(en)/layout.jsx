@@ -1,5 +1,6 @@
 import '../globals.css';
 import '../editorial.css';
+import '../audit.css';
 import { site, baseUrl, generatedArt } from '../site-data';
 import SiteChrome from '../../components/SiteChrome';
 
