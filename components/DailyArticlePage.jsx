@@ -42,30 +42,28 @@ export default function DailyArticlePage({ post, locale = 'tr', siteUrl = 'https
   };
 
   return (
-    <div className={english ? 'english-edition english-article-page' : 'main-wrapper'} lang={english ? 'en' : 'tr'}>
-      <section>
-        <article className="post article-detail" itemScope itemType="https://schema.org/Article">
-          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-          {faqSchema ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} /> : null}
-          <img className="article-cover" src={post.image} alt={post.title} width="1672" height="941" fetchPriority="high" />
-          <div className="post-body article-body">
-            <nav className={english ? 'english-breadcrumb' : 'breadcrumb-nav'} aria-label="Breadcrumb">
-              <a href={english ? '/en' : '/'}>{english ? 'English Edition' : 'Ana Sayfa'}</a><span>›</span><a href={english ? '/en/topic/new-discoveries' : '/label/Güncel%20Keşifler'}>{english ? 'New Discoveries' : 'Güncel Keşifler'}</a><span>›</span><span>{post.title}</span>
-            </nav>
-            {post.turkishPath ? <a className="english-original-link" href={post.turkishPath} hrefLang="tr">Turkish edition available →</a> : null}
-            {post.englishPath ? <a className="english-original-link" href={post.englishPath} hrefLang="en">Read this article in English →</a> : null}
-            <h1 className="article-title" itemProp="headline">{post.title}</h1>
-            <p className="article-summary" itemProp="description">{post.description}</p>
-            <div className="current-affairs-status"><strong>{english ? 'Research update' : 'Güncel araştırma'}</strong><span>{formatDate(post.updated || post.published, english ? 'en-US' : 'tr-TR')}</span></div>
-            <div className="post-meta-info"><span>{formatDate(post.published, english ? 'en-US' : 'tr-TR')}</span><span>{readingTime(post.contentHtml)} {english ? 'min read' : 'dk okuma'}</span><span>{post.labels?.[0]}</span></div>
-            <div className="post-labels top-labels">{post.labels?.map((label) => english ? <span key={label}>{label}</span> : <a key={label} href={`/label/${encodeURIComponent(label)}`}>{label}</a>)}</div>
-            <HtmlContent html={post.contentHtml} imageAlt={post.title} className={english ? 'english-content' : undefined} />
-            {english && post.sources?.length ? <section className="english-source-box"><p className="eyebrow">Source trail</p><h2>Selected references</h2><ol>{post.sources.map((source) => <li key={source}>{source}</li>)}</ol></section> : null}
-            <ShareButtons title={post.title} url={url} />
-          </div>
-        </article>
-      </section>
+    <div className={english ? 'english-edition english-article-page' : 'article-page-shell'} lang={english ? 'en' : 'tr'}>
+      <article className="post article-detail" itemScope itemType="https://schema.org/Article">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+        {faqSchema ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} /> : null}
+        <img className="article-cover" src={post.image} alt={post.title} width="1672" height="941" fetchPriority="high" />
+        <div className="post-body article-body">
+          <nav className={english ? 'english-breadcrumb' : 'breadcrumb-nav'} aria-label="Breadcrumb">
+            <a href={english ? '/en' : '/'}>{english ? 'English Edition' : 'Ana Sayfa'}</a><span>›</span><a href={english ? '/en/archive' : '/arsiv'}>{english ? 'Archive' : 'Tüm yazılar'}</a><span>›</span><span>{post.title}</span>
+          </nav>
+          {post.turkishPath ? <a className="english-original-link" href={post.turkishPath} hrefLang="tr">Turkish edition available →</a> : null}
+          {post.englishPath ? <a className="english-original-link" href={post.englishPath} hrefLang="en">Read this article in English →</a> : null}
+          <h1 className="article-title" itemProp="headline">{post.title}</h1>
+          <p className="article-summary" itemProp="description">{post.description}</p>
+          <div className="current-affairs-status"><strong>{english ? 'Research update' : 'Güncel araştırma'}</strong><span>{formatDate(post.updated || post.published, english ? 'en-US' : 'tr-TR')}</span></div>
+          <div className="post-meta-info"><span>{formatDate(post.published, english ? 'en-US' : 'tr-TR')}</span><span>{readingTime(post.contentHtml)} {english ? 'min read' : 'dk okuma'}</span><span>{post.labels?.[0]}</span></div>
+          <div className="post-labels top-labels">{post.labels?.map((label) => english ? <span key={label}>{label}</span> : <a key={label} href={`/label/${encodeURIComponent(label)}`}>{label}</a>)}</div>
+          <HtmlContent html={post.contentHtml} imageAlt={post.title} className={english ? 'english-content' : undefined} />
+          {english && post.sources?.length ? <section className="english-source-box"><p className="eyebrow">Source trail</p><h2>Selected references</h2><ol>{post.sources.map((source) => <li key={source}>{source}</li>)}</ol></section> : null}
+          <ShareButtons title={post.title} url={url} />
+        </div>
+      </article>
     </div>
   );
 }
