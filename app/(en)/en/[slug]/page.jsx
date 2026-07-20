@@ -3,7 +3,9 @@ import { englishPosts, findEnglishPost } from '../../../../data/en-posts';
 import { englishPolicyPages, findEnglishPolicyPage } from '../../../../data/en-pages';
 import { findEnglishTopic } from '../../../../data/en-topics';
 import { baseUrl, site, metaDescription } from '../../../site-data';
+import { allEnglishPosts } from '../../../../lib/content-collections';
 import HtmlContent from '../../../../components/HtmlContent';
+import SourceList from '../../../../components/SourceList';
 import EnglishPostCard from '../../../../components/EnglishPostCard';
 
 const siteUrl = baseUrl || 'https://www.odyomuh.net';
@@ -48,8 +50,8 @@ export async function generateMetadata({ params }) {
   const canonical = post.primaryPath;
   const description = metaDescription(post.description);
   const languages = post.turkishPath
-    ? { en: canonical, 'en-US': canonical, 'tr-TR': post.turkishPath, 'x-default': canonical }
-    : { en: canonical, 'en-US': canonical, 'x-default': canonical };
+    ? { en: canonical, 'tr-TR': post.turkishPath, 'x-default': canonical }
+    : { en: canonical, 'x-default': canonical };
 
   return {
     title: post.title,
@@ -100,11 +102,11 @@ export default async function EnglishDynamicPage({ params }) {
   const post = findEnglishPost(slug);
   if (!post) notFound();
   const topic = findEnglishTopic(post.topic);
-  const related = englishPosts
+  const related = allEnglishPosts()
     .filter((item) => item.id !== post.id)
     .map((item) => ({
       item,
-      score: (item.topic === post.topic ? 5 : 0) + item.labels.filter((label) => post.labels.includes(label)).length,
+      score: (item.topic === post.topic ? 5 : 0) + (item.labels || []).filter((label) => post.labels.includes(label)).length,
     }))
     .filter(({ score }) => score > 0)
     .sort((a, b) => b.score - a.score)
@@ -114,25 +116,28 @@ export default async function EnglishDynamicPage({ params }) {
   const url = `${siteUrl}${post.primaryPath}`;
   const description = metaDescription(post.description);
   const words = wordCount(post.contentHtml);
+  const schemaType = post.newsArticle ? 'NewsArticle' : 'Article';
   const articleSchema = {
     '@context': 'https://schema.org',
-    '@type': post.newsArticle ? 'NewsArticle' : 'Article',
+    '@type': schemaType,
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
     headline: post.title,
     description,
     image: [`${siteUrl}${post.image}`],
     datePublished: post.published,
     dateModified: post.updated || post.published,
-    inLanguage: 'en-US',
+    inLanguage: 'en',
     isAccessibleForFree: true,
     wordCount: words,
     keywords: post.labels.join(', '),
     articleSection: topic?.name || post.labels[0],
+    isPartOf: { '@type': 'WebSite', '@id': `${siteUrl}/en/#website`, name: `${site.name} English`, url: `${siteUrl}/en` },
     author: { '@type': 'Organization', name: site.name, url: `${siteUrl}/en/about` },
-    publisher: { '@type': 'Organization', name: site.name, logo: { '@type': 'ImageObject', url: `${siteUrl}/img/logo-512x512.png` } },
+    publisher: { '@type': 'Organization', '@id': `${siteUrl}/#organization`, name: site.name, url: siteUrl, logo: { '@type': 'ImageObject', url: `${siteUrl}/img/logo-512x512.png`, width: 512, height: 512 } },
     citation: post.sources,
+    speakable: post.newsArticle ? { '@type': 'SpeakableSpecification', cssSelector: ['.article-title', '.article-summary', '.odyomuh-note'] } : undefined,
   };
-  const faqSchema = {
+  const faqSchema = post.faq?.length ? {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: post.faq.map((item) => ({
@@ -140,7 +145,7 @@ export default async function EnglishDynamicPage({ params }) {
       name: item.question,
       acceptedAnswer: { '@type': 'Answer', text: item.answer },
     })),
-  };
+  } : null;
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -153,11 +158,11 @@ export default async function EnglishDynamicPage({ params }) {
 
   return (
     <div className="english-edition english-article-page" lang="en">
-      <article className="post article-detail english-article-detail" itemScope itemType="https://schema.org/Article">
+      <article className="post article-detail english-article-detail" itemScope itemType={`https://schema.org/${schemaType}`}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+        {faqSchema ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} /> : null}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-        <img className="article-cover" src={post.image} alt={post.title} width="1672" height="941" fetchPriority="high" />
+        <img className="article-cover" src={post.image} alt={post.title} width="1672" height="941" fetchPriority="high" decoding="async" />
         <div className="post-body article-body">
           <nav className="english-breadcrumb" aria-label="Breadcrumb">
             <a href="/en">English Edition</a><span>›</span><a href={`/en/topic/${post.topic}`}>{topic?.shortName || 'Archive'}</a><span>›</span><span>{post.title}</span>
@@ -173,13 +178,7 @@ export default async function EnglishDynamicPage({ params }) {
           </div>
           <div className="post-labels top-labels">{post.labels.map((label) => <span key={label}>{label}</span>)}</div>
           <HtmlContent html={post.contentHtml} imageAlt={post.title} className="english-content" />
-
-          <section className="english-source-box" aria-labelledby="article-sources-title">
-            <p className="eyebrow">Source trail</p>
-            <h2 id="article-sources-title">Selected references and research starting points</h2>
-            <ol>{post.sources.map((source) => <li key={source}>{source}</li>)}</ol>
-            <p>Sources are listed as research starting points. Specific claims should be checked against the cited edition, object record or excavation publication.</p>
-          </section>
+          <SourceList sources={post.sources} locale="en" />
 
           <div className="english-article-end">
             <p><strong>How this page is handled:</strong> Evidence, interpretation and modern speculation are separated. Material corrections are reflected in the article date.</p>
