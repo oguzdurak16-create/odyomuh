@@ -7,9 +7,9 @@ export default function robots() {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/search', '/search/', '/en/search', '/en/search/', '/api/'],
+      disallow: ['/api/'],
     },
-    sitemap: `${siteUrl}/sitemap.xml`,
+    sitemap: [`${siteUrl}/sitemap.xml`, `${siteUrl}/news-sitemap.xml`],
     host: siteUrl,
   };
 }
