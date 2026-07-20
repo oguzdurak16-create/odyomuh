@@ -2,11 +2,13 @@ import HtmlContent from '../../../components/HtmlContent';
 import TimelineExperience from '../../../components/TimelineExperience';
 import QuizExperience from '../../../components/QuizExperience';
 import DersNotlariExperience from '../../../components/DersNotlariExperience';
+import ShareButtons from '../../../components/ShareButtons';
+import SourceList from '../../../components/SourceList';
 import timelineData from '../../../data/timeline-events.json';
 import quizQuestions from '../../../data/quiz-questions.json';
-import ShareButtons from '../../../components/ShareButtons';
 import { allItems, findByPath, baseUrl, posts, site, generatedArt, metaDescription, normalizeSearchText } from '../../site-data';
 import { englishPathForTurkishPath } from '../../../data/en-posts';
+import { allTurkishPosts } from '../../../lib/content-collections';
 import { notFound } from 'next/navigation';
 
 const siteUrl = baseUrl || 'https://www.odyomuh.net';
@@ -21,9 +23,16 @@ function formatDate(value) {
   return new Intl.DateTimeFormat('tr-TR', { day: '2-digit', month: 'long', year: 'numeric' }).format(new Date(value));
 }
 
+function plainText(value = '') {
+  return String(value).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+function wordCount(value = '') {
+  return plainText(value).split(/\s+/).filter(Boolean).length;
+}
+
 function readingTime(value) {
-  const words = String(value || '').replace(/<[^>]+>/g, ' ').trim().split(/\s+/).filter(Boolean).length;
-  return Math.max(1, Math.ceil(words / 210));
+  return Math.max(1, Math.ceil(wordCount(value) / 210));
 }
 
 export function generateStaticParams() {
@@ -45,16 +54,16 @@ export async function generateMetadata({ params }) {
       ? generatedArt.ancientLibraryDesk
       : item.image;
   const image = specialImage ? [{ url: specialImage, width: 1672, height: 941, alt: item.title }] : [];
+  const languages = englishPath
+    ? { 'tr-TR': canonicalPath, en: englishPath, 'x-default': englishPath }
+    : { 'tr-TR': canonicalPath };
 
   return {
     title: item.title,
     description,
     keywords: [...(item.labels || []), ...(item.searchAliases || [])],
     other: item.newsArticle ? { news_keywords: [...(item.labels || []), ...(item.searchAliases || [])].join(', ') } : undefined,
-    alternates: {
-      canonical: canonicalPath,
-      languages: englishPath ? { 'tr-TR': canonicalPath, 'en-US': englishPath } : undefined,
-    },
+    alternates: { canonical: canonicalPath, languages },
     openGraph: {
       title: item.title,
       description,
@@ -64,6 +73,7 @@ export async function generateMetadata({ params }) {
       publishedTime: item.published,
       modifiedTime: item.updated || item.published,
       authors: item.type === 'POST' ? [site.name] : undefined,
+      tags: item.labels || undefined,
     },
     twitter: {
       card: 'summary_large_image',
@@ -83,13 +93,8 @@ export default async function ContentPage({ params }) {
   const description = metaDescription(item.description);
   const englishPath = englishPathForTurkishPath(item.primaryPath);
 
-  if (item.title === 'Tarih Kronolojisi') {
-    return <TimelineExperience data={timelineData} />;
-  }
-
-  if (item.title === 'Tarih Quiz') {
-    return <QuizExperience questions={quizQuestions} />;
-  }
+  if (item.title === 'Tarih Kronolojisi') return <TimelineExperience data={timelineData} />;
+  if (item.title === 'Tarih Quiz') return <QuizExperience questions={quizQuestions} />;
 
   if (item.title === 'Ders Notları') {
     const lessonPosts = posts().filter((post) => {
@@ -97,11 +102,16 @@ export default async function ContentPage({ params }) {
       const postLabels = (post.labels || []).map(normalizeSearchText);
       return title.includes('ders notu') || postLabels.includes('ders-notlari');
     });
-
     return <div className="lessons-layout"><DersNotlariExperience posts={lessonPosts} /></div>;
   }
 
-  const related = posts().filter((post) => post.id !== item.id && post.labels?.some((label) => item.labels?.includes(label))).slice(0, 3);
+  const related = allTurkishPosts()
+    .filter((post) => post.id !== item.id)
+    .map((post) => ({ post, score: (post.labels || []).filter((label) => item.labels?.includes(label)).length }))
+    .filter(({ score }) => score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 3)
+    .map(({ post }) => post);
   const schemaType = item.type === 'POST' ? (item.newsArticle ? 'NewsArticle' : 'Article') : 'WebPage';
   const pageSchema = {
     '@context': 'https://schema.org',
@@ -115,16 +125,20 @@ export default async function ContentPage({ params }) {
     dateModified: item.updated || item.published || undefined,
     inLanguage: 'tr-TR',
     isAccessibleForFree: true,
+    wordCount: item.type === 'POST' ? wordCount(item.contentHtml) : undefined,
     articleSection: item.articleSection || item.labels?.[0] || undefined,
     keywords: [...(item.labels || []), ...(item.searchAliases || [])].join(', '),
     about: (item.about || item.labels || []).map((name) => ({ '@type': 'Thing', name })),
     citation: item.sources || undefined,
     speakable: item.newsArticle ? { '@type': 'SpeakableSpecification', cssSelector: ['.article-title', '.article-summary', '.odyomuh-note'] } : undefined,
-    author: { '@type': 'Organization', name: site.name },
+    isPartOf: { '@type': 'WebSite', '@id': `${siteUrl}/#website`, name: site.name, url: siteUrl },
+    author: { '@type': 'Organization', name: site.name, url: siteUrl },
     publisher: {
       '@type': 'Organization',
+      '@id': `${siteUrl}/#organization`,
       name: site.name,
-      logo: { '@type': 'ImageObject', url: `${siteUrl}/img/logo-512x512.png` },
+      url: siteUrl,
+      logo: { '@type': 'ImageObject', url: `${siteUrl}/img/logo-512x512.png`, width: 512, height: 512 },
     },
   };
   const breadcrumbSchema = {
@@ -132,7 +146,7 @@ export default async function ContentPage({ params }) {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Ana Sayfa', item: siteUrl },
-      { '@type': 'ListItem', position: 2, name: item.articleSection || (item.type === 'POST' ? 'Yazılar' : 'Sayfalar'), item: item.articleSection === 'Orta Doğu Gündemi' ? `${siteUrl}/gundem/orta-dogu` : siteUrl },
+      { '@type': 'ListItem', position: 2, name: item.articleSection || (item.type === 'POST' ? 'Yazılar' : 'Sayfalar'), item: item.articleSection === 'Orta Doğu Gündemi' ? `${siteUrl}/gundem/orta-dogu` : `${siteUrl}/arsiv` },
       { '@type': 'ListItem', position: 3, name: item.title, item: url },
     ],
   };
@@ -148,11 +162,11 @@ export default async function ContentPage({ params }) {
 
   return (
     <div className="article-page-shell">
-      <article className="post article-detail" itemScope itemType={item.type === 'POST' ? 'https://schema.org/Article' : 'https://schema.org/WebPage'}>
+      <article className="post article-detail" itemScope itemType={item.type === 'POST' ? `https://schema.org/${schemaType}` : 'https://schema.org/WebPage'}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
         {faqSchema ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} /> : null}
-        {item.image ? <img className="article-cover" src={item.image} alt={item.title} width="1672" height="941" fetchPriority="high" /> : null}
+        {item.image ? <img className="article-cover" src={item.image} alt={item.title} width="1672" height="941" fetchPriority="high" decoding="async" /> : null}
         <div className="post-body article-body">
           <nav className="breadcrumb-nav" aria-label="Sayfa yolu">
             <ol className="breadcrumb-list">
@@ -164,17 +178,18 @@ export default async function ContentPage({ params }) {
             </ol>
           </nav>
           {item.articleSection === 'Orta Doğu Gündemi' ? <a className="middle-east-back-link" href="/gundem/orta-dogu">← Orta Doğu gündem merkezine dön</a> : null}
-          {englishPath ? <a className="english-original-link" href={englishPath}>Read this article in English →</a> : null}
+          {englishPath ? <a className="english-original-link" href={englishPath} hrefLang="en">Read this article in English →</a> : null}
           <h1 className="article-title" itemProp="headline">{item.title}</h1>
           <p className="article-summary" itemProp="description">{item.description}</p>
           {item.newsArticle ? <div className="current-affairs-status"><strong>Güncel dosya</strong><span>Son kontrol: {formatDate(item.updated || item.published)}</span><em>Askerî ve diplomatik durum değişebilir.</em></div> : null}
           <div className="post-meta-info">
-            <span>{formatDate(item.published)}</span>
+            <time dateTime={item.published}>{formatDate(item.published)}</time>
             <span>{readingTime(item.contentHtml)} dk okuma</span>
             {item.labels?.[0] ? <span>{item.labels[0]}</span> : null}
           </div>
           {item.labels?.length ? <div className="post-labels top-labels">{item.labels.map((label) => <a key={label} href={`/label/${encodeURIComponent(label)}`}>{label}</a>)}</div> : null}
           <HtmlContent html={item.contentHtml} imageAlt={item.title} />
+          <SourceList sources={item.sources} locale="tr" />
           {item.type === 'POST' ? <ShareButtons title={item.title} url={url} /> : null}
         </div>
       </article>
