@@ -1,7 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { allTurkishPosts, allEnglishPosts, turkishLabelStats } from '../lib/content-collections.js';
 import { currentTurkishPosts, currentEnglishPosts } from '../data/current-updates.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -41,6 +40,10 @@ function validatePost(post, locale) {
   if (String(post.image || '').startsWith('/') && !exists(path.join('public', post.image.slice(1)))) errors.push(`${label} image missing: ${post.image}`);
 }
 
+function uniquePaths(items = []) {
+  return items.map((item) => item.primaryPath).filter(Boolean);
+}
+
 const packageJson = JSON.parse(read('package.json'));
 const packageLock = JSON.parse(read('package-lock.json'));
 if (packageJson.name !== packageLock.name) errors.push('package.json and package-lock.json names differ');
@@ -76,12 +79,23 @@ for (const file of appFiles) {
 currentTurkishPosts.forEach((post) => validatePost(post, 'tr-current'));
 currentEnglishPosts.forEach((post) => validatePost(post, 'en-current'));
 
-const trPosts = allTurkishPosts();
-const enPosts = allEnglishPosts();
-if (!trPosts.length || !enPosts.length) errors.push('One or both publication archives are empty');
-if (new Set(trPosts.map((post) => post.primaryPath)).size !== trPosts.length) errors.push('Duplicate Turkish canonical paths');
-if (new Set(enPosts.map((post) => post.primaryPath)).size !== enPosts.length) errors.push('Duplicate English canonical paths');
-if (!turkishLabelStats().some((item) => item.count >= 2)) errors.push('No indexable Turkish label clusters found');
+const blogger = JSON.parse(read('data/blogger-export.json'));
+const standardTurkishPosts = (blogger.blog?.items || []).filter((item) => item.type === 'POST');
+const trPosts = [...currentTurkishPosts, ...standardTurkishPosts];
+const trPaths = uniquePaths(trPosts);
+if (!trPosts.length) errors.push('Turkish archive is empty');
+if (new Set(trPaths).size !== trPaths.length) errors.push('Duplicate Turkish canonical paths');
+
+const englishSource = read('data/en-posts.js');
+const englishIds = [...englishSource.matchAll(/^\s*id:\s*`([^`]+)`/gm)].map((match) => match[1]);
+const englishSlugs = [...englishSource.matchAll(/^\s*slug:\s*`([^`]+)`/gm)].map((match) => match[1]);
+if (!englishIds.length || englishIds.length !== englishSlugs.length) errors.push(`English article field counts differ: ids=${englishIds.length}, slugs=${englishSlugs.length}`);
+const enPaths = [...currentEnglishPosts.map((post) => post.primaryPath), ...englishSlugs.map((slug) => `/en/${slug}`)];
+if (new Set(enPaths).size !== enPaths.length) errors.push('Duplicate English canonical paths');
+
+const labelCounts = new Map();
+for (const post of trPosts) for (const label of post.labels || []) labelCounts.set(label, (labelCounts.get(label) || 0) + 1);
+if (![...labelCounts.values()].some((count) => count >= 2)) errors.push('No indexable Turkish label clusters found');
 
 if (errors.length) {
   console.error(`Site audit failed with ${errors.length} error(s):`);
@@ -89,5 +103,5 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`Site audit passed: ${trPosts.length} Turkish posts, ${enPosts.length} English posts, ${turkishLabelStats().length} Turkish labels.`);
+console.log(`Site audit passed: ${trPosts.length} Turkish posts, ${enPaths.length} English posts, ${labelCounts.size} Turkish labels.`);
 warnings.forEach((warning) => console.warn(`Warning: ${warning}`));
