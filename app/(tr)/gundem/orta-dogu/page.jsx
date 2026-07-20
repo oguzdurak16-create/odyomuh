@@ -1,5 +1,6 @@
 import PostCard from '../../../../components/PostCard';
-import { posts, generatedArt, baseUrl, site } from '../../../site-data';
+import { generatedArt, baseUrl, site } from '../../../site-data';
+import { allTurkishPosts, latestDate } from '../../../../lib/content-collections';
 
 const siteUrl = baseUrl || 'https://www.odyomuh.net';
 const canonicalPath = '/gundem/orta-dogu';
@@ -11,7 +12,7 @@ export const metadata = {
     'İran Amerika savaşı', 'İran İsrail savaşı', 'Husiler kimdir', 'Hürmüz Boğazı',
     'İranlı Şiiler', 'Şii Sünni farkı', 'Yahudilik İsrail Siyonizm', 'İsrail Filistin sorunu',
   ],
-  alternates: { canonical: canonicalPath, languages: { 'tr-TR': canonicalPath, en: '/en/topic/middle-east' } },
+  alternates: { canonical: canonicalPath, languages: { 'tr-TR': canonicalPath, en: '/en/topic/middle-east', 'x-default': '/en/topic/middle-east' } },
   openGraph: {
     type: 'website',
     title: 'Orta Doğu Gündemi | ODYOMUH',
@@ -19,7 +20,7 @@ export const metadata = {
     url: canonicalPath,
     images: [{ url: generatedArt.middleEastHub, width: 1672, height: 941, alt: 'İran, İsrail ve Orta Doğu gündemi' }],
   },
-  twitter: { card: 'summary_large_image', images: [generatedArt.middleEastHub] },
+  twitter: { card: 'summary_large_image', title: 'Orta Doğu Gündemi | ODYOMUH', description: 'Kaynak odaklı güncel dosyalar ve tarihsel arka plan.', images: [generatedArt.middleEastHub] },
 };
 
 const queries = [
@@ -33,12 +34,18 @@ const queries = [
   ['Nükleer Program', '/search?q=iran%20nukleer'],
 ];
 
+function formatDate(value) {
+  if (!value) return 'Güncel';
+  return new Intl.DateTimeFormat('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(value));
+}
+
 export default function MiddleEastHubPage() {
-  const allPosts = posts();
-  const middleEastPosts = allPosts.filter((post) =>
+  const middleEastPosts = allTurkishPosts().filter((post) =>
     String(post.id || '').startsWith('tr-middle-east-') ||
+    post.articleSection === 'Orta Doğu Gündemi' ||
     (post.labels || []).some((label) => ['Orta Doğu Gündemi', 'İran', 'Husiler', 'İsrail Filistin Sorunu'].includes(label))
   );
+  const lastReviewed = latestDate(middleEastPosts);
 
   const itemList = {
     '@context': 'https://schema.org',
@@ -47,10 +54,12 @@ export default function MiddleEastHubPage() {
     description: metadata.description,
     url: `${siteUrl}${canonicalPath}`,
     inLanguage: 'tr-TR',
-    isPartOf: { '@type': 'WebSite', name: site.name, url: siteUrl },
+    dateModified: lastReviewed || undefined,
+    isPartOf: { '@type': 'WebSite', '@id': `${siteUrl}/#website`, name: site.name, url: siteUrl },
     mainEntity: {
       '@type': 'ItemList',
-      itemListElement: middleEastPosts.slice(0, 20).map((post, index) => ({
+      numberOfItems: middleEastPosts.length,
+      itemListElement: middleEastPosts.slice(0, 30).map((post, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         url: `${siteUrl}${post.primaryPath}`,
@@ -76,7 +85,7 @@ export default function MiddleEastHubPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }} />
 
       <section className="middle-east-hub-hero">
-        <img src={generatedArt.middleEastHub} alt="Orta Doğu gündemi" width="1672" height="941" fetchPriority="high" />
+        <img src={generatedArt.middleEastHub} alt="Orta Doğu gündemi" width="1672" height="941" fetchPriority="high" decoding="async" />
         <div className="middle-east-hub-overlay" />
         <div className="middle-east-hub-copy">
           <p className="eyebrow">Güncel Gündem · Tarihsel Arka Plan</p>
@@ -90,7 +99,7 @@ export default function MiddleEastHubPage() {
       </section>
 
       <section className="middle-east-update-note">
-        <div><strong>Son güncelleme</strong><time dateTime="2026-07-17">17 Temmuz 2026</time></div>
+        <div><strong>Son güncelleme</strong><time dateTime={lastReviewed || undefined}>{formatDate(lastReviewed)}</time></div>
         <p>Askerî ve diplomatik durum değişebilir. Devletler, hükümetler, halklar ve dinî topluluklar birbirine eşitlenmeden yazılır.</p>
       </section>
 
