@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { englishPostsByTopic } from '../../../../../data/en-posts';
+import { dailyEnglishPosts } from '../../../../../data/daily-2026-07-20';
 import { englishTopics, findEnglishTopic } from '../../../../../data/en-topics';
 import EnglishPostCard from '../../../../../components/EnglishPostCard';
 
@@ -24,7 +25,9 @@ export default async function EnglishTopicPage({ params }) {
   const { topic: slug } = await params;
   const topic = findEnglishTopic(slug);
   if (!topic) notFound();
-  const posts = englishPostsByTopic(topic.slug);
+  const standardPosts = englishPostsByTopic(topic.slug);
+  const dailyPosts = dailyEnglishPosts.filter((post) => post.topic === topic.slug);
+  const posts = [...dailyPosts, ...standardPosts].filter((post, index, list) => index === list.findIndex((item) => item.id === post.id));
   return (
     <div className="english-edition english-index-page" lang="en">
       <header className="english-topic-hero">
