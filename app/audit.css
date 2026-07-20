@@ -66,6 +66,10 @@
   font-size: .9rem;
 }
 
+body:not(:has(.article-detail)) .reading-progress {
+  display: none;
+}
+
 .dark-mode-toggle {
   display: none !important;
 }
