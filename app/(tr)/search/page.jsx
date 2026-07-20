@@ -1,28 +1,19 @@
-import { posts, normalizeSearchText } from '../../site-data';
-import { dailyTurkishPosts } from '../../../data/daily-2026-07-20';
+import { normalizeSearchText } from '../../site-data';
+import { allTurkishPosts } from '../../../lib/content-collections';
 import PostCard from '../../../components/PostCard';
 
 export const metadata = {
-  title: 'Arama',
-  description: 'ODYOMUH arşivinde tarih, arkeoloji, mitoloji ve uygarlık yazılarını ara.',
+  title: 'Arşivde Ara',
+  description: 'ODYOMUH arşivinde tarih, arkeoloji, mitoloji, uygarlık ve güncel tarihsel arka plan yazılarını ara.',
+  alternates: { canonical: '/search' },
   robots: { index: false, follow: true },
 };
-
-function uniquePosts(items) {
-  const seen = new Set();
-  return items.filter((post) => {
-    const key = post.id || post.primaryPath;
-    if (!key || seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  });
-}
 
 export default async function SearchPage({ searchParams }) {
   const resolved = await searchParams;
   const q = String(resolved?.q || '').trim();
   const normalized = normalizeSearchText(q);
-  const allPosts = uniquePosts([...dailyTurkishPosts, ...posts()]).sort((a, b) => (b.published || '').localeCompare(a.published || ''));
+  const allPosts = allTurkishPosts();
   const results = q
     ? allPosts.filter((post) => normalizeSearchText(`${post.title} ${post.description} ${(post.labels || []).join(' ')} ${(post.searchAliases || []).join(' ')} ${String(post.contentHtml || '').replace(/<[^>]+>/g, ' ')}`).includes(normalized))
     : allPosts.slice(0, 12);
