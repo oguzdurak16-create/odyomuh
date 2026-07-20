@@ -1,5 +1,6 @@
 import '../globals.css';
 import '../editorial.css';
+import '../audit.css';
 import { site, pages, baseUrl, generatedArt } from '../site-data';
 import { allTurkishLabels } from '../../lib/content-collections';
 import SiteChrome from '../../components/SiteChrome';
