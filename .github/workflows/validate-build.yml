@@ -31,7 +31,19 @@ jobs:
         run: npm ci --no-audit --no-fund --prefer-online
 
       - name: Run interface and SEO audit
-        run: npm run site:audit
+        shell: bash
+        run: |
+          set -o pipefail
+          npm run site:audit 2>&1 | tee audit.log
+
+      - name: Upload audit log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-audit-log
+          path: audit.log
+          if-no-files-found: ignore
+          retention-days: 3
 
       - name: Validate English content
         run: npm run content:check
