@@ -1,7 +1,7 @@
 import '../globals.css';
+import '../editorial.css';
 import { site, baseUrl, generatedArt } from '../site-data';
 import SiteChrome from '../../components/SiteChrome';
-import DailyUpdateBanner from '../../components/DailyUpdateBanner';
 
 const siteUrl = baseUrl || 'https://www.odyomuh.net';
 const siteDescription = 'Evidence-led history, archaeology, ancient texts and historical mysteries for readers around the world.';
@@ -63,7 +63,6 @@ export default function EnglishRootLayout({ children }) {
       </head>
       <body>
         <SiteChrome site={{ name: site.name, description: siteDescription }} pages={[]} labels={[]}>
-          <DailyUpdateBanner locale="en" />
           {children}
         </SiteChrome>
       </body>
