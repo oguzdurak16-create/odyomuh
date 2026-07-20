@@ -5,8 +5,7 @@ import DersNotlariExperience from '../../../components/DersNotlariExperience';
 import timelineData from '../../../data/timeline-events.json';
 import quizQuestions from '../../../data/quiz-questions.json';
 import ShareButtons from '../../../components/ShareButtons';
-import Sidebar from '../../../components/Sidebar';
-import { allItems, findByPath, baseUrl, posts, labels, site, generatedArt, metaDescription, normalizeSearchText } from '../../site-data';
+import { allItems, findByPath, baseUrl, posts, site, generatedArt, metaDescription, normalizeSearchText } from '../../site-data';
 import { englishPathForTurkishPath } from '../../../data/en-posts';
 import { notFound } from 'next/navigation';
 
@@ -99,12 +98,7 @@ export default async function ContentPage({ params }) {
       return title.includes('ders notu') || postLabels.includes('ders-notlari');
     });
 
-    return (
-      <div className="main-wrapper lessons-layout">
-        <section><DersNotlariExperience posts={lessonPosts} /></section>
-        <Sidebar posts={posts()} labels={labels()} site={site} />
-      </div>
-    );
+    return <div className="lessons-layout"><DersNotlariExperience posts={lessonPosts} /></div>;
   }
 
   const related = posts().filter((post) => post.id !== item.id && post.labels?.some((label) => item.labels?.includes(label))).slice(0, 3);
@@ -153,57 +147,54 @@ export default async function ContentPage({ params }) {
   } : null;
 
   return (
-    <div className="main-wrapper">
-      <section>
-        <article className="post article-detail" itemScope itemType={item.type === 'POST' ? 'https://schema.org/Article' : 'https://schema.org/WebPage'}>
-          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
-          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-          {faqSchema ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} /> : null}
-          {item.image ? <img className="article-cover" src={item.image} alt={item.title} width="1672" height="941" fetchPriority="high" /> : null}
-          <div className="post-body article-body">
-            <nav className="breadcrumb-nav" aria-label="Sayfa yolu">
-              <ol className="breadcrumb-list">
-                <li className="breadcrumb-item"><a href="/">Ana Sayfa</a></li>
-                <li className="breadcrumb-separator">›</li>
-                <li className="breadcrumb-item"><a href="/">{item.type === 'PAGE' ? 'Sayfalar' : 'Yazılar'}</a></li>
-                <li className="breadcrumb-separator">›</li>
-                <li className="breadcrumb-current"><span>{item.title}</span></li>
-              </ol>
-            </nav>
-            {item.articleSection === 'Orta Doğu Gündemi' ? <a className="middle-east-back-link" href="/gundem/orta-dogu">← Orta Doğu gündem merkezine dön</a> : null}
-            {englishPath ? <a className="english-original-link" href={englishPath}>Read this article in English →</a> : null}
-            <h1 className="article-title" itemProp="headline">{item.title}</h1>
-            <p className="article-summary" itemProp="description">{item.description}</p>
-            {item.newsArticle ? <div className="current-affairs-status"><strong>Güncel dosya</strong><span>Son kontrol: {formatDate(item.updated || item.published)}</span><em>Askerî ve diplomatik durum değişebilir.</em></div> : null}
-            <div className="post-meta-info">
-              <span>{formatDate(item.published)}</span>
-              <span>{readingTime(item.contentHtml)} dk okuma</span>
-              {item.labels?.[0] ? <span>{item.labels[0]}</span> : null}
-            </div>
-            {item.labels?.length ? <div className="post-labels top-labels">{item.labels.map((label) => <a key={label} href={`/label/${encodeURIComponent(label)}`}>{label}</a>)}</div> : null}
-            <HtmlContent html={item.contentHtml} imageAlt={item.title} />
-            {item.type === 'POST' ? <ShareButtons title={item.title} url={url} /> : null}
+    <div className="article-page-shell">
+      <article className="post article-detail" itemScope itemType={item.type === 'POST' ? 'https://schema.org/Article' : 'https://schema.org/WebPage'}>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+        {faqSchema ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} /> : null}
+        {item.image ? <img className="article-cover" src={item.image} alt={item.title} width="1672" height="941" fetchPriority="high" /> : null}
+        <div className="post-body article-body">
+          <nav className="breadcrumb-nav" aria-label="Sayfa yolu">
+            <ol className="breadcrumb-list">
+              <li className="breadcrumb-item"><a href="/">Ana Sayfa</a></li>
+              <li className="breadcrumb-separator">›</li>
+              <li className="breadcrumb-item"><a href="/arsiv">{item.type === 'PAGE' ? 'Sayfalar' : 'Yazılar'}</a></li>
+              <li className="breadcrumb-separator">›</li>
+              <li className="breadcrumb-current"><span>{item.title}</span></li>
+            </ol>
+          </nav>
+          {item.articleSection === 'Orta Doğu Gündemi' ? <a className="middle-east-back-link" href="/gundem/orta-dogu">← Orta Doğu gündem merkezine dön</a> : null}
+          {englishPath ? <a className="english-original-link" href={englishPath}>Read this article in English →</a> : null}
+          <h1 className="article-title" itemProp="headline">{item.title}</h1>
+          <p className="article-summary" itemProp="description">{item.description}</p>
+          {item.newsArticle ? <div className="current-affairs-status"><strong>Güncel dosya</strong><span>Son kontrol: {formatDate(item.updated || item.published)}</span><em>Askerî ve diplomatik durum değişebilir.</em></div> : null}
+          <div className="post-meta-info">
+            <span>{formatDate(item.published)}</span>
+            <span>{readingTime(item.contentHtml)} dk okuma</span>
+            {item.labels?.[0] ? <span>{item.labels[0]}</span> : null}
           </div>
-        </article>
+          {item.labels?.length ? <div className="post-labels top-labels">{item.labels.map((label) => <a key={label} href={`/label/${encodeURIComponent(label)}`}>{label}</a>)}</div> : null}
+          <HtmlContent html={item.contentHtml} imageAlt={item.title} />
+          {item.type === 'POST' ? <ShareButtons title={item.title} url={url} /> : null}
+        </div>
+      </article>
 
-        {related.length ? (
-          <section className="related-posts-widget" aria-label="Benzer yazılar">
-            <h2 className="related-posts-title">Benzer Yazılar</h2>
-            <div className="related-posts-grid">
-              {related.map((post) => (
-                <a className="related-post-card" href={post.primaryPath} key={post.id}>
-                  <div className="related-post-image">{post.image ? <img src={post.image} alt={post.title} width="1672" height="941" loading="lazy" decoding="async" /> : null}</div>
-                  <div className="related-post-content">
-                    <h3 className="related-post-card-title">{post.title}</h3>
-                    <div className="related-post-meta">{formatDate(post.published)}</div>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </section>
-        ) : null}
-      </section>
-      <Sidebar posts={posts()} labels={labels()} site={site} />
+      {related.length ? (
+        <section className="related-posts-widget" aria-label="Benzer yazılar">
+          <h2 className="related-posts-title">Benzer yazılar</h2>
+          <div className="related-posts-grid">
+            {related.map((post) => (
+              <a className="related-post-card" href={post.primaryPath} key={post.id}>
+                <div className="related-post-image">{post.image ? <img src={post.image} alt={post.title} width="1672" height="941" loading="lazy" decoding="async" /> : null}</div>
+                <div className="related-post-content">
+                  <h3 className="related-post-card-title">{post.title}</h3>
+                  <div className="related-post-meta">{formatDate(post.published)}</div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      ) : null}
     </div>
   );
 }
