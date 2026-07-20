@@ -1,0 +1,30 @@
+ODYOMUH - English Edition
+==========================
+
+Bu paket Turkce ana siteyi korur.
+
+Yeni yapilar:
+- /en
+- /en/phaistos-disc-45-symbols-unsolved-message
+- /en/baalbek-stones-how-were-ancient-megaliths-moved
+- /en/troy-treasure-where-is-schliemanns-legacy-now
+- /en/derinkuyu-underground-city-who-built-it-and-why
+- /en/nibiru-and-the-twelfth-planet-claim-explained
+- /en/karahan-tepe-and-tas-tepeler-rethinking-early-monuments
+- /en/tartaria-myth-did-a-lost-empire-exist
+- /en/does-the-piri-reis-map-show-antarctica
+- /en/nazca-lines-were-they-made-for-aliens
+- /en/sumerian-king-list-did-kings-live-for-28800-years
+
+Yapi notlari:
+- Turkce ana site / adresinde kalir.
+- Ziyaretciyi ulkeye veya tarayici diline gore zorla yonlendirme yoktur.
+- Header ve mobil menude TR / EN gecisi vardir.
+- 10 Ingilizce yazi kendi URL, canonical, Open Graph ve Article schema ile yayinlanir.
+- Turkce ve Ingilizce karsilikli hreflang alternate baglantilari vardir.
+- Sitemap'e /en ve 10 Ingilizce yazi eklendi.
+
+Vercel:
+- Ek environment variable gerekmez.
+- NEXT_PUBLIC_SITE_URL=https://www.odyomuh.net olarak kalmali.
+- ZIP'i proje klasorune cikar, GITLABA-YUKLE.bat calistir ve Vercel deployment'in bitmesini bekle.

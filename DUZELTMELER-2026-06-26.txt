@@ -1,0 +1,28 @@
+ODYOMUH - Duzeltmeler
+======================
+
+1. Tarih Kronolojisi yeniden kuruldu.
+   - Blogger icindeki calismayan JavaScript kaldirildi.
+   - 51 olay, 5 cag, arama ve donem filtreleri React ile yeniden yapildi.
+   - Masaustu ve mobil tek kolon zaman akisi destekleniyor.
+
+2. Tarih Quiz yeniden kuruldu.
+   - Blogger icindeki calismayan JavaScript kaldirildi.
+   - 125 soruluk havuzdan kategori secerek 10 soruluk tur olusturur.
+   - Dogru/yanlis geri bildirimi, aciklama, skor ve tekrar oynama eklendi.
+
+3. Anasayfa profesyonel editor yapisina alindi.
+   - Kapak dosyasi, iki arastirma araci, editor secimleri, tematik salonlar ve son yazilar.
+   - Ana sayfada gereksiz sidebar kaldirildi.
+
+4. Acik tema duzeltildi.
+   - Parşomen, kum ve kahverengi tonlari kullanilir.
+   - Header, menu, kartlar ve footer acik temayla uyumlu hale getirildi.
+
+5. Mobil uyum.
+   - Ana sayfa, timeline, quiz, kartlar ve menu dar ekranlara gore duzenlendi.
+
+6. Vercel.
+   - package-lock.json pakete dahildir.
+   - public npm registry ayarı korunur ve kurulum npm ci ile tekrarlanabilir.
+   - npm run build basariyla tamamlandi.

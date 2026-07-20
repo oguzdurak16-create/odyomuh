@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+    <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#11161c"/><stop offset="1" stop-color="#080706"/></linearGradient><pattern id="p" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M0 42L42 0" stroke="#728ba0" stroke-opacity=".055"/></pattern></defs>
+    <rect width="1200" height="630" fill="url(#g)"/><rect width="1200" height="630" fill="url(#p)"/>
+    <circle cx="1070" cy="80" r="210" fill="#728ba0" opacity=".05"/><circle cx="105" cy="560" r="260" fill="#728ba0" opacity=".04"/>
+    <g transform="translate(650 250)"><circle r="105" fill="none" stroke="#728ba0" stroke-width="10" opacity=".82"/><circle r="52" fill="#728ba0" opacity=".18"/><path d="M0-190v42M0 148v42M-190 0h42M148 0h42M-134-134l30 30M104 104l30 30M134-134l-30 30M-104 104l-30 30" stroke="#728ba0" stroke-width="10" stroke-linecap="round"/><path d="M-145 20C-70-5 70 50 150 10" stroke="#11161c" stroke-width="38" opacity=".95"/></g>
+    <text x="70" y="110" fill="#728ba0" font-family="Georgia,serif" font-size="24" letter-spacing="8">ODYOMUH ÖZEL DOSYA</text>
+    <text x="70" y="430" fill="#f6efe5" font-family="Georgia,serif" font-weight="700" font-size="72">536</text>
+    <text x="70" y="486" fill="#d6c2a8" font-family="Arial,sans-serif" font-size="26">Güneşin solduğu ve kışın bitmediği yıl</text>
+    <path d="M70 525h470" stroke="#728ba0" stroke-width="4"/><text x="70" y="570" fill="#aa9987" font-family="Arial,sans-serif" font-size="18" letter-spacing="4">DİJİTAL TARİH ARŞİVİ / 2026</text>
+    </svg>

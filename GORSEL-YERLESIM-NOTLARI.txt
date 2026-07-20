@@ -1,0 +1,26 @@
+ODYOMUH - Gorsel yerlesim notlari
+=================================
+
+Bu surumde site icindeki gorsel duzen su sekilde guncellendi:
+
+1) TUM yazi kapaklari artik yerel ve yapay zeka ile uretilmis gorsellere yonlendiriliyor.
+   - Dosyalar: /public/generated-history/
+   - Eski karisik gorseller silinmedi ama aktif kullanimi kapatildi.
+
+2) Ana sayfaya "Tematik Salonlar" bolumu eklendi.
+   - Gizem Dosyalari
+   - Antik Dunya
+   - Arkeoloji
+   - Osmanli ve Turk Tarihi
+   - Savaslar ve Donum Noktalari
+   - Deniz ve Kayip Seferler
+
+3) One cikan yazi karti artik gorselli calisiyor.
+
+4) Yazi detay, benzer yazilar ve kenar cubugu otomatik olarak yeni gorselleri kullaniyor.
+
+5) Varsayilan Open Graph gorseli de yerel uretilen gorsele cevrildi.
+
+Vercel notu:
+- package-lock.json yeniden oluşturuldu ve pakete eklendi.
+- registry ayarı public npmjs üzerinde tutuldu.

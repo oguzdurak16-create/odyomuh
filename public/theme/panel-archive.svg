@@ -1,0 +1,17 @@
+<svg width="900" height="520" viewBox="0 0 900 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="520" rx="28" fill="#17110F"/>
+  <rect x="28" y="28" width="844" height="464" rx="22" fill="#211816" stroke="#8F6034" stroke-opacity="0.4"/>
+  <path d="M120 154C198 119 291 120 359 157C416 188 476 207 543 185C598 166 632 126 690 118C731 112 771 120 805 140" stroke="#D1A36A" stroke-width="3" stroke-dasharray="8 10" opacity="0.6"/>
+  <path d="M118 370C194 330 259 304 330 315C402 326 454 382 529 392C624 405 710 347 795 323" stroke="#B68249" stroke-width="3" stroke-dasharray="8 10" opacity="0.5"/>
+  <circle cx="188" cy="258" r="78" stroke="#6C4A2A" stroke-width="2"/>
+  <circle cx="188" cy="258" r="52" stroke="#B68249" stroke-width="2" stroke-dasharray="6 8"/>
+  <path d="M188 206L202 258L188 310L174 258L188 206Z" fill="#E0B983"/>
+  <path d="M136 258L188 272L240 258L188 244L136 258Z" fill="#8F6034"/>
+  <rect x="468" y="152" width="280" height="178" rx="16" fill="#1A1311" stroke="#8F6034"/>
+  <rect x="492" y="176" width="142" height="16" rx="8" fill="#8F6034" opacity="0.7"/>
+  <rect x="492" y="208" width="214" height="11" rx="5" fill="#B68249" opacity="0.5"/>
+  <rect x="492" y="231" width="188" height="11" rx="5" fill="#B68249" opacity="0.35"/>
+  <rect x="492" y="254" width="162" height="11" rx="5" fill="#B68249" opacity="0.25"/>
+  <rect x="492" y="287" width="214" height="20" rx="10" fill="#221815" stroke="#6C4A2A"/>
+  <text x="86" y="84" fill="#E6D6BE" font-size="26" font-family="Georgia, serif" letter-spacing="2">ARŞİV NOTLARI</text>
+</svg>

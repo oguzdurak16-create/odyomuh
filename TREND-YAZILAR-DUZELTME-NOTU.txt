@@ -1,0 +1,5 @@
+2026-06-26 trend yazi duzeltmesi
+
+Cakisan yeni taslaklar kaldirildi: Anunnaki, Gobekli Tepe, Atlantis, Voynich.
+Yerlerine eklendi: Phaistos Diski, Baalbek Taslari, Truva Hazinesi, Derinkuyu Yeralti Sehri.
+Eski cakisan yollar Next.js 308 kalici yonlendirmeleriyle mevcut kapsamli yazilara yonlendirildi.

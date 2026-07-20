@@ -1,0 +1,8 @@
+<svg width="280" height="280" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="140" cy="140" r="130" fill="#1A1311" stroke="#8F6034" stroke-width="3"/>
+  <circle cx="140" cy="140" r="102" stroke="#C69353" stroke-width="2" stroke-dasharray="6 8"/>
+  <circle cx="140" cy="140" r="72" fill="#8F6034" opacity="0.2" stroke="#C69353" stroke-width="2"/>
+  <path d="M140 80L154 126L202 126L163 154L177 200L140 171L103 200L117 154L78 126L126 126L140 80Z" fill="#E6C28C"/>
+  <text x="58" y="55" fill="#E8D7BF" font-size="18" font-family="Georgia, serif" letter-spacing="3">ODYOMUH</text>
+  <text x="78" y="240" fill="#E8D7BF" font-size="16" font-family="Georgia, serif" letter-spacing="2">TARİH ARŞİVİ</text>
+</svg>

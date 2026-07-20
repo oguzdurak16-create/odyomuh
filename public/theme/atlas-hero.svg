@@ -1,0 +1,27 @@
+<svg width="900" height="720" viewBox="0 0 900 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="720" rx="34" fill="#132028"/>
+  <rect x="24" y="24" width="852" height="672" rx="26" fill="#172831" stroke="#D1B488" stroke-opacity="0.35"/>
+  <path d="M108 180C194 133 305 136 384 188C452 232 515 249 594 225C673 201 730 136 815 128" stroke="#D1B488" stroke-width="3" stroke-dasharray="8 10" opacity="0.6"/>
+  <path d="M110 500C220 456 304 432 390 454C474 476 538 540 629 547C704 553 773 522 823 486" stroke="#C49A63" stroke-width="3" stroke-dasharray="8 10" opacity="0.55"/>
+  <rect x="118" y="102" width="266" height="152" rx="18" fill="#122028" stroke="#89643D"/>
+  <rect x="146" y="130" width="108" height="14" rx="7" fill="#89643D" opacity="0.8"/>
+  <rect x="146" y="164" width="198" height="10" rx="5" fill="#C49A63" opacity="0.45"/>
+  <rect x="146" y="186" width="174" height="10" rx="5" fill="#C49A63" opacity="0.34"/>
+  <rect x="146" y="208" width="142" height="10" rx="5" fill="#C49A63" opacity="0.25"/>
+  <circle cx="650" cy="252" r="110" stroke="#8A6640" stroke-width="2"/>
+  <circle cx="650" cy="252" r="76" stroke="#D1B488" stroke-width="2" stroke-dasharray="7 8" opacity="0.65"/>
+  <path d="M650 178L669 252L650 326L631 252L650 178Z" fill="#E7D8BC"/>
+  <path d="M576 252L650 271L724 252L650 233L576 252Z" fill="#A67947"/>
+  <rect x="120" y="420" width="296" height="176" rx="20" fill="#132028" stroke="#89643D"/>
+  <rect x="152" y="452" width="224" height="12" rx="6" fill="#D1B488" opacity="0.55"/>
+  <rect x="152" y="478" width="198" height="12" rx="6" fill="#C49A63" opacity="0.38"/>
+  <rect x="152" y="504" width="162" height="12" rx="6" fill="#C49A63" opacity="0.28"/>
+  <rect x="482" y="422" width="278" height="174" rx="20" fill="#132028" stroke="#89643D"/>
+  <path d="M522 544L566 500L606 526L674 458L720 486" stroke="#E7D8BC" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="522" cy="544" r="7" fill="#E7D8BC"/>
+  <circle cx="566" cy="500" r="7" fill="#E7D8BC"/>
+  <circle cx="606" cy="526" r="7" fill="#E7D8BC"/>
+  <circle cx="674" cy="458" r="7" fill="#E7D8BC"/>
+  <circle cx="720" cy="486" r="7" fill="#E7D8BC"/>
+  <text x="126" y="74" fill="#E8D9BC" font-size="28" font-family="Georgia, serif" letter-spacing="3">ODYOMUH ARŞİVİ</text>
+</svg>

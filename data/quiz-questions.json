@@ -1,0 +1,1502 @@
+[
+  {
+    "category": "osmanli",
+    "question": "İstanbul'u fetheden padişah kimdir?",
+    "options": [
+      "Yıldırım Bayezid",
+      "Fatih Sultan Mehmed",
+      "Kanuni Sultan Süleyman",
+      "Yavuz Sultan Selim"
+    ],
+    "correct": 1,
+    "info": "II. Mehmed, 29 Mayıs 1453'te İstanbul'u fethederek Orta Çağ'ı sona erdirmiştir."
+  },
+  {
+    "category": "osmanli",
+    "question": "Osmanlı Devleti hangi yılda kurulmuştur?",
+    "options": [
+      "1071",
+      "1299",
+      "1326",
+      "1453"
+    ],
+    "correct": 1,
+    "info": "Osmanlı Beyliği, 1299'da Osman Bey tarafından Söğüt'te kurulmuştur."
+  },
+  {
+    "category": "osmanli",
+    "question": "Kanuni Sultan Süleyman kaç yıl tahtta kalmıştır?",
+    "options": [
+      "26 yıl",
+      "36 yıl",
+      "46 yıl",
+      "56 yıl"
+    ],
+    "correct": 2,
+    "info": "Kanuni Sultan Süleyman 1520-1566 yılları arasında 46 yıl padişahlık yapmıştır."
+  },
+  {
+    "category": "osmanli",
+    "question": "Osmanlı'nın ilk başkenti hangi şehirdir?",
+    "options": [
+      "Bursa",
+      "Edirne",
+      "Söğüt",
+      "İstanbul"
+    ],
+    "correct": 2,
+    "info": "Osmanlı'nın ilk merkezi Söğüt'tür."
+  },
+  {
+    "category": "osmanli",
+    "question": "Yavuz Sultan Selim hangi savaşla Mısır'ı fethetmiştir?",
+    "options": [
+      "Çaldıran",
+      "Mercidabık",
+      "Ridaniye",
+      "Mohaç"
+    ],
+    "correct": 2,
+    "info": "1517 Ridaniye Savaşı ile Memlük Devleti yıkılmış ve Mısır Osmanlı'ya katılmıştır."
+  },
+  {
+    "category": "osmanli",
+    "question": "Osmanlı'da ilk deniz savaşı hangi padişah döneminde yapılmıştır?",
+    "options": [
+      "Orhan Bey",
+      "I. Murad",
+      "Yıldırım Bayezid",
+      "I. Bayezid"
+    ],
+    "correct": 0,
+    "info": "Orhan Bey döneminde 1352'de Osmanlı donanması ilk kez Cenevizlilerle savaşmıştır."
+  },
+  {
+    "category": "osmanli",
+    "question": "Osmanlı Devleti'nin son padişahı kimdir?",
+    "options": [
+      "Abdülhamid II",
+      "Mehmed V",
+      "Mehmed VI Vahdettin",
+      "Abdülmecid II"
+    ],
+    "correct": 2,
+    "info": "VI. Mehmed Vahdettin, 1918-1922 arasında tahtta kalan son Osmanlı padişahıdır."
+  },
+  {
+    "category": "osmanli",
+    "question": "Preveze Deniz Savaşı hangi yıl yapılmıştır?",
+    "options": [
+      "1522",
+      "1538",
+      "1571",
+      "1585"
+    ],
+    "correct": 1,
+    "info": "1538'de Barbaros Hayreddin Paşa komutasındaki Osmanlı donanması Haçlı donanmasını yenmiştir."
+  },
+  {
+    "category": "osmanli",
+    "question": "Tanzimat Fermanı hangi padişah döneminde ilan edilmiştir?",
+    "options": [
+      "II. Mahmud",
+      "Abdülmecid",
+      "Abdülaziz",
+      "II. Abdülhamid"
+    ],
+    "correct": 1,
+    "info": "Tanzimat Fermanı, 1839'da Abdülmecid döneminde Gülhane Parkı'nda ilan edilmiştir."
+  },
+  {
+    "category": "osmanli",
+    "question": "Mohaç Meydan Muharebesi hangi yıl yapılmıştır?",
+    "options": [
+      "1521",
+      "1526",
+      "1529",
+      "1532"
+    ],
+    "correct": 1,
+    "info": "1526'da Kanuni Sultan Süleyman, Macar ordusunu Mohaç'ta büyük bir bozguna uğratmıştır."
+  },
+  {
+    "category": "osmanli",
+    "question": "Yeniçeri Ocağı hangi padişah tarafından kaldırılmıştır?",
+    "options": [
+      "III. Selim",
+      "II. Mahmud",
+      "Abdülmecid",
+      "Abdülaziz"
+    ],
+    "correct": 1,
+    "info": "II. Mahmud, 1826'da Vaka-i Hayriye ile Yeniçeri Ocağı'nı kaldırmıştır."
+  },
+  {
+    "category": "osmanli",
+    "question": "Osmanlı'nın en uzun süre tahtta kalan padişahı kimdir?",
+    "options": [
+      "Fatih Sultan Mehmed",
+      "Kanuni Sultan Süleyman",
+      "II. Abdülhamid",
+      "I. Ahmed"
+    ],
+    "correct": 1,
+    "info": "Kanuni Sultan Süleyman 46 yıl ile en uzun süre tahtta kalan padişahtır."
+  },
+  {
+    "category": "osmanli",
+    "question": "I. Viyana Kuşatması hangi padişah döneminde yapılmıştır?",
+    "options": [
+      "Yavuz Sultan Selim",
+      "Kanuni Sultan Süleyman",
+      "II. Selim",
+      "III. Murad"
+    ],
+    "correct": 1,
+    "info": "1529'da Kanuni Sultan Süleyman Viyana'yı kuşatmış ancak alamadan geri dönmüştür."
+  },
+  {
+    "category": "osmanli",
+    "question": "Osmanlı Devleti'nde matbaa ilk kez hangi padişah döneminde kurulmuştur?",
+    "options": [
+      "II. Mustafa",
+      "III. Ahmed",
+      "I. Mahmud",
+      "III. Osman"
+    ],
+    "correct": 1,
+    "info": "İbrahim Müteferrika, III. Ahmed döneminde 1727'de ilk Osmanlı matbaasını kurmuştur."
+  },
+  {
+    "category": "osmanli",
+    "question": "Ankara Savaşı'nda Osmanlı ordusunu kim yenmiştir?",
+    "options": [
+      "Bizans İmparatoru",
+      "Timur",
+      "Memlük Sultanı",
+      "Akkoyunlu Hükümdarı"
+    ],
+    "correct": 1,
+    "info": "1402'de Timur, Yıldırım Bayezid'i Ankara Savaşı'nda yenerek esir almıştır."
+  },
+  {
+    "category": "osmanli",
+    "question": "II. Abdülhamid kaç yıl padişahlık yapmıştır?",
+    "options": [
+      "23 yıl",
+      "28 yıl",
+      "33 yıl",
+      "38 yıl"
+    ],
+    "correct": 2,
+    "info": "II. Abdülhamid, 1876-1909 yılları arasında 33 yıl padişahlık yapmıştır."
+  },
+  {
+    "category": "osmanli",
+    "question": "Osmanlı'da Divan-ı Hümayun'un başkanı kimdir?",
+    "options": [
+      "Padişah",
+      "Şeyhülislam",
+      "Sadrazam",
+      "Defterdar"
+    ],
+    "correct": 2,
+    "info": "Fatih döneminden itibaren Divan toplantılarına sadrazam başkanlık etmiştir."
+  },
+  {
+    "category": "osmanli",
+    "question": "Osmanlı Devleti'nde ilk anayasa hangi adla bilinir?",
+    "options": [
+      "Tanzimat Fermanı",
+      "Islahat Fermanı",
+      "Kanun-i Esasi",
+      "Hatt-ı Hümayun"
+    ],
+    "correct": 2,
+    "info": "1876'da ilan edilen Kanun-i Esasi, Osmanlı'nın ilk ve tek anayasasıdır."
+  },
+  {
+    "category": "osmanli",
+    "question": "Bursa hangi yıl Osmanlı başkenti olmuştur?",
+    "options": [
+      "1299",
+      "1326",
+      "1361",
+      "1402"
+    ],
+    "correct": 1,
+    "info": "Orhan Bey'in 1326'da Bursa'yı fethetmesiyle şehir Osmanlı'nın başkenti olmuştur."
+  },
+  {
+    "category": "osmanli",
+    "question": "Osmanlı'da ilk para (akçe) hangi padişah döneminde basılmıştır?",
+    "options": [
+      "Osman Bey",
+      "Orhan Bey",
+      "I. Murad",
+      "Yıldırım Bayezid"
+    ],
+    "correct": 1,
+    "info": "Orhan Bey döneminde 1327'de ilk Osmanlı parası olan akçe basılmıştır."
+  },
+  {
+    "category": "osmanli",
+    "question": "Lale Devri hangi padişah dönemine aittir?",
+    "options": [
+      "II. Mustafa",
+      "III. Ahmed",
+      "I. Mahmud",
+      "III. Mustafa"
+    ],
+    "correct": 1,
+    "info": "III. Ahmed döneminde (1718-1730) yaşanan barış ve eğlence dönemi Lale Devri olarak anılır."
+  },
+  {
+    "category": "osmanli",
+    "question": "Osmanlı Devleti'ni kuran Osman Bey'in babası kimdir?",
+    "options": [
+      "Süleyman Şah",
+      "Ertuğrul Gazi",
+      "Gündüz Alp",
+      "Dündar Bey"
+    ],
+    "correct": 1,
+    "info": "Osman Bey'in babası Ertuğrul Gazi, Kayı Boyu'nun lideridir."
+  },
+  {
+    "category": "osmanli",
+    "question": "Osmanlı'da Kapıkulu askerleri kime bağlıydı?",
+    "options": [
+      "Sadrazama",
+      "Padişaha",
+      "Beylerbeyi'ne",
+      "Şeyhülislama"
+    ],
+    "correct": 1,
+    "info": "Kapıkulu askerleri doğrudan padişaha bağlı merkez ordusuydu."
+  },
+  {
+    "category": "osmanli",
+    "question": "Mimar Sinan hangi padişah döneminde baş mimar olmuştur?",
+    "options": [
+      "Yavuz Sultan Selim",
+      "Kanuni Sultan Süleyman",
+      "II. Selim",
+      "III. Murad"
+    ],
+    "correct": 1,
+    "info": "Mimar Sinan, Kanuni döneminde baş mimar olmuş ve Süleymaniye Camii'ni inşa etmiştir."
+  },
+  {
+    "category": "osmanli",
+    "question": "Osmanlı Devleti'nin en geniş sınırlara ulaştığı dönem hangisidir?",
+    "options": [
+      "Fatih dönemi",
+      "Kanuni dönemi",
+      "IV. Murad dönemi",
+      "II. Viyana Kuşatması öncesi"
+    ],
+    "correct": 3,
+    "info": "1683 II. Viyana Kuşatması öncesinde Osmanlı en geniş sınırlarına ulaşmıştı."
+  },
+  {
+    "category": "dunya",
+    "question": "Fransız Devrimi hangi yılda başlamıştır?",
+    "options": [
+      "1776",
+      "1789",
+      "1804",
+      "1815"
+    ],
+    "correct": 1,
+    "info": "14 Temmuz 1789'da Bastille Hapishanesi'nin basılmasıyla Fransız Devrimi başlamıştır."
+  },
+  {
+    "category": "dunya",
+    "question": "1492 yılında Atlantik seferiyle Amerika kıtasını Avrupa gündemine taşıyan denizci kimdir?",
+    "options": [
+      "Vasco da Gama",
+      "Kristof Kolomb",
+      "Macellan",
+      "Amerigo Vespucci"
+    ],
+    "correct": 1,
+    "info": "Kristof Kolomb, 1492 yılında İspanya adına yaptığı seferle Amerika kıtasını Avrupa dünyasının gündemine taşımıştır."
+  },
+  {
+    "category": "dunya",
+    "question": "Berlin Duvarı hangi yıl yıkılmıştır?",
+    "options": [
+      "1985",
+      "1987",
+      "1989",
+      "1991"
+    ],
+    "correct": 2,
+    "info": "Berlin Duvarı 9 Kasım 1989'da yıkılmış, Soğuk Savaş'ın sembolik sonu olmuştur."
+  },
+  {
+    "category": "dunya",
+    "question": "Endüstri Devrimi ilk hangi ülkede başlamıştır?",
+    "options": [
+      "Fransa",
+      "Almanya",
+      "İngiltere",
+      "ABD"
+    ],
+    "correct": 2,
+    "info": "18. yüzyılın ortalarında İngiltere'de başlayan Endüstri Devrimi dünyayı değiştirmiştir."
+  },
+  {
+    "category": "dunya",
+    "question": "Magna Carta hangi yıl imzalanmıştır?",
+    "options": [
+      "1066",
+      "1215",
+      "1453",
+      "1689"
+    ],
+    "correct": 1,
+    "info": "1215'te İngiltere Kralı John tarafından imzalanan Magna Carta, modern demokrasinin temellerindendir."
+  },
+  {
+    "category": "dunya",
+    "question": "Amerikan Bağımsızlık Bildirgesi hangi yıl ilan edilmiştir?",
+    "options": [
+      "1774",
+      "1776",
+      "1783",
+      "1789"
+    ],
+    "correct": 1,
+    "info": "4 Temmuz 1776'da ABD Bağımsızlık Bildirgesi kabul edilmiştir."
+  },
+  {
+    "category": "dunya",
+    "question": "SSCB hangi yıl dağılmıştır?",
+    "options": [
+      "1989",
+      "1990",
+      "1991",
+      "1993"
+    ],
+    "correct": 2,
+    "info": "Sovyetler Birliği 26 Aralık 1991'de resmen dağılmıştır."
+  },
+  {
+    "category": "dunya",
+    "question": "İlk uçak uçuşunu kim gerçekleştirmiştir?",
+    "options": [
+      "Wright Kardeşler",
+      "Charles Lindbergh",
+      "Amelia Earhart",
+      "Santos Dumont"
+    ],
+    "correct": 0,
+    "info": "Wright Kardeşler, 17 Aralık 1903'te ilk motorlu uçuşu gerçekleştirmiştir."
+  },
+  {
+    "category": "dunya",
+    "question": "Birleşmiş Milletler hangi yıl kurulmuştur?",
+    "options": [
+      "1919",
+      "1939",
+      "1945",
+      "1948"
+    ],
+    "correct": 2,
+    "info": "BM, 24 Ekim 1945'te II. Dünya Savaşı sonrasında kurulmuştur."
+  },
+  {
+    "category": "dunya",
+    "question": "Martin Luther King suikaste hangi yıl uğramıştır?",
+    "options": [
+      "1963",
+      "1965",
+      "1968",
+      "1970"
+    ],
+    "correct": 2,
+    "info": "Martin Luther King, 4 Nisan 1968'de Memphis'te suikaste kurban gitmiştir."
+  },
+  {
+    "category": "dunya",
+    "question": "Çin Halk Cumhuriyeti hangi yıl kurulmuştur?",
+    "options": [
+      "1945",
+      "1949",
+      "1952",
+      "1956"
+    ],
+    "correct": 1,
+    "info": "Mao Zedong liderliğinde Çin Halk Cumhuriyeti 1 Ekim 1949'da kurulmuştur."
+  },
+  {
+    "category": "dunya",
+    "question": "Nelson Mandela kaç yıl hapiste kalmıştır?",
+    "options": [
+      "18 yıl",
+      "23 yıl",
+      "27 yıl",
+      "31 yıl"
+    ],
+    "correct": 2,
+    "info": "Nelson Mandela, 1964-1990 arasında 27 yıl hapiste kalmıştır."
+  },
+  {
+    "category": "dunya",
+    "question": "Hindistan hangi yıl bağımsızlığını ilan etmiştir?",
+    "options": [
+      "1945",
+      "1947",
+      "1950",
+      "1952"
+    ],
+    "correct": 1,
+    "info": "Hindistan, 15 Ağustos 1947'de İngiltere'den bağımsızlığını kazanmıştır."
+  },
+  {
+    "category": "dunya",
+    "question": "Ay'a ilk ayak basan insan kimdir?",
+    "options": [
+      "Yuri Gagarin",
+      "Neil Armstrong",
+      "Buzz Aldrin",
+      "Michael Collins"
+    ],
+    "correct": 1,
+    "info": "Neil Armstrong, 20 Temmuz 1969'da Ay'a ayak basan ilk insan olmuştur."
+  },
+  {
+    "category": "dunya",
+    "question": "Rönesans hangi ülkede başlamıştır?",
+    "options": [
+      "Fransa",
+      "İngiltere",
+      "İtalya",
+      "Almanya"
+    ],
+    "correct": 2,
+    "info": "Rönesans, 14. yüzyılda Floransa başta olmak üzere İtalya'da başlamıştır."
+  },
+  {
+    "category": "dunya",
+    "question": "Reform hareketini başlatan kişi kimdir?",
+    "options": [
+      "Jan Hus",
+      "Martin Luther",
+      "Jean Calvin",
+      "Erasmus"
+    ],
+    "correct": 1,
+    "info": "Martin Luther, 1517'de 95 tezini yayımlayarak Reform hareketini başlatmıştır."
+  },
+  {
+    "category": "dunya",
+    "question": "İspanyol İç Savaşı hangi yıllar arasında yaşanmıştır?",
+    "options": [
+      "1930-1933",
+      "1936-1939",
+      "1939-1942",
+      "1942-1945"
+    ],
+    "correct": 1,
+    "info": "İspanyol İç Savaşı 1936-1939 arasında yaşanmış, Franco galip gelmiştir."
+  },
+  {
+    "category": "dunya",
+    "question": "Avrupa Birliği'nin temeli olan antlaşma hangisidir?",
+    "options": [
+      "Versay",
+      "Roma",
+      "Maastricht",
+      "Lizbon"
+    ],
+    "correct": 1,
+    "info": "1957 Roma Antlaşması ile Avrupa Ekonomik Topluluğu kurulmuştur."
+  },
+  {
+    "category": "dunya",
+    "question": "Küba Füze Krizi hangi yıl yaşanmıştır?",
+    "options": [
+      "1959",
+      "1961",
+      "1962",
+      "1964"
+    ],
+    "correct": 2,
+    "info": "Küba Füze Krizi Ekim 1962'de yaşanmış, dünya nükleer savaşın eşiğine gelmiştir."
+  },
+  {
+    "category": "dunya",
+    "question": "Japonya'nın Meiji Restorasyonu hangi yılda gerçekleşmiştir?",
+    "options": [
+      "1854",
+      "1868",
+      "1889",
+      "1905"
+    ],
+    "correct": 1,
+    "info": "1868 Meiji Restorasyonu ile Japonya hızlı modernleşme sürecine girmiştir."
+  },
+  {
+    "category": "dunya",
+    "question": "İnsan Hakları Evrensel Beyannamesi hangi yıl kabul edilmiştir?",
+    "options": [
+      "1945",
+      "1948",
+      "1950",
+      "1955"
+    ],
+    "correct": 1,
+    "info": "BM Genel Kurulu, 10 Aralık 1948'de İnsan Hakları Evrensel Beyannamesi'ni kabul etmiştir."
+  },
+  {
+    "category": "dunya",
+    "question": "Panama Kanalı hangi yıl açılmıştır?",
+    "options": [
+      "1904",
+      "1910",
+      "1914",
+      "1920"
+    ],
+    "correct": 2,
+    "info": "Panama Kanalı, 15 Ağustos 1914'te deniz trafiğine açılmıştır."
+  },
+  {
+    "category": "dunya",
+    "question": "Apartheid rejimi hangi ülkede uygulanmıştır?",
+    "options": [
+      "Rodezya",
+      "Kongo",
+      "Güney Afrika",
+      "Angola"
+    ],
+    "correct": 2,
+    "info": "Apartheid, 1948-1994 arasında Güney Afrika'da uygulanan ırk ayrımcılığı sistemidir."
+  },
+  {
+    "category": "dunya",
+    "question": "Süveyş Kanalı hangi yıl açılmıştır?",
+    "options": [
+      "1859",
+      "1869",
+      "1879",
+      "1889"
+    ],
+    "correct": 1,
+    "info": "Süveyş Kanalı, 17 Kasım 1869'da resmi olarak açılmıştır."
+  },
+  {
+    "category": "dunya",
+    "question": "Çernobil nükleer felaketi hangi yıl yaşanmıştır?",
+    "options": [
+      "1979",
+      "1983",
+      "1986",
+      "1989"
+    ],
+    "correct": 2,
+    "info": "Çernobil nükleer kazası, 26 Nisan 1986'da Ukrayna'da meydana gelmiştir."
+  },
+  {
+    "category": "antik",
+    "question": "Antik Mısır'da piramitlerin inşa edildiği dönem hangisidir?",
+    "options": [
+      "Eski Krallık",
+      "Orta Krallık",
+      "Yeni Krallık",
+      "Geç Dönem"
+    ],
+    "correct": 0,
+    "info": "Giza Piramitleri, Eski Krallık döneminde (MÖ 2686-2181) inşa edilmiştir."
+  },
+  {
+    "category": "antik",
+    "question": "Büyük İskender hangi krallığın hükümdarıydı?",
+    "options": [
+      "Roma",
+      "Pers",
+      "Makedonya",
+      "Mısır"
+    ],
+    "correct": 2,
+    "info": "Büyük İskender, Makedonya kralı olarak tarihinin en büyük imparatorluklarından birini kurmuştur."
+  },
+  {
+    "category": "antik",
+    "question": "Roma İmparatorluğu'nun batı kısmı hangi yıl yıkılmıştır?",
+    "options": [
+      "395",
+      "410",
+      "455",
+      "476"
+    ],
+    "correct": 3,
+    "info": "476'da Germen şefi Odovacar, son Roma İmparatoru'nu tahttan indirmiştir."
+  },
+  {
+    "category": "antik",
+    "question": "Yazıyı icat eden uygarlık hangisidir?",
+    "options": [
+      "Mısır",
+      "Sümer",
+      "Çin",
+      "Fenike"
+    ],
+    "correct": 1,
+    "info": "Sümerler MÖ 3400 civarında çivi yazısını icat etmişlerdir."
+  },
+  {
+    "category": "antik",
+    "question": "Truva Savaşı'nın geçtiği yer bugün hangi ülkededir?",
+    "options": [
+      "Yunanistan",
+      "İtalya",
+      "Türkiye",
+      "Mısır"
+    ],
+    "correct": 2,
+    "info": "Truva antik kenti, bugünkü Çanakkale ili sınırları içindedir."
+  },
+  {
+    "category": "antik",
+    "question": "Antik Yunan'da demokrasinin doğduğu şehir hangisidir?",
+    "options": [
+      "Sparta",
+      "Atina",
+      "Korint",
+      "Tebai"
+    ],
+    "correct": 1,
+    "info": "MÖ 5. yüzyılda Atina, doğrudan demokrasiyi uygulayan ilk şehir devleti olmuştur."
+  },
+  {
+    "category": "antik",
+    "question": "Hammurabi Kanunları hangi uygarlığa aittir?",
+    "options": [
+      "Sümer",
+      "Akad",
+      "Babil",
+      "Asur"
+    ],
+    "correct": 2,
+    "info": "Hammurabi Kanunları, MÖ 1754 civarında Babil Kralı Hammurabi tarafından yazılmıştır."
+  },
+  {
+    "category": "antik",
+    "question": "Julius Caesar hangi yıl öldürülmüştür?",
+    "options": [
+      "MÖ 48",
+      "MÖ 44",
+      "MÖ 31",
+      "MÖ 27"
+    ],
+    "correct": 1,
+    "info": "Julius Caesar, 15 Mart MÖ 44'te senato üyeleri tarafından öldürülmüştür."
+  },
+  {
+    "category": "antik",
+    "question": "İlk Olimpiyat Oyunları hangi yıl yapılmıştır?",
+    "options": [
+      "MÖ 876",
+      "MÖ 776",
+      "MÖ 676",
+      "MÖ 576"
+    ],
+    "correct": 1,
+    "info": "İlk Olimpiyat Oyunları MÖ 776'da Olympia'da düzenlenmiştir."
+  },
+  {
+    "category": "antik",
+    "question": "Persler hangi savaşta Yunanlılara yenilmiştir?",
+    "options": [
+      "Issos",
+      "Maraton",
+      "Gaugamela",
+      "Thermopylae"
+    ],
+    "correct": 1,
+    "info": "MÖ 490'da Maraton Savaşı'nda Atinalılar Pers ordusunu yenmiştir."
+  },
+  {
+    "category": "antik",
+    "question": "Kleopatra hangi uygarlığın son hükümdarıdır?",
+    "options": [
+      "Pers",
+      "Yunan",
+      "Ptolemaios Mısırı",
+      "Roma"
+    ],
+    "correct": 2,
+    "info": "VII. Kleopatra, Ptolemaios Hanedanlığı'nın son hükümdarıdır."
+  },
+  {
+    "category": "antik",
+    "question": "Dünyanın yedi harikasından hangisi Efes'teydi?",
+    "options": [
+      "Zeus Heykeli",
+      "Artemis Tapınağı",
+      "Mausoleum",
+      "Rodos Heykeli"
+    ],
+    "correct": 1,
+    "info": "Artemis Tapınağı, antik dönemin en büyük tapınaklarından biri olarak Efes'te bulunuyordu."
+  },
+  {
+    "category": "antik",
+    "question": "Üçüncü Pön Savaşı sonunda Kartaca'nın yıkılışıyla ilişkilendirilen Roma komutanı kimdir?",
+    "options": [
+      "Scipio Aemilianus",
+      "Julius Caesar",
+      "Pompeius",
+      "Marius"
+    ],
+    "correct": 0,
+    "info": "Kartaca, MÖ 146 yılında Roma komutanı Scipio Aemilianus döneminde yıkılmıştır. Scipio Africanus ise daha çok İkinci Pön Savaşı ile bilinir."
+  },
+  {
+    "category": "antik",
+    "question": "Büyük İskender kaç yaşında ölmüştür?",
+    "options": [
+      "28",
+      "30",
+      "32",
+      "35"
+    ],
+    "correct": 2,
+    "info": "Büyük İskender, MÖ 323'te 32 yaşında Babil'de ölmüştür."
+  },
+  {
+    "category": "antik",
+    "question": "Çin Seddi'nin inşasına hangi hanedan döneminde başlanmıştır?",
+    "options": [
+      "Han",
+      "Qin",
+      "Ming",
+      "Tang"
+    ],
+    "correct": 1,
+    "info": "Çin Seddi'nin ilk büyük bölümü Qin Hanedanlığı döneminde yapılmıştır."
+  },
+  {
+    "category": "antik",
+    "question": "Roma'nın efsanevi kurucuları kimlerdir?",
+    "options": [
+      "Romulus ve Remus",
+      "Aeneas ve Anchises",
+      "Brutus ve Cassius",
+      "Numa ve Tullus"
+    ],
+    "correct": 0,
+    "info": "Efsaneye göre Roma, MÖ 753'te Romulus tarafından kurulmuştur."
+  },
+  {
+    "category": "antik",
+    "question": "Asur İmparatorluğu'nun başkenti hangisiydi?",
+    "options": [
+      "Babil",
+      "Ninova",
+      "Ur",
+      "Persepolis"
+    ],
+    "correct": 1,
+    "info": "Ninova, Neo-Asur İmparatorluğu'nun en önemli başkentiydi."
+  },
+  {
+    "category": "antik",
+    "question": "İskenderiye Kütüphanesi hangi şehirdeydi?",
+    "options": [
+      "Atina",
+      "Roma",
+      "İskenderiye",
+      "Pergamon"
+    ],
+    "correct": 2,
+    "info": "Antik dünyanın en büyük kütüphanesi Mısır'ın İskenderiye şehrindeydi."
+  },
+  {
+    "category": "antik",
+    "question": "Hititlerin başkenti hangisiydi?",
+    "options": [
+      "Hattuşaş",
+      "Gordion",
+      "Efes",
+      "Sardes"
+    ],
+    "correct": 0,
+    "info": "Hattuşaş (bugünkü Boğazköy), Hitit İmparatorluğu'nun başkentiydi."
+  },
+  {
+    "category": "antik",
+    "question": "Antik dönemde 'Felsefenin Babası' olarak kim anılır?",
+    "options": [
+      "Sokrates",
+      "Platon",
+      "Thales",
+      "Aristoteles"
+    ],
+    "correct": 2,
+    "info": "Miletli Thales, Batı felsefesinin kurucusu kabul edilir."
+  },
+  {
+    "category": "antik",
+    "question": "Peloponez Savaşı hangi iki şehir arasında yapılmıştır?",
+    "options": [
+      "Atina-Tebai",
+      "Sparta-Korint",
+      "Atina-Sparta",
+      "Makedonya-Atina"
+    ],
+    "correct": 2,
+    "info": "Peloponez Savaşı (MÖ 431-404) Atina ve Sparta arasında yaşanmıştır."
+  },
+  {
+    "category": "antik",
+    "question": "Roma'da cumhuriyet dönemi hangi olayla başlamıştır?",
+    "options": [
+      "Caesar'ın ölümü",
+      "Kralların kovulması",
+      "Pön Savaşları",
+      "Augustus'un tahta çıkışı"
+    ],
+    "correct": 1,
+    "info": "MÖ 509'da son kralın kovulmasıyla Roma Cumhuriyeti kurulmuştur."
+  },
+  {
+    "category": "antik",
+    "question": "Fenike uygarlığının en önemli icadı hangisidir?",
+    "options": [
+      "Tekerlek",
+      "Alfabe",
+      "Barut",
+      "Pusula"
+    ],
+    "correct": 1,
+    "info": "Fenikeliler, modern alfabenin temelini oluşturan fonetik alfabeyi geliştirmişlerdir."
+  },
+  {
+    "category": "antik",
+    "question": "Lidya Krallığı hangi buluşuyla ünlüdür?",
+    "options": [
+      "Para (sikke)",
+      "Yazı",
+      "Cam",
+      "Demir"
+    ],
+    "correct": 0,
+    "info": "Lidyalılar MÖ 7. yüzyılda tarihte bilinen ilk madeni parayı kullanmışlardır."
+  },
+  {
+    "category": "antik",
+    "question": "Parthenon Tapınağı hangi tanrıçaya adanmıştır?",
+    "options": [
+      "Hera",
+      "Afrodit",
+      "Athena",
+      "Artemis"
+    ],
+    "correct": 2,
+    "info": "Parthenon, Atina'nın koruyucu tanrıçası Athena'ya adanmış bir tapınaktır."
+  },
+  {
+    "category": "savas",
+    "question": "I. Dünya Savaşı hangi olayla başlamıştır?",
+    "options": [
+      "Lusitania'nın batması",
+      "Avusturya veliahtının suikaste uğraması",
+      "Almanya'nın Polonya'yı işgali",
+      "Rusya'nın seferberlik ilan etmesi"
+    ],
+    "correct": 1,
+    "info": "28 Haziran 1914'te Franz Ferdinand'ın Saraybosna'da öldürülmesi I. Dünya Savaşı'nı başlatmıştır."
+  },
+  {
+    "category": "savas",
+    "question": "Malazgirt Savaşı hangi yıl yapılmıştır?",
+    "options": [
+      "1040",
+      "1071",
+      "1176",
+      "1243"
+    ],
+    "correct": 1,
+    "info": "26 Ağustos 1071'de Alparslan, Bizans İmparatoru'nu mağlup etmiştir."
+  },
+  {
+    "category": "savas",
+    "question": "Kurtuluş Savaşı'nın dönüm noktası kabul edilen meydan savaşı hangisidir?",
+    "options": [
+      "I. İnönü",
+      "II. İnönü",
+      "Sakarya",
+      "Büyük Taarruz"
+    ],
+    "correct": 2,
+    "info": "22 gün süren Sakarya Meydan Muharebesi (1921) Yunan ilerleyişini durdurmuştur."
+  },
+  {
+    "category": "savas",
+    "question": "Waterloo Savaşı'nda kim yenilmiştir?",
+    "options": [
+      "İngiltere",
+      "Prusya",
+      "Napolyon",
+      "Rusya"
+    ],
+    "correct": 2,
+    "info": "18 Haziran 1815'te Napolyon Waterloo'da kesin yenilgiye uğramıştır."
+  },
+  {
+    "category": "savas",
+    "question": "İkinci Dünya Savaşı hangi tarihte sona ermiştir?",
+    "options": [
+      "8 Mayıs 1945",
+      "6 Ağustos 1945",
+      "2 Eylül 1945",
+      "15 Ağustos 1945"
+    ],
+    "correct": 2,
+    "info": "Japonya'nın teslim belgesini imzaladığı 2 Eylül 1945, savaşın resmi bitiş tarihidir."
+  },
+  {
+    "category": "savas",
+    "question": "Çanakkale Savaşı hangi yıllar arasında yapılmıştır?",
+    "options": [
+      "1914-1915",
+      "1915-1916",
+      "1916-1917",
+      "1917-1918"
+    ],
+    "correct": 1,
+    "info": "Çanakkale Savaşları Şubat 1915 - Ocak 1916 arasında sürmüştür."
+  },
+  {
+    "category": "savas",
+    "question": "Normandiya Çıkarması hangi tarihte yapılmıştır?",
+    "options": [
+      "6 Haziran 1943",
+      "6 Haziran 1944",
+      "6 Haziran 1945",
+      "6 Mayıs 1944"
+    ],
+    "correct": 1,
+    "info": "D-Day olarak bilinen Normandiya Çıkarması 6 Haziran 1944'te gerçekleştirilmiştir."
+  },
+  {
+    "category": "savas",
+    "question": "Vietnam Savaşı hangi yıl sona ermiştir?",
+    "options": [
+      "1973",
+      "1975",
+      "1977",
+      "1979"
+    ],
+    "correct": 1,
+    "info": "Vietnam Savaşı, 30 Nisan 1975'te Saygon'un düşmesiyle sona ermiştir."
+  },
+  {
+    "category": "savas",
+    "question": "Pön Savaşları Roma ile hangi devlet arasında yapılmıştır?",
+    "options": [
+      "Makedonya",
+      "Kartaca",
+      "Yunanistan",
+      "Mısır"
+    ],
+    "correct": 1,
+    "info": "MÖ 264-146 arasında Roma ve Kartaca arasında üç Pön Savaşı yaşanmıştır."
+  },
+  {
+    "category": "savas",
+    "question": "Kore Savaşı hangi yıllar arasında yaşanmıştır?",
+    "options": [
+      "1948-1951",
+      "1950-1953",
+      "1952-1955",
+      "1954-1957"
+    ],
+    "correct": 1,
+    "info": "Kore Savaşı 1950-1953 arasında yaşanmış ve ateşkesle sonuçlanmıştır."
+  },
+  {
+    "category": "savas",
+    "question": "Haçlı Seferleri kaç yıl sürmüştür?",
+    "options": [
+      "100 yıl",
+      "150 yıl",
+      "200 yıl",
+      "250 yıl"
+    ],
+    "correct": 2,
+    "info": "Haçlı Seferleri 1095-1291 arasında yaklaşık 200 yıl sürmüştür."
+  },
+  {
+    "category": "savas",
+    "question": "Pearl Harbor baskını hangi tarihte yapılmıştır?",
+    "options": [
+      "7 Aralık 1940",
+      "7 Aralık 1941",
+      "7 Aralık 1942",
+      "7 Ocak 1941"
+    ],
+    "correct": 1,
+    "info": "Japonya'nın Pearl Harbor'a saldırısı 7 Aralık 1941'de ABD'yi savaşa sokmuştur."
+  },
+  {
+    "category": "savas",
+    "question": "Yüz Yıl Savaşları hangi ülkeler arasında yapılmıştır?",
+    "options": [
+      "İngiltere-İspanya",
+      "Fransa-Almanya",
+      "İngiltere-Fransa",
+      "İspanya-Portekiz"
+    ],
+    "correct": 2,
+    "info": "Yüz Yıl Savaşları (1337-1453) İngiltere ve Fransa arasında yaşanmıştır."
+  },
+  {
+    "category": "savas",
+    "question": "Stalingrad Savaşı hangi ülkeler arasında yapılmıştır?",
+    "options": [
+      "SSCB-Japonya",
+      "SSCB-İtalya",
+      "Almanya-SSCB",
+      "Almanya-İngiltere"
+    ],
+    "correct": 2,
+    "info": "Stalingrad Savaşı (1942-1943) Nazi Almanyası ile SSCB arasında yaşanmıştır."
+  },
+  {
+    "category": "savas",
+    "question": "Miryokefalon Savaşı hangi devletler arasında yapılmıştır?",
+    "options": [
+      "Selçuklu-Bizans",
+      "Osmanlı-Bizans",
+      "Selçuklu-Haçlılar",
+      "Osmanlı-Memlük"
+    ],
+    "correct": 0,
+    "info": "1176'da Türkiye Selçukluları Bizans'ı Miryokefalon'da yenmiştir."
+  },
+  {
+    "category": "savas",
+    "question": "Kösedağ Savaşı'nı Türkiye Selçukluları kime karşı kaybetmiştir?",
+    "options": [
+      "Bizans",
+      "Haçlılar",
+      "Moğollar",
+      "Eyyubiler"
+    ],
+    "correct": 2,
+    "info": "1243 Kösedağ Savaşı'nda Moğollara yenilen Selçuklular hakimiyete girmiştir."
+  },
+  {
+    "category": "savas",
+    "question": "Niğbolu Savaşı hangi yıl yapılmıştır?",
+    "options": [
+      "1389",
+      "1396",
+      "1402",
+      "1444"
+    ],
+    "correct": 1,
+    "info": "1396 Niğbolu Savaşı'nda Yıldırım Bayezid Haçlı ordusunu bozguna uğratmıştır."
+  },
+  {
+    "category": "savas",
+    "question": "Varna Savaşı'nda hangi Haçlı kralı hayatını kaybetmiştir?",
+    "options": [
+      "III. Richard",
+      "I. Ladislas",
+      "III. Frederik",
+      "I. Louis"
+    ],
+    "correct": 1,
+    "info": "1444 Varna Savaşı'nda Macar-Polonya Kralı I. Ladislas hayatını kaybetmiştir."
+  },
+  {
+    "category": "savas",
+    "question": "Trafalgar Deniz Savaşı'nda hangi ünlü amiral ölmüştür?",
+    "options": [
+      "Francis Drake",
+      "Horatio Nelson",
+      "John Paul Jones",
+      "George Dewey"
+    ],
+    "correct": 1,
+    "info": "1805 Trafalgar Savaşı'nda İngiliz Amiral Nelson zafer kazanmasına rağmen ölmüştür."
+  },
+  {
+    "category": "savas",
+    "question": "Körfez Savaşı hangi yıl başlamıştır?",
+    "options": [
+      "1989",
+      "1990",
+      "1991",
+      "1992"
+    ],
+    "correct": 1,
+    "info": "Körfez Savaşı, Irak'ın Kuveyt'i işgal etmesiyle Ağustos 1990'da başlamıştır."
+  },
+  {
+    "category": "savas",
+    "question": "Balkan Savaşları sonucunda Osmanlı hangi bölgeleri kaybetmiştir?",
+    "options": [
+      "Suriye ve Irak",
+      "Mısır ve Cezayir",
+      "Makedonya ve Trakya'nın büyük bölümü",
+      "Kırım ve Kafkasya"
+    ],
+    "correct": 2,
+    "info": "1912-1913 Balkan Savaşları sonunda Osmanlı Balkanlar'daki topraklarını kaybetmiştir."
+  },
+  {
+    "category": "savas",
+    "question": "I. Kosova Savaşı hangi padişah döneminde yapılmıştır?",
+    "options": [
+      "Orhan Bey",
+      "I. Murad",
+      "Yıldırım Bayezid",
+      "I. Mehmed"
+    ],
+    "correct": 1,
+    "info": "1389 I. Kosova Savaşı'nda I. Murad şehit olmuştur."
+  },
+  {
+    "category": "savas",
+    "question": "Lepanto Deniz Savaşı hangi yıl yapılmıştır?",
+    "options": [
+      "1538",
+      "1565",
+      "1571",
+      "1585"
+    ],
+    "correct": 2,
+    "info": "1571 İnebahtı Savaşı'nda Osmanlı donanması Haçlı donanmasına yenilmiştir."
+  },
+  {
+    "category": "savas",
+    "question": "II. Viyana Kuşatması hangi yıl yapılmıştır?",
+    "options": [
+      "1664",
+      "1676",
+      "1683",
+      "1699"
+    ],
+    "correct": 2,
+    "info": "1683 II. Viyana Kuşatması'nın başarısızlığı Osmanlı'nın geri çekilişinin başlangıcıdır."
+  },
+  {
+    "category": "savas",
+    "question": "93 Harbi olarak bilinen savaş hangi devletle yapılmıştır?",
+    "options": [
+      "İngiltere",
+      "Fransa",
+      "Rusya",
+      "Avusturya"
+    ],
+    "correct": 2,
+    "info": "1877-1878 Osmanlı-Rus Savaşı büyük toprak kayıplarıyla sonuçlanmıştır."
+  },
+  {
+    "category": "turkiye",
+    "question": "Türkiye Cumhuriyeti hangi tarihte ilan edilmiştir?",
+    "options": [
+      "23 Nisan 1920",
+      "30 Ağustos 1922",
+      "29 Ekim 1923",
+      "24 Temmuz 1923"
+    ],
+    "correct": 2,
+    "info": "29 Ekim 1923'te TBMM'de yapılan anayasa değişikliğiyle Cumhuriyet ilan edilmiştir."
+  },
+  {
+    "category": "turkiye",
+    "question": "Türk kadınlarına seçme ve seçilme hakkı hangi yıl verilmiştir?",
+    "options": [
+      "1930",
+      "1934",
+      "1938",
+      "1946"
+    ],
+    "correct": 1,
+    "info": "5 Aralık 1934'te Türk kadınları seçme ve seçilme hakkını kazanmıştır."
+  },
+  {
+    "category": "turkiye",
+    "question": "Lozan Antlaşması hangi yıl imzalanmıştır?",
+    "options": [
+      "1920",
+      "1921",
+      "1922",
+      "1923"
+    ],
+    "correct": 3,
+    "info": "24 Temmuz 1923'te imzalanan Lozan Antlaşması Türkiye'nin tanınmasını sağlamıştır."
+  },
+  {
+    "category": "turkiye",
+    "question": "Harf Devrimi hangi yıl gerçekleştirilmiştir?",
+    "options": [
+      "1925",
+      "1926",
+      "1928",
+      "1930"
+    ],
+    "correct": 2,
+    "info": "1 Kasım 1928'de Latin alfabesi kullanılmaya başlanmıştır."
+  },
+  {
+    "category": "turkiye",
+    "question": "Atatürk'ün Samsun'a çıkışı hangi tarihtedir?",
+    "options": [
+      "23 Nisan 1919",
+      "19 Mayıs 1919",
+      "30 Ağustos 1919",
+      "9 Eylül 1919"
+    ],
+    "correct": 1,
+    "info": "19 Mayıs 1919'da Mustafa Kemal'in Samsun'a çıkışı Kurtuluş Savaşı'nın başlangıcıdır."
+  },
+  {
+    "category": "turkiye",
+    "question": "TBMM hangi tarihte açılmıştır?",
+    "options": [
+      "19 Mayıs 1919",
+      "23 Nisan 1920",
+      "29 Ekim 1923",
+      "30 Ağustos 1922"
+    ],
+    "correct": 1,
+    "info": "Türkiye Büyük Millet Meclisi 23 Nisan 1920'de Ankara'da açılmıştır."
+  },
+  {
+    "category": "turkiye",
+    "question": "Büyük Taarruz hangi tarihte başlamıştır?",
+    "options": [
+      "26 Ağustos 1921",
+      "26 Ağustos 1922",
+      "30 Ağustos 1921",
+      "30 Ağustos 1922"
+    ],
+    "correct": 1,
+    "info": "Büyük Taarruz 26 Ağustos 1922'de başlamış, 30 Ağustos'ta zaferle sonuçlanmıştır."
+  },
+  {
+    "category": "turkiye",
+    "question": "İzmir hangi tarihte düşman işgalinden kurtulmuştur?",
+    "options": [
+      "30 Ağustos 1922",
+      "9 Eylül 1922",
+      "11 Ekim 1922",
+      "29 Ekim 1922"
+    ],
+    "correct": 1,
+    "info": "İzmir, 9 Eylül 1922'de Türk ordusunun şehre girişiyle kurtarılmıştır."
+  },
+  {
+    "category": "turkiye",
+    "question": "Atatürk hangi yıl vefat etmiştir?",
+    "options": [
+      "1936",
+      "1937",
+      "1938",
+      "1939"
+    ],
+    "correct": 2,
+    "info": "Mustafa Kemal Atatürk 10 Kasım 1938'de İstanbul'da vefat etmiştir."
+  },
+  {
+    "category": "turkiye",
+    "question": "Türkiye'de çok partili hayata geçiş hangi yıl gerçekleşmiştir?",
+    "options": [
+      "1924",
+      "1930",
+      "1945",
+      "1946"
+    ],
+    "correct": 3,
+    "info": "1946'da yapılan seçimlerle Türkiye çok partili sisteme geçmiştir."
+  },
+  {
+    "category": "turkiye",
+    "question": "Türkiye NATO'ya hangi yıl katılmıştır?",
+    "options": [
+      "1949",
+      "1950",
+      "1952",
+      "1955"
+    ],
+    "correct": 2,
+    "info": "Türkiye 18 Şubat 1952'de NATO'ya üye olmuştur."
+  },
+  {
+    "category": "turkiye",
+    "question": "Sivas Kongresi hangi tarihte yapılmıştır?",
+    "options": [
+      "23 Temmuz 1919",
+      "4 Eylül 1919",
+      "22 Haziran 1919",
+      "28 Ocak 1920"
+    ],
+    "correct": 1,
+    "info": "Sivas Kongresi 4-11 Eylül 1919 tarihleri arasında toplanmıştır."
+  },
+  {
+    "category": "turkiye",
+    "question": "Erzurum Kongresi hangi tarihte yapılmıştır?",
+    "options": [
+      "19 Mayıs 1919",
+      "23 Temmuz 1919",
+      "4 Eylül 1919",
+      "23 Nisan 1920"
+    ],
+    "correct": 1,
+    "info": "Erzurum Kongresi 23 Temmuz - 7 Ağustos 1919 tarihleri arasında toplanmıştır."
+  },
+  {
+    "category": "turkiye",
+    "question": "Mudanya Ateşkes Antlaşması hangi yıl imzalanmıştır?",
+    "options": [
+      "1921",
+      "1922",
+      "1923",
+      "1924"
+    ],
+    "correct": 1,
+    "info": "11 Ekim 1922'de imzalanan Mudanya Ateşkesi silahlı mücadeleyi sona erdirmiştir."
+  },
+  {
+    "category": "turkiye",
+    "question": "Halifelik hangi yıl kaldırılmıştır?",
+    "options": [
+      "1922",
+      "1923",
+      "1924",
+      "1925"
+    ],
+    "correct": 2,
+    "info": "3 Mart 1924'te halifelik kaldırılmıştır."
+  },
+  {
+    "category": "turkiye",
+    "question": "Soyadı Kanunu hangi yıl kabul edilmiştir?",
+    "options": [
+      "1928",
+      "1930",
+      "1932",
+      "1934"
+    ],
+    "correct": 3,
+    "info": "21 Haziran 1934'te Soyadı Kanunu kabul edilmiştir."
+  },
+  {
+    "category": "turkiye",
+    "question": "Atatürk'e 'Atatürk' soyadı hangi yıl verilmiştir?",
+    "options": [
+      "1932",
+      "1933",
+      "1934",
+      "1935"
+    ],
+    "correct": 2,
+    "info": "24 Kasım 1934'te TBMM Mustafa Kemal'e 'Atatürk' soyadını vermiştir."
+  },
+  {
+    "category": "turkiye",
+    "question": "Kıbrıs Barış Harekatı hangi yıl gerçekleştirilmiştir?",
+    "options": [
+      "1964",
+      "1967",
+      "1974",
+      "1983"
+    ],
+    "correct": 2,
+    "info": "Kıbrıs Barış Harekatı 20 Temmuz 1974'te başlamıştır."
+  },
+  {
+    "category": "turkiye",
+    "question": "Cumhuriyet döneminde yapılan ilk genel seçim hangi yıldadır?",
+    "options": [
+      "1920",
+      "1923",
+      "1927",
+      "1946"
+    ],
+    "correct": 1,
+    "info": "Cumhuriyet döneminin ilk genel seçimi 1923 yılında yapılmıştır. 1946 ise çok partili hayata geçişte önemli bir seçimdir."
+  },
+  {
+    "category": "turkiye",
+    "question": "Terakkiperver Cumhuriyet Fırkası hangi yıl kurulmuştur?",
+    "options": [
+      "1923",
+      "1924",
+      "1925",
+      "1930"
+    ],
+    "correct": 1,
+    "info": "Cumhuriyet döneminin ilk muhalefet partisi 17 Kasım 1924'te kurulmuştur."
+  },
+  {
+    "category": "turkiye",
+    "question": "Şeyh Said İsyanı hangi yıl çıkmıştır?",
+    "options": [
+      "1924",
+      "1925",
+      "1926",
+      "1930"
+    ],
+    "correct": 1,
+    "info": "Şeyh Said İsyanı Şubat 1925'te Güneydoğu Anadolu'da başlamıştır."
+  },
+  {
+    "category": "turkiye",
+    "question": "Türk Tarih Kurumu hangi yıl kurulmuştur?",
+    "options": [
+      "1928",
+      "1930",
+      "1931",
+      "1932"
+    ],
+    "correct": 2,
+    "info": "Türk Tarih Kurumu 15 Nisan 1931'de kurulmuştur."
+  },
+  {
+    "category": "turkiye",
+    "question": "Türk Dil Kurumu hangi yıl kurulmuştur?",
+    "options": [
+      "1928",
+      "1930",
+      "1931",
+      "1932"
+    ],
+    "correct": 3,
+    "info": "Türk Dil Kurumu 12 Temmuz 1932'de kurulmuştur."
+  },
+  {
+    "category": "turkiye",
+    "question": "Montrö Boğazlar Sözleşmesi hangi yıl imzalanmıştır?",
+    "options": [
+      "1923",
+      "1930",
+      "1936",
+      "1939"
+    ],
+    "correct": 2,
+    "info": "20 Temmuz 1936'da imzalanan Montrö ile Türkiye Boğazlar üzerinde tam egemenlik kazanmıştır."
+  },
+  {
+    "category": "turkiye",
+    "question": "Hatay hangi yıl Türkiye'ye katılmıştır?",
+    "options": [
+      "1936",
+      "1938",
+      "1939",
+      "1945"
+    ],
+    "correct": 2,
+    "info": "Hatay 30 Haziran 1939'da yapılan halk oylaması sonucunda Türkiye'ye katılmıştır."
+  }
+]

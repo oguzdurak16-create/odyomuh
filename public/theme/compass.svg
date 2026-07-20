@@ -1,0 +1,13 @@
+<svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="160" cy="160" r="148" fill="#1A1311" stroke="#8F6034" stroke-width="2"/>
+  <circle cx="160" cy="160" r="118" stroke="#B68249" stroke-width="2" stroke-dasharray="8 8" opacity="0.7"/>
+  <circle cx="160" cy="160" r="84" stroke="#6B4A2B" stroke-width="2"/>
+  <path d="M160 52V116M160 204V268M52 160H116M204 160H268" stroke="#D3A268" stroke-width="4" stroke-linecap="round"/>
+  <path d="M160 86L185 160L160 234L135 160L160 86Z" fill="#D3A268"/>
+  <path d="M86 160L160 185L234 160L160 135L86 160Z" fill="#8F6034"/>
+  <circle cx="160" cy="160" r="14" fill="#F0D5A3"/>
+  <text x="152" y="34" fill="#E8D7BF" font-size="24" font-family="Georgia, serif">N</text>
+  <text x="153" y="302" fill="#E8D7BF" font-size="24" font-family="Georgia, serif">S</text>
+  <text x="24" y="168" fill="#E8D7BF" font-size="24" font-family="Georgia, serif">W</text>
+  <text x="287" y="168" fill="#E8D7BF" font-size="24" font-family="Georgia, serif">E</text>
+</svg>

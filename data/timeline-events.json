@@ -1,0 +1,590 @@
+{
+  "eras": {
+    "prehistoric": {
+      "title": "Tarih Öncesi Çağ",
+      "range": "MÖ 10000 - MÖ 3000"
+    },
+    "ancient": {
+      "title": "Antik Çağ",
+      "range": "MÖ 3000 - MS 476"
+    },
+    "medieval": {
+      "title": "Orta Çağ",
+      "range": "MS 476 - 1453"
+    },
+    "early-modern": {
+      "title": "Yeni Çağ",
+      "range": "1453 - 1789"
+    },
+    "modern": {
+      "title": "Yakın Çağ",
+      "range": "1789 - Günümüz"
+    }
+  },
+  "events": [
+    {
+      "era": "prehistoric",
+      "keywords": "göbeklitepe şanlıurfa tapınak neolitik türkiye",
+      "date": "MÖ 9600",
+      "title": "Göbeklitepe - Dünyanın İlk Tapınağı",
+      "description": "Şanlıurfa'da keşfedilen Göbeklitepe, bilinen en eski anıtsal yapı. Stonehenge'den 6000 yıl önce inşa edildi.",
+      "details": "Konum: Şanlıurfa, Türkiye Keşif: 1963 Önemi: Tarih anlayışını değiştirdi",
+      "tags": [
+        "Anadolu",
+        "UNESCO"
+      ]
+    },
+    {
+      "era": "prehistoric",
+      "keywords": "çatalhöyük konya neolitik şehir",
+      "date": "MÖ 7500",
+      "title": "Çatalhöyük - İlk Şehir",
+      "description": "Konya'da bulunan Çatalhöyük, dünyanın en eski şehirlerinden biri. 8000 kişilik nüfusuyla Neolitik dönemin en büyük yerleşimi.",
+      "details": "Konum: Konya, Türkiye Nüfus: 5000-8000 kişi Özellik: Kapısız evler, çatıdan giriş",
+      "tags": [
+        "Anadolu"
+      ]
+    },
+    {
+      "era": "prehistoric",
+      "keywords": "sümer yazı çivi mezopotamya uruk",
+      "date": "MÖ 3500",
+      "title": "Yazının İcadı - Sümerler",
+      "description": "Mezopotamya'da Sümerler çivi yazısını icat etti. İnsanlık tarihinin en büyük buluşu, tarihsel kayıt dönemi başladı.",
+      "details": "Konum: Uruk, Mezopotamya İlk Metinler: Ticaret kayıtları Önemi: Tarih öncesi çağ sona erdi",
+      "tags": [
+        "Sümer"
+      ]
+    },
+    {
+      "era": "prehistoric",
+      "keywords": "mısır firavun nil narmer",
+      "date": "MÖ 3100",
+      "title": "Mısır'ın Birleşmesi",
+      "description": "Kral Narmer, Yukarı ve Aşağı Mısır'ı birleştirdi. 3000 yıl sürecek Firavunlar dönemi başladı.",
+      "details": "İlk Firavun: Narmer/Menes Başkent: Memphis Kanıt: Narmer Paleti",
+      "tags": [
+        "Mısır"
+      ]
+    },
+    {
+      "era": "prehistoric",
+      "keywords": "stonehenge ingiltere megalit",
+      "date": "MÖ 3000",
+      "title": "Stonehenge İnşaatı",
+      "description": "İngiltere'de devasa taş çemberi inşa edildi. Astronomik gözlemevi mi, tapınak mı? Gizemi hâlâ çözülemedi.",
+      "details": "Konum: Wiltshire, İngiltere Taş Ağırlığı: 25-50 ton Özellik: Gündönümünde güneş hizalanır",
+      "tags": [
+        "İngiltere"
+      ]
+    },
+    {
+      "era": "ancient",
+      "keywords": "piramit giza keops mısır yedi harika",
+      "date": "MÖ 2560",
+      "title": "Keops Piramidi'nin İnşası",
+      "description": "Giza'da Büyük Piramit tamamlandı. 3800 yıl boyunca dünyanın en yüksek yapısı. Yedi harikadan tek ayakta kalan.",
+      "details": "Yükseklik: 146.5 metre Taş Sayısı: 2.3 milyon blok İnşaat: ~20 yıl",
+      "tags": [
+        "Mısır",
+        "7 Harika"
+      ]
+    },
+    {
+      "era": "ancient",
+      "keywords": "hammurabi babil kanun hukuk",
+      "date": "MÖ 1754",
+      "title": "Hammurabi Kanunları",
+      "description": "Babil Kralı Hammurabi, tarihin bilinen ilk yazılı yasalarını yayınladı. \"Göze göz, dişe diş\" ilkesi.",
+      "details": "Madde: 282 yasa Stele: Louvre Müzesi Önemi: Modern hukukun temeli",
+      "tags": [
+        "Babil"
+      ]
+    },
+    {
+      "era": "ancient",
+      "keywords": "tutankhamun firavun altın maske",
+      "date": "MÖ 1323",
+      "title": "Tutankhamun'un Ölümü",
+      "description": "Genç firavun 19 yaşında öldü. Mezarı 1922'de bozulmamış halde bulundu. \"Firavunun Laneti\" efsanesi doğdu.",
+      "details": "Tahta Geçiş: 9 yaşında Keşif: Howard Carter, 1922 Hazine: 5000+ eser",
+      "tags": [
+        "Mısır"
+      ]
+    },
+    {
+      "era": "ancient",
+      "keywords": "truva savaşı homeros yunan tahta at",
+      "date": "MÖ 1200",
+      "title": "Truva Savaşı",
+      "description": "10 yıl süren efsanevi savaş, Tahta At hilesiyle sona erdi. Bronz Çağı'nın çöküşünü simgeler.",
+      "details": "Konum: Truva, Çanakkale Kaynak: Homeros, İlyada Keşif: Schliemann, 1870",
+      "tags": [
+        "Yunan"
+      ]
+    },
+    {
+      "era": "ancient",
+      "keywords": "roma kuruluş romulus remus kurt",
+      "date": "MÖ 753",
+      "title": "Roma'nın Kuruluşu",
+      "description": "Roma geleneğine göre Romulus ve Remus efsanesi, şehrin kuruluş anlatısının merkezinde yer alır. Tarihin en büyük imparatorluğunun temeli.",
+      "details": "Sembol: Dişi kurt (Lupa) İlk Yönetim: Krallık (7 kral) Cumhuriyet: MÖ 509",
+      "tags": [
+        "Roma"
+      ]
+    },
+    {
+      "era": "ancient",
+      "keywords": "olimpiyat yunanistan zeus spor",
+      "date": "MÖ 776",
+      "title": "İlk Olimpiyat Oyunları",
+      "description": "Zeus onuruna Olympia'da ilk atletizm yarışmaları. 1000 yıldan fazla süren gelenek, savaşları bile durdurdu.",
+      "details": "İlk Yarış: 192m koşu Ödül: Zeytin çelengi Aralık: Her 4 yılda bir",
+      "tags": [
+        "Yunan"
+      ]
+    },
+    {
+      "era": "ancient",
+      "keywords": "buda siddhartha budizm hindistan",
+      "date": "MÖ 563-483",
+      "title": "Buda'nın Yaşamı",
+      "description": "Prens Siddhartha lüks hayatını bırakıp aydınlanma aradı. Bodhi ağacı altında \"Buda\" (Uyanmış) oldu.",
+      "details": "Doğum: Lumbini, Nepal Aydınlanma: Bodh Gaya Takipçi: ~500 milyon",
+      "tags": [
+        "Hindistan"
+      ]
+    },
+    {
+      "era": "ancient",
+      "keywords": "pers xerxes thermopylae sparta 300 leonidas",
+      "date": "MÖ 480",
+      "title": "Thermopylae Savaşı",
+      "description": "300 Spartalı, Kral Leonidas komutasında 100.000+ Pers ordusuna karşı geçidi savundu. Tarihin en ünlü son direnişi.",
+      "details": "Komutanlar: Leonidas vs Xerxes Sonuç: Tüm Spartalılar şehit Ünlü Söz: \"Molon labe\"",
+      "tags": [
+        "Yunan"
+      ]
+    },
+    {
+      "era": "ancient",
+      "keywords": "sokrates felsefe atina zehir",
+      "date": "MÖ 399",
+      "title": "Sokrates'in Ölümü",
+      "description": "Batı felsefesinin babası, \"gençliği yoldan çıkarmak\" suçlamasıyla baldıran zehri içmeye mahkum edildi.",
+      "details": "Suçlama: Gençliği yoldan çıkarmak İnfaz: Baldıran zehri Yöntemi: Sokratik sorgulama",
+      "tags": [
+        "Yunan"
+      ]
+    },
+    {
+      "era": "ancient",
+      "keywords": "iskender büyük makedonya fetih pers",
+      "date": "MÖ 334-323",
+      "title": "Büyük İskender'in Fetihleri",
+      "description": "20 yaşında tahta çıkan İskender, 10 yılda Mısır'dan Hindistan'a uzanan devasa imparatorluk kurdu.",
+      "details": "Hüküm: MÖ 336-323 Kurulan: 20+ İskenderiye Ölüm: 32 yaşında, Babil'de",
+      "tags": [
+        "Makedonya"
+      ]
+    },
+    {
+      "era": "ancient",
+      "keywords": "çin seddi imparator qin",
+      "date": "MÖ 221",
+      "title": "Çin Seddi İnşaatı Başlıyor",
+      "description": "İlk Çin İmparatoru Qin Shi Huang, kuzey barbarlarına karşı Çin Seddi'nin yapımını başlattı.",
+      "details": "Uzunluk: 21.196 km İşçi: Milyonlarca 🏗️ Süre: 2000+ yıl",
+      "tags": [
+        "Çin",
+        "UNESCO"
+      ]
+    },
+    {
+      "era": "ancient",
+      "keywords": "hannibal kartaca fil alpler roma",
+      "date": "MÖ 218",
+      "title": "Hannibal Alpleri Geçiyor",
+      "description": "Kartacalı general, 37 savaş fili ve 50.000 askerle Alpleri geçti. Roma'yı yenilgiye uğrattı ama şehri alamadı.",
+      "details": "Fil: 37 savaş fili Cannae: 50.000+ Romalı öldü Sonuç: Roma yine de kazandı",
+      "tags": [
+        "Kartaca"
+      ]
+    },
+    {
+      "era": "ancient",
+      "keywords": "julius caesar roma diktatör brütüs",
+      "date": "MÖ 44",
+      "title": "Julius Caesar'ın Öldürülmesi",
+      "description": "Roma diktatörü, Mart İdleri'nde senatoda 23 bıçak darbesiyle öldürüldü. \"Sen de mi Brütüs?\"",
+      "details": "Tarih: 15 Mart MÖ 44 Darbe: 23 bıçak yarası Suikastçı: 60+ senatör",
+      "tags": [
+        "Roma"
+      ]
+    },
+    {
+      "era": "ancient",
+      "keywords": "kleopatra mısır roma antonius",
+      "date": "MÖ 30",
+      "title": "Kleopatra'nın Ölümü",
+      "description": "Son Mısır firavunu, Actium yenilgisinden sonra intihar etti. 3000 yıllık Mısır uygarlığı Roma'ya katıldı.",
+      "details": "İlişkiler: Caesar, Antonius Ölüm: Yılan zehri? Önemi: Son Ptolemaios",
+      "tags": [
+        "Mısır"
+      ]
+    },
+    {
+      "era": "ancient",
+      "keywords": "hz isa hristiyanlık kudüs çarmıh",
+      "date": "MS 0-33",
+      "title": "Hz. İsa'nın Yaşamı",
+      "description": "Hristiyanlığın kurucusu, Kudüs ve çevresinde öğretilerini yaydı. Çarmıha gerildi, diriliş inancı doğdu.",
+      "details": "Doğum: Beytüllahim Çarmıh: Kudüs, MS ~30 Takipçi: 2.4 milyar",
+      "tags": [
+        "Kudüs"
+      ]
+    },
+    {
+      "era": "ancient",
+      "keywords": "pompeii vezüv yanardağ",
+      "date": "MS 79",
+      "title": "Pompeii'nin Yıkılışı",
+      "description": "Vezüv Yanardağı patladı, Pompeii ve Herculaneum kül altında kaldı. 2000 kişi öldü, şehir 1748'de keşfedildi.",
+      "details": "Yanardağ: Vezüv Kül: 6 metre Keşif: 1748",
+      "tags": [
+        "Roma"
+      ]
+    },
+    {
+      "era": "ancient",
+      "keywords": "roma yıkılış barbar germen odoacer",
+      "date": "MS 476",
+      "title": "Batı Roma'nın Yıkılışı",
+      "description": "Germen savaşçısı Odoacer, son imparator Romulus Augustulus'u tahttan indirdi. Antik Çağ sona erdi.",
+      "details": "Son İmparator: Romulus Augustulus Tarih: 4 Eylül 476 Önemi: Orta Çağ başladı",
+      "tags": [
+        "Roma"
+      ]
+    },
+    {
+      "era": "medieval",
+      "keywords": "göktürk türk kağanlık orhun",
+      "date": "MS 552",
+      "title": "Göktürk Kağanlığı Kuruluşu",
+      "description": "Bumin Kağan, Göktürk Kağanlığı'nı kurdu. Türk adının geçtiği ilk devlet.",
+      "details": "Kurucu: Bumin Kağan Yazıtlar: Orhun Abideleri Sembol: Bozkurt",
+      "tags": [
+        "Türk"
+      ]
+    },
+    {
+      "era": "medieval",
+      "keywords": "hz muhammed islam mekke medine",
+      "date": "MS 610",
+      "title": "İslam'ın Doğuşu",
+      "description": "Hz. Muhammed'e Hira Mağarası'nda ilk vahiy geldi. İslam üç kıtaya yayıldı.",
+      "details": "İlk Vahiy: Hira Mağarası 🕋 Hicret: MS 622 Takipçi: 1.9 milyar",
+      "tags": [
+        "Arabistan"
+      ]
+    },
+    {
+      "era": "medieval",
+      "keywords": "viking ragnar iskandinav",
+      "date": "MS 793-1066",
+      "title": "Viking Çağı",
+      "description": "İskandinav savaşçıları Avrupa'yı kasıp kavurdu. Amerika'ya bile ulaştılar.",
+      "details": "İlk Baskın: Lindisfarne (793) Keşif: İzlanda, Grönland, Vinland Teknoloji: Longship",
+      "tags": [
+        "İskandinav"
+      ]
+    },
+    {
+      "era": "medieval",
+      "keywords": "malazgirt selçuklu alparslan bizans",
+      "date": "MS 1071",
+      "title": "Malazgirt Meydan Muharebesi",
+      "description": "Alparslan, Bizans İmparatoru Romanos'u yenip esir aldı. Anadolu'nun kapıları Türklere açıldı.",
+      "details": "Taraflar: Selçuklu vs Bizans Komutan: Alparslan Konum: Malazgirt, Muş",
+      "tags": [
+        "Selçuklu"
+      ]
+    },
+    {
+      "era": "medieval",
+      "keywords": "haçlı seferi kudüs selahaddin",
+      "date": "MS 1096-1291",
+      "title": "Haçlı Seferleri",
+      "description": "Papa'nın çağrısıyla başlayan Haçlı Seferleri, 200 yıl sürdü. Selahaddin Kudüs'ü 1187'de geri aldı.",
+      "details": "Sefer: 9 büyük sefer 🏰 Kudüs: 1099 fetih, 1187 geri alındı 🏴 Son: Akka (1291)",
+      "tags": [
+        "Haçlı"
+      ]
+    },
+    {
+      "era": "medieval",
+      "keywords": "cengiz han moğol imparatorluk",
+      "date": "MS 1206",
+      "title": "Moğol İmparatorluğu",
+      "description": "Cengiz Han, tarihin en büyük kara imparatorluğunu kurdu. Asya'dan Avrupa'ya uzandı.",
+      "details": "Kurucu: Cengiz Han Alan: 24 milyon km² Ölümler: 40 milyon+",
+      "tags": [
+        "Moğol"
+      ]
+    },
+    {
+      "era": "medieval",
+      "keywords": "kara veba salgın avrupa",
+      "date": "MS 1347-1351",
+      "title": "Kara Veba Salgını",
+      "description": "Avrupa nüfusunun %30-60'ı vebadan öldü. Tarihin en yıkıcı salgını toplumu kökten değiştirdi.",
+      "details": "Ölü: 75-200 milyon 🐀 Neden: Yersinia pestis Sonuç: Feodalizm çöktü",
+      "tags": [
+        "Avrupa"
+      ]
+    },
+    {
+      "era": "medieval",
+      "keywords": "osmanlı kuruluş osman bey söğüt",
+      "date": "MS 1299",
+      "title": "Osmanlı Beyliği Kuruluşu",
+      "description": "Osman Bey, Söğüt'te küçük bir beylik kurdu. 600 yıl sürecek imparatorluğun temeli.",
+      "details": "Kurucu: Osman Gazi Merkez: Söğüt Süre: 623 yıl",
+      "tags": [
+        "Osmanlı"
+      ]
+    },
+    {
+      "era": "medieval",
+      "keywords": "istanbul fetih fatih bizans konstantinopolis",
+      "date": "MS 1453",
+      "title": "İstanbul'un Fethi",
+      "description": "21 yaşındaki Fatih Sultan Mehmed, 53 günlük kuşatmayla Konstantinopolis'i fethetti. Çağ değişti.",
+      "details": "Tarih: 29 Mayıs 1453 Fatih: II. Mehmed (21 yaş) Strateji: Gemiler karadan",
+      "tags": [
+        "Osmanlı"
+      ]
+    },
+    {
+      "era": "early-modern",
+      "keywords": "gutenberg matbaa baskı",
+      "date": "1455",
+      "title": "Gutenberg Matbaası",
+      "description": "Johannes Gutenberg, hareketli harfli matbaayı icat etti. Bilgi devrimi başladı.",
+      "details": "İlk Kitap: Gutenberg İncili Baskı: 180 kopya Etki: Reform, Rönesans",
+      "tags": [
+        "Almanya"
+      ]
+    },
+    {
+      "era": "early-modern",
+      "keywords": "kolomb amerika keşif ispanya",
+      "date": "1492",
+      "title": "Amerika Kıtasının Avrupa Gündemine Girmesi",
+      "description": "Kristof Kolomb batıya yelken açarak Karayipler'e ulaştı. Amerika kıtası Avrupa haritalarında belirginleşmeye başladı.",
+      "details": "Gemiler: Santa Maria, Niña, Pinta Varış: 12 Ekim 1492 İlk Ada: San Salvador",
+      "tags": [
+        "İspanya"
+      ]
+    },
+    {
+      "era": "early-modern",
+      "keywords": "luther reform protestan",
+      "date": "1517",
+      "title": "Protestan Reformu",
+      "description": "Martin Luther 95 tezini yayınladı. Katolik Kilisesi'ne meydan okundu, Avrupa ikiye bölündü.",
+      "details": "95 Tez: 31 Ekim 1517 Konum: Wittenberg Sonuç: Protestanlık doğdu",
+      "tags": [
+        "Almanya"
+      ]
+    },
+    {
+      "era": "early-modern",
+      "keywords": "kanuni süleyman osmanlı muhteşem",
+      "date": "1520-1566",
+      "title": "Kanuni Sultan Süleyman",
+      "description": "Osmanlı İmparatorluğu en parlak dönemini yaşadı. \"Muhteşem Süleyman\" 46 yıl hüküm sürdü.",
+      "details": "Hüküm: 46 yıl Seferler: 13 büyük sefer 🏰 Fetihler: Belgrad, Rodos, Macaristan",
+      "tags": [
+        "Osmanlı"
+      ]
+    },
+    {
+      "era": "early-modern",
+      "keywords": "galileo bilim astronomi teleskop",
+      "date": "1610",
+      "title": "Galileo'nun Keşifleri",
+      "description": "Galileo, teleskobuyla Jüpiter'in uydularını keşfetti. Güneş merkezli evren modeline dair gözlemsel kanıtlar güçlendi.",
+      "details": "Keşif: Jüpiter uyduları Engizisyon: 1633 Söz: \"Yine de dönüyor\"",
+      "tags": [
+        "İtalya"
+      ]
+    },
+    {
+      "era": "early-modern",
+      "keywords": "newton yerçekimi fizik",
+      "date": "1687",
+      "title": "Newton'un Principia'sı",
+      "description": "Isaac Newton hareket yasalarını ve yerçekimini açıkladı. Modern fiziğin temeli.",
+      "details": "Eser: Principia Mathematica Yerçekimi: Evrensel kütleçekim Matematik: Kalkülüs",
+      "tags": [
+        "İngiltere"
+      ]
+    },
+    {
+      "era": "early-modern",
+      "keywords": "amerikan bağımsızlık abd washington",
+      "date": "1776",
+      "title": "Amerikan Bağımsızlık Bildirgesi",
+      "description": "13 koloni İngiltere'den bağımsızlığını ilan etti. Modern demokrasinin temel taşı.",
+      "details": "Tarih: 4 Temmuz 1776 Yazar: Thomas Jefferson İlk Başkan: Washington",
+      "tags": [
+        "ABD"
+      ]
+    },
+    {
+      "era": "modern",
+      "keywords": "fransız devrim paris bastille",
+      "date": "1789",
+      "title": "Fransız Devrimi",
+      "description": "Bastille Hapishanesi basıldı. \"Özgürlük, Eşitlik, Kardeşlik\" sloganı dünyaya yayıldı.",
+      "details": "Bastille: 14 Temmuz 1789 Kral: XVI. Louis (idam) Miras: İnsan Hakları Bildirgesi",
+      "tags": [
+        "Fransa"
+      ]
+    },
+    {
+      "era": "modern",
+      "keywords": "napolyon waterloo fransa imparator",
+      "date": "1804-1815",
+      "title": "Napolyon Dönemi",
+      "description": "Napolyon kendini imparator ilan etti. Avrupa'yı fethetti ama Waterloo'da yenildi.",
+      "details": "Savaşlar: 60+ savaş ❄️ Rusya: 600.000'den 100.000 döndü 🏝️ Sürgün: St. Helena",
+      "tags": [
+        "Fransa"
+      ]
+    },
+    {
+      "era": "modern",
+      "keywords": "sanayi devrim buhar fabrika",
+      "date": "1760-1840",
+      "title": "Sanayi Devrimi",
+      "description": "İngiltere'de başlayan devrim, üretimi elle yapımdan makineye taşıdı. Dünya değişti.",
+      "details": "Başlangıç: İngiltere Buhar: James Watt Sonuç: Şehirleşme",
+      "tags": [
+        "İngiltere"
+      ]
+    },
+    {
+      "era": "modern",
+      "keywords": "birinci dünya savaşı ww1",
+      "date": "1914-1918",
+      "title": "Birinci Dünya Savaşı",
+      "description": "Tarihin ilk küresel savaşı. 17 milyon ölü, dört imparatorluk yıkıldı.",
+      "details": "Ölü: 17-20 milyon Tetikleyici: Franz Ferdinand suikastı Yıkılan: Osmanlı, Avusturya, Rus, Alman",
+      "tags": [
+        "Dünya"
+      ]
+    },
+    {
+      "era": "modern",
+      "keywords": "atatürk cumhuriyet türkiye kurtuluş",
+      "date": "1923",
+      "title": "Türkiye Cumhuriyeti'nin Kuruluşu",
+      "description": "Mustafa Kemal Atatürk önderliğinde Kurtuluş Savaşı kazanıldı. 29 Ekim'de Cumhuriyet ilan edildi.",
+      "details": "Kurucu: Atatürk İlan: 29 Ekim 1923 Başkent: Ankara",
+      "tags": [
+        "Türkiye"
+      ]
+    },
+    {
+      "era": "modern",
+      "keywords": "ikinci dünya savaşı ww2 hitler nazi",
+      "date": "1939-1945",
+      "title": "İkinci Dünya Savaşı",
+      "description": "Tarihin en kanlı savaşı. 70-85 milyon insan öldü. Holokost ve atom bombası.",
+      "details": "Ölü: 70-85 milyon Holokost: 6 milyon Atom: Hiroşima, Nagazaki",
+      "tags": [
+        "Dünya"
+      ]
+    },
+    {
+      "era": "modern",
+      "keywords": "atom bomba hiroşima nagazaki",
+      "date": "1945",
+      "title": "Hiroşima ve Nagazaki",
+      "description": "ABD, Japonya'ya iki atom bombası attı. 200.000+ öldü. Nükleer çağ başladı.",
+      "details": "Hiroşima: 6 Ağustos Nagazaki: 9 Ağustos Ölü: 200.000+",
+      "tags": [
+        "Japonya"
+      ]
+    },
+    {
+      "era": "modern",
+      "keywords": "apollo ay uzay nasa armstrong",
+      "date": "1969",
+      "title": "Ay'a İlk İnsan",
+      "description": "Neil Armstrong Ay'a ayak bastı. \"İnsanlık için dev bir sıçrama\" tarihe geçti.",
+      "details": "Tarih: 20 Temmuz 1969 Görev: Apollo 11 👨‍Astronot: Armstrong, Aldrin",
+      "tags": [
+        "ABD"
+      ]
+    },
+    {
+      "era": "modern",
+      "keywords": "berlin duvarı soğuk savaş sovyet",
+      "date": "1989",
+      "title": "Berlin Duvarı'nın Yıkılışı",
+      "description": "28 yıl Doğu-Batı'yı ayıran duvar yıkıldı. Soğuk Savaş sona erdi.",
+      "details": "Tarih: 9 Kasım 1989 Duvar: 1961'de kuruldu 🇩🇪 Birleşme: 3 Ekim 1990",
+      "tags": [
+        "Almanya"
+      ]
+    },
+    {
+      "era": "modern",
+      "keywords": "internet www dijital web",
+      "date": "1991",
+      "title": "World Wide Web",
+      "description": "Tim Berners-Lee WWW'yi halka açtı. İnternet devrimi başladı, dünya bir köy oldu.",
+      "details": "Mucit: Tim Berners-Lee Konum: CERN Kullanıcı: 5.3 milyar",
+      "tags": [
+        "İsviçre"
+      ]
+    },
+    {
+      "era": "modern",
+      "keywords": "11 eylül terörizm amerika ikiz kuleler",
+      "date": "2001",
+      "title": "11 Eylül Saldırıları",
+      "description": "4 uçak kaçırıldı, İkiz Kuleler çöktü. 3000 kişi öldü. Terörle savaş başladı.",
+      "details": "Tarih: 11 Eylül 2001 ✈️ Uçak: 4 yolcu uçağı Ölü: 2.977 kişi",
+      "tags": [
+        "ABD"
+      ]
+    },
+    {
+      "era": "modern",
+      "keywords": "covid pandemi salgın koronavirüs",
+      "date": "2020",
+      "title": "COVID-19 Pandemisi",
+      "description": "Koronavirüs dünyayı kapattı. 7 milyon+ öldü. Uzaktan çalışma ve aşı devrimi.",
+      "details": "🦠 Virüs: SARS-CoV-2 Başlangıç: Wuhan 💉 Aşı: mRNA teknolojisi",
+      "tags": [
+        "Dünya"
+      ]
+    },
+    {
+      "era": "modern",
+      "keywords": "chatgpt yapay zeka ai",
+      "date": "2022",
+      "title": "Yapay Zeka Devrimi",
+      "description": "ChatGPT yayınlandı, 2 ayda 100 milyon kullanıcı. Yapay zeka çağı başladı.",
+      "details": "Yayın: 30 Kasım 2022 Kullanıcı: 2 ayda 100M Etki: İş dünyası dönüşüyor",
+      "tags": [
+        "ABD"
+      ]
+    }
+  ]
+}

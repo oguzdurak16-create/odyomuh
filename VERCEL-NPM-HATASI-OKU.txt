@@ -1,0 +1,14 @@
+VERCEL NPM KURULUM NOTU
+========================
+
+Bu paket güncel package-lock.json ile gelir.
+
+Neden:
+- Onceki pakette farkli bir ortamin private registry adresi package-lock.json icine yazilmisti.
+- Bu sürümde lock dosyası public npm registry kullanılarak yeniden oluşturuldu.
+- .npmrc, npm registry adresini public npm olarak ayarlar.
+- vercel.json tekrarlanabilir kurulum için "npm ci --no-audit --no-fund" kullanır.
+
+Vercel ayarlarinda ek bir Install Command tanimladiysan kaldir veya su sekilde birak:
+
+npm ci --no-audit --no-fund
