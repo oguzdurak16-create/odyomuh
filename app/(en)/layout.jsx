@@ -3,9 +3,11 @@ import '../editorial.css';
 import '../audit.css';
 import { site, baseUrl, generatedArt } from '../site-data';
 import SiteChrome from '../../components/SiteChrome';
+import ConsentRestore from '../../components/ConsentRestore';
 
 const siteUrl = baseUrl || 'https://www.odyomuh.net';
 const siteDescription = 'Evidence-led history, archaeology, ancient texts and historical mysteries for readers around the world.';
+const themeBootstrap = `(function(){try{var saved=localStorage.getItem('odyomuh-theme');var theme=saved==='light'||saved==='dark'?saved:(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');document.documentElement.setAttribute('data-theme',theme);}catch(e){}})();`;
 
 export const viewport = {
   width: 'device-width',
@@ -81,6 +83,7 @@ export default function EnglishRootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning style={{ '--font-cinzel': '"Cinzel", Georgia, serif', '--font-merriweather': '"Merriweather", Georgia, serif', '--font-inter': '"Inter", Arial, sans-serif' }}>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: themeBootstrap }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
@@ -89,6 +92,7 @@ export default function EnglishRootLayout({ children }) {
       </head>
       <body>
         <SiteChrome site={{ name: site.name, description: siteDescription }} pages={[]} labels={[]}>
+          <ConsentRestore />
           {children}
         </SiteChrome>
       </body>
