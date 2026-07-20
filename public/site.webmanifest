@@ -1,12 +1,13 @@
 {
-  "name": "ODYOMUH - Tarih ve Mitoloji Arşivi",
+  "name": "ODYOMUH - Tarih ve Arkeoloji Arşivi",
   "short_name": "ODYOMUH",
-  "description": "Tarih, mitoloji ve kadim uygarlıklar üzerine dijital arşiv.",
+  "description": "Tarih, arkeoloji, mitoloji ve kadim uygarlıklar üzerine kaynak odaklı dijital arşiv.",
   "lang": "tr-TR",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#0a0a0f",
-  "theme_color": "#1a1a2e",
+  "background_color": "#120d09",
+  "theme_color": "#2a1f17",
   "icons": [
     {
       "src": "/img/logo-512x512.png",
