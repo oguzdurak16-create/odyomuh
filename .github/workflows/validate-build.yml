@@ -3,6 +3,8 @@ name: Validate ODYOMUH build
 on:
   push:
     branches: [main, audit-ui-seo-20260720]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
