@@ -17,8 +17,10 @@ function formatYear(year) {
 export default function HomeExperience({ posts = [] }) {
   const [index, setIndex] = useState(2);
   const [clock, setClock] = useState('');
+  const [discoveryIndex, setDiscoveryIndex] = useState(0);
   const moment = moments[index];
-  const discovery = useMemo(() => posts[Math.floor(Math.random() * Math.max(posts.length, 1))], [posts]);
+  const usablePosts = useMemo(() => posts.filter((post) => post?.primaryPath && post?.title), [posts]);
+  const discovery = usablePosts.length ? usablePosts[discoveryIndex % usablePosts.length] : null;
 
   useEffect(() => {
     const update = () => setClock(new Intl.DateTimeFormat('tr-TR', {
@@ -28,6 +30,11 @@ export default function HomeExperience({ posts = [] }) {
     const timer = window.setInterval(update, 1000);
     return () => window.clearInterval(timer);
   }, []);
+
+  const nextDiscovery = () => {
+    if (usablePosts.length < 2) return;
+    setDiscoveryIndex((value) => (value + 7) % usablePosts.length);
+  };
 
   return (
     <section className="odyssey-command" aria-label="İnteraktif tarih merkezi">
@@ -55,12 +62,15 @@ export default function HomeExperience({ posts = [] }) {
         </article>
 
         <article className="odyssey-discovery-widget">
-          <div className="odyssey-widget-label"><i /> Rastgele keşif</div>
+          <div className="odyssey-widget-label"><i /> Sürpriz keşif</div>
           {discovery ? <>
             <span>{discovery.labels?.[0] || 'Tarih dosyası'}</span>
             <h3>{discovery.title}</h3>
             <p>{discovery.description}</p>
-            <a href={discovery.primaryPath}>Beklenmedik bir dosyaya gir ↗</a>
+            <div className="odyssey-discovery-actions">
+              <a href={discovery.primaryPath}>Dosyaya gir ↗</a>
+              {usablePosts.length > 1 ? <button type="button" onClick={nextDiscovery}>Başka keşif</button> : null}
+            </div>
           </> : <p>Arşiv hazırlanıyor.</p>}
         </article>
       </div>
