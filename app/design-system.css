@@ -6,11 +6,13 @@
   --ds-shadow:0 26px 72px rgba(0,0,0,.34);--ds-radius:28px;--ds-card-radius:20px;
 }
 [data-theme="light"]{
-  --ds-bg:#fbf7f0;--ds-text:#2e231a;--ds-text-soft:#6d5c49;--ds-muted:#7d6c59;
-  --ds-accent:#9a6c37;--ds-line:rgba(143,100,54,.22);--ds-line-strong:rgba(143,100,54,.4);
+  --ds-bg:#fbf7f0;--ds-surface:#fffaf2;--ds-surface-2:#f4e8d7;--ds-surface-3:#ead9c2;
+  --ds-text:#2d2118;--ds-text-soft:#6b5845;--ds-muted:#826f5b;--ds-accent:#9a6a32;
+  --ds-line:rgba(143,100,54,.20);--ds-line-strong:rgba(143,100,54,.36);
+  --ds-shadow:0 24px 64px rgba(74,49,28,.13);
 }
 
-/* Keep immersive modules intentionally dark in both themes */
+/* Dark theme */
 .odyssey-command,.civilization-graph,.ody-map-card,.ody-museum-card,.future-lab article{
   color:#f6ead8!important;background:radial-gradient(circle at 15% 0,rgba(214,170,99,.11),transparent 32%),linear-gradient(145deg,#17110d,#0b0806)!important;
   border:1px solid var(--ds-line)!important;box-shadow:var(--ds-shadow)!important;
@@ -19,63 +21,132 @@
 .odyssey-command article,.civilization-active-card,.ody-map-detail,.artifact-viewer,.archive-assistant,.research-stream{
   background:rgba(255,255,255,.035)!important;border-color:var(--ds-line)!important;color:#f6ead8!important;
 }
-
-/* Headings must never inherit light-theme dark fill or low opacity */
 .odyssey-command h2,.civilization-graph h2,.civilization-active-card strong,.ody-map-detail h3,.ody-museum-copy h3,
 .future-lab h2,.future-lab h3,.odyssey-time-display strong,.odyssey-radar-widget>strong,.odyssey-discovery-widget h3{
   color:#f6ead8!important;-webkit-text-fill-color:#f6ead8!important;opacity:1!important;text-shadow:none!important;
 }
-.odyssey-command-head h2,.civilization-graph h2{filter:none!important}
-
-/* Supporting copy */
 .odyssey-command p,.civilization-graph-copy>p,.civilization-active-card p,.ody-map-detail p,.ody-museum-copy p,
 .future-lab p,.artifact-meta p,.research-stream p{color:#c7b69e!important;opacity:1!important}
 .odyssey-command-head time,.civilization-active-card small,.ody-map-toolbar,.ody-museum-top{color:#b9a88f!important}
 .odyssey-widget-label,.civilization-kicker,.future-panel-label,.ody-map-detail small,.ody-museum-copy small{color:#d6aa63!important}
-
-/* Command center cards */
-.odyssey-command-grid article{background:linear-gradient(145deg,#211a14,#15100c)!important;color:#f6ead8!important;border-color:var(--ds-line)!important}
-.odyssey-time-machine>p,.odyssey-radar-widget>p,.odyssey-discovery-widget>p{color:#c7b69e!important}
+.odyssey-command-grid article{background:linear-gradient(145deg,#211a14,#15100c)!important;color:#f6ead8!important}
 .odyssey-time-scale{color:#8f806d!important}
 .odyssey-command-grid article>a,.odyssey-discovery-actions a{color:#e3b86e!important}
-.odyssey-discovery-actions button{background:#f3e7d6!important;color:#2e231a!important;border-color:rgba(255,255,255,.16)!important}
-
-/* Civilization graph */
+.odyssey-discovery-actions button{background:#f3e7d6!important;color:#2e231a!important}
 .civilization-canvas{background:radial-gradient(circle at 50% 48%,rgba(214,170,99,.09),transparent 34%),linear-gradient(rgba(214,170,99,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(214,170,99,.045) 1px,transparent 1px),#0c0907!important;background-size:auto,42px 42px,42px 42px,auto!important}
 .civilization-node{background:rgba(12,9,7,.9)!important;color:#d3c1a6!important;border-color:var(--ds-line)!important}
 .civilization-node.is-active{background:#d6aa63!important;color:#17100b!important;border-color:#f0c77f!important}
-.civilization-node.is-active strong,.civilization-node.is-active span{color:#17100b!important}
 .civilization-links line{stroke:rgba(214,170,99,.22)!important}.civilization-links line.is-active{stroke:#d6aa63!important}
-
-/* Atlas */
-.ody-atlas-section>.odyssey-section-head h2{color:var(--ds-text)!important;-webkit-text-fill-color:var(--ds-text)!important;opacity:1!important}
 .ody-world-map{background:radial-gradient(circle at center,rgba(214,170,99,.08),transparent 55%),linear-gradient(rgba(214,170,99,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(214,170,99,.04) 1px,transparent 1px),#0d0907!important;background-size:auto,32px 32px,32px 32px,auto!important}
 .ody-map-detail{background:rgba(10,7,5,.88)!important}
 .ody-museum-stage img{filter:brightness(.82) saturate(.92)!important}
 .ody-museum-light{background:linear-gradient(180deg,rgba(4,3,2,.08) 0%,rgba(4,3,2,.22) 45%,rgba(4,3,2,.9) 100%)!important}
 .ody-museum-copy{z-index:2}.ody-museum-copy h3{font-size:clamp(1.45rem,2.2vw,2.35rem)!important;line-height:1.08!important;max-width:14ch!important}
 .ody-museum-copy p{color:#ead8ba!important;text-shadow:0 2px 10px #000!important}
-
-/* Hero readability */
 .odyssey-feature-shade{background:linear-gradient(180deg,rgba(8,5,3,.08) 0%,rgba(8,5,3,.12) 40%,rgba(8,5,3,.78) 100%)!important}
 .odyssey-feature img{filter:brightness(.9) saturate(.95)!important}
 .odyssey-feature-copy{z-index:3!important}
-.odyssey-feature-copy h2,.odyssey-feature-copy p,.odyssey-feature-copy strong,.odyssey-feature-copy small{
-  opacity:1!important;-webkit-text-fill-color:initial!important;text-shadow:0 3px 18px rgba(0,0,0,.82)!important
-}
+.odyssey-feature-copy h2,.odyssey-feature-copy p,.odyssey-feature-copy strong,.odyssey-feature-copy small{opacity:1!important;-webkit-text-fill-color:initial!important;text-shadow:0 3px 18px rgba(0,0,0,.82)!important}
 .odyssey-feature-copy h2{color:#f6ead8!important}.odyssey-feature-copy p{color:#f0dfc4!important}.odyssey-feature-copy strong,.odyssey-feature-copy small{color:#e4b96f!important}
 
-/* Light page chrome + dark modules: clear boundary */
-[data-theme="light"] .odyssey-command,[data-theme="light"] .civilization-graph,[data-theme="light"] .ody-map-card,[data-theme="light"] .ody-museum-card,[data-theme="light"] .future-lab article{color:#f6ead8!important}
-[data-theme="light"] .odyssey-command article,[data-theme="light"] .civilization-active-card,[data-theme="light"] .ody-map-detail,[data-theme="light"] .future-lab article{background:linear-gradient(145deg,#211a14,#15100c)!important;color:#f6ead8!important}
-[data-theme="light"] .odyssey-command p,[data-theme="light"] .civilization-graph p,[data-theme="light"] .ody-map-card p,[data-theme="light"] .ody-museum-card p,[data-theme="light"] .future-lab p{color:#c7b69e!important}
+/* True premium light theme */
+[data-theme="light"] body{background:radial-gradient(circle at 20% 0,rgba(154,106,50,.08),transparent 30%),linear-gradient(180deg,#fffdf9,#f6efe5)!important}
+[data-theme="light"] .odyssey-command,
+[data-theme="light"] .civilization-graph,
+[data-theme="light"] .ody-map-card,
+[data-theme="light"] .ody-museum-card,
+[data-theme="light"] .future-lab article{
+  color:var(--ds-text)!important;
+  background:radial-gradient(circle at 12% 0,rgba(154,106,50,.10),transparent 30%),linear-gradient(145deg,#fffaf2,#f1e3d0)!important;
+  border-color:var(--ds-line)!important;
+  box-shadow:var(--ds-shadow)!important;
+}
+[data-theme="light"] .odyssey-command article,
+[data-theme="light"] .civilization-active-card,
+[data-theme="light"] .ody-map-detail,
+[data-theme="light"] .artifact-viewer,
+[data-theme="light"] .archive-assistant,
+[data-theme="light"] .research-stream{
+  background:rgba(255,255,255,.72)!important;
+  color:var(--ds-text)!important;
+  border-color:var(--ds-line)!important;
+  box-shadow:0 16px 36px rgba(88,58,31,.09)!important;
+}
+[data-theme="light"] .odyssey-command h2,
+[data-theme="light"] .civilization-graph h2,
+[data-theme="light"] .civilization-active-card strong,
+[data-theme="light"] .ody-map-detail h3,
+[data-theme="light"] .future-lab h2,
+[data-theme="light"] .future-lab h3,
+[data-theme="light"] .odyssey-time-display strong,
+[data-theme="light"] .odyssey-radar-widget>strong,
+[data-theme="light"] .odyssey-discovery-widget h3{
+  color:var(--ds-text)!important;-webkit-text-fill-color:var(--ds-text)!important;text-shadow:none!important;
+}
+[data-theme="light"] .odyssey-command p,
+[data-theme="light"] .civilization-graph-copy>p,
+[data-theme="light"] .civilization-active-card p,
+[data-theme="light"] .ody-map-detail p,
+[data-theme="light"] .future-lab p,
+[data-theme="light"] .artifact-meta p,
+[data-theme="light"] .research-stream p{
+  color:var(--ds-text-soft)!important;
+}
+[data-theme="light"] .odyssey-widget-label,
+[data-theme="light"] .civilization-kicker,
+[data-theme="light"] .future-panel-label,
+[data-theme="light"] .ody-map-detail small,
+[data-theme="light"] .ody-map-toolbar,
+[data-theme="light"] .ody-museum-top{color:var(--ds-accent)!important}
+[data-theme="light"] .odyssey-command-head time{background:#fff8ed!important;color:#6f5a44!important;border-color:var(--ds-line)!important}
+[data-theme="light"] .odyssey-time-scale{color:#8b765f!important}
+[data-theme="light"] .odyssey-command-grid article>a,
+[data-theme="light"] .odyssey-discovery-actions a,
+[data-theme="light"] .civilization-active-card a,
+[data-theme="light"] .ody-map-detail a{color:#8b5e2e!important}
+[data-theme="light"] .odyssey-discovery-actions button,
+[data-theme="light"] .artifact-controls button,
+[data-theme="light"] .assistant-prompts button,
+[data-theme="light"] .artifact-strip button{
+  background:#f6ead9!important;color:var(--ds-text)!important;border-color:var(--ds-line)!important;
+}
+[data-theme="light"] .civilization-canvas{
+  background:radial-gradient(circle at 50% 48%,rgba(154,106,50,.10),transparent 34%),linear-gradient(rgba(143,100,54,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(143,100,54,.055) 1px,transparent 1px),#fffaf2!important;
+  background-size:auto,42px 42px,42px 42px,auto!important;
+  border-color:var(--ds-line)!important;
+}
+[data-theme="light"] .civilization-node{background:rgba(255,250,242,.95)!important;color:#66513d!important;border-color:var(--ds-line)!important;box-shadow:0 8px 20px rgba(87,57,30,.08)}
+[data-theme="light"] .civilization-node:hover,[data-theme="light"] .civilization-node.is-connected{color:#2d2118!important;border-color:var(--ds-line-strong)!important}
+[data-theme="light"] .civilization-node.is-active{background:#a87335!important;color:#fff!important;border-color:#a87335!important;box-shadow:0 0 0 7px rgba(154,106,50,.10),0 14px 28px rgba(91,59,27,.18)!important}
+[data-theme="light"] .civilization-node.is-active strong,[data-theme="light"] .civilization-node.is-active span{color:#fff!important}
+[data-theme="light"] .civilization-links line{stroke:rgba(143,100,54,.23)!important}[data-theme="light"] .civilization-links line.is-active{stroke:#9a6a32!important}
+[data-theme="light"] .ody-world-map{
+  background:radial-gradient(circle at center,rgba(154,106,50,.09),transparent 55%),linear-gradient(rgba(143,100,54,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(143,100,54,.055) 1px,transparent 1px),#fffaf2!important;
+  background-size:auto,32px 32px,32px 32px,auto!important;
+}
+[data-theme="light"] .ody-world-map path{fill:rgba(154,106,50,.09)!important;stroke:rgba(143,100,54,.38)!important}
+[data-theme="light"] .ody-map-detail{background:rgba(255,250,242,.94)!important;backdrop-filter:blur(18px)!important}
+[data-theme="light"] .ody-museum-card{background:linear-gradient(145deg,#f8eddc,#ead6bd)!important}
+[data-theme="light"] .ody-museum-stage{background:#ede0cf!important}
+[data-theme="light"] .ody-museum-stage img{filter:brightness(.95) saturate(.88)!important}
+[data-theme="light"] .ody-museum-light{background:linear-gradient(180deg,rgba(255,255,255,.02) 0%,rgba(70,43,22,.05) 48%,rgba(52,31,16,.72) 100%)!important}
+[data-theme="light"] .ody-museum-copy h3,[data-theme="light"] .ody-museum-copy p,[data-theme="light"] .ody-museum-copy small,[data-theme="light"] .ody-museum-copy strong{color:#fff7ea!important;-webkit-text-fill-color:#fff7ea!important;text-shadow:0 3px 16px rgba(35,20,9,.85)!important}
+[data-theme="light"] .artifact-stage{background:radial-gradient(circle at center,rgba(154,106,50,.13),transparent 54%),linear-gradient(145deg,#fffaf2,#ead8c0)!important}
+[data-theme="light"] .assistant-results a,[data-theme="light"] .stream-list a{background:rgba(255,255,255,.7)!important;color:var(--ds-text)!important;border-color:var(--ds-line)!important}
 
-/* Reset accidental opacity/text-fill inheritance */
+/* Hero remains editorial but readable in light mode */
+[data-theme="light"] .odyssey-hero{background:linear-gradient(135deg,#fffaf2 0 42%,#1a120d 42% 100%)!important}
+[data-theme="light"] .odyssey-copy h1,[data-theme="light"] .odyssey-copy p,[data-theme="light"] .odyssey-metrics strong{color:var(--ds-text)!important;-webkit-text-fill-color:initial!important}
+[data-theme="light"] .odyssey-feature{background:#17100c!important}
+[data-theme="light"] .odyssey-feature-shade{background:linear-gradient(180deg,rgba(8,5,3,.03),rgba(8,5,3,.12) 42%,rgba(8,5,3,.70) 100%)!important}
+[data-theme="light"] .odyssey-feature img{filter:brightness(.97) saturate(.92)!important}
+
 .odyssey-command *,.civilization-graph *,.ody-map-card *,.ody-museum-card *,.future-lab *{text-decoration-color:currentColor}
 .odyssey-command h1,.odyssey-command h2,.odyssey-command h3,.civilization-graph h1,.civilization-graph h2,.civilization-graph h3,.ody-map-card h1,.ody-map-card h2,.ody-map-card h3,.ody-museum-card h1,.ody-museum-card h2,.ody-museum-card h3,.future-lab h1,.future-lab h2,.future-lab h3{opacity:1!important}
 
 @media(max-width:640px){
   .odyssey-command,.civilization-graph{border-radius:22px!important}
   .ody-museum-copy h3{max-width:100%!important;font-size:1.55rem!important}
-  .ody-museum-stage img{filter:brightness(.72) saturate(.9)!important}
+  .ody-museum-stage img{filter:brightness(.78) saturate(.9)!important}
+  [data-theme="light"] .odyssey-hero{background:linear-gradient(180deg,#fffaf2 0 52%,#17100c 52% 100%)!important}
 }
