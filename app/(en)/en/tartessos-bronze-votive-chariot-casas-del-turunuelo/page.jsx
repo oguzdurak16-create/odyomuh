@@ -1,6 +1,6 @@
-import { dailyEnglishPosts } from '../../../data/daily-2026-07-21';
-import DailyArticlePage from '../../../components/DailyArticlePage';
-import { baseUrl } from '../../site-data';
+import { dailyEnglishPosts } from '../../../../data/daily-2026-07-21';
+import DailyArticlePage from '../../../../components/DailyArticlePage';
+import { baseUrl } from '../../../site-data';
 
 const post = dailyEnglishPosts.find((item) => item.id === 'en-daily-20260721-tartessos-bronze-chariot');
 const siteUrl = baseUrl || 'https://www.odyomuh.net';
