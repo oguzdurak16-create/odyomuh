@@ -98,17 +98,203 @@ body:not(:has(.article-detail)) .reading-progress {
   will-change: auto;
 }
 
+/* Responsive editorial homepage: fluid type, container queries and modern viewport units */
+.home-editorial-shell {
+  width: min(100%, 1480px);
+  min-width: 0;
+  margin-inline: auto;
+  container-type: inline-size;
+  container-name: editorial-home;
+}
+
+.home-editorial-hero {
+  width: 100%;
+  min-width: 0;
+  min-height: min(760px, calc(100svh - 150px));
+  grid-template-columns: minmax(0, .92fr) minmax(0, 1.38fr) !important;
+  overflow: clip;
+}
+
+.home-editorial-hero > *,
+.home-editorial-intro,
+.home-lead-story,
+.home-lead-story-content {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.home-editorial-intro {
+  padding: clamp(30px, 4.5vw, 72px) !important;
+}
+
+.home-editorial-intro h1 {
+  max-width: 12.5ch;
+  margin-inline: 0;
+  font-size: clamp(2.7rem, 5.2cqi, 5.7rem) !important;
+  line-height: .98 !important;
+  letter-spacing: -.055em;
+  text-wrap: balance;
+  overflow-wrap: normal;
+  hyphens: auto;
+}
+
+.home-lead-copy {
+  max-width: 58ch;
+  font-size: clamp(.96rem, 1.15cqi, 1.12rem);
+  text-wrap: pretty;
+}
+
+.home-hero-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+}
+
+.home-hero-actions a {
+  min-width: 0;
+  justify-content: center;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.home-quick-links {
+  max-width: 100%;
+}
+
+.home-lead-story img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-lead-story-content {
+  padding: clamp(28px, 4vw, 60px) !important;
+}
+
+.home-lead-story-content h2 {
+  max-width: 18ch;
+  font-size: clamp(2rem, 3.5cqi, 4.2rem) !important;
+  line-height: 1.03 !important;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+
+.home-lead-story-content p {
+  max-width: 62ch;
+  text-wrap: pretty;
+}
+
+@container editorial-home (max-width: 980px) {
+  .home-editorial-hero {
+    min-height: auto;
+    grid-template-columns: 1fr !important;
+  }
+
+  .home-editorial-intro {
+    padding: clamp(30px, 7cqi, 64px) !important;
+  }
+
+  .home-editorial-intro h1 {
+    max-width: 14ch;
+    font-size: clamp(2.65rem, 8.7cqi, 5rem) !important;
+  }
+
+  .home-lead-story {
+    min-height: clamp(400px, 70cqi, 640px);
+  }
+
+  .home-lead-story-content h2 {
+    font-size: clamp(2rem, 6cqi, 3.8rem) !important;
+  }
+}
+
 @media (max-width: 720px) {
   .header-topbar {
     display: none;
   }
 
   .content-wrapper {
-    padding-top: 18px;
+    width: 100%;
+    min-width: 0;
+    padding: 18px clamp(12px, 3.8vw, 20px) 36px;
+    overflow-x: clip;
+  }
+
+  .container {
+    width: 100%;
+    min-width: 0;
+    padding-inline: clamp(12px, 3.8vw, 20px);
+  }
+
+  .home-editorial-shell,
+  .home-editorial-hero {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .home-editorial-hero {
+    border-radius: clamp(18px, 5vw, 28px);
+  }
+
+  .home-editorial-intro {
+    padding: clamp(28px, 8vw, 42px) clamp(20px, 7vw, 34px) !important;
   }
 
   .home-editorial-intro h1 {
-    font-size: clamp(2.25rem, 12vw, 3.55rem);
+    max-width: 100%;
+    font-size: clamp(2.35rem, 11.2vw, 4rem) !important;
+    line-height: 1.03 !important;
+    letter-spacing: -.045em;
+    overflow-wrap: break-word;
+  }
+
+  .home-lead-copy {
+    font-size: .98rem;
+    line-height: 1.72;
+  }
+
+  .home-hero-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .home-hero-actions a {
+    width: 100%;
+    min-height: 50px;
+  }
+
+  .home-quick-links {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    margin-inline: calc(clamp(20px, 7vw, 34px) * -1);
+    padding-inline: clamp(20px, 7vw, 34px);
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline proximity;
+    scrollbar-width: none;
+  }
+
+  .home-quick-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .home-quick-links a {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  .home-lead-story {
+    min-height: min(132vw, 620px);
+  }
+
+  .home-lead-story-content {
+    padding: clamp(24px, 7vw, 38px) !important;
+  }
+
+  .home-lead-story-content h2 {
+    max-width: 100%;
+    font-size: clamp(1.85rem, 8.5vw, 3rem) !important;
   }
 
   .article-page-shell .article-cover,
@@ -118,6 +304,28 @@ body:not(:has(.article-detail)) .reading-progress {
 
   .article-source-box {
     border-radius: 16px;
+  }
+}
+
+@media (max-width: 390px) {
+  .home-editorial-intro {
+    padding-inline: 18px !important;
+  }
+
+  .home-editorial-intro h1 {
+    font-size: clamp(2.08rem, 10.7vw, 2.75rem) !important;
+    letter-spacing: -.035em;
+  }
+
+  .home-quick-links {
+    margin-inline: -18px;
+    padding-inline: 18px;
+  }
+}
+
+@supports (height: 100dvh) {
+  .home-editorial-hero {
+    min-height: min(760px, calc(100dvh - 150px));
   }
 }
 
