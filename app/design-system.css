@@ -1,0 +1,81 @@
+/* ODYOMUH unified design system - loaded last */
+:root{
+  --ds-bg:#120d09;--ds-surface:#17110d;--ds-surface-2:#201812;--ds-surface-3:#2a211a;
+  --ds-text:#f6ead8;--ds-text-soft:#c7b69e;--ds-muted:#9f907c;--ds-accent:#d6aa63;
+  --ds-line:rgba(214,170,99,.22);--ds-line-strong:rgba(214,170,99,.38);
+  --ds-shadow:0 26px 72px rgba(0,0,0,.34);--ds-radius:28px;--ds-card-radius:20px;
+}
+[data-theme="light"]{
+  --ds-bg:#fbf7f0;--ds-text:#2e231a;--ds-text-soft:#6d5c49;--ds-muted:#7d6c59;
+  --ds-accent:#9a6c37;--ds-line:rgba(143,100,54,.22);--ds-line-strong:rgba(143,100,54,.4);
+}
+
+/* Keep immersive modules intentionally dark in both themes */
+.odyssey-command,.civilization-graph,.ody-map-card,.ody-museum-card,.future-lab article{
+  color:#f6ead8!important;background:radial-gradient(circle at 15% 0,rgba(214,170,99,.11),transparent 32%),linear-gradient(145deg,#17110d,#0b0806)!important;
+  border:1px solid var(--ds-line)!important;box-shadow:var(--ds-shadow)!important;
+}
+.odyssey-command,.civilization-graph{border-radius:var(--ds-radius)!important}
+.odyssey-command article,.civilization-active-card,.ody-map-detail,.artifact-viewer,.archive-assistant,.research-stream{
+  background:rgba(255,255,255,.035)!important;border-color:var(--ds-line)!important;color:#f6ead8!important;
+}
+
+/* Headings must never inherit light-theme dark fill or low opacity */
+.odyssey-command h2,.civilization-graph h2,.civilization-active-card strong,.ody-map-detail h3,.ody-museum-copy h3,
+.future-lab h2,.future-lab h3,.odyssey-time-display strong,.odyssey-radar-widget>strong,.odyssey-discovery-widget h3{
+  color:#f6ead8!important;-webkit-text-fill-color:#f6ead8!important;opacity:1!important;text-shadow:none!important;
+}
+.odyssey-command-head h2,.civilization-graph h2{filter:none!important}
+
+/* Supporting copy */
+.odyssey-command p,.civilization-graph-copy>p,.civilization-active-card p,.ody-map-detail p,.ody-museum-copy p,
+.future-lab p,.artifact-meta p,.research-stream p{color:#c7b69e!important;opacity:1!important}
+.odyssey-command-head time,.civilization-active-card small,.ody-map-toolbar,.ody-museum-top{color:#b9a88f!important}
+.odyssey-widget-label,.civilization-kicker,.future-panel-label,.ody-map-detail small,.ody-museum-copy small{color:#d6aa63!important}
+
+/* Command center cards */
+.odyssey-command-grid article{background:linear-gradient(145deg,#211a14,#15100c)!important;color:#f6ead8!important;border-color:var(--ds-line)!important}
+.odyssey-time-machine>p,.odyssey-radar-widget>p,.odyssey-discovery-widget>p{color:#c7b69e!important}
+.odyssey-time-scale{color:#8f806d!important}
+.odyssey-command-grid article>a,.odyssey-discovery-actions a{color:#e3b86e!important}
+.odyssey-discovery-actions button{background:#f3e7d6!important;color:#2e231a!important;border-color:rgba(255,255,255,.16)!important}
+
+/* Civilization graph */
+.civilization-canvas{background:radial-gradient(circle at 50% 48%,rgba(214,170,99,.09),transparent 34%),linear-gradient(rgba(214,170,99,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(214,170,99,.045) 1px,transparent 1px),#0c0907!important;background-size:auto,42px 42px,42px 42px,auto!important}
+.civilization-node{background:rgba(12,9,7,.9)!important;color:#d3c1a6!important;border-color:var(--ds-line)!important}
+.civilization-node.is-active{background:#d6aa63!important;color:#17100b!important;border-color:#f0c77f!important}
+.civilization-node.is-active strong,.civilization-node.is-active span{color:#17100b!important}
+.civilization-links line{stroke:rgba(214,170,99,.22)!important}.civilization-links line.is-active{stroke:#d6aa63!important}
+
+/* Atlas */
+.ody-atlas-section>.odyssey-section-head h2{color:var(--ds-text)!important;-webkit-text-fill-color:var(--ds-text)!important;opacity:1!important}
+.ody-world-map{background:radial-gradient(circle at center,rgba(214,170,99,.08),transparent 55%),linear-gradient(rgba(214,170,99,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(214,170,99,.04) 1px,transparent 1px),#0d0907!important;background-size:auto,32px 32px,32px 32px,auto!important}
+.ody-map-detail{background:rgba(10,7,5,.88)!important}
+.ody-museum-stage img{filter:brightness(.82) saturate(.92)!important}
+.ody-museum-light{background:linear-gradient(180deg,rgba(4,3,2,.08) 0%,rgba(4,3,2,.22) 45%,rgba(4,3,2,.9) 100%)!important}
+.ody-museum-copy{z-index:2}.ody-museum-copy h3{font-size:clamp(1.45rem,2.2vw,2.35rem)!important;line-height:1.08!important;max-width:14ch!important}
+.ody-museum-copy p{color:#ead8ba!important;text-shadow:0 2px 10px #000!important}
+
+/* Hero readability */
+.odyssey-feature-shade{background:linear-gradient(180deg,rgba(8,5,3,.08) 0%,rgba(8,5,3,.12) 40%,rgba(8,5,3,.78) 100%)!important}
+.odyssey-feature img{filter:brightness(.9) saturate(.95)!important}
+.odyssey-feature-copy{z-index:3!important}
+.odyssey-feature-copy h2,.odyssey-feature-copy p,.odyssey-feature-copy strong,.odyssey-feature-copy small{
+  opacity:1!important;-webkit-text-fill-color:initial!important;text-shadow:0 3px 18px rgba(0,0,0,.82)!important
+}
+.odyssey-feature-copy h2{color:#f6ead8!important}.odyssey-feature-copy p{color:#f0dfc4!important}.odyssey-feature-copy strong,.odyssey-feature-copy small{color:#e4b96f!important}
+
+/* Light page chrome + dark modules: clear boundary */
+[data-theme="light"] .odyssey-command,[data-theme="light"] .civilization-graph,[data-theme="light"] .ody-map-card,[data-theme="light"] .ody-museum-card,[data-theme="light"] .future-lab article{color:#f6ead8!important}
+[data-theme="light"] .odyssey-command article,[data-theme="light"] .civilization-active-card,[data-theme="light"] .ody-map-detail,[data-theme="light"] .future-lab article{background:linear-gradient(145deg,#211a14,#15100c)!important;color:#f6ead8!important}
+[data-theme="light"] .odyssey-command p,[data-theme="light"] .civilization-graph p,[data-theme="light"] .ody-map-card p,[data-theme="light"] .ody-museum-card p,[data-theme="light"] .future-lab p{color:#c7b69e!important}
+
+/* Reset accidental opacity/text-fill inheritance */
+.odyssey-command *,.civilization-graph *,.ody-map-card *,.ody-museum-card *,.future-lab *{text-decoration-color:currentColor}
+.odyssey-command h1,.odyssey-command h2,.odyssey-command h3,.civilization-graph h1,.civilization-graph h2,.civilization-graph h3,.ody-map-card h1,.ody-map-card h2,.ody-map-card h3,.ody-museum-card h1,.ody-museum-card h2,.ody-museum-card h3,.future-lab h1,.future-lab h2,.future-lab h3{opacity:1!important}
+
+@media(max-width:640px){
+  .odyssey-command,.civilization-graph{border-radius:22px!important}
+  .ody-museum-copy h3{max-width:100%!important;font-size:1.55rem!important}
+  .ody-museum-stage img{filter:brightness(.72) saturate(.9)!important}
+}
