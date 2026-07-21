@@ -4,6 +4,7 @@ import '../audit.css';
 import { site, baseUrl, generatedArt } from '../site-data';
 import SiteChrome from '../../components/SiteChrome';
 import ConsentRestore from '../../components/ConsentRestore';
+import AnalyticsBootstrap from '../../components/AnalyticsBootstrap';
 
 const siteUrl = baseUrl || 'https://www.odyomuh.net';
 const siteDescription = 'Evidence-led history, archaeology, ancient texts and historical mysteries for readers around the world.';
@@ -91,6 +92,7 @@ export default function EnglishRootLayout({ children }) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
       <body>
+        <AnalyticsBootstrap />
         <SiteChrome site={{ name: site.name, description: siteDescription }} pages={[]} labels={[]}>
           <ConsentRestore />
           {children}
