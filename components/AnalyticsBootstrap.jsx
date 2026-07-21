@@ -1,14 +1,13 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import Script from 'next/script';
 
 const GTM_ID = 'GTM-5N62TLPD';
 
 export default function AnalyticsBootstrap() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
   const firstRender = useRef(true);
 
   useEffect(() => {
@@ -17,8 +16,7 @@ export default function AnalyticsBootstrap() {
       return;
     }
 
-    const query = searchParams?.toString();
-    const pagePath = query ? `${pathname}?${query}` : pathname;
+    const pagePath = `${pathname}${window.location.search || ''}`;
 
     window.dataLayer = window.dataLayer || [];
     window.gtag = window.gtag || function gtag() { window.dataLayer.push(arguments); };
@@ -27,7 +25,7 @@ export default function AnalyticsBootstrap() {
       page_location: window.location.href,
       page_path: pagePath,
     });
-  }, [pathname, searchParams]);
+  }, [pathname]);
 
   return (
     <Script id="gtm-loader" strategy="afterInteractive">{`
