@@ -5,6 +5,7 @@ import PostCard from './PostCard';
 import HomeExperience from './HomeExperience';
 import CivilizationGraph from './CivilizationGraph';
 import HistoryAtlas from './HistoryAtlas';
+import FutureHistoryLab from './FutureHistoryLab';
 
 const eras = [
   { year: 'MÖ 9600', title: 'İlk Yerleşimler', text: 'Göbeklitepe, tarım devrimi ve insanlığın yerleşik hayata geçişi.', href: '/search?q=neolitik', icon: '𒀭' },
@@ -34,6 +35,7 @@ export default function ProfessionalHome() {
   const recentIds = new Set(recentResearch.map((post) => post.id));
   const latest = allPosts.filter((post) => !recentIds.has(post.id)).slice(0, 6);
   const editorPicks = archivePosts.slice(0, 3);
+  const experiencePosts = [...recentResearch, ...allPosts].filter((post, index, array) => array.findIndex((item) => item.primaryPath === post.primaryPath) === index);
 
   return (
     <div className="odyssey-home">
@@ -54,7 +56,8 @@ export default function ProfessionalHome() {
 
       <HomeExperience posts={allPosts.slice(0, 24)} />
       <CivilizationGraph />
-      <HistoryAtlas posts={[...recentResearch, ...allPosts]} />
+      <HistoryAtlas posts={experiencePosts} />
+      <FutureHistoryLab posts={experiencePosts.slice(0, 80)} />
 
       <section className="odyssey-era-section"><div className="odyssey-section-head"><div><span>Zaman koridoru</span><h2>İnsanlığın kırılma noktaları</h2></div><p>On iki bin yıllık geçmişi dönemler, uygarlıklar ve dönüm noktaları üzerinden tarayın.</p></div><div className="odyssey-era-track">{eras.map((era) => <a href={era.href} key={era.title} className="odyssey-era-card"><div className="odyssey-era-icon">{era.icon}</div><time>{era.year}</time><h3>{era.title}</h3><p>{era.text}</p><span>Keşfet ↗</span></a>)}</div></section>
       <section className="odyssey-research" id="son-arastirmalar"><div className="odyssey-section-head"><div><span>{formatDate(currentUpdateDate)} · Canlı arşiv</span><h2>Son araştırmalar</h2></div><a href="/arsiv">Tüm dosyalar ↗</a></div><div className="odyssey-research-grid">{recentResearch.slice(0, 4).map((post, index) => <a className={`odyssey-research-card ${index === 0 ? 'is-large' : ''}`} href={post.primaryPath} key={post.id}><img src={post.image} alt={post.title} width="1672" height="941" loading={index ? 'lazy' : 'eager'} decoding="async" /><div className="odyssey-card-glass"><span>{post.labels?.[0] || 'Yeni dosya'}</span><h3>{post.title}</h3><p>{post.description}</p></div></a>)}</div></section>
