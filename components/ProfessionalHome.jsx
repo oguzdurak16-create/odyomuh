@@ -3,6 +3,7 @@ import { currentTurkishPosts, currentUpdateDate } from '../data/current-updates'
 import { allTurkishPosts, allTurkishLabels } from '../lib/content-collections';
 import PostCard from './PostCard';
 import HomeExperience from './HomeExperience';
+import CivilizationGraph from './CivilizationGraph';
 
 const eras = [
   { year: 'MÖ 9600', title: 'İlk Yerleşimler', text: 'Göbeklitepe, tarım devrimi ve insanlığın yerleşik hayata geçişi.', href: '/search?q=neolitik', icon: '𒀭' },
@@ -64,6 +65,7 @@ export default function ProfessionalHome() {
       </section>
 
       <HomeExperience posts={allPosts.slice(0, 24)} />
+      <CivilizationGraph />
 
       <section className="odyssey-era-section">
         <div className="odyssey-section-head"><div><span>Zaman koridoru</span><h2>İnsanlığın kırılma noktaları</h2></div><p>On iki bin yıllık geçmişi dönemler, uygarlıklar ve dönüm noktaları üzerinden tarayın.</p></div>
