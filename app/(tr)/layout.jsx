@@ -7,6 +7,7 @@ import '../platform.css';
 import '../future-lab.css';
 import '../ui-consistency.css';
 import '../journey.css';
+import '../design-system.css';
 import { site, pages, baseUrl, generatedArt } from '../site-data';
 import { allTurkishLabels, allTurkishPosts } from '../../lib/content-collections';
 import SiteChrome from '../../components/SiteChrome';
