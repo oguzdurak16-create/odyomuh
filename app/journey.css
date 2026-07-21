@@ -1,0 +1,16 @@
+.home-journey-nav{position:sticky;top:72px;z-index:80;display:flex;align-items:center;gap:18px;margin:-48px 0 72px;padding:12px 14px;border:1px solid var(--ui-line,rgba(214,170,99,.2));border-radius:18px;background:rgba(18,13,9,.82);backdrop-filter:blur(18px);box-shadow:0 18px 48px rgba(0,0,0,.2)}
+.home-journey-label{flex:0 0 auto;padding:0 10px;color:var(--ui-accent,#d6aa63);font:800 .67rem/1 var(--font-inter),sans-serif;letter-spacing:.14em;text-transform:uppercase}
+.home-journey-links{display:flex;gap:6px;min-width:0;overflow-x:auto;scrollbar-width:none;scroll-snap-type:x proximity}
+.home-journey-links::-webkit-scrollbar{display:none}
+.home-journey-links a{display:flex;align-items:center;gap:8px;flex:0 0 auto;min-height:42px;padding:0 13px;border:1px solid transparent;border-radius:12px;color:#bba98f;font:700 .74rem/1 var(--font-inter),sans-serif;scroll-snap-align:start;white-space:nowrap}
+.home-journey-links a small{color:#756958;font-size:.62rem;letter-spacing:.08em}
+.home-journey-links a:hover{color:#fff;background:rgba(255,255,255,.05);border-color:rgba(214,170,99,.16)}
+.home-journey-links a.is-active{color:#19110b;background:var(--ui-accent,#d6aa63);border-color:var(--ui-accent,#d6aa63);box-shadow:0 8px 24px rgba(214,170,99,.2)}
+.home-journey-links a.is-active small{color:rgba(25,17,11,.62)}
+.home-journey-anchor{scroll-margin-top:150px}
+[data-theme="light"] .home-journey-nav{background:rgba(251,247,240,.88);box-shadow:0 18px 44px rgba(42,31,23,.1)}
+[data-theme="light"] .home-journey-links a{color:#6d5c49}
+[data-theme="light"] .home-journey-links a:hover{color:#2e231a;background:rgba(143,100,54,.07)}
+@media(max-width:900px){.home-journey-nav{top:66px;margin:-42px 0 62px}.home-journey-label{display:none}}
+@media(max-width:620px){.home-journey-nav{top:60px;margin:-38px -4px 54px;padding:9px;border-radius:14px}.home-journey-links a{min-height:40px;padding:0 11px;font-size:.7rem}}
+@media(prefers-reduced-motion:reduce){.home-journey-links{scroll-behavior:auto}.home-journey-links a{transition:none}}
