@@ -1,6 +1,7 @@
 import '../globals.css';
 import '../editorial.css';
 import '../audit.css';
+import '../experience.css';
 import { site, pages, baseUrl, generatedArt } from '../site-data';
 import { allTurkishLabels } from '../../lib/content-collections';
 import SiteChrome from '../../components/SiteChrome';
@@ -23,41 +24,15 @@ export const viewport = {
 export const metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: site.name,
-  title: {
-    default: 'ODYOMUH | Tarih, Arkeoloji ve Kadim Uygarlıklar',
-    template: `%s | ${site.name}`,
-  },
+  title: { default: 'ODYOMUH | Tarih, Arkeoloji ve Kadim Uygarlıklar', template: `%s | ${site.name}` },
   description: siteDescription,
   keywords: ['tarih', 'arkeoloji', 'mitoloji', 'kadim uygarlıklar', 'antik tarih', 'Türk tarihi', 'tarihsel araştırma'],
-  authors: [{ name: site.name, url: siteUrl }],
-  creator: site.name,
-  publisher: site.name,
-  category: 'history',
+  authors: [{ name: site.name, url: siteUrl }], creator: site.name, publisher: site.name, category: 'history',
   alternates: { canonical: '/', languages: { 'tr-TR': '/', en: '/en', 'x-default': '/en' } },
-  manifest: '/site.webmanifest',
-  icons: { icon: '/favicon.ico', apple: '/img/logo-512x512.png' },
-  openGraph: {
-    locale: 'tr_TR',
-    type: 'website',
-    siteName: site.name,
-    title: 'ODYOMUH | Tarih, Arkeoloji ve Kadim Uygarlıklar',
-    description: siteDescription,
-    url: siteUrl,
-    images: [{ url: generatedArt.explorerDesk, width: 1672, height: 941, alt: 'ODYOMUH tarih ve arkeoloji arşivi' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    site: '@tarihdedektifi0',
-    creator: '@tarihdedektifi0',
-    title: 'ODYOMUH | Tarih, Arkeoloji ve Kadim Uygarlıklar',
-    description: siteDescription,
-    images: [generatedArt.explorerDesk],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1 },
-  },
+  manifest: '/site.webmanifest', icons: { icon: '/favicon.ico', apple: '/img/logo-512x512.png' },
+  openGraph: { locale: 'tr_TR', type: 'website', siteName: site.name, title: 'ODYOMUH | Tarih, Arkeoloji ve Kadim Uygarlıklar', description: siteDescription, url: siteUrl, images: [{ url: generatedArt.explorerDesk, width: 1672, height: 941, alt: 'ODYOMUH tarih ve arkeoloji arşivi' }] },
+  twitter: { card: 'summary_large_image', site: '@tarihdedektifi0', creator: '@tarihdedektifi0', title: 'ODYOMUH | Tarih, Arkeoloji ve Kadim Uygarlıklar', description: siteDescription, images: [generatedArt.explorerDesk] },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1 } },
 };
 
 export default function TurkishRootLayout({ children }) {
@@ -68,28 +43,8 @@ export default function TurkishRootLayout({ children }) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
-      {
-        '@type': 'Organization',
-        '@id': organizationId,
-        name: site.name,
-        url: siteUrl,
-        logo: { '@type': 'ImageObject', url: `${siteUrl}/img/logo-512x512.png`, width: 512, height: 512 },
-        sameAs: [
-          'https://www.facebook.com/profile.php?id=61554477900461',
-          'https://instagram.com/tarihdedektifi0',
-          'https://www.youtube.com/@tarihdedektifi0',
-        ],
-      },
-      {
-        '@type': 'WebSite',
-        '@id': websiteId,
-        url: siteUrl,
-        name: site.name,
-        description: siteDescription,
-        inLanguage: 'tr-TR',
-        publisher: { '@id': organizationId },
-        potentialAction: { '@type': 'SearchAction', target: `${siteUrl}/search?q={search_term_string}`, 'query-input': 'required name=search_term_string' },
-      },
+      { '@type': 'Organization', '@id': organizationId, name: site.name, url: siteUrl, logo: { '@type': 'ImageObject', url: `${siteUrl}/img/logo-512x512.png`, width: 512, height: 512 }, sameAs: ['https://www.facebook.com/profile.php?id=61554477900461','https://instagram.com/tarihdedektifi0','https://www.youtube.com/@tarihdedektifi0'] },
+      { '@type': 'WebSite', '@id': websiteId, url: siteUrl, name: site.name, description: siteDescription, inLanguage: 'tr-TR', publisher: { '@id': organizationId }, potentialAction: { '@type': 'SearchAction', target: `${siteUrl}/search?q={search_term_string}`, 'query-input': 'required name=search_term_string' } },
     ],
   };
 
