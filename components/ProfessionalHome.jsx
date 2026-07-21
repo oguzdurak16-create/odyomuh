@@ -6,6 +6,7 @@ import HomeExperience from './HomeExperience';
 import CivilizationGraph from './CivilizationGraph';
 import HistoryAtlas from './HistoryAtlas';
 import FutureHistoryLab from './FutureHistoryLab';
+import HomeJourneyNav from './HomeJourneyNav';
 
 const eras = [
   { year: 'MÖ 9600', title: 'İlk Yerleşimler', text: 'Göbeklitepe, tarım devrimi ve insanlığın yerleşik hayata geçişi.', href: '/search?q=neolitik', icon: '𒀭' },
@@ -54,13 +55,14 @@ export default function ProfessionalHome() {
 
       <section className="odyssey-dashboard" aria-label="Hızlı erişim"><a href="/arsiv"><span>01</span><div><small>Tüm içerik</small><strong>Arşiv Merkezi</strong></div><b>↗</b></a><a href="/p/tarih-kronolojisi.html"><span>02</span><div><small>İnteraktif araç</small><strong>Zaman Makinesi</strong></div><b>↗</b></a><a href="/p/tarih-quiz.html"><span>03</span><div><small>Bilgini test et</small><strong>Tarih Laboratuvarı</strong></div><b>↗</b></a><a href="/etiketler"><span>04</span><div><small>Konu navigasyonu</small><strong>Keşif Haritası</strong></div><b>↗</b></a></section>
 
-      <HomeExperience posts={allPosts.slice(0, 24)} />
-      <CivilizationGraph />
-      <HistoryAtlas posts={experiencePosts} />
-      <FutureHistoryLab posts={experiencePosts.slice(0, 80)} />
+      <HomeJourneyNav />
+      <div id="komuta-merkezi" className="home-journey-anchor"><HomeExperience posts={allPosts.slice(0, 24)} /></div>
+      <div id="uygarlik-agi" className="home-journey-anchor"><CivilizationGraph /></div>
+      <div id="tarih-atlasi" className="home-journey-anchor"><HistoryAtlas posts={experiencePosts} /></div>
+      <div id="gelecek-laboratuvari" className="home-journey-anchor"><FutureHistoryLab posts={experiencePosts.slice(0, 80)} /></div>
 
-      <section className="odyssey-era-section"><div className="odyssey-section-head"><div><span>Zaman koridoru</span><h2>İnsanlığın kırılma noktaları</h2></div><p>On iki bin yıllık geçmişi dönemler, uygarlıklar ve dönüm noktaları üzerinden tarayın.</p></div><div className="odyssey-era-track">{eras.map((era) => <a href={era.href} key={era.title} className="odyssey-era-card"><div className="odyssey-era-icon">{era.icon}</div><time>{era.year}</time><h3>{era.title}</h3><p>{era.text}</p><span>Keşfet ↗</span></a>)}</div></section>
-      <section className="odyssey-research" id="son-arastirmalar"><div className="odyssey-section-head"><div><span>{formatDate(currentUpdateDate)} · Canlı arşiv</span><h2>Son araştırmalar</h2></div><a href="/arsiv">Tüm dosyalar ↗</a></div><div className="odyssey-research-grid">{recentResearch.slice(0, 4).map((post, index) => <a className={`odyssey-research-card ${index === 0 ? 'is-large' : ''}`} href={post.primaryPath} key={post.id}><img src={post.image} alt={post.title} width="1672" height="941" loading={index ? 'lazy' : 'eager'} decoding="async" /><div className="odyssey-card-glass"><span>{post.labels?.[0] || 'Yeni dosya'}</span><h3>{post.title}</h3><p>{post.description}</p></div></a>)}</div></section>
+      <section className="odyssey-era-section home-journey-anchor" id="zaman-koridoru"><div className="odyssey-section-head"><div><span>Zaman koridoru</span><h2>İnsanlığın kırılma noktaları</h2></div><p>On iki bin yıllık geçmişi dönemler, uygarlıklar ve dönüm noktaları üzerinden tarayın.</p></div><div className="odyssey-era-track">{eras.map((era) => <a href={era.href} key={era.title} className="odyssey-era-card"><div className="odyssey-era-icon">{era.icon}</div><time>{era.year}</time><h3>{era.title}</h3><p>{era.text}</p><span>Keşfet ↗</span></a>)}</div></section>
+      <section className="odyssey-research home-journey-anchor" id="son-arastirmalar"><div className="odyssey-section-head"><div><span>{formatDate(currentUpdateDate)} · Canlı arşiv</span><h2>Son araştırmalar</h2></div><a href="/arsiv">Tüm dosyalar ↗</a></div><div className="odyssey-research-grid">{recentResearch.slice(0, 4).map((post, index) => <a className={`odyssey-research-card ${index === 0 ? 'is-large' : ''}`} href={post.primaryPath} key={post.id}><img src={post.image} alt={post.title} width="1672" height="941" loading={index ? 'lazy' : 'eager'} decoding="async" /><div className="odyssey-card-glass"><span>{post.labels?.[0] || 'Yeni dosya'}</span><h3>{post.title}</h3><p>{post.description}</p></div></a>)}</div></section>
       <section className="odyssey-portals">{portals.map((portal) => <a href={portal.href} className="odyssey-portal" key={portal.title}><img src={portal.image} alt="" width="1672" height="941" loading="lazy" decoding="async" /><div><span>{portal.meta}</span><h3>{portal.title}</h3><p>{portal.text}</p><strong>Portalı aç ↗</strong></div></a>)}</section>
       <section className="odyssey-editorial"><div className="odyssey-section-head"><div><span>Editör seçkisi</span><h2>Derin okumalar</h2></div><p>Arşivden seçilmiş kapsamlı tarih, arkeoloji ve kültür dosyaları.</p></div><div className="home-picks-grid">{editorPicks.map((post) => <PostCard post={post} key={post.id} />)}</div></section>
       <section className="odyssey-latest"><div className="odyssey-section-head"><div><span>Arşiv akışı</span><h2>Keşfetmeye devam edin</h2></div><a href="/arsiv">Arşive git ↗</a></div><div className="home-latest-grid">{latest.map((post) => <PostCard post={post} key={post.id} />)}</div></section>
