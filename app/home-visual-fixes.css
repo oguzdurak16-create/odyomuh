@@ -1,0 +1,110 @@
+/* Homepage research-card readability and image presentation fixes. */
+
+.odyssey-research {
+  position: relative;
+  z-index: 1;
+  scroll-margin-top: 118px;
+}
+
+.odyssey-research .odyssey-section-head {
+  position: relative;
+  z-index: 3;
+  padding-top: 8px;
+}
+
+.odyssey-research-card {
+  isolation: isolate;
+  background: #2a1b11;
+  box-shadow: 0 18px 46px rgba(45, 29, 17, 0.14);
+}
+
+.odyssey-research-card img {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.86) saturate(0.96) contrast(1.04);
+  transform: scale(1.01);
+  transition: transform 320ms ease, filter 320ms ease;
+}
+
+.odyssey-research-card:hover img {
+  filter: brightness(0.96) saturate(1.02) contrast(1.03);
+  transform: scale(1.035);
+}
+
+.odyssey-research-card::after {
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(13, 8, 5, 0.02) 0%, rgba(13, 8, 5, 0.16) 44%, rgba(13, 8, 5, 0.82) 100%);
+}
+
+.odyssey-card-glass {
+  color: #fff8ed;
+  border-color: rgba(255, 244, 224, 0.22);
+  background: rgba(20, 13, 8, 0.84);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.34);
+  -webkit-backdrop-filter: blur(9px);
+  backdrop-filter: blur(9px);
+}
+
+.odyssey-card-glass span {
+  color: #e0a14d;
+}
+
+.odyssey-card-glass h3 {
+  color: #fff8ed !important;
+  -webkit-text-fill-color: #fff8ed;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.44);
+}
+
+.odyssey-card-glass p {
+  color: #f1e4d2;
+}
+
+/* The former sticky state could cover the next section heading while scrolling. */
+.home-journey-nav {
+  position: relative;
+  top: auto;
+  margin-top: 24px;
+  margin-bottom: 56px;
+}
+
+@media (max-width: 920px) {
+  .odyssey-research-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .odyssey-research-card,
+  .odyssey-research-card.is-large {
+    grid-row: auto;
+    min-height: clamp(310px, 58vw, 500px);
+  }
+}
+
+@media (max-width: 760px) {
+  .home-journey-nav {
+    margin-top: 18px;
+    margin-bottom: 38px;
+  }
+
+  .odyssey-card-glass {
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    padding: 20px;
+  }
+
+  .odyssey-card-glass h3 {
+    font-size: clamp(1.35rem, 7vw, 2rem);
+    line-height: 1.08;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .odyssey-research-card img {
+    transition: none;
+  }
+}
