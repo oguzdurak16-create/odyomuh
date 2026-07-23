@@ -1,28 +1,28 @@
 const UPDATED_AT = '2026-07-23T09:00:00.000Z';
 
 export const contentOverrides = {
-  '/2025/11/blog-post.html': {
+  '/2025/11/anunnakiler-kimdir-mitolojik-kokenlerden-bilimsel-konsensuse-kadar-kapsamli-rehber.html': {
     title: 'Anunnakiler Kimdir? Sümer Tabletleri, İgigi ve Uzaylı İddiası',
     seoTitle: 'Anunnakiler Kimdir? Sümer Tabletlerinde Gerçekte Ne Yazıyor?',
     description: 'Anunnakiler, Sümer ve Akad metinlerinde geçen Mezopotamya tanrılarıdır. İgigi farkını, insanın yaratılışı anlatılarını ve uzaylı iddialarının bilimsel karşılığını inceleyin.',
     metaDescription: 'Anunnakiler kimdir? Sümer ve Akad tabletlerinde Anunnaki tanrıları, İgigi farkı, insanın yaratılışı ve uzaylı iddialarının bilimsel karşılığı.',
     updated: UPDATED_AT,
     searchAliases: ['anunnakiler kimdir', 'anunnakiler kimlerdir', 'anunnakiler nedir', 'anunnaki kimdir', 'anunnakiler ve igigiler', 'kuran da anunnakiler kimdir'],
-    introHtml: `<div class="odyomuh-note search-intent-summary"><strong>Kısa cevap:</strong> Anunnakiler, antik Mezopotamya metinlerinde tek bir kişi veya uzaylı ırkı değil, dönem ve kente göre işlevi değişen bir tanrılar topluluğudur. Sümer, Akad ve Babil kaynaklarında kader, ilahi meclis ve yeraltı yargısı bağlamlarında anılırlar. <a href="/2025/11/akad-ve-babilde-anunnaki-igigi-ayrimi-ve-yeralti-tanrilari.html">İgigi ile Anunnaki arasındaki farkı</a> ayrı dosyada inceleyebilirsiniz.</div>`,
+    introHtml: `<div class="odyomuh-note search-intent-summary"><strong>Kısa cevap:</strong> Anunnakiler, antik Mezopotamya metinlerinde tek bir kişi veya uzaylı ırkı değil, dönem ve kente göre işlevi değişen bir tanrılar topluluğudur. Sümer, Akad ve Babil kaynaklarında kader, ilahi meclis ve yeraltı yargısı bağlamlarında anılırlar. <a href="/2025/11/akad-ve-babil-de-anunnaki-igigi-ayrimi-ve-yeralti-tanrilari.html">İgigi ile Anunnaki arasındaki farkı</a> ayrı dosyada inceleyebilirsiniz.</div>`,
     faq: [
       { question: 'Anunnakiler kimdir?', answer: 'Anunnakiler, Sümer ve Akad metinlerinde geçen, dönemlere göre göksel meclis, büyük tanrılar veya yeraltı yargıçları olarak tanımlanan Mezopotamya tanrıları topluluğudur.' },
       { question: 'Anunnakiler uzaylı mı?', answer: 'Hayır. Bilinen çivi yazılı metinler Anunnakileri Mezopotamya inanç sisteminin tanrıları olarak anlatır; uzaylı olduklarına dair akademik veya arkeolojik kanıt yoktur.' },
       { question: 'Anunnaki ve İgigi aynı mı?', answer: 'Bazı metinlerde gruplar örtüşse de özellikle Akad ve Babil geleneğinde İgigi daha çok göksel tanrılar, Anunnaki ise büyük tanrılar veya yeraltı yargıçları için kullanılır.' },
     ],
   },
-  '/2025/11/akad-ve-babilde-anunnaki-igigi-ayrimi-ve-yeralti-tanrilari.html': {
+  '/2025/11/akad-ve-babil-de-anunnaki-igigi-ayrimi-ve-yeralti-tanrilari.html': {
     title: 'İgigi Kimdir? Anunnaki ile Farkı ve İgigi İsyanı',
     seoTitle: 'İgigi Kimdir? Anunnaki–İgigi Farkı ve İsyan Efsanesi',
     description: 'İgigi kimdir, Anunnakilerden farkları nedir ve Atrahasis Destanı’ndaki İgigi isyanı insanın yaratılışıyla nasıl ilişkilendirilir?',
     metaDescription: 'İgigi kimdir? Anunnaki ile İgigi arasındaki farkı, Atrahasis Destanı’ndaki İgigi isyanını ve insanın yaratılışı anlatısını inceleyin.',
     updated: UPDATED_AT,
     searchAliases: ['igigi', 'igigiler', 'igigiler kimdir', 'igigi gods', 'igigi and anunnaki', 'anunnaki igigi', 'anunnakiler ve igigiler'],
-    introHtml: `<div class="odyomuh-note search-intent-summary"><strong>Kısa cevap:</strong> İgigi, Akadca mitolojik metinlerde özellikle göksel tanrılar veya ağır işlerde çalışan genç tanrılar için kullanılan bir addır. Atrahasis anlatısında İgigilerin isyanı, insanların tanrıların işini üstlenmek üzere yaratılmasıyla sonuçlanır. Genel Anunnaki çerçevesi için <a href="/2025/11/blog-post.html">Anunnakiler kimdir?</a> rehberine bakabilirsiniz.</div>`,
+    introHtml: `<div class="odyomuh-note search-intent-summary"><strong>Kısa cevap:</strong> İgigi, Akadca mitolojik metinlerde özellikle göksel tanrılar veya ağır işlerde çalışan genç tanrılar için kullanılan bir addır. Atrahasis anlatısında İgigilerin isyanı, insanların tanrıların işini üstlenmek üzere yaratılmasıyla sonuçlanır. Genel Anunnaki çerçevesi için <a href="/2025/11/anunnakiler-kimdir-mitolojik-kokenlerden-bilimsel-konsensuse-kadar-kapsamli-rehber.html">Anunnakiler kimdir?</a> rehberine bakabilirsiniz.</div>`,
     faq: [
       { question: 'İgigi kimdir?', answer: 'İgigi, Akad ve Babil metinlerinde göksel veya genç tanrılar topluluğu için kullanılan bir addır.' },
       { question: 'İgigi ve Anunnaki arasındaki fark nedir?', answer: 'Kullanım metne göre değişir; birçok Akad ve Babil anlatısında İgigi göksel ve çalışan tanrıları, Anunnaki ise büyük tanrıları veya yeraltı yargıçlarını belirtir.' },
@@ -105,7 +105,7 @@ export function applyContentOverride(item) {
   const override = contentOverrides[item.primaryPath] || {};
   const aliases = [...new Set([...(item.searchAliases || []), ...(override.searchAliases || [])])];
   const cleanedHtml = cleanLegacyNoise(item.contentHtml);
-  const intro = override.introHtml || '';
+  const intro = override.introHtml && !cleanedHtml.includes('search-intent-summary') ? override.introHtml : '';
 
   return {
     ...item,
