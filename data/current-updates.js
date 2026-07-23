@@ -1,4 +1,4 @@
-import { dailyTurkishPosts, dailyEnglishPosts } from './daily-2026-07-21.js';
+import { dailyTurkishPosts, dailyEnglishPosts } from './current-updates-2026-07-22.js';
 
 export const currentTurkishPosts = dailyTurkishPosts;
 export const currentEnglishPosts = dailyEnglishPosts;
