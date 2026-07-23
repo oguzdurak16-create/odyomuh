@@ -45,16 +45,21 @@
   gap: 8px !important;
 }
 
-.header-language-link,
-.header-theme-button {
+.header-language-link {
   min-width: 42px !important;
   min-height: 42px !important;
   padding: 0 11px !important;
   border-radius: 999px !important;
 }
 
-.header-language-link small,
-.header-theme-label {
+.header-language-link small {
+  display: none !important;
+}
+
+.header-theme-button,
+.dark-mode-toggle,
+.mobile-menu-footer-actions button,
+.ody-floating-tools {
   display: none !important;
 }
 
@@ -78,11 +83,6 @@
 
 .desktop-nav-meta {
   gap: 9px !important;
-}
-
-.dark-mode-toggle,
-.ody-floating-tools {
-  display: none !important;
 }
 
 .archive-pagination {
@@ -207,8 +207,7 @@
     font-size: 1.35rem !important;
   }
 
-  .header-language-link,
-  .header-theme-button {
+  .header-language-link {
     display: none !important;
   }
 
