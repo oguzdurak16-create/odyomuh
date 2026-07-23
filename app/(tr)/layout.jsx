@@ -9,6 +9,7 @@ import '../ui-consistency.css';
 import '../journey.css';
 import '../design-system.css';
 import '../home-visual-fixes.css';
+import '../archive-light-fix.css';
 import { site, pages, baseUrl, generatedArt } from '../site-data';
 import { allTurkishLabels, allTurkishPosts } from '../../lib/content-collections';
 import SiteChrome from '../../components/SiteChrome';
