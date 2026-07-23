@@ -1,0 +1,63 @@
+name: Daily AI Cover
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/current-updates.js'
+      - 'data/current-updates-*.js'
+      - 'scripts/generate-daily-cover.mjs'
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-ai-cover
+  cancel-in-progress: false
+
+jobs:
+  generate-cover:
+    if: github.event_name != 'push' || !startsWith(github.event.head_commit.message, 'Daily cover ')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_IMAGE_MODEL: gpt-image-1
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Check API secret
+        run: |
+          if [ -z "$OPENAI_API_KEY" ]; then
+            echo "::error::OPENAI_API_KEY repository secret is missing."
+            exit 1
+          fi
+
+      - name: Generate and attach daily cover
+        run: node scripts/generate-daily-cover.mjs
+
+      - name: Commit generated cover
+        run: |
+          if git diff --quiet && [ -z "$(git status --porcelain)" ]; then
+            echo "No cover changes were needed."
+            exit 0
+          fi
+
+          git config user.name "odyomuh-content-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add public/generated-daily data/current-updates-*.js
+          git commit -m "Daily cover $(date -u +%F)"
+          git pull --rebase origin main
+          git push origin HEAD:main
