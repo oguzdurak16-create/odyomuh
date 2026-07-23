@@ -10,11 +10,11 @@ import '../journey.css';
 import '../design-system.css';
 import '../home-visual-fixes.css';
 import '../archive-light-fix.css';
+import '../site-cleanup.css';
 import { site, pages, baseUrl, generatedArt } from '../site-data';
-import { allTurkishLabels, allTurkishPosts } from '../../lib/content-collections';
+import { allTurkishLabels } from '../../lib/content-collections';
 import SiteChrome from '../../components/SiteChrome';
 import ConsentRestore from '../../components/ConsentRestore';
-import GlobalExperience from '../../components/GlobalExperience';
 import AnalyticsBootstrap from '../../components/AnalyticsBootstrap';
 
 const siteUrl = baseUrl || 'https://www.odyomuh.net';
@@ -39,7 +39,6 @@ export const metadata = {
 export default function TurkishRootLayout({ children }) {
   const pageLinks = pages().slice(0, 8).map((page) => ({ id: page.id, title: page.title, primaryPath: page.primaryPath }));
   const labelLinks = allTurkishLabels().slice(0, 12);
-  const commandItems = allTurkishPosts().slice(0, 120).map(({ id, title, description, labels, primaryPath }) => ({ id, title, description, labels, primaryPath }));
   const organizationId = `${siteUrl}/#organization`;
   const websiteId = `${siteUrl}/#website`;
   const jsonLd = { '@context': 'https://schema.org', '@graph': [
@@ -49,6 +48,6 @@ export default function TurkishRootLayout({ children }) {
 
   return <html lang="tr" suppressHydrationWarning style={{ '--font-cinzel': '"Cinzel", Georgia, serif', '--font-merriweather': '"Merriweather", Georgia, serif', '--font-inter': '"Inter", Arial, sans-serif' }}>
     <head><script dangerouslySetInnerHTML={{ __html: themeBootstrap }} /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" /><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" /><link rel="alternate" type="application/rss+xml" title="ODYOMUH Türkçe RSS" href="/feed.xml" /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} /></head>
-    <body><AnalyticsBootstrap /><SiteChrome site={{ name: site.name, description: siteDescription }} pages={pageLinks} labels={labelLinks}><ConsentRestore />{children}</SiteChrome><GlobalExperience items={commandItems} /></body>
+    <body><AnalyticsBootstrap /><SiteChrome site={{ name: site.name, description: siteDescription }} pages={pageLinks} labels={labelLinks}><ConsentRestore />{children}</SiteChrome></body>
   </html>;
 }
