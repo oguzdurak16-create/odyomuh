@@ -1,4 +1,4 @@
-import exportData from '../data/blogger-export.json';
+import exportData from '../data/blogger-export.json' with { type: 'json' };
 
 export const site = exportData.blog;
 export const baseUrl = (process.env.NEXT_PUBLIC_SITE_URL || site.domain || '').replace(/\/$/, '');
