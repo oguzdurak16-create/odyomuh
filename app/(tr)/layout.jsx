@@ -12,7 +12,6 @@ import '../home-visual-fixes.css';
 import '../archive-light-fix.css';
 import '../site-cleanup.css';
 import { site, pages, baseUrl, generatedArt } from '../site-data';
-import { allTurkishLabels } from '../../lib/content-collections';
 import SiteChrome from '../../components/SiteChrome';
 import ConsentRestore from '../../components/ConsentRestore';
 import AnalyticsBootstrap from '../../components/AnalyticsBootstrap';
@@ -38,7 +37,7 @@ export const metadata = {
 
 export default function TurkishRootLayout({ children }) {
   const pageLinks = pages().slice(0, 8).map((page) => ({ id: page.id, title: page.title, primaryPath: page.primaryPath }));
-  const labelLinks = allTurkishLabels().slice(0, 12);
+  const labelLinks = ['Anadolu Tarihi', 'Antik Uygarlıklar', 'Antik Teknoloji'];
   const organizationId = `${siteUrl}/#organization`;
   const websiteId = `${siteUrl}/#website`;
   const jsonLd = { '@context': 'https://schema.org', '@graph': [
