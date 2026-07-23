@@ -27,11 +27,19 @@ function words(html = '') {
   return String(html).replace(/<[^>]+>/g, ' ').replace(/&[a-z#0-9]+;/gi, ' ').match(/[A-Za-zÀ-žĞğİıÖöŞşÜüÇç0-9’'-]+/g)?.length || 0;
 }
 
+function resolvedPrimaryPath(post, locale = '') {
+  if (post.primaryPath) return post.primaryPath;
+  if (locale.startsWith('en') && post.slug) return `/en/${post.slug}`;
+  return null;
+}
+
 function validatePost(post, locale) {
-  const label = `${locale}:${post.id || post.primaryPath || 'unknown'}`;
-  for (const field of ['id', 'title', 'description', 'primaryPath', 'published', 'image', 'contentHtml']) {
+  const primaryPath = resolvedPrimaryPath(post, locale);
+  const label = `${locale}:${post.id || primaryPath || 'unknown'}`;
+  for (const field of ['id', 'title', 'description', 'published', 'image', 'contentHtml']) {
     if (!post[field]) errors.push(`${label} missing ${field}`);
   }
+  if (!primaryPath) errors.push(`${label} missing primaryPath`);
   if (!Array.isArray(post.labels) || !post.labels.length) errors.push(`${label} has no labels`);
   if (!Array.isArray(post.sources) || post.sources.length < 2) errors.push(`${label} has insufficient sources`);
   if (!Array.isArray(post.faq) || !post.faq.length) errors.push(`${label} has no FAQ data`);
@@ -90,7 +98,10 @@ const englishSource = read('data/en-posts.js');
 const englishIds = [...englishSource.matchAll(/^\s*id:\s*`([^`]+)`/gm)].map((match) => match[1]);
 const englishSlugs = [...englishSource.matchAll(/^\s*slug:\s*`([^`]+)`/gm)].map((match) => match[1]);
 if (!englishIds.length || englishIds.length !== englishSlugs.length) errors.push(`English article field counts differ: ids=${englishIds.length}, slugs=${englishSlugs.length}`);
-const enPaths = [...currentEnglishPosts.map((post) => post.primaryPath), ...englishSlugs.map((slug) => `/en/${slug}`)];
+const enPaths = [
+  ...currentEnglishPosts.map((post) => resolvedPrimaryPath(post, 'en-current')).filter(Boolean),
+  ...englishSlugs.map((slug) => `/en/${slug}`),
+];
 if (new Set(enPaths).size !== enPaths.length) errors.push('Duplicate English canonical paths');
 
 const labelCounts = new Map();
