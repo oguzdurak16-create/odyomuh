@@ -1,0 +1,72 @@
+/* Archive and listing contrast fixes.
+   The archive hero intentionally remains dark in both themes, so its text
+   and controls must not inherit the light theme's dark text variables. */
+
+.modern-page-hero {
+  color: #f8efe1;
+}
+
+.modern-page-hero .eyebrow {
+  color: #d8ae70;
+  opacity: 1;
+}
+
+.modern-page-hero h1 {
+  color: #fff8ec;
+  text-shadow: 0 3px 24px rgba(0, 0, 0, .48);
+}
+
+.modern-page-hero > p:not(.eyebrow) {
+  color: rgba(255, 247, 235, .82);
+}
+
+.modern-page-hero .modern-page-tools input {
+  border-color: rgba(216, 174, 112, .34);
+  background: rgba(5, 3, 2, .44);
+  color: #fff8ec;
+  caret-color: #d8ae70;
+}
+
+.modern-page-hero .modern-page-tools input::placeholder {
+  color: rgba(255, 247, 235, .6);
+  opacity: 1;
+}
+
+.modern-page-hero .modern-page-tools input:focus {
+  outline: none;
+  border-color: rgba(216, 174, 112, .72);
+  box-shadow: 0 0 0 4px rgba(216, 174, 112, .12);
+}
+
+[data-theme="light"] .modern-page-hero {
+  border-color: rgba(111, 77, 40, .34);
+  box-shadow: 0 20px 52px rgba(46, 33, 25, .2);
+}
+
+/* Keep archive cards clearly readable on the cream light-theme surface. */
+[data-theme="light"] .archive-post-list .premium-post-card,
+[data-theme="light"] .search-results-grid .premium-post-card,
+[data-theme="light"] .label-results-grid .premium-post-card {
+  background: #fffaf2;
+  border-color: rgba(111, 77, 40, .2);
+  box-shadow: 0 12px 30px rgba(46, 33, 25, .1);
+}
+
+[data-theme="light"] .premium-post-card .post-title,
+[data-theme="light"] .premium-post-card .post-title a {
+  color: #2b1d14;
+}
+
+[data-theme="light"] .premium-post-card .post-snippet,
+[data-theme="light"] .premium-post-card .premium-card-meta,
+[data-theme="light"] .premium-post-card .premium-card-tags a {
+  color: #684f39;
+}
+
+[data-theme="light"] .premium-post-card .premium-card-bottom {
+  border-top-color: rgba(111, 77, 40, .17);
+}
+
+[data-theme="light"] .premium-post-card .premium-card-read-link {
+  color: #7b522b;
+}
