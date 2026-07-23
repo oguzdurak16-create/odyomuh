@@ -19,6 +19,16 @@ const migratedRouteRedirects = exportData.blog.items.flatMap((item) =>
 
 const consolidatedPostRedirects = [
   {
+    source: '/2025/11/blog-post.html',
+    destination: '/2025/11/anunnakiler-kimdir-mitolojik-kokenlerden-bilimsel-konsensuse-kadar-kapsamli-rehber.html',
+    permanent: true,
+  },
+  {
+    source: '/2025/11/akad-ve-babilde-anunnaki-igigi-ayrimi-ve-yeralti-tanrilari.html',
+    destination: '/2025/11/akad-ve-babil-de-anunnaki-igigi-ayrimi-ve-yeralti-tanrilari.html',
+    permanent: true,
+  },
+  {
     source: '/2026/06/anunnaki-nedir-sumer-tanrilari-mi-uzayli-efsanesi-mi.html',
     destination: '/2025/12/anunnaki-nedir-sumer-tanrilari-ve-antik-uzayli-teorisi-tarih-ve-gizem.html',
     permanent: true,
