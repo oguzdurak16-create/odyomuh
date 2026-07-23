@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { englishPosts, findEnglishPost } from '../../../../data/en-posts';
 import { englishPolicyPages, findEnglishPolicyPage } from '../../../../data/en-pages';
 import { findEnglishTopic } from '../../../../data/en-topics';
+import { applyContentOverride } from '../../../../data/seo-overrides';
 import { baseUrl, site, metaDescription } from '../../../site-data';
 import { allEnglishPosts } from '../../../../lib/content-collections';
 import HtmlContent from '../../../../components/HtmlContent';
@@ -45,23 +46,36 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  const post = findEnglishPost(slug);
+  const post = applyContentOverride(findEnglishPost(slug));
   if (!post) return {};
   const canonical = post.primaryPath;
-  const description = metaDescription(post.description);
+  const seoTitle = post.seoTitle || post.title;
+  const description = metaDescription(post.metaDescription || post.description);
+  const keywords = [...new Set([...(post.labels || []), ...(post.searchAliases || [])])];
   const languages = post.turkishPath
     ? { en: canonical, 'tr-TR': post.turkishPath, 'x-default': canonical }
     : { en: canonical, 'x-default': canonical };
 
   return {
-    title: post.title,
+    title: seoTitle,
     description,
-    keywords: post.labels,
+    keywords,
     alternates: { canonical, languages },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-snippet': -1,
+        'max-image-preview': 'large',
+        'max-video-preview': -1,
+      },
+    },
     openGraph: {
       locale: 'en_US',
       type: 'article',
-      title: post.title,
+      title: seoTitle,
       description,
       url: canonical,
       images: [{ url: post.image, width: 1672, height: 941, alt: post.title }],
@@ -70,7 +84,7 @@ export async function generateMetadata({ params }) {
       authors: [site.name],
       tags: post.labels,
     },
-    twitter: { card: 'summary_large_image', title: post.title, description, images: [post.image] },
+    twitter: { card: 'summary_large_image', title: seoTitle, description, images: [post.image] },
   };
 }
 
@@ -99,29 +113,32 @@ export default async function EnglishDynamicPage({ params }) {
   const policyPage = findEnglishPolicyPage(slug);
   if (policyPage) return <EnglishPolicyPage page={policyPage} />;
 
-  const post = findEnglishPost(slug);
+  const post = applyContentOverride(findEnglishPost(slug));
   if (!post) notFound();
   const topic = findEnglishTopic(post.topic);
   const related = allEnglishPosts()
     .filter((item) => item.id !== post.id)
     .map((item) => ({
       item,
-      score: (item.topic === post.topic ? 5 : 0) + (item.labels || []).filter((label) => post.labels.includes(label)).length,
+      score: (item.topic === post.topic ? 5 : 0)
+        + ((item.labels || []).filter((label) => post.labels.includes(label)).length * 2)
+        + ((item.searchAliases || []).filter((alias) => post.searchAliases?.includes(alias)).length * 4),
     }))
     .filter(({ score }) => score > 0)
     .sort((a, b) => b.score - a.score)
-    .slice(0, 3)
+    .slice(0, 4)
     .map(({ item }) => item);
 
   const url = `${siteUrl}${post.primaryPath}`;
-  const description = metaDescription(post.description);
+  const description = metaDescription(post.metaDescription || post.description);
   const words = wordCount(post.contentHtml);
   const schemaType = post.newsArticle ? 'NewsArticle' : 'Article';
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': schemaType,
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
-    headline: post.title,
+    headline: post.seoTitle || post.title,
+    name: post.title,
     description,
     image: [`${siteUrl}${post.image}`],
     datePublished: post.published,
@@ -129,7 +146,7 @@ export default async function EnglishDynamicPage({ params }) {
     inLanguage: 'en',
     isAccessibleForFree: true,
     wordCount: words,
-    keywords: post.labels.join(', '),
+    keywords: [...new Set([...(post.labels || []), ...(post.searchAliases || [])])].join(', '),
     articleSection: topic?.name || post.labels[0],
     isPartOf: { '@type': 'WebSite', '@id': `${siteUrl}/en/#website`, name: `${site.name} English`, url: `${siteUrl}/en` },
     author: { '@type': 'Organization', name: site.name, url: `${siteUrl}/en/about` },

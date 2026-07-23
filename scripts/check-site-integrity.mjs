@@ -80,7 +80,7 @@ for (const layout of ['app/(tr)/layout.jsx', 'app/(en)/layout.jsx']) {
 const appFiles = walk('app').filter((file) => /\.(jsx?|mjs)$/.test(file));
 for (const file of appFiles) {
   const source = read(file);
-  if (/from ['\"](?:\.\.\/)*components\/Sidebar/.test(source)) errors.push(`Legacy sidebar import remains in ${file}`);
+  if (/from ['"](?:\.\.\/)*components\/Sidebar/.test(source)) errors.push(`Legacy sidebar import remains in ${file}`);
   if (source.includes('DailyUpdateBanner')) errors.push(`Legacy daily banner remains in ${file}`);
 }
 

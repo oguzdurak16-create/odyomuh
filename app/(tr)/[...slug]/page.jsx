@@ -8,10 +8,12 @@ import timelineData from '../../../data/timeline-events.json';
 import quizQuestions from '../../../data/quiz-questions.json';
 import { allItems, findByPath, baseUrl, posts, site, generatedArt, metaDescription, normalizeSearchText } from '../../site-data';
 import { englishPathForTurkishPath } from '../../../data/en-posts';
+import { applyContentOverride } from '../../../data/seo-overrides';
 import { allTurkishPosts } from '../../../lib/content-collections';
 import { notFound } from 'next/navigation';
 
 const siteUrl = baseUrl || 'https://www.odyomuh.net';
+const TIMELINE_PATH = '/p/tarih-kronolojisi.html';
 
 function pathFromParams(params) {
   const slug = params?.slug || [];
@@ -41,14 +43,15 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
-  const item = findByPath(pathFromParams(resolvedParams));
+  const item = applyContentOverride(findByPath(pathFromParams(resolvedParams)));
   if (!item) return {};
 
   const canonicalPath = item.primaryPath;
-  const description = metaDescription(item.description);
+  const seoTitle = item.seoTitle || item.title;
+  const description = metaDescription(item.metaDescription || item.description);
   const canonicalUrl = `${siteUrl}${canonicalPath}`;
   const englishPath = englishPathForTurkishPath(canonicalPath);
-  const specialImage = item.title === 'Tarih Kronolojisi'
+  const specialImage = canonicalPath === TIMELINE_PATH
     ? generatedArt.explorerDesk
     : item.title === 'Tarih Quiz' || item.title === 'Ders Notları'
       ? generatedArt.ancientLibraryDesk
@@ -59,13 +62,24 @@ export async function generateMetadata({ params }) {
     : { 'tr-TR': canonicalPath };
 
   return {
-    title: item.title,
+    title: seoTitle,
     description,
     keywords: [...(item.labels || []), ...(item.searchAliases || [])],
     other: item.newsArticle ? { news_keywords: [...(item.labels || []), ...(item.searchAliases || [])].join(', ') } : undefined,
     alternates: { canonical: canonicalPath, languages },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-snippet': -1,
+        'max-image-preview': 'large',
+        'max-video-preview': -1,
+      },
+    },
     openGraph: {
-      title: item.title,
+      title: seoTitle,
       description,
       url: canonicalUrl,
       images: image,
@@ -77,7 +91,7 @@ export async function generateMetadata({ params }) {
     },
     twitter: {
       card: 'summary_large_image',
-      title: item.title,
+      title: seoTitle,
       description,
       images: specialImage ? [specialImage] : [],
     },
@@ -86,14 +100,14 @@ export async function generateMetadata({ params }) {
 
 export default async function ContentPage({ params }) {
   const resolvedParams = await params;
-  const item = findByPath(pathFromParams(resolvedParams));
+  const item = applyContentOverride(findByPath(pathFromParams(resolvedParams)));
   if (!item) notFound();
 
   const url = `${siteUrl}${item.primaryPath}`;
-  const description = metaDescription(item.description);
+  const description = metaDescription(item.metaDescription || item.description);
   const englishPath = englishPathForTurkishPath(item.primaryPath);
 
-  if (item.title === 'Tarih Kronolojisi') return <TimelineExperience data={timelineData} />;
+  if (item.primaryPath === TIMELINE_PATH) return <TimelineExperience data={timelineData} />;
   if (item.title === 'Tarih Quiz') return <QuizExperience questions={quizQuestions} />;
 
   if (item.title === 'Ders Notları') {
@@ -107,17 +121,21 @@ export default async function ContentPage({ params }) {
 
   const related = allTurkishPosts()
     .filter((post) => post.id !== item.id)
-    .map((post) => ({ post, score: (post.labels || []).filter((label) => item.labels?.includes(label)).length }))
+    .map((post) => ({
+      post,
+      score: ((post.labels || []).filter((label) => item.labels?.includes(label)).length * 3)
+        + ((post.searchAliases || []).filter((alias) => item.searchAliases?.includes(alias)).length * 5),
+    }))
     .filter(({ score }) => score > 0)
     .sort((a, b) => b.score - a.score)
-    .slice(0, 3)
+    .slice(0, 4)
     .map(({ post }) => post);
   const schemaType = item.type === 'POST' ? (item.newsArticle ? 'NewsArticle' : 'Article') : 'WebPage';
   const pageSchema = {
     '@context': 'https://schema.org',
     '@type': schemaType,
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
-    headline: item.title,
+    headline: item.seoTitle || item.title,
     name: item.title,
     description,
     image: item.image ? [`${siteUrl}${item.image}`] : undefined,
@@ -196,7 +214,7 @@ export default async function ContentPage({ params }) {
 
       {related.length ? (
         <section className="related-posts-widget" aria-label="Benzer yazılar">
-          <h2 className="related-posts-title">Benzer yazılar</h2>
+          <h2 className="related-posts-title">Bu konuyla ilgili devam yazıları</h2>
           <div className="related-posts-grid">
             {related.map((post) => (
               <a className="related-post-card" href={post.primaryPath} key={post.id}>
