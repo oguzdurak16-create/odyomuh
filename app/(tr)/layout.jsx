@@ -19,9 +19,9 @@ import AnalyticsBootstrap from '../../components/AnalyticsBootstrap';
 
 const siteUrl = baseUrl || 'https://www.odyomuh.net';
 const siteDescription = site.settings?.blog_meta_description || site.description || 'Tarih, arkeoloji, mitoloji ve kadim uygarlıklar üzerine kaynak odaklı dijital arşiv.';
-const themeBootstrap = `(function(){try{var saved=localStorage.getItem('odyomuh-theme');var theme=saved==='light'||saved==='dark'?saved:(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');document.documentElement.setAttribute('data-theme',theme);}catch(e){}})();`;
+const themeBootstrap = `(function(){try{localStorage.setItem('odyomuh-theme','dark');document.documentElement.setAttribute('data-theme','dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`;
 
-export const viewport = { width: 'device-width', initialScale: 1, colorScheme: 'dark light', themeColor: [{ media: '(prefers-color-scheme: dark)', color: '#120d09' },{ media: '(prefers-color-scheme: light)', color: '#fbf7f0' }] };
+export const viewport = { width: 'device-width', initialScale: 1, colorScheme: 'dark', themeColor: '#120d09' };
 
 export const metadata = {
   metadataBase: new URL(siteUrl), applicationName: site.name,
