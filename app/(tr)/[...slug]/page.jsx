@@ -6,8 +6,9 @@ import ShareButtons from '../../../components/ShareButtons';
 import SourceList from '../../../components/SourceList';
 import timelineData from '../../../data/timeline-events.json';
 import quizQuestions from '../../../data/quiz-questions.json';
-import { allItems, findByPath, baseUrl, posts, site, generatedArt, metaDescription, normalizeSearchText } from '../../site-data';
+import { allItems, baseUrl, posts, site, generatedArt, metaDescription, normalizeSearchText } from '../../site-data';
 import { englishPathForTurkishPath } from '../../../data/en-posts';
+import { currentTurkishPosts } from '../../../data/current-updates';
 import { applyContentOverride } from '../../../data/seo-overrides';
 import { allTurkishPosts } from '../../../lib/content-collections';
 import { notFound } from 'next/navigation';
@@ -18,6 +19,33 @@ const TIMELINE_PATH = '/p/tarih-kronolojisi.html';
 function pathFromParams(params) {
   const slug = params?.slug || [];
   return '/' + slug.join('/');
+}
+
+function normalizeRoutableItem(item) {
+  if (!item) return item;
+  if (item.type) return item;
+  return {
+    ...item,
+    type: 'POST',
+    routes: [...new Set([item.primaryPath, ...(item.routes || [])].filter(Boolean))],
+  };
+}
+
+function routableItems() {
+  const seen = new Set();
+  return [...currentTurkishPosts, ...allItems()]
+    .map(normalizeRoutableItem)
+    .filter((item) => {
+      const key = item?.id || item?.primaryPath;
+      if (!key || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+}
+
+function findRoutableByPath(path) {
+  const normalized = path.startsWith('/') ? path : `/${path}`;
+  return routableItems().find((item) => item.primaryPath === normalized || item.routes?.includes(normalized));
 }
 
 function formatDate(value) {
@@ -38,19 +66,19 @@ function readingTime(value) {
 }
 
 export function generateStaticParams() {
-  return allItems().map((item) => ({ slug: item.primaryPath.split('/').filter(Boolean) }));
+  return routableItems().map((item) => ({ slug: item.primaryPath.split('/').filter(Boolean) }));
 }
 
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
-  const item = applyContentOverride(findByPath(pathFromParams(resolvedParams)));
+  const item = applyContentOverride(findRoutableByPath(pathFromParams(resolvedParams)));
   if (!item) return {};
 
   const canonicalPath = item.primaryPath;
   const seoTitle = item.seoTitle || item.title;
   const description = metaDescription(item.metaDescription || item.description);
   const canonicalUrl = `${siteUrl}${canonicalPath}`;
-  const englishPath = englishPathForTurkishPath(canonicalPath);
+  const englishPath = item.englishPath || englishPathForTurkishPath(canonicalPath);
   const specialImage = canonicalPath === TIMELINE_PATH
     ? generatedArt.explorerDesk
     : item.title === 'Tarih Quiz' || item.title === 'Ders Notları'
@@ -100,12 +128,12 @@ export async function generateMetadata({ params }) {
 
 export default async function ContentPage({ params }) {
   const resolvedParams = await params;
-  const item = applyContentOverride(findByPath(pathFromParams(resolvedParams)));
+  const item = applyContentOverride(findRoutableByPath(pathFromParams(resolvedParams)));
   if (!item) notFound();
 
   const url = `${siteUrl}${item.primaryPath}`;
   const description = metaDescription(item.metaDescription || item.description);
-  const englishPath = englishPathForTurkishPath(item.primaryPath);
+  const englishPath = item.englishPath || englishPathForTurkishPath(item.primaryPath);
 
   if (item.primaryPath === TIMELINE_PATH) return <TimelineExperience data={timelineData} />;
   if (item.title === 'Tarih Quiz') return <QuizExperience questions={quizQuestions} />;
