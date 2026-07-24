@@ -1,0 +1,13 @@
+/* Dedicated homepage visuals for current articles that shared a broken generic image. */
+.clean-article-image[href="/2026/07/pompeii-duvar-yazilari-antik-roma-gundelik-hayat.html"] {
+  background: #251a13 url('/generated-history/classical-ruins-bust.webp') center / cover no-repeat !important;
+}
+
+.clean-article-image[href="/2026/07/catalhoyuk-evleri-sokaksiz-neolitik-kent.html"] {
+  background: #251a13 url('/generated-global/gobekli-tepe.webp') center / cover no-repeat !important;
+}
+
+.clean-article-image[href="/2026/07/pompeii-duvar-yazilari-antik-roma-gundelik-hayat.html"] > img,
+.clean-article-image[href="/2026/07/catalhoyuk-evleri-sokaksiz-neolitik-kent.html"] > img {
+  display: none !important;
+}
