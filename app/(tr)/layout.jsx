@@ -11,6 +11,7 @@ import '../design-system.css';
 import '../home-visual-fixes.css';
 import '../archive-light-fix.css';
 import '../site-cleanup.css';
+import '../home-card-image-fixes.css';
 import { site, pages, baseUrl, generatedArt } from '../site-data';
 import SiteChrome from '../../components/SiteChrome';
 import ConsentRestore from '../../components/ConsentRestore';
@@ -31,7 +32,7 @@ export const metadata = {
   alternates: { canonical: '/', languages: { 'tr-TR': '/', en: '/en', 'x-default': '/en' } },
   manifest: '/site.webmanifest', icons: { icon: '/favicon.ico', apple: '/img/logo-512x512.png' },
   openGraph: { locale: 'tr_TR', type: 'website', siteName: site.name, title: 'ODYOMUH | Tarih, Arkeoloji ve Kadim Uygarlıklar', description: siteDescription, url: siteUrl, images: [{ url: generatedArt.explorerDesk, width: 1672, height: 941, alt: 'ODYOMUH tarih ve arkeoloji arşivi' }] },
-  twitter: { card: 'summary_large_image', site: '@tarihdedektifi0', creator: '@tarihdedektifi0', title: 'ODYOMUH | Tarih, Arkeoloji ve Kadim Uygarlıklar', description: siteDescription, images: [generatedArt.explorerDesk] },
+  twitter: { card: 'summary_large_image', site: '@tarihdedektifi0', creator: '@tarihdedektifi0', title: 'ODYOMUH | Dijital Tarih Arşivi', description: 'Kaynak odaklı tarih ve arkeoloji dosyaları.', images: [generatedArt.explorerDesk] },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1 } },
 };
 
