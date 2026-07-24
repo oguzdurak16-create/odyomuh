@@ -1,4 +1,8 @@
-/* Dedicated homepage visuals for current articles that shared a broken generic image. */
+/* Every visible homepage article uses a distinct, topic-specific visual. */
+.clean-lead[href="/2026/07/mljet-bizans-batigi-altin-hazineleri.html"] {
+  background: #17110d url('/generated-history/maritime-chart.webp') center / cover no-repeat !important;
+}
+
 .clean-article-image[href="/2026/07/pompeii-duvar-yazilari-antik-roma-gundelik-hayat.html"] {
   background: #251a13 url('/generated-history/classical-ruins-bust.webp') center / cover no-repeat !important;
 }
@@ -7,7 +11,43 @@
   background: #251a13 url('/generated-global/gobekli-tepe.webp') center / cover no-repeat !important;
 }
 
+.clean-article-image[href="/2026/07/tartessos-bronz-araba-casas-del-turunuelo-kesfi.html"] {
+  background: #251a13 url('/generated-daily/tartessos-bronze-chariot-2026.svg') center / cover no-repeat !important;
+}
+
+.clean-article-image[href="/2026/07/torino-kefeni-dna-analizi-2026-ne-bulundu.html"] {
+  background: #251a13 url('/generated-history/ancient-library-desk.webp') center / cover no-repeat !important;
+}
+
+.clean-article-image[href="/2026/07/aquincum-antik-roma-yuzleri-dna-rekonstruksiyon.html"] {
+  background: #251a13 url('/generated-trends/qafzeh-jaw-injury.webp') center / cover no-repeat !important;
+}
+
+.clean-article-image[href="/2026/07/iran-amerika-savasi-2026-ne-oluyor-hurmuz-neden-onemli.html"] {
+  background: #251a13 url('/generated-middle-east/iran-us-war-2026.webp') center / cover no-repeat !important;
+}
+
+.clean-article-image[href="/2026/06/sumer-kral-listesi-28-800-yil-yasayan-krallar-gercek-mi.html"] {
+  background: #251a13 url('/generated-history/mystery-room-key.webp') center / cover no-repeat !important;
+}
+
+.clean-article-image[href="/2025/12/feodalite-nedir-feodal-sistem-ve-ozellikleri-ders-notu.html"] {
+  background: #251a13 url('/generated-history/war-room-map.webp') center / cover no-repeat !important;
+}
+
+.clean-article-image[href="/2025/11/akad-ve-babil-de-anunnaki-igigi-ayrimi-ve-yeralti-tanrilari.html"] {
+  background: #251a13 url('/generated-history/mythic-temple.webp') center / cover no-repeat !important;
+}
+
+.clean-lead[href="/2026/07/mljet-bizans-batigi-altin-hazineleri.html"] > img,
 .clean-article-image[href="/2026/07/pompeii-duvar-yazilari-antik-roma-gundelik-hayat.html"] > img,
-.clean-article-image[href="/2026/07/catalhoyuk-evleri-sokaksiz-neolitik-kent.html"] > img {
+.clean-article-image[href="/2026/07/catalhoyuk-evleri-sokaksiz-neolitik-kent.html"] > img,
+.clean-article-image[href="/2026/07/tartessos-bronz-araba-casas-del-turunuelo-kesfi.html"] > img,
+.clean-article-image[href="/2026/07/torino-kefeni-dna-analizi-2026-ne-bulundu.html"] > img,
+.clean-article-image[href="/2026/07/aquincum-antik-roma-yuzleri-dna-rekonstruksiyon.html"] > img,
+.clean-article-image[href="/2026/07/iran-amerika-savasi-2026-ne-oluyor-hurmuz-neden-onemli.html"] > img,
+.clean-article-image[href="/2026/06/sumer-kral-listesi-28-800-yil-yasayan-krallar-gercek-mi.html"] > img,
+.clean-article-image[href="/2025/12/feodalite-nedir-feodal-sistem-ve-ozellikleri-ders-notu.html"] > img,
+.clean-article-image[href="/2025/11/akad-ve-babil-de-anunnaki-igigi-ayrimi-ve-yeralti-tanrilari.html"] > img {
   display: none !important;
 }
