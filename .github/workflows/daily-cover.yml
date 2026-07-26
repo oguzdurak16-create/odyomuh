@@ -7,48 +7,90 @@ on:
       - 'data/current-updates.js'
       - 'data/current-updates-*.js'
       - 'scripts/generate-daily-cover.mjs'
+      - '.github/workflows/daily-cover.yml'
   schedule:
-    - cron: '0 6 * * *'
+    - cron: '15 6 * * *'
   workflow_dispatch:
+    inputs:
+      force:
+        description: 'Regenerate the current cover even when a file already exists'
+        required: false
+        default: false
+        type: boolean
+      quality:
+        description: 'Image generation quality'
+        required: false
+        default: medium
+        type: choice
+        options:
+          - low
+          - medium
+          - high
 
 permissions:
   contents: write
 
 concurrency:
-  group: daily-ai-cover
-  cancel-in-progress: false
+  group: daily-ai-cover-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
 
 jobs:
   generate-cover:
-    if: github.event_name != 'push' || !startsWith(github.event.head_commit.message, 'Daily cover ')
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
+    if: github.event_name != 'push' || !startsWith(github.event.head_commit.message, 'chore(cover):')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
     env:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       OPENAI_IMAGE_MODEL: gpt-image-1
+      OPENAI_IMAGE_SIZE: 1536x1024
+      OPENAI_IMAGE_QUALITY: ${{ github.event_name == 'workflow_dispatch' && inputs.quality || 'medium' }}
+      OPENAI_IMAGE_FORMAT: webp
+      OPENAI_IMAGE_COMPRESSION: '84'
+      FORCE_REGENERATE: ${{ github.event_name == 'workflow_dispatch' && inputs.force && 'true' || 'false' }}
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Checkout latest main
+        uses: actions/checkout@v6
         with:
+          ref: main
           fetch-depth: 0
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - name: Set up Node.js 24
+        uses: actions/setup-node@v6
         with:
-          node-version: '24'
+          node-version-file: package.json
+          package-manager-cache: false
 
-      - name: Check API secret
+      - name: Validate cover generator
+        run: node --check scripts/generate-daily-cover.mjs
+
+      - name: Check API availability
+        id: api
+        shell: bash
         run: |
-          if [ -z "$OPENAI_API_KEY" ]; then
-            echo "::error::OPENAI_API_KEY repository secret is missing."
-            exit 1
+          if [ -z "${OPENAI_API_KEY:-}" ]; then
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::OPENAI_API_KEY is not configured yet. Cover generation was skipped without failing the workflow."
+            {
+              echo "### Daily AI Cover"
+              echo ""
+              echo "OPENAI_API_KEY henüz eklenmediği için üretim güvenli biçimde atlandı."
+              echo "Secret eklendiğinde workflow otomatik olarak aktif olacaktır."
+            } >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Generate and attach daily cover
+        if: steps.api.outputs.enabled == 'true'
         run: node scripts/generate-daily-cover.mjs
 
       - name: Commit generated cover
+        if: steps.api.outputs.enabled == 'true'
+        shell: bash
         run: |
           if git diff --quiet && [ -z "$(git status --porcelain)" ]; then
             echo "No cover changes were needed."
@@ -57,7 +99,13 @@ jobs:
 
           git config user.name "odyomuh-content-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add public/generated-daily data/current-updates-*.js
-          git commit -m "Daily cover $(date -u +%F)"
-          git pull --rebase origin main
+          git add -- public/generated-daily data/current-updates-*.js
+
+          if git diff --cached --quiet; then
+            echo "No staged cover changes were needed."
+            exit 0
+          fi
+
+          git commit -m "chore(cover): generate daily article visual"
+          git pull --rebase --autostash origin main
           git push origin HEAD:main
