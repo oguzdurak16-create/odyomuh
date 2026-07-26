@@ -16,21 +16,29 @@ concurrency:
   group: odyomuh-build-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  NEXT_TELEMETRY_DISABLED: '1'
+
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
     steps:
       - name: Checkout source
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Use Node.js 24
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: '24.x'
+          node-version-file: package.json
           cache: npm
+          cache-dependency-path: package-lock.json
 
       - name: Install dependencies
         run: npm ci --no-audit --no-fund --prefer-online
+
+      - name: Validate AI cover automation
+        run: node --check scripts/generate-daily-cover.mjs
 
       - name: Run interface and SEO audit
         shell: bash
@@ -40,9 +48,9 @@ jobs:
 
       - name: Upload audit log
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
-          name: site-audit-log
+          name: site-audit-log-${{ github.run_id }}
           path: audit.log
           if-no-files-found: ignore
           retention-days: 3
