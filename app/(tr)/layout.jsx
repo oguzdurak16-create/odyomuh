@@ -16,6 +16,7 @@ import { site, pages, baseUrl, generatedArt } from '../site-data';
 import SiteChrome from '../../components/SiteChrome';
 import ConsentRestore from '../../components/ConsentRestore';
 import AnalyticsBootstrap from '../../components/AnalyticsBootstrap';
+import HomeImageDeduplicator from '../../components/HomeImageDeduplicator';
 
 const siteUrl = baseUrl || 'https://www.odyomuh.net';
 const siteDescription = site.settings?.blog_meta_description || site.description || 'Tarih, arkeoloji, mitoloji ve kadim uygarlıklar üzerine kaynak odaklı dijital arşiv.';
@@ -48,6 +49,6 @@ export default function TurkishRootLayout({ children }) {
 
   return <html lang="tr" suppressHydrationWarning style={{ '--font-cinzel': '"Cinzel", Georgia, serif', '--font-merriweather': '"Merriweather", Georgia, serif', '--font-inter': '"Inter", Arial, sans-serif' }}>
     <head><script dangerouslySetInnerHTML={{ __html: themeBootstrap }} /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" /><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" /><link rel="alternate" type="application/rss+xml" title="ODYOMUH Türkçe RSS" href="/feed.xml" /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} /></head>
-    <body><AnalyticsBootstrap /><SiteChrome site={{ name: site.name, description: siteDescription }} pages={pageLinks} labels={labelLinks}><ConsentRestore />{children}</SiteChrome></body>
+    <body><AnalyticsBootstrap /><HomeImageDeduplicator /><SiteChrome site={{ name: site.name, description: siteDescription }} pages={pageLinks} labels={labelLinks}><ConsentRestore />{children}</SiteChrome></body>
   </html>;
 }
