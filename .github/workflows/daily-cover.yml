@@ -1,4 +1,4 @@
-name: Daily AI Cover
+name: Daily Unique AI Covers
 
 on:
   push:
@@ -7,13 +7,14 @@ on:
       - 'data/current-updates.js'
       - 'data/current-updates-*.js'
       - 'scripts/generate-daily-cover.mjs'
+      - 'scripts/backfill-daily-covers.mjs'
       - '.github/workflows/daily-cover.yml'
   schedule:
     - cron: '15 6 * * *'
   workflow_dispatch:
     inputs:
       force:
-        description: 'Regenerate the current cover even when a file already exists'
+        description: 'Regenerate covers even when valid files already exist'
         required: false
         default: false
         type: boolean
@@ -26,22 +27,32 @@ on:
           - low
           - medium
           - high
+      from_date:
+        description: 'First daily content date to audit (YYYY-MM-DD)'
+        required: false
+        default: '2026-07-23'
+        type: string
+      to_date:
+        description: 'Last daily content date to audit (YYYY-MM-DD)'
+        required: false
+        default: '9999-12-31'
+        type: string
 
 permissions:
   contents: write
 
 concurrency:
-  group: daily-ai-cover-${{ github.ref }}
+  group: daily-unique-ai-covers-${{ github.ref }}
   cancel-in-progress: true
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
 
 jobs:
-  generate-cover:
+  generate-covers:
     if: github.event_name != 'push' || !startsWith(github.event.head_commit.message, 'chore(cover):')
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 45
     env:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       OPENAI_IMAGE_MODEL: gpt-image-1
@@ -50,6 +61,8 @@ jobs:
       OPENAI_IMAGE_FORMAT: webp
       OPENAI_IMAGE_COMPRESSION: '84'
       FORCE_REGENERATE: ${{ github.event_name == 'workflow_dispatch' && inputs.force && 'true' || 'false' }}
+      COVER_BACKFILL_FROM: ${{ github.event_name == 'workflow_dispatch' && inputs.from_date || '2026-07-23' }}
+      COVER_BACKFILL_TO: ${{ github.event_name == 'workflow_dispatch' && inputs.to_date || '9999-12-31' }}
 
     steps:
       - name: Checkout latest main
@@ -64,8 +77,10 @@ jobs:
           node-version-file: package.json
           package-manager-cache: false
 
-      - name: Validate cover generator
-        run: node --check scripts/generate-daily-cover.mjs
+      - name: Validate unique cover pipeline
+        run: |
+          node --check scripts/generate-daily-cover.mjs
+          node --check scripts/backfill-daily-covers.mjs
 
       - name: Check API availability
         id: api
@@ -73,39 +88,33 @@ jobs:
         run: |
           if [ -z "${OPENAI_API_KEY:-}" ]; then
             echo "enabled=false" >> "$GITHUB_OUTPUT"
-            echo "::notice::OPENAI_API_KEY is not configured yet. Cover generation was skipped without failing the workflow."
-            {
-              echo "### Daily AI Cover"
-              echo ""
-              echo "OPENAI_API_KEY henüz eklenmediği için üretim güvenli biçimde atlandı."
-              echo "Secret eklendiğinde workflow otomatik olarak aktif olacaktır."
-            } >> "$GITHUB_STEP_SUMMARY"
-          else
-            echo "enabled=true" >> "$GITHUB_OUTPUT"
+            echo "::error::OPENAI_API_KEY repository secret is missing. Unique article covers cannot be generated."
+            exit 1
           fi
+          echo "enabled=true" >> "$GITHUB_OUTPUT"
 
-      - name: Generate and attach daily cover
+      - name: Generate, attach and verify unique article covers
         if: steps.api.outputs.enabled == 'true'
-        run: node scripts/generate-daily-cover.mjs
+        run: node scripts/backfill-daily-covers.mjs
 
-      - name: Commit generated cover
+      - name: Commit generated covers
         if: steps.api.outputs.enabled == 'true'
         shell: bash
         run: |
           if git diff --quiet && [ -z "$(git status --porcelain)" ]; then
-            echo "No cover changes were needed."
+            echo "All article covers were already unique."
             exit 0
           fi
 
           git config user.name "odyomuh-content-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add -- public/generated-daily data/current-updates-*.js
+          git add -- public/generated-daily data/current-updates.js data/current-updates-*.js
 
           if git diff --cached --quiet; then
             echo "No staged cover changes were needed."
             exit 0
           fi
 
-          git commit -m "chore(cover): generate daily article visual"
+          git commit -m "chore(cover): generate unique article visuals"
           git pull --rebase --autostash origin main
           git push origin HEAD:main
