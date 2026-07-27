@@ -21,21 +21,6 @@ import HomeImageDeduplicator from '../../components/HomeImageDeduplicator';
 const siteUrl = baseUrl || 'https://www.odyomuh.net';
 const siteDescription = site.settings?.blog_meta_description || site.description || 'Tarih, arkeoloji, mitoloji ve kadim uygarlıklar üzerine kaynak odaklı dijital arşiv.';
 const themeBootstrap = `(function(){try{localStorage.setItem('odyomuh-theme','dark');document.documentElement.setAttribute('data-theme','dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`;
-const consentBootstrap = `
-  window.dataLayer = window.dataLayer || [];
-  window.gtag = window.gtag || function(){window.dataLayer.push(arguments);};
-  window.gtag('consent', 'default', {
-    ad_user_data: 'denied',
-    ad_personalization: 'denied',
-    ad_storage: 'denied',
-    analytics_storage: 'denied',
-    functionality_storage: 'granted',
-    security_storage: 'granted',
-    wait_for_update: 500
-  });
-  window.gtag('set', 'ads_data_redaction', true);
-  window.gtag('set', 'url_passthrough', true);
-`;
 
 export const viewport = { width: 'device-width', initialScale: 1, colorScheme: 'dark', themeColor: '#120d09' };
 
@@ -63,7 +48,7 @@ export default function TurkishRootLayout({ children }) {
   ]};
 
   return <html lang="tr" suppressHydrationWarning style={{ '--font-cinzel': '"Cinzel", Georgia, serif', '--font-merriweather': '"Merriweather", Georgia, serif', '--font-inter': '"Inter", Arial, sans-serif' }}>
-    <head><script dangerouslySetInnerHTML={{ __html: themeBootstrap }} /><script id="odyomuh-consent-default-head" dangerouslySetInnerHTML={{ __html: consentBootstrap }} /><script id="odyomuh-adsense-script" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4491868887846507" crossOrigin="anonymous" /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" /><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" /><link rel="alternate" type="application/rss+xml" title="ODYOMUH Türkçe RSS" href="/feed.xml" /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} /></head>
+    <head><script dangerouslySetInnerHTML={{ __html: themeBootstrap }} /><script id="odyomuh-consent-default-head" src="/consent-default.js" /><script id="odyomuh-adsense-script" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4491868887846507" crossOrigin="anonymous" /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" /><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" /><link rel="alternate" type="application/rss+xml" title="ODYOMUH Türkçe RSS" href="/feed.xml" /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} /></head>
     <body><AnalyticsBootstrap /><HomeImageDeduplicator /><SiteChrome site={{ name: site.name, description: siteDescription }} pages={pageLinks} labels={labelLinks}><ConsentRestore />{children}</SiteChrome></body>
   </html>;
 }
