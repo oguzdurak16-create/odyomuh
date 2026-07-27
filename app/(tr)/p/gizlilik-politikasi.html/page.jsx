@@ -38,7 +38,7 @@ export default function GizlilikPolitikasiPage() {
               <p>Reklam depolaması, reklam kullanıcı verisi ve reklam kişiselleştirme sinyalleri varsayılan olarak reddedilir. AdSense etiketi site doğrulaması ve izin sinyallerinin iletilmesi amacıyla sınırlı Consent Mode durumunda yüklenebilir; bu durum reklam çerezlerine veya kişiselleştirilmiş reklamlara otomatik izin verildiği anlamına gelmez.</p>
 
               <h2>Çerez tercihleri</h2>
-              <p>Zorunlu olmayan analitik ve reklam işlemlerini çerez panelinden kabul edebilir veya reddedebilirsiniz. Reddetmeniz site içeriklerine erişiminizi engellemez. Ayrıntılı bilgi için <a href="/p/cerez-politikasi.html">Çerez Politikası</a> sayfasını inceleyebilirsiniz.</p>
+              <p>Zorunlu olmayan analitik ve reklam işlemlerini çerez panelinden kabul edebilir veya reddedebilirsiniz. Reddetmeniz site içeriklerine erişiminizi engellemez. Ayrıntılı bilgi için <a href="/p/cerez-politikasi.html">Çerez Politikası</a> sayfasını inceleyebilirsiniz. Reklam kişiselleştirme tercihleriniz ayrıca Google hesabınızdaki reklam ayarlarından yönetilebilir.</p>
 
               <h2>Hizmet sağlayıcılar ve yurt dışı aktarım</h2>
               <p>Vercel gibi barındırma sağlayıcıları ile Google Analytics ve Google AdSense gibi hizmetler farklı ülkelerde bulunan altyapıları kullanabilir. Teknik veya izin temelli veriler, hizmetin sağlanması ve güvenliği için gerekli ölçüde bu sağlayıcılar tarafından kendi şartları kapsamında işlenebilir.</p>
