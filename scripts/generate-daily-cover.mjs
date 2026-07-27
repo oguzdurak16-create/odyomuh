@@ -18,7 +18,6 @@ const REQUEST_TIMEOUT_MS = 4 * 60 * 1000;
 if (!API_KEY) {
   throw new Error('OPENAI_API_KEY is missing. Add it as a GitHub Actions repository secret.');
 }
-
 if (IMAGE_FORMAT !== 'webp') {
   throw new Error(`OPENAI_IMAGE_FORMAT must be webp for the current site pipeline, received: ${IMAGE_FORMAT}`);
 }
@@ -76,9 +75,9 @@ function visualDirection(seed) {
   const compositions = [
     'A wide environmental establishing shot with the central evidence in the foreground and the historical setting clearly readable behind it.',
     'An artifact-led composition: the key object dominates the foreground while people and architecture provide scale and archaeological context.',
-    'A restrained documentary cutaway or sectional view that explains the site, vessel, structure, or discovery without becoming an infographic.',
+    'A restrained documentary cutaway or sectional view that explains the site, vessel, structure or discovery without becoming an infographic.',
     'A low-angle cinematic field view with researchers or historical figures used only for scale, never as generic posing subjects.',
-    'A layered scene with foreground evidence, a strong middle-ground action, and a geographically accurate background landmark.',
+    'A layered scene with foreground evidence, a strong middle-ground action and a geographically accurate background landmark.',
     'An overhead or oblique archaeological survey composition that makes the discovery context immediately understandable at thumbnail size.'
   ];
   const lighting = [
@@ -95,7 +94,6 @@ function visualDirection(seed) {
     'desert ochre, basalt black, faded linen and copper',
     'forest green, wet earth, worn timber and antique ivory'
   ];
-
   return {
     composition: compositions[hashIndex(seed, compositions.length, 1)],
     lighting: lighting[hashIndex(seed, lighting.length, 2)],
@@ -108,19 +106,22 @@ function buildPrompt({ turkishPost, englishPost, seed }) {
     .slice(0, 10)
     .join(', ');
   const direction = visualDirection(seed);
+  const coverBrief = englishPost.coverBrief || turkishPost.coverBrief || '';
 
   return [
     'Create one premium cinematic editorial cover for a serious evidence-led history and archaeology publication.',
     `Article subject: ${englishPost.title || turkishPost.title}.`,
     `Editorial context: ${englishPost.description || turkishPost.description || ''}`,
+    coverBrief ? `Mandatory article-specific scene brief: ${coverBrief}` : '',
     labels ? `Historically relevant themes: ${labels}.` : '',
     `Composition mandate: ${direction.composition}`,
     `Lighting mandate: ${direction.lighting}.`,
     `Palette direction: ${direction.palette}.`,
     'Landscape 3:2 composition designed to crop safely to 16:9. Keep the main subject inside the central safe area.',
+    'Follow the article-specific scene brief as the primary visual concept. Do not replace it with a generic historical scene.',
     'Use historically and archaeologically plausible clothing, materials, architecture, geography, tools, vessels and artifacts.',
-    'Prioritize a specific scene tied to this article. Do not fall back to a generic marble bust, open book, scroll, library desk, anonymous ruins, treasure chest or fantasy temple unless that object is central to the actual subject.',
-    'The image must be visually distinct from other publication covers: unique camera position, unique focal object, unique environmental context and no repeated stock composition.',
+    'Do not fall back to a generic marble bust, open book, scroll, library desk, anonymous ruins, treasure chest or fantasy temple unless that object is central to the actual subject.',
+    'The image must be visually distinct from every other publication cover: unique focal object, camera position, action and environmental context.',
     'Documentary realism, natural textures, strong depth, clear silhouette and immediate readability at small thumbnail size.',
     'No text, letters, captions, logos, watermark, decorative border, modern objects, split screen, collage or fabricated inscription.',
     `Internal visual seed: ${seed.slice(0, 16)}. Do not render the seed as text.`
@@ -143,7 +144,6 @@ function retryableStatus(status) {
 
 async function requestImage(prompt) {
   let lastError;
-
   for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt += 1) {
     try {
       const response = await fetch('https://api.openai.com/v1/images/generations', {
@@ -179,15 +179,13 @@ async function requestImage(prompt) {
       }
     } catch (error) {
       lastError = error;
-      const isTimeoutOrNetwork = error?.name === 'TimeoutError' || error?.name === 'AbortError' || error instanceof TypeError;
-      if (!isTimeoutOrNetwork || attempt === MAX_ATTEMPTS) throw error;
+      const networkError = error?.name === 'TimeoutError' || error?.name === 'AbortError' || error instanceof TypeError;
+      if (!networkError || attempt === MAX_ATTEMPTS) throw error;
     }
-
     const delay = 1500 * (2 ** (attempt - 1));
     console.warn(`Image request attempt ${attempt} failed. Retrying in ${delay} ms...`);
     await sleep(delay);
   }
-
   throw lastError || new Error('Image generation failed after all retry attempts.');
 }
 
@@ -201,9 +199,9 @@ const pointerSource = await readFile(POINTER_FILE, 'utf8');
 const datedModulePath = currentModulePath(pointerSource);
 const moduleUrl = `${pathToFileURL(datedModulePath).href}?cover=${Date.now()}`;
 const contentModule = await import(moduleUrl);
-
 const turkishPost = contentModule.dailyTurkishPosts?.[0];
 const englishPost = contentModule.dailyEnglishPosts?.[0];
+
 if (!turkishPost || !englishPost) {
   throw new Error('The current content module must export Turkish and English posts.');
 }
@@ -213,7 +211,7 @@ const slug = cleanSlug(englishPost.slug || englishPost.primaryPath || turkishPos
 if (!slug) throw new Error('Could not create an image filename from the current article.');
 
 const seed = createHash('sha256')
-  .update(`${date}|${slug}|${englishPost.title || ''}|${turkishPost.title || ''}`)
+  .update(`${date}|${slug}|${englishPost.title || ''}|${turkishPost.title || ''}|${englishPost.coverBrief || turkishPost.coverBrief || ''}`)
   .digest('hex');
 const relativeFile = path.join('public', 'generated-daily', `${date}-${slug}.webp`);
 const outputFile = path.join(ROOT, relativeFile);
