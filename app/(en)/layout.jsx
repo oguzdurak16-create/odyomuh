@@ -11,21 +11,6 @@ import AnalyticsBootstrap from '../../components/AnalyticsBootstrap';
 const siteUrl = baseUrl || 'https://www.odyomuh.net';
 const siteDescription = 'Evidence-led history, archaeology, ancient texts and historical mysteries for readers around the world.';
 const themeBootstrap = `(function(){try{localStorage.setItem('odyomuh-theme','dark');document.documentElement.setAttribute('data-theme','dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`;
-const consentBootstrap = `
-  window.dataLayer = window.dataLayer || [];
-  window.gtag = window.gtag || function(){window.dataLayer.push(arguments);};
-  window.gtag('consent', 'default', {
-    ad_user_data: 'denied',
-    ad_personalization: 'denied',
-    ad_storage: 'denied',
-    analytics_storage: 'denied',
-    functionality_storage: 'granted',
-    security_storage: 'granted',
-    wait_for_update: 500
-  });
-  window.gtag('set', 'ads_data_redaction', true);
-  window.gtag('set', 'url_passthrough', true);
-`;
 
 export const viewport = {
   width: 'device-width',
@@ -99,7 +84,7 @@ export default function EnglishRootLayout({ children }) {
     <html lang="en" suppressHydrationWarning style={{ '--font-cinzel': '"Cinzel", Georgia, serif', '--font-merriweather': '"Merriweather", Georgia, serif', '--font-inter': '"Inter", Arial, sans-serif' }}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeBootstrap }} />
-        <script id="odyomuh-consent-default-head-en" dangerouslySetInnerHTML={{ __html: consentBootstrap }} />
+        <script id="odyomuh-consent-default-head-en" src="/consent-default.js" />
         <script id="odyomuh-adsense-script-en" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4491868887846507" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
