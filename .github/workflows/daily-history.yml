@@ -1,0 +1,118 @@
+name: Daily Bilingual History
+
+on:
+  schedule:
+    - cron: '5 5 * * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Regenerate today even when a dated file already exists'
+        required: false
+        default: false
+        type: boolean
+      content_date:
+        description: 'Optional publication date (YYYY-MM-DD)'
+        required: false
+        default: ''
+        type: string
+      text_model:
+        description: 'OpenAI text model'
+        required: false
+        default: gpt-5-mini
+        type: choice
+        options:
+          - gpt-5-mini
+          - gpt-5.1
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/generate-daily-history.mjs'
+      - '.github/workflows/daily-history.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-bilingual-history-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+
+jobs:
+  generate-and-publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 75
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_TEXT_MODEL: ${{ github.event_name == 'workflow_dispatch' && inputs.text_model || 'gpt-5-mini' }}
+      OPENAI_REASONING_EFFORT: low
+      OPENAI_IMAGE_MODEL: gpt-image-1
+      OPENAI_IMAGE_SIZE: 1536x1024
+      OPENAI_IMAGE_QUALITY: medium
+      OPENAI_IMAGE_FORMAT: webp
+      OPENAI_IMAGE_COMPRESSION: '84'
+      CONTENT_DATE: ${{ github.event_name == 'workflow_dispatch' && inputs.content_date || '' }}
+      FORCE_REGENERATE: ${{ github.event_name == 'workflow_dispatch' && inputs.force && 'true' || 'false' }}
+
+    steps:
+      - name: Checkout latest main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Node.js 24
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: package.json
+          package-manager-cache: false
+
+      - name: Validate generators
+        run: |
+          node --check scripts/generate-daily-history.mjs
+          node --check scripts/generate-daily-cover.mjs
+
+      - name: Check OpenAI secret
+        shell: bash
+        run: |
+          if [ -z "${OPENAI_API_KEY:-}" ]; then
+            echo "::error::OPENAI_API_KEY repository secret is missing."
+            exit 1
+          fi
+
+      - name: Generate Turkish and English history articles
+        run: node scripts/generate-daily-history.mjs
+
+      - name: Generate independent AI cover
+        run: node scripts/generate-daily-cover.mjs
+
+      - name: Install site dependencies
+        run: npm ci
+
+      - name: Validate generated site content
+        run: |
+          npm run site:audit
+          npm run content:check
+
+      - name: Commit daily package
+        shell: bash
+        run: |
+          if git diff --quiet && [ -z "$(git status --porcelain)" ]; then
+            echo "Daily package already exists and passed validation."
+            exit 0
+          fi
+
+          git config user.name "odyomuh-content-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -- data/current-updates.js data/current-updates-*.js public/generated-daily
+
+          if git diff --cached --quiet; then
+            echo "No daily content changes were staged."
+            exit 0
+          fi
+
+          DATE_LABEL="${CONTENT_DATE:-$(TZ=Europe/Istanbul date +'%Y-%m-%d')}"
+          git commit -m "Daily bilingual history ${DATE_LABEL}"
+          git pull --rebase --autostash origin main
+          git push origin HEAD:main
