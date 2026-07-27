@@ -91,3 +91,5 @@ export const englishPolicyPages = [
 export function findEnglishPolicyPage(slug) {
   return englishPolicyPages.find((page) => page.slug === slug);
 }
+
+// Policy content is intentionally versioned so hosting integrations rebuild these routes.
