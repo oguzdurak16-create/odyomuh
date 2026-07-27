@@ -1,3 +1,4 @@
+// AdSense readiness: English policy routes and consent defaults are deployed together.
 import '../globals.css';
 import '../editorial.css';
 import '../audit.css';
