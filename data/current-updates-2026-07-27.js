@@ -14,7 +14,7 @@ const turkishPost = {
   published: '2026-07-27T05:00:00.000Z',
   updated: '2026-07-27T05:00:00.000Z',
   labels: ['Seleukeia Sidera', 'Antik Teknoloji', 'Arkeoloji', 'Isparta', 'Doğu Roma', 'Demircilik'],
-  image: coverPath,
+  image: '/generated-daily/2026-07-27-seleukeia-sidera-ancient-blacksmith-workshop.webp',
   contentHtml: `
     <div class="odyomuh-note"><strong>Yeni keşfin özeti:</strong> Isparta’nın Atabey ilçesindeki Seleukeia Sidera Antik Kenti’nde yaklaşık bin beş yüz yıllık bir demirci atölyesi ortaya çıkarıldı. Beşinci yüzyıla tarihlenen mekânda demir üretim fırını, örs, kömür depolama bölümü, kızgın metali soğutmak için kullanılan su havuzu ve çok sayıda yarı işlenmiş demir eşya aynı üretim düzeni içinde korunmuş durumda. Bu bütünlük, atölyeyi Anadolu’daki antik metal işçiliğini anlamak açısından sıra dışı kılıyor.</div>
 
@@ -94,7 +94,7 @@ const englishPost = {
   published: '2026-07-27T05:00:00.000Z',
   updated: '2026-07-27T05:00:00.000Z',
   labels: ['Seleukeia Sidera', 'Ancient Technology', 'Archaeology', 'Türkiye', 'Eastern Roman Empire', 'Ironworking'],
-  image: coverPath,
+  image: '/generated-daily/2026-07-27-seleukeia-sidera-ancient-blacksmith-workshop.webp',
   contentHtml: `
     <div class="odyomuh-note"><strong>Discovery summary:</strong> Archaeologists at Seleukeia Sidera in Isparta have uncovered a blacksmith workshop dating to the fifth century. An ironworking furnace, anvil, charcoal storage area, water pool for cooling hot metal and numerous semi-finished iron objects survive within the same production space. The unusually complete arrangement offers a rare view of how an Eastern Roman workshop functioned about 1,500 years ago.</div>
 

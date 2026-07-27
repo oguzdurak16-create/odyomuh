@@ -13,7 +13,7 @@ const turkishPost = {
   published: '2026-07-23T12:00:00.000Z',
   updated: '2026-07-23T12:00:00.000Z',
   labels: ['Pompeii', 'Antik Roma', 'Arkeoloji', 'Gündelik Hayat', 'Epigrafi'],
-  image: generatedArt.excavationSite,
+  image: '/generated-daily/2026-07-23-pompeii-graffiti-everyday-life-ancient-rome.webp',
   contentHtml: `
     <div class="odyomuh-note"><strong>Dosya özeti:</strong> Pompeii duvar yazıları, Antik Roma toplumunu yalnızca imparatorların ve seçkinlerin metinlerinden değil; esnafın, müşterinin, seçmenin, âşığın, yolcunun ve gladyatör hayranının kendi kelimelerinden görmemizi sağlar.</div>
     <h2>Pompeii duvar yazıları neden önemlidir?</h2>
@@ -80,7 +80,7 @@ const englishPost = {
   published: '2026-07-23T12:00:00.000Z',
   updated: '2026-07-23T12:00:00.000Z',
   labels: ['Pompeii', 'Ancient Rome', 'Archaeology', 'Daily Life', 'Epigraphy'],
-  image: generatedArt.excavationSite,
+  image: '/generated-daily/2026-07-23-pompeii-graffiti-everyday-life-ancient-rome.webp',
   contentHtml: `
     <div class="odyomuh-note"><strong>File summary:</strong> Pompeii’s wall writing lets us study Roman society through the words of voters, customers, lovers, travelers, shopkeepers and arena fans rather than only through emperors and elite authors.</div>
     <h2>Why does Pompeii graffiti matter?</h2>

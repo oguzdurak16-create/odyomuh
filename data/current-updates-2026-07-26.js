@@ -13,7 +13,7 @@ const turkishPost = {
   published: '2026-07-26T05:00:00.000Z',
   updated: '2026-07-26T05:00:00.000Z',
   labels: ['Efes', 'Bizans', 'Arkeoloji', 'Türkiye', 'Çocuk Arkeolojisi', 'Artemis Tapınağı'],
-  image: generatedArt.excavationSite,
+  image: '/generated-daily/2026-07-26-ephesus-byzantine-twin-infant-burial-roman-latrine.webp',
   contentHtml: `
     <div class="odyomuh-note"><strong>Yeni araştırmanın özeti:</strong> Efes’te Artemis kutsal alanındaki Roma Odeionu’na bağlı, yüzyıllar önce kullanım dışı kalmış bir latrin kanalında iki perinatal bebeğin mezarı yeniden incelendi. Sekizinci ya da dokuzuncu yüzyıla tarihlenen taş örgülü mezar, bebeklerin gelişigüzel bırakılmadığını; aksine yan yana, muhtemelen kefene sarılmış ve korunmaya çalışılmış biçimde gömüldüğünü gösteriyor.</div>
 
@@ -93,7 +93,7 @@ const englishPost = {
   published: '2026-07-26T05:00:00.000Z',
   updated: '2026-07-26T05:00:00.000Z',
   labels: ['Ephesus', 'Byzantine Empire', 'Archaeology', 'Türkiye', 'Childhood Archaeology', 'Temple of Artemis'],
-  image: generatedArt.excavationSite,
+  image: '/generated-daily/2026-07-26-ephesus-byzantine-twin-infant-burial-roman-latrine.webp',
   contentHtml: `
     <div class="odyomuh-note"><strong>New study summary:</strong> Researchers have re-examined a grave containing two perinatal infants inside the disused sewer channel of a Roman latrine in the Artemision of Ephesus. The stone-lined burial, dated to the eighth or ninth century, shows that the infants were not discarded. They were placed side by side, probably wrapped in cloth, in a protected space chosen long after the latrine had ceased to function.</div>
 

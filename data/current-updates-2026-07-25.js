@@ -13,7 +13,7 @@ const turkishPost = {
   published: '2026-07-25T05:00:00.000Z',
   updated: '2026-07-25T05:00:00.000Z',
   labels: ['Antik Roma', 'Marcus Aurelius', 'Arkeoloji', 'Slovakya', 'Markoman Savaşları', 'Roma Ordusu'],
-  image: generatedArt.warRoomMap,
+  image: '/generated-daily/2026-07-25-surany-roman-military-camp-marcus-aurelius.webp',
   contentHtml: `
     <div class="odyomuh-note"><strong>Güncel keşif özeti:</strong> Slovak Bilimler Akademisi Arkeoloji Enstitüsü ile MH Invest tarafından Šurany yakınlarında yürütülen geniş ölçekli kazıda, ikinci yüzyılın ikinci yarısına tarihlenen yaklaşık 7,4 hektarlık bir Roma yürüyüş kampı ortaya çıkarıldı. Hendekler, kuyular ve sığ mezarlarda bulunan insan kalıntıları ile askerî teçhizat, alanın Markoman Savaşları sırasında ani ve şiddetli bir olayın ardından terk edilmiş olabileceğini düşündürüyor.</div>
 
@@ -92,7 +92,7 @@ const englishPost = {
   published: '2026-07-25T05:00:00.000Z',
   updated: '2026-07-25T05:00:00.000Z',
   labels: ['Ancient Rome', 'Marcus Aurelius', 'Archaeology', 'Slovakia', 'Marcomannic Wars', 'Roman Army'],
-  image: generatedArt.warRoomMap,
+  image: '/generated-daily/2026-07-25-surany-roman-military-camp-marcus-aurelius.webp',
   contentHtml: `
     <div class="odyomuh-note"><strong>Discovery summary:</strong> A large rescue excavation near Šurany in southwestern Slovakia has uncovered a 7.4-hectare Roman marching camp dating to the second half of the second century. Human remains in wells, defensive ditches and shallow graves, often accompanied by military equipment, suggest that the camp ended after a sudden and violent episode during the Marcomannic Wars.</div>
 

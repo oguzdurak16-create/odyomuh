@@ -13,7 +13,7 @@ const turkishPost = {
   published: '2026-07-24T05:00:00.000Z',
   updated: '2026-07-24T05:00:00.000Z',
   labels: ['Bizans', 'Sualtı Arkeolojisi', 'Mljet', 'Hırvatistan', 'Gemi Batığı', 'Altın Buluntular'],
-  image: generatedArt.excavationSite,
+  image: '/generated-daily/2026-07-24-mljet-byzantine-shipwreck-gold-treasure.webp',
   contentHtml: `
     <div class="odyomuh-note"><strong>Güncel keşif özeti:</strong> Hırvatistan’ın Mljet Adası yakınındaki Bizans dönemi batığında, temizleme ve restorasyon sonrasında toplam ağırlığı 600 gramı aşan altın eserler açıklandı. Bulgular, geminin sıradan bir yük gemisinden çok üst düzey bir yolcuya veya resmî heyete hizmet etmiş olabileceğini düşündürüyor.</div>
     <h2>Mljet Bizans batığında ne bulundu?</h2>
@@ -80,7 +80,7 @@ const englishPost = {
   published: '2026-07-24T05:00:00.000Z',
   updated: '2026-07-24T05:00:00.000Z',
   labels: ['Byzantine Empire', 'Underwater Archaeology', 'Mljet', 'Croatia', 'Shipwreck', 'Gold Artefacts'],
-  image: generatedArt.excavationSite,
+  image: '/generated-daily/2026-07-24-mljet-byzantine-shipwreck-gold-treasure.webp',
   contentHtml: `
     <div class="odyomuh-note"><strong>Discovery summary:</strong> Archaeologists have announced more than 600 grams of conserved gold from a Byzantine wreck near Croatia’s Mljet Island. The coins, gem-set buckles and imperial signet ring suggest that this was not an ordinary merchant vessel.</div>
     <h2>What was found in the Mljet shipwreck?</h2>
