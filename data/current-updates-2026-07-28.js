@@ -14,7 +14,7 @@ const turkishPost = {
   published: '2026-07-28T05:00:00.000Z',
   updated: '2026-07-28T05:00:00.000Z',
   labels: ['Neolitik', 'İrlanda', 'Galway', 'Megalitik Mezarlar', 'Arkeoloji'],
-  image: coverPath,
+  image: '/generated-daily/2026-07-28-galway-lost-neolithic-tombs-maree.webp',
   contentHtml: `
     <div class="odyomuh-note"><strong>Yeni keşfin özeti:</strong> Galway Üniversitesi araştırmacıları, İrlanda’nın batısındaki Maree bölgesinde yaklaşık 6.000 yıllık iki farklı megalitik mezar türünü aynı peyzaj içinde belgeledi. Eski kayıtlardan bilinen fakat yeri unutulan bir portal mezarı yeniden bulundu; ayrıca daha önce tanımlanmamış bir avlulu mezar ortaya çıkarıldı.</div>
     <h2>Maree’de ne bulundu?</h2>
@@ -61,7 +61,7 @@ const englishPost = {
   published: '2026-07-28T05:00:00.000Z',
   updated: '2026-07-28T05:00:00.000Z',
   labels: ['Neolithic', 'Ireland', 'Galway', 'Megalithic Tombs', 'Archaeology'],
-  image: coverPath,
+  image: '/generated-daily/2026-07-28-galway-lost-neolithic-tombs-maree.webp',
   contentHtml: `
     <div class="odyomuh-note"><strong>Discovery summary:</strong> University of Galway archaeologists documented two different megalithic tomb traditions at Maree in western Ireland. They relocated a portal tomb known from old records and identified a previously unknown court tomb, both belonging to a landscape used roughly 6,000 years ago.</div>
     <h2>What was found at Maree?</h2>
