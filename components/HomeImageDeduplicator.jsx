@@ -29,7 +29,10 @@ export default function HomeImageDeduplicator() {
     const root = document.querySelector('.clean-home');
     if (!root) return;
 
-    const images = [...root.querySelectorAll('.clean-lead img, .clean-article-image img')];
+    // The lead article is intentionally repeated as the first latest-post card.
+    // Only deduplicate images between cards so the same article always keeps
+    // its real cover in both the lead area and the latest-post list.
+    const images = [...root.querySelectorAll('.clean-article-image img')];
     const used = new Set();
 
     for (const image of images) {
