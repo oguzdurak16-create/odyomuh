@@ -99,7 +99,7 @@ export default function EnglishRootLayout({ children }) {
         <SiteChrome site={{ name: site.name, description: siteDescription }} pages={[]} labels={[]}>
           <ConsentRestore />
           {children}
-          <AdSlot slot={process.env.NEXT_PUBLIC_ADSENSE_CONTENT_SLOT} label="Advertisement" />
+          <AdSlot slot={process.env.NEXT_PUBLIC_ADSENSE_CONTENT_SLOT} label="Advertisement" afterSelector=".post-meta-info" />
         </SiteChrome>
       </body>
     </html>
