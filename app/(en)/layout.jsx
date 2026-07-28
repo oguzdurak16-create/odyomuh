@@ -8,6 +8,7 @@ import { site, baseUrl, generatedArt } from '../site-data';
 import SiteChrome from '../../components/SiteChrome';
 import ConsentRestore from '../../components/ConsentRestore';
 import AnalyticsBootstrap from '../../components/AnalyticsBootstrap';
+import AdSlot from '../../components/AdSlot';
 
 const siteUrl = baseUrl || 'https://www.odyomuh.net';
 const siteDescription = 'Evidence-led history, archaeology, ancient texts and historical mysteries for readers around the world.';
@@ -98,6 +99,7 @@ export default function EnglishRootLayout({ children }) {
         <SiteChrome site={{ name: site.name, description: siteDescription }} pages={[]} labels={[]}>
           <ConsentRestore />
           {children}
+          <AdSlot slot={process.env.NEXT_PUBLIC_ADSENSE_CONTENT_SLOT} label="Advertisement" afterSelector=".post-meta-info" />
         </SiteChrome>
       </body>
     </html>
