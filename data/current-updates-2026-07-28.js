@@ -14,7 +14,7 @@ const turkishPost = {
   published: '2026-07-28T05:00:00.000Z',
   updated: '2026-07-28T07:30:00.000Z',
   labels: ['Neolitik', 'İrlanda', 'Galway', 'Megalitik Mezarlar', 'Arkeoloji'],
-  image: coverPath,
+  image: '/generated-daily/2026-07-28-galway-lost-neolithic-tombs-maree.webp',
   contentHtml: `
     <div class="odyomuh-note"><strong>Yeni keşfin özeti:</strong> Galway Üniversitesi tarafından Maree, County Galway’de yürütülen 2026 kazıları, İrlanda Neolitiği için son derece ender bir düzeni ortaya çıkardı. Yaklaşık 6.000 yıllık, bir zamanlar tamamen yok olduğu düşünülen büyük bir avlulu mezar yeniden açığa çıkarıldı; hemen yanında ise daha önce mezar olarak kayda geçmemiş, yaklaşık 14 tonluk kapak taşına sahip bir portal mezarı belirlendi. Araştırmacılar, iki farklı megalitik mezar geleneğinin yan yana bulunduğu başka bir İrlanda örneğinin bilinmediğini belirtiyor.</div>
 
@@ -98,7 +98,7 @@ const englishPost = {
   published: '2026-07-28T05:00:00.000Z',
   updated: '2026-07-28T07:30:00.000Z',
   labels: ['Neolithic', 'Ireland', 'Galway', 'Megalithic Tombs', 'Archaeology'],
-  image: coverPath,
+  image: '/generated-daily/2026-07-28-galway-lost-neolithic-tombs-maree.webp',
   contentHtml: `
     <div class="odyomuh-note"><strong>Discovery summary:</strong> The 2026 University of Galway excavation at Maree, County Galway, revealed an exceptionally rare Neolithic arrangement. A large court tomb once believed to have been completely destroyed was exposed again, while an unrecorded portal tomb with an estimated 14-tonne capstone was identified immediately beside it. Both monuments are approximately 6,000 years old. The researchers say no other Irish site is currently known to combine these two megalithic traditions side by side.</div>
 
