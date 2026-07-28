@@ -63,8 +63,8 @@ export default function ProfessionalHome() {
   const archive = allTurkishPosts();
   const articles = uniquePosts([...currentTurkishPosts, ...archive]);
   const lead = articles[0];
-  const latest = articles.slice(1, 7);
-  const selected = articles.slice(7, 10);
+  const latest = articles.slice(0, 6);
+  const selected = articles.slice(6, 9);
 
   return (
     <div className="clean-home">
