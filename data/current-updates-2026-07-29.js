@@ -14,7 +14,7 @@ const turkishPost = {
   published: '2026-07-29T05:00:00.000Z',
   updated: '2026-07-29T05:00:00.000Z',
   labels: ['Paleontoloji', 'İhtiyozor', 'Pterozor', 'Kronosaurus', 'Avustralya'],
-  image: coverPath,
+  image: '/generated-daily/2026-07-29-bag-of-bones-ichthyosaur-pterosaur-kronosaurus.webp',
   contentHtml: `
     <div class="odyomuh-note"><strong>Yeni araştırmanın özeti:</strong> Avustralya’nın Queensland eyaletindeki Richmond yakınlarında bulunan ve “B.O.B. – Bag of Bones” adı verilen yaklaşık 100 milyon yıllık fosil topluluğu, tarih öncesi bir besin zincirinin üç ayrı halkasını aynı olay dizisinde bir araya getiriyor. Araştırmacılar, 6–7 metre uzunluğundaki bir ihtiyozorun sindirim bölgesinde balık, kalamar ve bir pterozora ait çene kemiği tespit etti. Aynı ihtiyozorun kemiklerindeki ezilme ve parçalanma izleri ise hayvanın daha büyük bir deniz sürüngeni, muhtemelen Kronosaurus queenslandicus tarafından saldırıya uğramış olabileceğini düşündürüyor.</div>
 
@@ -93,7 +93,7 @@ const englishPost = {
   published: '2026-07-29T05:00:00.000Z',
   updated: '2026-07-29T05:00:00.000Z',
   labels: ['Palaeontology', 'Ichthyosaur', 'Pterosaur', 'Kronosaurus', 'Australia'],
-  image: coverPath,
+  image: '/generated-daily/2026-07-29-bag-of-bones-ichthyosaur-pterosaur-kronosaurus.webp',
   contentHtml: `
     <div class="odyomuh-note"><strong>Discovery summary:</strong> A roughly 100-million-year-old fossil assemblage from near Richmond, Queensland, nicknamed “B.O.B. – Bag of Bones”, appears to preserve three levels of a Cretaceous food web in a single sequence. Researchers identified fish, squid-like cephalopod remains and a pterosaur jaw inside the body region of a 6–7 metre ichthyosaur. Severe crushing and fragmentation of the ichthyosaur skeleton may then record an attack or scavenging event by a much larger marine reptile, possibly Kronosaurus queenslandicus.</div>
 
