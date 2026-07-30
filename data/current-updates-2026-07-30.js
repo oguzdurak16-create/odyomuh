@@ -14,7 +14,7 @@ const turkishPost = {
   published: '2026-07-30T05:00:00.000Z',
   updated: '2026-07-30T05:00:00.000Z',
   labels: ['İnsan Evrimi', 'Paranthropus boisei', 'Fosil Ayak İzleri', 'Turkana Gölü', 'Paleoantropoloji'],
-  image: coverPath,
+  image: '/generated-daily/2026-07-30-paranthropus-boisei-lake-turkana-fossil-footprints.webp',
   contentHtml: `
     <div class="odyomuh-note"><strong>Yeni araştırmanın özeti:</strong> Kuzey Kenya’daki Turkana Gölü’nün eski kıyı tortullarında korunan yaklaşık 1,43 milyon yıllık ayak izleri, insan evriminin yan kollarından <em>Paranthropus boisei</em> hakkında kemiklerin tek başına veremediği davranışsal bilgiler sunuyor. 27 Temmuz 2026’da <em>Proceedings of the National Academy of Sciences</em> dergisinde yayımlanan çalışma, aynı yüzeyde sekiz yetişkin bireye ait 21 izin bulunduğunu, bazı bireylerin yaklaşık 1,8 metre boya ve 75 kilogram ağırlığa ulaşmış olabileceğini bildiriyor. İzlerin birlikte ve benzer yönde ilerlemesi, yetişkin erkeklerin grup hâlinde hareket etmiş olabileceği ihtimalini gündeme getiriyor.</div>
 
@@ -89,7 +89,7 @@ const englishPost = {
   published: '2026-07-30T05:00:00.000Z',
   updated: '2026-07-30T05:00:00.000Z',
   labels: ['Human Evolution', 'Paranthropus boisei', 'Fossil Footprints', 'Lake Turkana', 'Paleoanthropology'],
-  image: coverPath,
+  image: '/generated-daily/2026-07-30-paranthropus-boisei-lake-turkana-fossil-footprints.webp',
   contentHtml: `
     <div class="odyomuh-note"><strong>Research summary:</strong> A track surface preserved on the ancient margins of Lake Turkana in northern Kenya records a rare moment in the life of <em>Paranthropus boisei</em>, an extinct branch of the human family. The study, published in the <em>Proceedings of the National Academy of Sciences</em> on 27 July 2026, identifies 21 footprints made by at least eight adults about 1.43 million years ago. Some track-makers may have stood around 1.8 metres tall and weighed roughly 75 kilograms. Their shared direction and close spacing raise the possibility that adult males sometimes moved together as a group.</div>
 
