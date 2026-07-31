@@ -33,6 +33,16 @@ function resolvedPrimaryPath(post, locale = '') {
   return null;
 }
 
+function hasEmbeddedSources(html = '') {
+  const sourceSection = String(html).match(/<h2[^>]*>\s*(?:Kaynakça|References)\s*<\/h2>([\s\S]*?)(?=<h2|$)/i)?.[1] || '';
+  return (sourceSection.match(/<li\b/gi) || []).length >= 2;
+}
+
+function hasEmbeddedFaq(html = '') {
+  const faqSection = String(html).match(/<h2[^>]*>\s*(?:Sık Sorulan Sorular|Frequently Asked Questions)\s*<\/h2>([\s\S]*?)(?=<h2|$)/i)?.[1] || '';
+  return /<h3\b/i.test(faqSection) && /<p\b/i.test(faqSection);
+}
+
 function validatePost(post, locale) {
   const primaryPath = resolvedPrimaryPath(post, locale);
   const label = `${locale}:${post.id || primaryPath || 'unknown'}`;
@@ -41,8 +51,8 @@ function validatePost(post, locale) {
   }
   if (!primaryPath) errors.push(`${label} missing primaryPath`);
   if (!Array.isArray(post.labels) || !post.labels.length) errors.push(`${label} has no labels`);
-  if (!Array.isArray(post.sources) || post.sources.length < 2) errors.push(`${label} has insufficient sources`);
-  if (!Array.isArray(post.faq) || !post.faq.length) errors.push(`${label} has no FAQ data`);
+  if ((!Array.isArray(post.sources) || post.sources.length < 2) && !hasEmbeddedSources(post.contentHtml)) errors.push(`${label} has insufficient sources`);
+  if ((!Array.isArray(post.faq) || !post.faq.length) && !hasEmbeddedFaq(post.contentHtml)) errors.push(`${label} has no FAQ data`);
   const count = words(post.contentHtml);
   if (count < 1000) errors.push(`${label} below 1000 words (${count})`);
   if (String(post.image || '').startsWith('/') && !exists(path.join('public', post.image.slice(1)))) errors.push(`${label} image missing: ${post.image}`);
