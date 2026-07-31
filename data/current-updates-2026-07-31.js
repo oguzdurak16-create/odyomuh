@@ -14,7 +14,7 @@ const turkishPost = {
   published: '2026-07-31T05:00:00.000Z',
   updated: '2026-07-31T05:00:00.000Z',
   labels: ['Mağara Sanatı', 'Font-de-Gaume', 'Paleolitik', 'Radyokarbon', 'Arkeometri'],
-  image: coverPath,
+  image: '/generated-daily/2026-07-31-font-de-gaume-cave-art-radiocarbon-dating.webp',
   coverBrief: 'Inside Font-de-Gaume Cave in Dordogne, show a scientifically plausible Upper Paleolithic bison painted in black and ochre on irregular limestone, with a modern conservation researcher using non-contact hyperspectral equipment at a respectful distance; emphasize pigment texture, cave relief and documentary realism, no fantasy and no text.',
   contentHtml: `
     <div class="odyomuh-note"><strong>Yeni araştırmanın özeti:</strong> Fransa'nın Dordogne bölgesindeki Font-de-Gaume Mağarası'nda bulunan siyah tarihöncesi resimler ilk kez doğrudan ve güvenilir biçimde tarihlendirildi. Araştırmacılar, yalnızca mineral pigmentten yapıldığı düşünülen siyah çizgilerde çok küçük miktarda odun kömürü tespit etti. Kimyasal görüntüleme ile doğrulanan bu karbon, son derece küçük örneklerle radyokarbon ölçümü yapılmasını sağladı. Sonuçlar bir bizonun yaklaşık 13 bin yıl önce boyandığını, “maske” olarak bilinen karmaşık figürün ise binlerce yıl arayla eklenen bölümler içerdiğini gösteriyor.</div>
@@ -87,7 +87,7 @@ const englishPost = {
   published: '2026-07-31T05:00:00.000Z',
   updated: '2026-07-31T05:00:00.000Z',
   labels: ['Cave Art', 'Font-de-Gaume', 'Paleolithic', 'Radiocarbon Dating', 'Archaeometry'],
-  image: coverPath,
+  image: '/generated-daily/2026-07-31-font-de-gaume-cave-art-radiocarbon-dating.webp',
   coverBrief: 'Inside Font-de-Gaume Cave in Dordogne, show a scientifically plausible Upper Paleolithic bison painted in black and ochre on irregular limestone, with a modern conservation researcher using non-contact hyperspectral equipment at a respectful distance; emphasize pigment texture, cave relief and documentary realism, no fantasy and no text.',
   contentHtml: `
     <div class="odyomuh-note"><strong>Research summary:</strong> Black prehistoric images in Font-de-Gaume Cave in France's Dordogne region have been directly and reliably dated for the first time. Researchers detected minute amounts of charcoal in lines long assumed to consist only of mineral pigment. After chemical imaging confirmed that the carbon belonged to the original paint, tiny samples were measured by radiocarbon dating. The results place one bison around 13,000 years ago and show that the enigmatic “mask” figure contains additions made thousands of years apart.</div>
