@@ -14,7 +14,7 @@ const turkishPost = {
   published: '2026-08-01T05:00:00.000Z',
   updated: '2026-08-01T05:00:00.000Z',
   labels: ['Roma İmparatorluğu', 'Marcus Aurelius', 'Markoman Savaşları', 'Slovakya', 'Askeri Arkeoloji'],
-  image: coverPath,
+  image: '/generated-daily/2026-08-01-surany-roman-marching-camp-marcus-aurelius.webp',
   coverBrief: 'Aerial oblique documentary reconstruction of the newly excavated Roman marching camp near Surany, Slovakia: visible defensive ditches and a curved clavicula gateway in the foreground, archaeologists documenting late-second-century military objects and carefully exposed human remains, misty Central European plain behind, historically plausible and restrained, no text, no fantasy, no modern industrial buildings.',
   sources: [
     { name: 'Slovak Academy of Sciences', url: 'https://www.sav.sk/?doc=services-news&lang=en&news_no=13815&source_no=20' },
@@ -96,7 +96,7 @@ const englishPost = {
   published: '2026-08-01T05:00:00.000Z',
   updated: '2026-08-01T05:00:00.000Z',
   labels: ['Roman Empire', 'Marcus Aurelius', 'Marcomannic Wars', 'Slovakia', 'Military Archaeology'],
-  image: coverPath,
+  image: '/generated-daily/2026-08-01-surany-roman-marching-camp-marcus-aurelius.webp',
   coverBrief: 'Aerial oblique documentary reconstruction of the newly excavated Roman marching camp near Surany, Slovakia: visible defensive ditches and a curved clavicula gateway in the foreground, archaeologists documenting late-second-century military objects and carefully exposed human remains, misty Central European plain behind, historically plausible and restrained, no text, no fantasy, no modern industrial buildings.',
   sources: [
     { name: 'Slovak Academy of Sciences', url: 'https://www.sav.sk/?doc=services-news&lang=en&news_no=13815&source_no=20' },
