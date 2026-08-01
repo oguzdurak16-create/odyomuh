@@ -11,6 +11,20 @@ import EnglishPostCard from '../../../../components/EnglishPostCard';
 
 const siteUrl = baseUrl || 'https://www.odyomuh.net';
 
+function resolvedSlug(post = {}) {
+  if (post.slug) return post.slug;
+  return String(post.primaryPath || '').replace(/^\/en\//, '').replace(/^\/+|\/+$/g, '');
+}
+
+function findEnglishContent(slug) {
+  const normalized = decodeURIComponent(String(slug || '')).replace(/^\/+|\/+$/g, '');
+  return allEnglishPosts().find((post) => (
+    resolvedSlug(post) === normalized
+    || (post.routes || []).includes(`/en/${normalized}`)
+    || post.primaryPath === `/en/${normalized}`
+  )) || findEnglishPost(normalized);
+}
+
 function formatDate(value) {
   return new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric' }).format(new Date(value));
 }
@@ -28,10 +42,11 @@ function readingTime(value) {
 }
 
 export function generateStaticParams() {
-  return [
-    ...englishPosts.map((post) => ({ slug: post.slug })),
-    ...englishPolicyPages.map((page) => ({ slug: page.slug })),
-  ];
+  const slugs = [
+    ...allEnglishPosts().map(resolvedSlug),
+    ...englishPolicyPages.map((page) => page.slug),
+  ].filter(Boolean);
+  return [...new Set(slugs)].map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }) {
@@ -46,7 +61,7 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  const post = applyContentOverride(findEnglishPost(slug));
+  const post = applyContentOverride(findEnglishContent(slug));
   if (!post) return {};
   const canonical = post.primaryPath;
   const seoTitle = post.seoTitle || post.title;
@@ -113,7 +128,7 @@ export default async function EnglishDynamicPage({ params }) {
   const policyPage = findEnglishPolicyPage(slug);
   if (policyPage) return <EnglishPolicyPage page={policyPage} />;
 
-  const post = applyContentOverride(findEnglishPost(slug));
+  const post = applyContentOverride(findEnglishContent(slug));
   if (!post) notFound();
   const topic = findEnglishTopic(post.topic);
   const related = allEnglishPosts()
