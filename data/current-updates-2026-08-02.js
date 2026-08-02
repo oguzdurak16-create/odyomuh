@@ -16,7 +16,7 @@ const turkishPost = {
   labels: ['Neolitik Çağ', 'İrlanda Arkeolojisi', 'Megalitik Mezarlar', 'Galway', 'Ametist Kolye'],
   topic: 'ancient-civilizations',
   searchAliases: ['Maree tombs', 'Galway Neolithic tombs', 'Ireland amethyst pendant', 'portal tomb court tomb'],
-  image: coverPath,
+  image: '/generated-daily/2026-08-02-galway-maree-neolithic-tombs-amethyst-pendant.webp',
   coverBrief: 'Documentary archaeological reconstruction of the Maree Neolithic site on the Atlantic coast of County Galway, showing a large court tomb beside a portal tomb with a massive capstone, archaeologists carefully excavating cremated remains and a tiny purple amethyst pendant, wet green Irish landscape, restrained natural light, historically plausible, no text, no fantasy, no modern buildings.',
   sources: [
     { name: 'University of Galway', url: 'https://www.universityofgalway.ie/about-us/news-and-events/news-archive/2026/july/' },
@@ -95,7 +95,7 @@ const englishPost = {
   labels: ['Neolithic Ireland', 'Megalithic Tombs', 'Galway Archaeology', 'Portal Tomb', 'Amethyst Pendant'],
   topic: 'ancient-civilizations',
   searchAliases: ['Maree Neolithic tombs', 'Galway court tomb', 'Irish portal tomb', 'Ireland amethyst pendant'],
-  image: coverPath,
+  image: '/generated-daily/2026-08-02-galway-maree-neolithic-tombs-amethyst-pendant.webp',
   coverBrief: 'Documentary archaeological reconstruction of the Maree Neolithic site on the Atlantic coast of County Galway, showing a large court tomb beside a portal tomb with a massive capstone, archaeologists carefully excavating cremated remains and a tiny purple amethyst pendant, wet green Irish landscape, restrained natural light, historically plausible, no text, no fantasy, no modern buildings.',
   sources: [
     { name: 'University of Galway', url: 'https://www.universityofgalway.ie/about-us/news-and-events/news-archive/2026/july/' },
