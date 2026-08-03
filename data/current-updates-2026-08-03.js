@@ -16,7 +16,7 @@ const turkishPost = {
   labels: ['Antikythera Mekanizması', 'Antik Yunan', 'Antik Teknoloji', 'Arkeoastronomi', 'Batık Arkeolojisi'],
   topic: 'lost-technology',
   searchAliases: ['Antikythera mechanism', 'Antikitera mekanizması', 'antik Yunan bilgisayarı', 'ilk analog bilgisayar'],
-  image: coverPath,
+  image: '/generated-daily/2026-08-03-antikythera-mechanism-ancient-greek-computer.webp',
   coverBrief: 'Museum-quality documentary reconstruction of the Antikythera Mechanism on a dark conservation table, corroded bronze fragments beside a historically plausible completed hand-cranked bronze gear calculator, visible interlocking gears and engraved astronomical dials, subtle Mediterranean shipwreck context in the background, precise archaeological realism, dramatic restrained lighting, no text, no modern electronics, no fantasy.',
   sources: [
     { name: 'Antikythera Mechanism Research Project', url: 'https://www.antikythera-mechanism.gr/' },
@@ -103,7 +103,7 @@ const englishPost = {
   labels: ['Antikythera Mechanism', 'Ancient Greek Technology', 'Archaeoastronomy', 'Analog Computer', 'Shipwreck Archaeology'],
   topic: 'lost-technology',
   searchAliases: ['how Antikythera mechanism worked', 'ancient Greek computer', 'Antikythera gears', 'oldest analog computer'],
-  image: coverPath,
+  image: '/generated-daily/2026-08-03-antikythera-mechanism-ancient-greek-computer.webp',
   coverBrief: 'Museum-quality documentary reconstruction of the Antikythera Mechanism on a dark conservation table, corroded bronze fragments beside a historically plausible completed hand-cranked bronze gear calculator, visible interlocking gears and engraved astronomical dials, subtle Mediterranean shipwreck context in the background, precise archaeological realism, dramatic restrained lighting, no text, no modern electronics, no fantasy.',
   sources: [
     { name: 'Antikythera Mechanism Research Project', url: 'https://www.antikythera-mechanism.gr/' },
