@@ -1,4 +1,4 @@
-const UPDATED_AT = '2026-07-23T09:00:00.000Z';
+const UPDATED_AT = '2026-08-03T07:00:00.000Z';
 
 export const contentOverrides = {
   '/2025/11/anunnakiler-kimdir-mitolojik-kokenlerden-bilimsel-konsensuse-kadar-kapsamli-rehber.html': {
@@ -36,7 +36,7 @@ export const contentOverrides = {
     metaDescription: 'Kaybolan antik teknolojiler kitabı ve gerçek örnekleri: Antikythera mekanizması, Roma betonu, antik mühendislik, kanıtlar ve abartılı iddialar.',
     updated: UPDATED_AT,
     searchAliases: ['kaybolan antik teknolojiler kitap', 'antik teknolojiler', 'kayıp antik teknoloji', 'antik uygarlıkların teknolojileri'],
-    introHtml: `<div class="odyomuh-note search-intent-summary"><strong>Kitap arayanlar için:</strong> “Kaybolan antik teknolojiler” ifadesi tek bir akademik kitap adı olmaktan çok, antik mühendislik ve kayıp bilgi temalı yayınlar için kullanılan genel bir aramadır. Bu dosya gerçek arkeolojik örnekleri, popüler iddiaları ve güvenilir okuma başlangıçlarını ayırır.</div>`,
+    introHtml: `<div class="odyomuh-note search-intent-summary"><strong>Kitap arayanlar için:</strong> “Kaybolan antik teknolojiler” ifadesi tek bir akademik kitap adı olmaktan çok, antik mühendislik ve kayıp bilgi temalı yayınlar için kullanılan genel bir aramadır. Bu dosya gerçek arkeolojik örnekleri, popüler iddiaları ve güvenilir okuma başlangıçlarını ayırır. Benzer antik kültür ve sembol içerikleri için <a href="/2025/12/ongun-turk-boylarinin-kutsal-damgalari-ve-totem-hayvanlari.html">Ongun ve Türk boylarının kutsal sembolleri</a> yazısına geçebilirsiniz.</div>`,
   },
   '/2025/12/feodalite-nedir-feodal-sistem-ve-ozellikleri-ders-notu.html': {
     title: 'Feodalite Nedir? Feodal Sistem, Derebeylik ve Özellikleri',
@@ -45,7 +45,21 @@ export const contentOverrides = {
     metaDescription: 'Feodalite nedir? Feodal sistem, derebeylik, senyör, vassal ve serf kavramlarını kısa ders notu, özellikler ve örneklerle öğrenin.',
     updated: UPDATED_AT,
     searchAliases: ['feodalite nedir', 'feodal sistem', 'feodal ne demek', 'feodal yapı nedir', 'derebeylik nedir', 'feodalizm'],
-    introHtml: `<div class="odyomuh-note search-intent-summary"><strong>Kısa tanım:</strong> Feodalite, Orta Çağ Avrupa’sında toprağın kullanım hakkı, askerî hizmet ve kişisel bağlılık ilişkileri çevresinde oluşan siyasal ve toplumsal düzendir. Senyör toprağı korur ve dağıtır; vassal hizmet ve bağlılık sunar; serfler ise toprağa bağlı üretimde çalışır.</div>`,
+    introHtml: `<div class="odyomuh-note search-intent-summary"><strong>Kısa tanım:</strong> Feodalite, Orta Çağ Avrupa’sında toprağın kullanım hakkı, askerî hizmet ve kişisel bağlılık ilişkileri çevresinde oluşan siyasal ve toplumsal düzendir. Senyör toprağı korur ve dağıtır; vassal hizmet ve bağlılık sunar; serfler ise toprağa bağlı üretimde çalışır. Çağları birlikte görmek için <a href="/p/tarih-kronolojisi.html">dünya tarihi kronolojisini</a> açabilirsiniz.</div>`,
+  },
+  '/2025/12/ongun-turk-boylarinin-kutsal-damgalari-ve-totem-hayvanlari.html': {
+    title: 'Ongun Nedir? Türk Boylarında Kutsal Hayvanlar ve Damgalar',
+    seoTitle: 'Ongun Nedir? Türk Boylarının Kutsal Hayvanları ve Damgaları',
+    description: 'Ongun nedir? Eski Türk topluluklarında kutsal kabul edilen hayvanları, boy damgalarını, totem kavramıyla farkını ve tarihî kaynaklardaki yerini öğrenin.',
+    metaDescription: 'Ongun nedir? Türk boylarında kutsal hayvanlar, damgalar ve semboller; totem kavramından farkı ve tarihî örnekleriyle kısa açıklama.',
+    updated: UPDATED_AT,
+    searchAliases: ['ongun nedir', 'ongun nedir tarih', 'türklerde ongun ne demek', 'türk boylarının kutsal hayvanları', 'türk boyları damgaları', 'ongun totem farkı'],
+    introHtml: `<div class="odyomuh-note search-intent-summary"><strong>Kısa cevap:</strong> Ongun, bazı eski Türk ve bozkır topluluklarında bir boyla ilişkilendirilen, koruyucu veya kutsal kabul edilen hayvan ve semboller için kullanılan terimdir. Her ongun doğrudan “tapınılan totem” anlamına gelmez; kullanım kaynak ve döneme göre değişir. Konuyu tarih sıralaması içinde görmek için <a href="/p/tarih-kronolojisi.html">dünya tarihi kronolojisine</a>, benzer inanç karşılaştırmaları için <a href="/2025/11/anunnakiler-kimdir-mitolojik-kokenlerden-bilimsel-konsensuse-kadar-kapsamli-rehber.html">Anunnakiler rehberine</a> geçebilirsiniz.</div>`,
+    faq: [
+      { question: 'Ongun nedir?', answer: 'Ongun, özellikle eski Türk ve bozkır kültürlerinde bir boy veya toplulukla ilişkilendirilen koruyucu ya da kutsal hayvan ve semboller için kullanılan terimdir.' },
+      { question: 'Ongun ile totem aynı şey mi?', answer: 'Tam olarak aynı değildir. Totem daha geniş bir antropoloji kavramıdır; ongun ise tarihî Türk ve bozkır bağlamında kullanılan, kaynaklara göre anlamı değişebilen özel bir terimdir.' },
+      { question: 'Türk boylarının ongunları hangileridir?', answer: 'Kaynaklarda kartal, şahin, doğan ve başka yırtıcı kuşlar farklı boylarla ilişkilendirilir; ancak eşleştirmeler kaynak ve döneme göre değişebilir.' },
+    ],
   },
   '/p/tarih-kronolojisi.html': {
     title: 'Dünya Tarihi Kronolojisi: Tarih Öncesinden Günümüze',
