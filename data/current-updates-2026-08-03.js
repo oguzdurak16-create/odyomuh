@@ -16,7 +16,7 @@ const turkishPost = {
   labels: ['Roma Kütüphaneleri', 'Fuente Álamo', 'Roma İspanyası', 'Córdoba', 'Geç Antik Çağ'],
   topic: 'lost-technology',
   searchAliases: ['Fuente Alamo Roman library', 'İspanya Roma kütüphanesi', 'Puente Genil arkeoloji', 'Roma villası kütüphanesi'],
-  image: coverPath,
+  image: '/generated-daily/2026-08-03-fuente-alamo-roman-library-cordoba.webp',
   coverBrief: 'Archaeologically grounded documentary reconstruction of the newly interpreted private Roman library hall at the Villa of Fuente Alamo near Cordoba, late antique interior with a central apse, rectangular wall niches holding rolled papyri and codices, low podium, adjoining workroom, fragments of original mosaic flooring, Iberian Roman villa courtyard visible through an opening, researchers comparing the excavated plan in the foreground, warm natural light, no modern furniture, no fantasy, no text.',
   sources: [
     { name: 'Cadena SER — Fuente Álamo Roman library report', url: 'https://cadenaser.com/nacional/2026/07/31/descubren-en-cordoba-la-biblioteca-romana-mas-antigua-de-la-peninsula-iberica-cadena-ser/' },
@@ -103,7 +103,7 @@ const englishPost = {
   labels: ['Roman Libraries', 'Fuente Álamo', 'Roman Spain', 'Córdoba', 'Late Antiquity'],
   topic: 'lost-technology',
   searchAliases: ['oldest Roman library Spain', 'Fuente Alamo library', 'Puente Genil Roman villa', 'private Roman library archaeology'],
-  image: coverPath,
+  image: '/generated-daily/2026-08-03-fuente-alamo-roman-library-cordoba.webp',
   coverBrief: 'Archaeologically grounded documentary reconstruction of the newly interpreted private Roman library hall at the Villa of Fuente Alamo near Cordoba, late antique interior with a central apse, rectangular wall niches holding rolled papyri and codices, low podium, adjoining workroom, fragments of original mosaic flooring, Iberian Roman villa courtyard visible through an opening, researchers comparing the excavated plan in the foreground, warm natural light, no modern furniture, no fantasy, no text.',
   sources: [
     { name: 'Cadena SER — Fuente Álamo Roman library report', url: 'https://cadenaser.com/nacional/2026/07/31/descubren-en-cordoba-la-biblioteca-romana-mas-antigua-de-la-peninsula-iberica-cadena-ser/' },
