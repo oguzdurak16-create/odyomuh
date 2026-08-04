@@ -16,7 +16,7 @@ const turkishPost = {
   labels: ['Erken Hristiyanlık', 'Roma İmparatorluğu', 'Nida', 'Latince Yazıtlar', 'Dijital Arkeoloji'],
   topic: 'new-discoveries',
   searchAliases: ['Frankfurt Silver Inscription', 'Frankfurt gümüş muska', 'Nida Hristiyan mezarı', 'Alpler kuzeyi erken Hristiyanlık'],
-  image: coverPath,
+  image: '/generated-daily/2026-08-04-frankfurt-silver-inscription-early-christian-amulet.webp',
   coverBrief: 'Archaeologically accurate documentary scene of the Frankfurt Silver Inscription: a tiny Roman silver amulet capsule and digitally unrolled inscribed foil displayed beside a high-resolution CT reconstruction, subtle view of a third-century grave at Roman Nida in the background, museum conservation table, Latin letterforms visible but not readable as modern text, realistic silver patina, restrained dramatic lighting, no fantasy, no cross-shaped anachronisms, no headline text.',
   sources: [
     { name: 'Archaeological Museum Frankfurt — Frankfurt Silver Inscription', url: 'https://archaeologisches-museum-frankfurt.de/en/' },
@@ -100,7 +100,7 @@ const englishPost = {
   labels: ['Early Christianity', 'Roman Empire', 'Nida', 'Latin Inscriptions', 'Digital Archaeology'],
   topic: 'new-discoveries',
   searchAliases: ['Frankfurt Silver Inscription', 'Frankfurt Christian amulet', 'Nida Roman grave', 'oldest Christian evidence north Alps'],
-  image: coverPath,
+  image: '/generated-daily/2026-08-04-frankfurt-silver-inscription-early-christian-amulet.webp',
   coverBrief: 'Archaeologically accurate documentary scene of the Frankfurt Silver Inscription: a tiny Roman silver amulet capsule and digitally unrolled inscribed foil displayed beside a high-resolution CT reconstruction, subtle view of a third-century grave at Roman Nida in the background, museum conservation table, Latin letterforms visible but not readable as modern text, realistic silver patina, restrained dramatic lighting, no fantasy, no cross-shaped anachronisms, no headline text.',
   sources: turkishPost.sources,
   faq: [
