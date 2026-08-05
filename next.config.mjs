@@ -58,6 +58,12 @@ const nextConfig = {
   compress: true,
   async redirects() {
     return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'odyomuh.net' }],
+        destination: 'https://www.odyomuh.net/:path*',
+        permanent: true,
+      },
       { source: '/search/label/:label', destination: '/label/:label', permanent: true },
       ...uniqueRedirects,
     ];
