@@ -1,0 +1,38 @@
+name: One-time fix Aug 6 word count
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/fix-aug06-wordcount.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Extend Turkish article and remove one-time workflow
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('data/current-updates-2026-08-06.js')
+          text = p.read_text(encoding='utf-8')
+          needle = '''<h2>Sonuç</h2>\n<p>Antikythera Mekanizması, Helenistik dünyanın yalnızca teorik astronomi üretmediğini, bu bilgiyi hassas metal parçalarına ve işleyen bir hesaplama sistemine dönüştürebildiğini kanıtlar.'''
+          replacement = '''<h2>Mekanizmanın arkeoloji açısından asıl önemi</h2>\n<p>Antikythera Mekanizması’nın değeri yalnızca dişli sayısında değildir. Aynı batıktan gelen heykeller, seramikler ve diğer yüklerle birlikte değerlendirilmesi, aygıtı belirli bir Akdeniz ticaret ve kültür ortamına yerleştirir. Bu bağlam, karmaşık bilimsel aletlerin yalnızca kuramsal metinlerde kalmadığını; üretilebildiğini, taşınabildiğini ve seçkin kullanıcıların dünyasında dolaşıma girebildiğini gösterir. Mekanizmanın eksik parçaları nedeniyle her ayrıntı kesin değildir; bu nedenle modern rekonstrüksiyonlarda kanıtlanmış özelliklerle varsayımsal çözümleri birbirinden ayırmak özellikle önemlidir.</p>\n\n<h2>Sonuç</h2>\n<p>Antikythera Mekanizması, Helenistik dünyanın yalnızca teorik astronomi üretmediğini, bu bilgiyi hassas metal parçalarına ve işleyen bir hesaplama sistemine dönüştürebildiğini kanıtlar.'''
+          if needle not in text:
+              raise SystemExit('Target paragraph not found; refusing unsafe patch')
+          p.write_text(text.replace(needle, replacement, 1), encoding='utf-8')
+          PY
+          rm .github/workflows/fix-aug06-wordcount.yml
+          git config user.name "odyomuh-content-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/current-updates-2026-08-06.js .github/workflows/fix-aug06-wordcount.yml
+          git commit -m "fix: complete 2026-08-06 article audit"
+          git pull --rebase origin main
+          git push origin HEAD:main
