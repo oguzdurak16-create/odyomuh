@@ -57,6 +57,9 @@ const turkishPost = {
 <p>Araştırmacılar mikro odaklı X-ışını tomografisiyle parçaların içini tarar, yansıma dönüşümlü görüntüleme ile yüzey yazılarını belirginleştirir ve bilgisayar modelleriyle olası dişli dizilimlerini test eder. Farklı rekonstrüksiyonlar arasında ayrıntı farkları vardır. Özellikle gezegen göstergelerinin tam mekanizması konusunda kesin bir uzlaşma yoktur.</p>
 <p>Bu belirsizlik, mekanizmanın önemini azaltmaz. Aksine, arkeolojik kanıt ile matematiksel modellemenin nasıl birlikte çalıştığını gösterir. Her yeni okuma, antik bilimin uygulamalı yönüne dair daha ayrıntılı bir tablo sunmaktadır.</p>
 
+<h2>Mekanizmanın arkeoloji açısından asıl önemi</h2>
+<p>Antikythera Mekanizması’nın değeri yalnızca dişli sayısında değildir. Aynı batıktan gelen heykeller, seramikler ve diğer yüklerle birlikte değerlendirilmesi, aygıtı belirli bir Akdeniz ticaret ve kültür ortamına yerleştirir. Bu bağlam, karmaşık bilimsel aletlerin yalnızca kuramsal metinlerde kalmadığını; üretilebildiğini, taşınabildiğini ve seçkin kullanıcıların dünyasında dolaşıma girebildiğini gösterir. Mekanizmanın eksik parçaları nedeniyle her ayrıntı kesin değildir; bu nedenle modern rekonstrüksiyonlarda kanıtlanmış özelliklerle varsayımsal çözümleri birbirinden ayırmak özellikle önemlidir.</p>
+
 <h2>Sonuç</h2>
 <p>Antikythera Mekanizması, Helenistik dünyanın yalnızca teorik astronomi üretmediğini, bu bilgiyi hassas metal parçalarına ve işleyen bir hesaplama sistemine dönüştürebildiğini kanıtlar. Gök hareketlerini dişli oranlarıyla temsil eden aygıt, bilim tarihi ile mühendislik tarihinin kesişim noktasında durur. Onu önemli yapan yalnızca yaşı değil, antik teknolojiye ilişkin beklentilerimizi kökten değiştirmiş olmasıdır.</p>
 
