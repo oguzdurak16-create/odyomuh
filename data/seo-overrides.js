@@ -1,4 +1,4 @@
-const UPDATED_AT = '2026-08-03T07:00:00.000Z';
+const UPDATED_AT = '2026-08-09T06:10:00.000Z';
 
 export const contentOverrides = {
   '/2025/11/anunnakiler-kimdir-mitolojik-kokenlerden-bilimsel-konsensuse-kadar-kapsamli-rehber.html': {
@@ -84,6 +84,14 @@ export const contentOverrides = {
     metaDescription: 'Sümer Kral Listesi’nde krallar neden binlerce yıl yaşamış görünür? 28.800 yıllık hükümdarlıklar, sayı sistemi, mitoloji ve tarihsel kanıtlar.',
     updated: UPDATED_AT,
     searchAliases: ['sümer kralları kaç yıl yaşadı', 'sümer kral listesi', '28800 yıl yaşayan kral', 'sümer kralları gerçek mi'],
+  },
+  '/en/how-cuneiform-was-deciphered-behistun-inscription': {
+    seoTitle: 'Behistun Inscription: How Cuneiform Was Deciphered',
+    metaDescription: 'How was cuneiform deciphered? See how the multilingual Behistun Inscription helped Rawlinson and other scholars unlock Old Persian and Mesopotamian cuneiform.',
+    description: 'A concise history of how the multilingual Behistun Inscription became a key to deciphering cuneiform writing and comparing Old Persian, Elamite and Babylonian texts.',
+    updated: UPDATED_AT,
+    searchAliases: ['behistun inscription decipherment cuneiform', 'british museum behistun inscription decipherment cuneiform', 'how cuneiform was deciphered', 'behistun inscription cuneiform'],
+    introHtml: `<div class="odyomuh-note search-intent-summary"><strong>Quick answer:</strong> The Behistun Inscription was crucial because the same royal message appeared in multiple cuneiform languages, giving scholars a comparative key for decipherment. For the next step, see <a href="/en/how-sumerian-tablets-are-read-and-translated">how Sumerian tablets are read and translated</a>.</div>`,
   },
   '/en/sunni-shia-difference-history-beliefs-and-practices': {
     seoTitle: 'Sunni vs Shia: Key Differences, History and Beliefs',
