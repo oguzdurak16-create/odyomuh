@@ -31,9 +31,9 @@ export const contentOverrides = {
   },
   '/2025/10/antik-uygarliklarin-kaybolan-teknolojileri-modern-dunyaya-isik-tutan-sirlar.html': {
     title: 'Kaybolan Antik Teknolojiler: Kitaplar, Kanıtlar ve Gerçek Örnekler',
-    seoTitle: 'Kaybolan Antik Teknolojiler: Kitap, Kanıt ve Gerçek Örnekler',
+    seoTitle: 'Kaybolan Antik Teknolojiler Kitabı: Kanıtlar ve Gerçek Örnekler',
     description: 'Kaybolan antik teknolojiler hakkında öne çıkan kitapları, Antikythera mekanizması, Roma betonu ve antik mühendislik gibi gerçek örnekleri iddialardan ayırarak inceleyin.',
-    metaDescription: 'Kaybolan antik teknolojiler kitabı ve gerçek örnekleri: Antikythera mekanizması, Roma betonu, antik mühendislik, kanıtlar ve abartılı iddialar.',
+    metaDescription: 'Kaybolan antik teknolojiler kitabı arayanlar için: Antikythera, Roma betonu ve antik mühendislik örneklerini; güvenilir kaynakları ve abartılı iddiaları ayırın.',
     updated: UPDATED_AT,
     searchAliases: ['kaybolan antik teknolojiler kitap', 'antik teknolojiler', 'kayıp antik teknoloji', 'antik uygarlıkların teknolojileri'],
     introHtml: `<div class="odyomuh-note search-intent-summary"><strong>Kitap arayanlar için:</strong> “Kaybolan antik teknolojiler” ifadesi tek bir akademik kitap adı olmaktan çok, antik mühendislik ve kayıp bilgi temalı yayınlar için kullanılan genel bir aramadır. Bu dosya gerçek arkeolojik örnekleri, popüler iddiaları ve güvenilir okuma başlangıçlarını ayırır. Benzer antik kültür ve sembol içerikleri için <a href="/2025/12/ongun-turk-boylarinin-kutsal-damgalari-ve-totem-hayvanlari.html">Ongun ve Türk boylarının kutsal sembolleri</a> yazısına geçebilirsiniz.</div>`,
