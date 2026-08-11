@@ -34,7 +34,7 @@ function resolvedPrimaryPath(post, locale = '') {
 }
 
 function hasEmbeddedSources(html = '') {
-  const sourceSection = String(html).match(/<h2[^>]*>\s*(?:Kaynakça|References)\s*<\/h2>([\s\S]*?)(?=<h2|$)/i)?.[1] || '';
+  const sourceSection = String(html).match(/<h2[^>]*>\s*(?:Kaynakça|References|Sources)\s*<\/h2>([\s\S]*?)(?=<h2|$)/i)?.[1] || '';
   return (sourceSection.match(/<li\b/gi) || []).length >= 2;
 }
 
