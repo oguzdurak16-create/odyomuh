@@ -1,4 +1,4 @@
-const UPDATED_AT = '2026-08-09T06:10:00.000Z';
+const UPDATED_AT = '2026-08-11T06:30:00.000Z';
 
 export const contentOverrides = {
   '/2025/11/anunnakiler-kimdir-mitolojik-kokenlerden-bilimsel-konsensuse-kadar-kapsamli-rehber.html': {
@@ -84,6 +84,15 @@ export const contentOverrides = {
     metaDescription: 'Sümer Kral Listesi’nde krallar neden binlerce yıl yaşamış görünür? 28.800 yıllık hükümdarlıklar, sayı sistemi, mitoloji ve tarihsel kanıtlar.',
     updated: UPDATED_AT,
     searchAliases: ['sümer kralları kaç yıl yaşadı', 'sümer kral listesi', '28800 yıl yaşayan kral', 'sümer kralları gerçek mi'],
+  },
+  '/2026/06/1518-dans-salgini-strasbourg-halki-neden-dans-etti.html': {
+    title: '1518 Dans Salgını: Strasbourg’da İnsanlar Neden Dans Etti?',
+    seoTitle: '1518 Dans Salgını: Strasbourg’da Ne Oldu, Neden Dans Ettiler?',
+    description: '1518 Dans Salgını nedir? Strasbourg’da yüzlerce kişinin günlerce dans etmesiyle anılan olayın tarihsel kayıtlarını, olası nedenlerini ve efsanelerden ayrılan kanıtları inceleyin.',
+    metaDescription: '1518 Dans Salgını: Strasbourg’da insanlar neden durmadan dans etti? Tarihsel kayıtlar, olası nedenler, toplumsal stres teorisi ve yanlış bilinenler.',
+    updated: UPDATED_AT,
+    searchAliases: ['1518 dans salgını', '1518 dancing plague', 'strasbourg dans salgını', 'dans vebası 1518', 'insanlar neden dans etti 1518'],
+    introHtml: `<div class="odyomuh-note search-intent-summary"><strong>Kısa cevap:</strong> 1518’de Strasbourg’da başlayan toplu dans olayı tarihsel kayıtlarda yer alır; ancak tek ve kesin bir neden kanıtlanmış değildir. Modern yorumlar yoğun toplumsal stres, inançlar ve psikojenik etkenleri tartışır. Dönemin daha geniş çerçevesi için <a href="/p/tarih-kronolojisi.html">dünya tarihi kronolojisine</a> geçebilirsiniz.</div>`,
   },
   '/en/how-cuneiform-was-deciphered-behistun-inscription': {
     seoTitle: 'Behistun Inscription: How Cuneiform Was Deciphered',
