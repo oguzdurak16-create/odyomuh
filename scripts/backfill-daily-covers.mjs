@@ -21,10 +21,15 @@ function pointerForDate(source, date) {
 }
 
 function imagePaths(source) {
+  const sharedImagePath = source.match(/const\s+imagePath\s*=\s*['"]([^'"]+)['"]/)?.[1] || null;
+
   const readObjectImage = (objectName) => {
-    const match = source.match(new RegExp(`const\\s+${objectName}\\s*=\\s*\\{[\\s\\S]*?\\n\\s*image:\\s*['\"]([^'\"]+)['\"]`));
-    return match?.[1] || null;
+    const pattern = new RegExp(`const\\s+${objectName}\\s*=\\s*\\{[\\s\\S]*?\\bimage:\\s*(?:['\"]([^'\"]+)['\"]|imagePath)`);
+    const match = source.match(pattern);
+    if (!match) return null;
+    return match[1] || sharedImagePath;
   };
+
   return {
     turkish: readObjectImage('turkishPost'),
     english: readObjectImage('englishPost')
@@ -96,7 +101,7 @@ for (const item of datedFiles) {
   const images = imagePaths(source);
 
   if (!images.turkish || !images.english) {
-    throw new Error(`${item.name} does not contain quoted Turkish and English image paths.`);
+    throw new Error(`${item.name} does not contain resolvable Turkish and English image paths.`);
   }
   if (images.turkish !== images.english) {
     throw new Error(`${item.name} uses different covers for the same bilingual article pair.`);
