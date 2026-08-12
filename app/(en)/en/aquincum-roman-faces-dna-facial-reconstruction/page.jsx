@@ -4,13 +4,15 @@ import { baseUrl } from '../../../site-data';
 
 const post = dailyEnglishPosts.find((item) => item.id === 'en-daily-20260720-aquincum-faces');
 const siteUrl = baseUrl || 'https://www.odyomuh.net';
+const seoTitle = 'Aquincum Museum Roman Faces: DNA Facial Reconstruction';
+const seoDescription = 'See how Roman-era faces from Aquincum in Budapest were reconstructed using ancient DNA, archaeology and forensic facial reconstruction evidence.';
 
 export const metadata = {
-  title: post.title,
-  description: post.description,
+  title: seoTitle,
+  description: seoDescription,
   alternates: { canonical: post.primaryPath, languages: { en: post.primaryPath, 'tr-TR': post.turkishPath, 'x-default': post.primaryPath } },
-  openGraph: { type: 'article', locale: 'en_US', title: post.title, description: post.description, url: `${siteUrl}${post.primaryPath}`, images: [{ url: post.image, width: 1672, height: 941, alt: post.title }] },
-  twitter: { card: 'summary_large_image', title: post.title, description: post.description, images: [post.image] },
+  openGraph: { type: 'article', locale: 'en_US', title: seoTitle, description: seoDescription, url: `${siteUrl}${post.primaryPath}`, images: [{ url: post.image, width: 1672, height: 941, alt: post.title }] },
+  twitter: { card: 'summary_large_image', title: seoTitle, description: seoDescription, images: [post.image] },
 };
 
 export default function Page() {
