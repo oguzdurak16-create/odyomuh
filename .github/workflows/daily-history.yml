@@ -2,7 +2,8 @@ name: Daily Bilingual History
 
 on:
   schedule:
-    - cron: '5 5 * * *'
+    # Start early enough for text + unique cover + audit to finish before the 08:00 TR verification window.
+    - cron: '15 3 * * *'
   workflow_dispatch:
     inputs:
       force:
