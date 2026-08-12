@@ -52,9 +52,23 @@ function cleanSlug(value = '') {
 }
 
 function updateImageField(source, objectName, publicPath) {
-  const pattern = new RegExp(`(const\\s+${objectName}\\s*=\\s*\\{[\\s\\S]*?\\n\\s*image:\\s*)([^,\\n]+)(,)`);
-  if (!pattern.test(source)) throw new Error(`Could not find image field for ${objectName}.`);
-  return source.replace(pattern, `$1'${publicPath}'$3`);
+  const objectStart = new RegExp(`const\\s+${objectName}\\s*=\\s*\\{`);
+  const startMatch = objectStart.exec(source);
+  if (!startMatch) throw new Error(`Could not find object ${objectName}.`);
+
+  const objectStartIndex = startMatch.index;
+  const rest = source.slice(objectStartIndex + startMatch[0].length);
+  const nextObjectMatch = /\nconst\s+[A-Za-z_$][\w$]*\s*=\s*\{/.exec(rest);
+  const objectEndIndex = nextObjectMatch
+    ? objectStartIndex + startMatch[0].length + nextObjectMatch.index
+    : source.length;
+
+  const objectSource = source.slice(objectStartIndex, objectEndIndex);
+  const imagePattern = /(\n\s*image:\s*)([^,\n]+)(,)/;
+  if (!imagePattern.test(objectSource)) throw new Error(`Could not find image field for ${objectName}.`);
+
+  const updatedObject = objectSource.replace(imagePattern, `$1'${publicPath}'$3`);
+  return source.slice(0, objectStartIndex) + updatedObject + source.slice(objectEndIndex);
 }
 
 async function fileExists(filePath) {
