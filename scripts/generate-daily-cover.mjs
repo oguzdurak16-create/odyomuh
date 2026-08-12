@@ -64,7 +64,7 @@ function updateImageField(source, objectName, publicPath) {
     : source.length;
 
   const objectSource = source.slice(objectStartIndex, objectEndIndex);
-  const imagePattern = /(\n\s*image:\s*)([^,\n]+)(,)/;
+  const imagePattern = /(\bimage:\s*)([^,\n]+)(,)/;
   if (!imagePattern.test(objectSource)) throw new Error(`Could not find image field for ${objectName}.`);
 
   const updatedObject = objectSource.replace(imagePattern, `$1'${publicPath}'$3`);
