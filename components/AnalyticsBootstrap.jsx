@@ -5,8 +5,33 @@ import { usePathname } from 'next/navigation';
 
 const MEASUREMENT_ID = 'G-S7Z8Q4R0HM';
 const CONSENT_KEY = 'odyomuh-cookie-consent';
+const INTERNAL_TRAFFIC_KEY = 'odyomuh-internal-traffic';
+const INTERNAL_QUERY_KEY = 'odyomuh_internal';
+let lastPageViewUrl = '';
+let lastPageViewAt = 0;
+
+function isInternalVisit() {
+  const host = window.location.hostname.toLowerCase();
+  const url = new URL(window.location.href);
+  const mode = url.searchParams.get(INTERNAL_QUERY_KEY);
+
+  if (mode === '1') window.localStorage.setItem(INTERNAL_TRAFFIC_KEY, '1');
+  if (mode === '0') window.localStorage.removeItem(INTERNAL_TRAFFIC_KEY);
+
+  if (mode === '1' || mode === '0') {
+    url.searchParams.delete(INTERNAL_QUERY_KEY);
+    window.history.replaceState({}, '', `${url.pathname}${url.search}${url.hash}`);
+  }
+
+  return window.localStorage.getItem(INTERNAL_TRAFFIC_KEY) === '1'
+    || host === 'localhost'
+    || host === '127.0.0.1'
+    || host.endsWith('.vercel.app');
+}
 
 function ensureGtag() {
+  if (isInternalVisit()) return false;
+
   window.dataLayer = window.dataLayer || [];
   window.gtag = window.gtag || function gtag() { window.dataLayer.push(arguments); };
 
@@ -31,6 +56,8 @@ function ensureGtag() {
     send_page_view: false,
     anonymize_ip: true,
   });
+
+  return true;
 }
 
 function syncConsent() {
@@ -44,9 +71,17 @@ function syncConsent() {
 }
 
 function sendPageView() {
+  if (isInternalVisit()) return;
+
+  const currentUrl = window.location.href;
+  const now = Date.now();
+  if (currentUrl === lastPageViewUrl && now - lastPageViewAt < 2000) return;
+
+  lastPageViewUrl = currentUrl;
+  lastPageViewAt = now;
   window.gtag?.('event', 'page_view', {
     page_title: document.title,
-    page_location: window.location.href,
+    page_location: currentUrl,
     page_path: `${window.location.pathname}${window.location.search}`,
   });
 }
@@ -57,10 +92,11 @@ export default function AnalyticsBootstrap() {
 
   useEffect(() => {
     if (!initialized.current) {
-      ensureGtag();
       initialized.current = true;
+      if (!ensureGtag()) return undefined;
     }
 
+    if (isInternalVisit()) return undefined;
     syncConsent();
     const timer = window.setTimeout(sendPageView, 250);
 
