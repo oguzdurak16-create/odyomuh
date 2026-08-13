@@ -1,4 +1,4 @@
-const UPDATED_AT = '2026-08-11T06:30:00.000Z';
+const UPDATED_AT = '2026-08-13T12:00:00.000Z';
 
 export const contentOverrides = {
   '/2025/11/anunnakiler-kimdir-mitolojik-kokenlerden-bilimsel-konsensuse-kadar-kapsamli-rehber.html': {
@@ -61,6 +61,19 @@ export const contentOverrides = {
       { question: 'Türk boylarının ongunları hangileridir?', answer: 'Kaynaklarda kartal, şahin, doğan ve başka yırtıcı kuşlar farklı boylarla ilişkilendirilir; ancak eşleştirmeler kaynak ve döneme göre değişebilir.' },
     ],
   },
+  '/2026/07/sak-tahn-waax-maya-matematikcisi-gezegen-formulu.html': {
+    title: 'Sak Tahn Waax Kimdir? Maya Matematikçisi ve Gezegen Formülü',
+    seoTitle: 'Sak Tahn Waax Kimdir? Maya Matematikçisi ve Xultun Formülü',
+    description: 'Sak Tahn Waax kimdi? Xultun’da bulunan ve MS 781’e tarihlenen Maya formülünün Venüs, Mars ve takvim döngülerini nasıl birleştirdiğini inceleyin.',
+    metaDescription: 'Sak Tahn Waax kimdir? Adı Xultun’da okunan Maya matematikçisi, MS 781 tarihli gezegen formülü ve Venüs–Mars takvim hesabı.',
+    updated: UPDATED_AT,
+    searchAliases: ['sak tahn waax', 'sak tahn waax kimdir', 'maya matematikçisi', 'xultun matematikçi', 'beyaz göğüslü tilki maya', 'maya astronomu sak tahn waax'],
+    faq: [
+      { question: 'Sak Tahn Waax kimdir?', answer: 'Sak Tahn Waax, Guatemala’daki Xultun’da bulunan MS 781 tarihli bir hesap metninde adı okunan Klasik Maya dönemi matematikçi-astronomudur.' },
+      { question: 'Sak Tahn Waax neyi hesapladı?', answer: 'Metin 19 olarak adlandırılan hesap; 2.920 günlük yapı içinde Venüs, Mars ve Maya takvim döngüleri arasındaki ilişkileri düzenler.' },
+      { question: 'Sak Tahn Waax adı nerede bulundu?', answer: 'Adı, Xultun’daki 10K-2 yapısının duvarında bulunan matematiksel metnin sonunda “Sak Tahn Waax böyle söylüyor” anlamındaki ifadede tespit edildi.' },
+    ],
+  },
   '/p/tarih-kronolojisi.html': {
     title: 'Dünya Tarihi Kronolojisi: Tarih Öncesinden Günümüze',
     seoTitle: 'Dünya Tarihi Kronolojisi: Çağlar ve Önemli Olaylar',
@@ -107,7 +120,36 @@ export const contentOverrides = {
     metaDescription: 'Sunni vs Shia explained: how the split began, core beliefs and practices, major branches, Iran’s Shia history and where communities live today.',
     description: 'A clear evidence-based explanation of the Sunni–Shia split, beliefs and practices, major branches, Iran’s Shia history and modern geography.',
     updated: UPDATED_AT,
-    searchAliases: ['sunni and shia', 'shia sunni', 'sunni shia split', 'what is sunni and shia in islam', 'origin of shia and sunni'],
+    searchAliases: ['sunni and shia', 'shia sunni', 'sunni shia split', 'what is sunni and shia in islam', 'origin of shia and sunni', 'difference between sunni and shia', 'sunni vs shia beliefs'],
+    faq: [
+      { question: 'What is the main difference between Sunni and Shia Islam?', answer: 'The historical division began with disagreement over leadership after Muhammad’s death. Sunni traditions accepted leadership through communal selection, while Shia traditions emphasized Ali and the Prophet’s family.' },
+      { question: 'Do Sunni and Shia Muslims share the same core beliefs?', answer: 'Yes. Both affirm one God, the Quran, Muhammad’s prophethood, prayer, fasting, charity, pilgrimage and the afterlife, while differing in authority, law and some ritual practices.' },
+      { question: 'Why is Karbala important in Shia Islam?', answer: 'The killing of Husayn at Karbala in 680 became central to Shia memory, religious identity and Ashura commemoration.' },
+    ],
+  },
+  '/en/strait-of-hormuz-and-bab-el-mandeb-explained': {
+    seoTitle: 'Strait of Hormuz and Bab el-Mandeb: Map, Trade and Risk',
+    metaDescription: 'Where are the Strait of Hormuz and Bab el-Mandeb? See how the two chokepoints affect oil, LNG, Suez shipping, freight costs and global trade.',
+    description: 'A map-led explanation of where the Strait of Hormuz and Bab el-Mandeb are, what passes through them and why disruption affects energy and global shipping.',
+    updated: UPDATED_AT,
+    searchAliases: ['strait of hormuz', 'bab el mandeb', 'strait of hormuz map', 'why is the strait of hormuz important', 'bab el mandeb map', 'global shipping chokepoints'],
+    faq: [
+      { question: 'Where is the Strait of Hormuz?', answer: 'The Strait of Hormuz lies between Iran and Oman and connects the Persian Gulf with the Gulf of Oman and the Arabian Sea.' },
+      { question: 'Where is Bab el-Mandeb?', answer: 'Bab el-Mandeb lies between Yemen and the Horn of Africa, connecting the Gulf of Aden with the Red Sea and the Suez route.' },
+      { question: 'Why do these waterways matter?', answer: 'Hormuz is central to Gulf oil and LNG exports, while Bab el-Mandeb links the Indian Ocean to the Red Sea and Suez Canal. Disruption can raise fuel, insurance and freight costs.' },
+    ],
+  },
+  '/en/mohenjo-daro-what-happened-to-the-indus-city': {
+    seoTitle: 'Mohenjo-daro: What Happened to the Indus Valley City?',
+    metaDescription: 'What happened to Mohenjo-daro? Examine river change, monsoon weakening and urban decline—and why the ancient nuclear explosion claim has no evidence.',
+    description: 'Mohenjo-daro’s decline was gradual and regional. Archaeology points to environmental and economic change, not a proven invasion or ancient nuclear explosion.',
+    updated: UPDATED_AT,
+    searchAliases: ['what happened to mohenjo daro', 'mohenjo daro nuclear theory', 'why was mohenjo daro abandoned', 'indus valley civilization collapse'],
+    faq: [
+      { question: 'What happened to Mohenjo-daro?', answer: 'The city changed and declined gradually as river systems, monsoon patterns, trade and regional settlement networks shifted; no single destruction event explains the evidence.' },
+      { question: 'Was Mohenjo-daro destroyed by a nuclear explosion?', answer: 'No archaeological destruction layer, radiation pattern or other physical evidence supports an ancient nuclear explosion at Mohenjo-daro.' },
+      { question: 'Why was Mohenjo-daro abandoned?', answer: 'Researchers consider interacting environmental, hydrological and economic changes rather than one proven invasion or catastrophe.' },
+    ],
   },
   '/en/rongorongo-easter-islands-undeciphered-script': {
     seoTitle: 'Rongorongo: Why Easter Island’s Script Is Still Undeciphered',
@@ -128,6 +170,7 @@ function cleanLegacyNoise(html = '') {
     .replace(/Yükleniyor\.\.\.\s*Son güncelleme:[^<\n]*/gi, '')
     .replace(/<p[^>]*>\s*Yazan:\s*ODYOMUH\s*<\/p>/gi, '')
     .replace(/<div[^>]*>\s*Yükleniyor\.\.\.\s*Son güncelleme:[\s\S]*?<\/div>/gi, '')
+    .replace(/<p>For search readers, the key is to keep chronology and institutional responsibility visible\.[\s\S]*?prevents current conflict language from turning into ethnic or religious blame\.<\/p>/gi, '')
     .trim();
 }
 
