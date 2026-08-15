@@ -1,4 +1,4 @@
-import { dailyTurkishPosts, dailyEnglishPosts } from './current-updates-2026-08-12.js';
+import { dailyTurkishPosts, dailyEnglishPosts } from './current-updates-2026-08-15.js';
 
 export const currentTurkishPosts = dailyTurkishPosts;
 export const currentEnglishPosts = dailyEnglishPosts;
@@ -11,5 +11,3 @@ function newestDate(items = []) {
 }
 
 export const currentUpdateDate = newestDate([...currentTurkishPosts, ...currentEnglishPosts]);
-
-// Daily content verified: 2026-08-12
