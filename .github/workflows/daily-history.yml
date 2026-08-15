@@ -43,7 +43,7 @@ env:
 jobs:
   generate-and-publish:
     runs-on: ubuntu-24.04
-    timeout-minutes: 75
+    timeout-minutes: 90
     env:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       OPENAI_TEXT_MODEL: ${{ github.event_name == 'workflow_dispatch' && inputs.text_model || 'gpt-5-mini' }}
@@ -83,7 +83,24 @@ jobs:
           fi
 
       - name: Generate Turkish and English history articles
-        run: node scripts/generate-daily-history.mjs
+        shell: bash
+        run: |
+          set +e
+          node scripts/generate-daily-history.mjs 2>&1 | tee /tmp/daily-history.log
+          GENERATION_STATUS=${PIPESTATUS[0]}
+          set -e
+
+          if [ "$GENERATION_STATUS" -eq 0 ]; then
+            exit 0
+          fi
+
+          if grep -q "below 1000 words" /tmp/daily-history.log; then
+            echo "::warning::gpt-5-mini missed the article-length quality gate; retrying the same native generator with gpt-5.1."
+            OPENAI_TEXT_MODEL=gpt-5.1 OPENAI_REASONING_EFFORT=medium node scripts/generate-daily-history.mjs
+            exit 0
+          fi
+
+          exit "$GENERATION_STATUS"
 
       - name: Generate independent AI cover
         run: node scripts/generate-daily-cover.mjs
