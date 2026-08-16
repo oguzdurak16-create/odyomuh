@@ -39,6 +39,12 @@
   background: #251a13 url('/generated-history/mythic-temple.webp') center / cover no-repeat !important;
 }
 
+/* Safari/iOS can retain the earlier failed response for this generated cover.
+   Keep the same Hattusa-specific asset, but force a fresh request and hide the stale img node. */
+.clean-article-image[href="/2026/08/hattusa-hitit-civi-yazisi-arsivleri.html"] {
+  background: #251a13 url('/generated-daily/2026-08-11-hattusa-hittite-cuneiform-archives.webp?v=20260816') center / cover no-repeat !important;
+}
+
 .clean-lead[href="/2026/07/mljet-bizans-batigi-altin-hazineleri.html"] > img,
 .clean-article-image[href="/2026/07/pompeii-duvar-yazilari-antik-roma-gundelik-hayat.html"] > img,
 .clean-article-image[href="/2026/07/catalhoyuk-evleri-sokaksiz-neolitik-kent.html"] > img,
@@ -48,6 +54,7 @@
 .clean-article-image[href="/2026/07/iran-amerika-savasi-2026-ne-oluyor-hurmuz-neden-onemli.html"] > img,
 .clean-article-image[href="/2026/06/sumer-kral-listesi-28-800-yil-yasayan-krallar-gercek-mi.html"] > img,
 .clean-article-image[href="/2025/12/feodalite-nedir-feodal-sistem-ve-ozellikleri-ders-notu.html"] > img,
-.clean-article-image[href="/2025/11/akad-ve-babil-de-anunnaki-igigi-ayrimi-ve-yeralti-tanrilari.html"] > img {
+.clean-article-image[href="/2025/11/akad-ve-babil-de-anunnaki-igigi-ayrimi-ve-yeralti-tanrilari.html"] > img,
+.clean-article-image[href="/2026/08/hattusa-hitit-civi-yazisi-arsivleri.html"] > img {
   display: none !important;
 }
