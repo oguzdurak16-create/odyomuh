@@ -11,7 +11,7 @@ import { englishPathForTurkishPath } from '../../../data/en-posts';
 import { currentTurkishPosts } from '../../../data/current-updates';
 import { applyContentOverride } from '../../../data/seo-overrides';
 import { allTurkishPosts } from '../../../lib/content-collections';
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 
 const siteUrl = baseUrl || 'https://www.odyomuh.net';
 const TIMELINE_PATH = '/p/tarih-kronolojisi.html';
@@ -128,8 +128,10 @@ export async function generateMetadata({ params }) {
 
 export default async function ContentPage({ params }) {
   const resolvedParams = await params;
-  const item = applyContentOverride(findRoutableByPath(pathFromParams(resolvedParams)));
+  const requestedPath = pathFromParams(resolvedParams);
+  const item = applyContentOverride(findRoutableByPath(requestedPath));
   if (!item) notFound();
+  if (requestedPath !== item.primaryPath) permanentRedirect(item.primaryPath);
 
   const url = `${siteUrl}${item.primaryPath}`;
   const description = metaDescription(item.metaDescription || item.description);
@@ -243,7 +245,7 @@ export default async function ContentPage({ params }) {
       {related.length ? (
         <section className="related-posts-widget" aria-label="Benzer yazılar">
           <h2 className="related-posts-title">Bu konuyla ilgili devam yazıları</h2>
-          <div className="related-posts-grid">
+          <div className="related-posts-grid related-posts-grid">
             {related.map((post) => (
               <a className="related-post-card" href={post.primaryPath} key={post.id}>
                 <div className="related-post-image">{post.image ? <img src={post.image} alt={post.title} width="1672" height="941" loading="lazy" decoding="async" /> : null}</div>
