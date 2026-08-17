@@ -1,4 +1,4 @@
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import { englishPosts, findEnglishPost } from '../../../../data/en-posts';
 import { englishPolicyPages, findEnglishPolicyPage } from '../../../../data/en-pages';
 import { findEnglishTopic } from '../../../../data/en-topics';
@@ -128,8 +128,11 @@ export default async function EnglishDynamicPage({ params }) {
   const policyPage = findEnglishPolicyPage(slug);
   if (policyPage) return <EnglishPolicyPage page={policyPage} />;
 
+  const requestedPath = `/en/${decodeURIComponent(String(slug || '')).replace(/^\/+|\/+$/g, '')}`;
   const post = applyContentOverride(findEnglishContent(slug));
   if (!post) notFound();
+  if (requestedPath !== post.primaryPath) permanentRedirect(post.primaryPath);
+
   const topic = findEnglishTopic(post.topic);
   const related = allEnglishPosts()
     .filter((item) => item.id !== post.id)
