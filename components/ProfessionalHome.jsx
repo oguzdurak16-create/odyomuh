@@ -64,7 +64,14 @@ export default function ProfessionalHome() {
   const articles = uniquePosts([...currentTurkishPosts, ...archive]);
   const lead = articles[0];
   const latest = articles.slice(0, 6);
-  const selected = articles.slice(6, 9);
+  const priorityPaths = [
+    '/2025/10/antik-uygarliklarin-kaybolan-teknolojileri-modern-dunyaya-isik-tutan-sirlar.html',
+    '/2025/12/feodalite-nedir-feodal-sistem-ve-ozellikleri-ders-notu.html',
+    '/2025/12/ongun-turk-boylarinin-kutsal-damgalari-ve-totem-hayvanlari.html',
+    '/2026/06/1518-dans-salgini-strasbourg-halki-neden-dans-etti.html',
+    '/2025/11/anunnakiler-kimdir-mitolojik-kokenlerden-bilimsel-konsensuse-kadar-kapsamli-rehber.html',
+  ];
+  const selected = priorityPaths.map((path) => articles.find((post) => post.primaryPath === path)).filter(Boolean);
 
   return (
     <div className="clean-home">
