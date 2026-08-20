@@ -10,6 +10,14 @@ function formatDate(value) {
 
 export default function ProfessionalEnglishHome() {
   const allPosts = allEnglishPosts();
+  const searchFocusPaths = [
+    '/en/how-cuneiform-was-deciphered-behistun-inscription',
+    '/en/who-were-the-anunnaki-mesopotamian-gods-explained',
+    '/en/sunni-shia-difference-history-beliefs-and-practices',
+    '/en/strait-of-hormuz-and-bab-el-mandeb-explained',
+    '/en/mohenjo-daro-what-happened-to-the-indus-city',
+  ];
+  const searchFocus = searchFocusPaths.map((path) => allPosts.find((post) => post.primaryPath === path)).filter(Boolean);
   const recentResearch = [...currentEnglishPosts].sort((a, b) => String(b.published || '').localeCompare(String(a.published || '')));
   const lead = recentResearch[0] || allPosts[0];
   const recentIds = new Set(recentResearch.map((post) => post.id));
@@ -76,6 +84,16 @@ export default function ProfessionalEnglishHome() {
           })}
         </div>
       </section>
+
+      {searchFocus.length ? (
+        <section className="english-stories-section" aria-labelledby="essential-explainers-title">
+          <div className="home-section-heading">
+            <div><p className="eyebrow">Start with the evidence</p><h2 id="essential-explainers-title">Essential explainers</h2></div>
+            <a className="section-text-link" href="/en/archive">View complete archive →</a>
+          </div>
+          <div className="english-post-grid">{searchFocus.map((post) => <EnglishPostCard post={post} key={post.id} />)}</div>
+        </section>
+      ) : null}
 
       <section className="english-stories-section">
         <div className="home-section-heading">
