@@ -1,0 +1,173 @@
+name: One-time Daily Backfill 2026-08-27 28
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/backfill-daily-2026-08-27-28.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: one-time-daily-backfill-2026-08-27-28
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_TEXT_MODEL: gpt-5-mini
+      OPENAI_REASONING_EFFORT: low
+      OPENAI_IMAGE_MODEL: gpt-image-1
+      OPENAI_IMAGE_SIZE: 1536x1024
+      OPENAI_IMAGE_QUALITY: medium
+      OPENAI_IMAGE_FORMAT: webp
+      OPENAI_IMAGE_COMPRESSION: '84'
+      FORCE_REGENERATE: 'false'
+
+    steps:
+      - name: Checkout latest main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Node.js 24
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: package.json
+          package-manager-cache: false
+
+      - name: Verify backfill preconditions
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f data/current-updates-2026-08-26.js
+          test -f data/current-updates-2026-08-29.js
+          test ! -f data/current-updates-2026-08-27.js
+          test ! -f data/current-updates-2026-08-28.js
+          grep -q "current-updates-2026-08-29.js" data/current-updates.js
+          grep -q "current-updates-2026-08-26.js" data/current-updates-2026-08-29.js
+          cp data/current-updates.js /tmp/current-updates-original.js
+
+      - name: Apply economical generation limits
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('scripts/generate-daily-history.mjs')
+          source = path.read_text()
+          replacements = {
+              'const MAX_API_ATTEMPTS = 3;': 'const MAX_API_ATTEMPTS = 2;',
+              'const MAX_CONTENT_ATTEMPTS = 2;': 'const MAX_CONTENT_ATTEMPTS = 1;',
+              'max_output_tokens: 20_000,': 'max_output_tokens: 10_000,',
+              "search_context_size: 'high',": "search_context_size: 'medium',",
+              'return status === 408 || status === 409 || status === 429 || status >= 500;': 'return status === 408 || status === 409 || status >= 500;',
+          }
+          for old, new in replacements.items():
+              if old not in source:
+                  raise SystemExit(f'Economy patch target missing: {old}')
+              source = source.replace(old, new)
+          path.write_text(source)
+          PY
+          node --check scripts/generate-daily-history.mjs
+          node --check scripts/generate-daily-cover.mjs
+
+      - name: Generate 27 August package and unique cover
+        shell: bash
+        run: |
+          cat > data/current-updates.js <<'EOF'
+          import { dailyTurkishPosts, dailyEnglishPosts } from './current-updates-2026-08-26.js';
+
+          export const currentTurkishPosts = dailyTurkishPosts;
+          export const currentEnglishPosts = dailyEnglishPosts;
+
+          function newestDate(items = []) {
+            return items
+              .map((item) => item.updated || item.published)
+              .filter(Boolean)
+              .sort((a, b) => String(b).localeCompare(String(a)))[0] || null;
+          }
+
+          export const currentUpdateDate = newestDate([...currentTurkishPosts, ...currentEnglishPosts]);
+          EOF
+          CONTENT_DATE=2026-08-27 node scripts/generate-daily-history.mjs
+          node scripts/generate-daily-cover.mjs
+
+      - name: Generate 28 August package and unique cover
+        shell: bash
+        run: |
+          CONTENT_DATE=2026-08-28 node scripts/generate-daily-history.mjs
+          node scripts/generate-daily-cover.mjs
+
+      - name: Reconnect 29 August and restore production pointer
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('data/current-updates-2026-08-29.js')
+          source = path.read_text()
+          old = "from './current-updates-2026-08-26.js';"
+          new = "from './current-updates-2026-08-28.js';"
+          if old not in source:
+              raise SystemExit('29 August chain target was not the expected 26 August module')
+          path.write_text(source.replace(old, new, 1))
+          PY
+          cp /tmp/current-updates-original.js data/current-updates.js
+
+      - name: Verify package chain and unique WebP files
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          expected_previous = {
+              '2026-08-27': '2026-08-26',
+              '2026-08-28': '2026-08-27',
+              '2026-08-29': '2026-08-28',
+          }
+          for date, previous in expected_previous.items():
+              source = Path(f'data/current-updates-{date}.js').read_text()
+              if f"current-updates-{previous}.js" not in source:
+                  raise SystemExit(f'{date} does not import {previous}')
+
+          for date in ('2026-08-27', '2026-08-28'):
+              source = Path(f'data/current-updates-{date}.js').read_text()
+              images = re.findall(r"\bimage:\s*['\"]([^'\"]+)['\"]", source)
+              if len(images) < 2 or images[0] != images[1]:
+                  raise SystemExit(f'{date}: Turkish and English image paths differ')
+              image = images[0]
+              if not image.startswith(f'/generated-daily/{date}-') or not image.endswith('.webp'):
+                  raise SystemExit(f'{date}: invalid unique daily image path: {image}')
+              file = Path('public') / image.lstrip('/')
+              data = file.read_bytes()
+              if len(data) < 20 or data[:4] != b'RIFF' or data[8:12] != b'WEBP':
+                  raise SystemExit(f'{date}: missing or invalid WebP: {file}')
+
+          pointer = Path('data/current-updates.js').read_text()
+          if 'current-updates-2026-08-29.js' not in pointer:
+              raise SystemExit('Production pointer was not restored to 29 August')
+          PY
+
+      - name: Install and audit
+        run: |
+          npm ci
+          npm run site:audit
+          npm run content:check
+
+      - name: Commit completed backfill
+        shell: bash
+        run: |
+          set -euo pipefail
+          git checkout -- scripts/generate-daily-history.mjs
+          git config user.name "odyomuh-content-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -- data/current-updates-2026-08-27.js data/current-updates-2026-08-28.js data/current-updates-2026-08-29.js public/generated-daily
+          git diff --cached --quiet && { echo 'No backfill changes to commit'; exit 1; }
+          git commit -m "Backfill daily history 2026-08-27 and 2026-08-28"
+          git pull --rebase --autostash origin main
+          git push origin HEAD:main
