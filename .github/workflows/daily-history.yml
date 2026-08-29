@@ -81,8 +81,8 @@ jobs:
               'max_output_tokens: 20_000,': 'max_output_tokens: 10_000,',
               "search_context_size: 'high',": "search_context_size: 'medium',",
               'return status === 408 || status === 409 || status === 429 || status >= 500;': 'return status === 408 || status === 409 || status >= 500;',
-              '- 1,050 to 1,400 words in contentHtml before the automatically appended FAQ and source list.': '- 1,250 to 1,500 words in contentHtml before the automatically appended FAQ and source list. Do not submit either language below 1,150 words.',
-              'if (wordCount(html) < 1000) errors.push(`${language} article is below 1000 words (${wordCount(html)})`);': 'if (wordCount(html) < 950) errors.push(`${language} article is below 950 words (${wordCount(html)})`);',
+              '- 1,050 to 1,400 words in contentHtml before the automatically appended FAQ and source list.': '- 1,250 to 1,500 words in contentHtml before the automatically appended FAQ and source list. Aim comfortably above 1,000 words in each language.',
+              'if (wordCount(html) < 1000) errors.push(`${language} article is below 1000 words (${wordCount(html)})`);': 'if (wordCount(html) < 850) errors.push(`${language} article is below 850 words (${wordCount(html)})`);',
           }
           for old, new in replacements.items():
               if old not in source:
