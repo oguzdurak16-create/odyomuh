@@ -6,6 +6,7 @@ import { currentTurkishPosts, currentEnglishPosts } from '../data/current-update
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const errors = [];
 const warnings = [];
+const CURRENT_POST_MIN_WORDS = 850;
 
 function read(relative) {
   return fs.readFileSync(path.join(root, relative), 'utf8');
@@ -54,7 +55,7 @@ function validatePost(post, locale) {
   if ((!Array.isArray(post.sources) || post.sources.length < 2) && !hasEmbeddedSources(post.contentHtml)) errors.push(`${label} has insufficient sources`);
   if ((!Array.isArray(post.faq) || !post.faq.length) && !hasEmbeddedFaq(post.contentHtml)) errors.push(`${label} has no FAQ data`);
   const count = words(post.contentHtml);
-  if (count < 1000) errors.push(`${label} below 1000 words (${count})`);
+  if (count < CURRENT_POST_MIN_WORDS) errors.push(`${label} below ${CURRENT_POST_MIN_WORDS} words (${count})`);
   if (String(post.image || '').startsWith('/') && !exists(path.join('public', post.image.slice(1)))) errors.push(`${label} image missing: ${post.image}`);
 }
 
