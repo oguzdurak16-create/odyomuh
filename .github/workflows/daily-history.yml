@@ -23,7 +23,6 @@ on:
         type: choice
         options:
           - gpt-5-mini
-          - gpt-5.1
   push:
     branches: [main]
     paths:
@@ -46,7 +45,7 @@ jobs:
     timeout-minutes: 90
     env:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      OPENAI_TEXT_MODEL: ${{ github.event_name == 'workflow_dispatch' && inputs.text_model || 'gpt-5-mini' }}
+      OPENAI_TEXT_MODEL: gpt-5-mini
       OPENAI_REASONING_EFFORT: low
       OPENAI_IMAGE_MODEL: gpt-image-1
       OPENAI_IMAGE_SIZE: 1536x1024
@@ -69,6 +68,27 @@ jobs:
           node-version-file: package.json
           package-manager-cache: false
 
+      - name: Apply economical generation limits
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('scripts/generate-daily-history.mjs')
+          source = path.read_text()
+          replacements = {
+              'const MAX_API_ATTEMPTS = 3;': 'const MAX_API_ATTEMPTS = 2;',
+              'const MAX_CONTENT_ATTEMPTS = 2;': 'const MAX_CONTENT_ATTEMPTS = 1;',
+              'max_output_tokens: 20_000,': 'max_output_tokens: 10_000,',
+              "search_context_size: 'high',": "search_context_size: 'medium',",
+              'return status === 408 || status === 409 || status === 429 || status >= 500;': 'return status === 408 || status === 409 || status >= 500;',
+          }
+          for old, new in replacements.items():
+              if old not in source:
+                  raise SystemExit(f'Economy patch target missing: {old}')
+              source = source.replace(old, new)
+          path.write_text(source)
+          PY
+
       - name: Validate generators
         run: |
           node --check scripts/generate-daily-history.mjs
@@ -83,24 +103,7 @@ jobs:
           fi
 
       - name: Generate Turkish and English history articles
-        shell: bash
-        run: |
-          set +e
-          node scripts/generate-daily-history.mjs 2>&1 | tee /tmp/daily-history.log
-          GENERATION_STATUS=${PIPESTATUS[0]}
-          set -e
-
-          if [ "$GENERATION_STATUS" -eq 0 ]; then
-            exit 0
-          fi
-
-          if grep -q "below 1000 words" /tmp/daily-history.log; then
-            echo "::warning::gpt-5-mini missed the article-length quality gate; retrying the same native generator with gpt-5.1."
-            OPENAI_TEXT_MODEL=gpt-5.1 OPENAI_REASONING_EFFORT=medium node scripts/generate-daily-history.mjs
-            exit 0
-          fi
-
-          exit "$GENERATION_STATUS"
+        run: node scripts/generate-daily-history.mjs
 
       - name: Generate independent AI cover
         run: node scripts/generate-daily-cover.mjs
@@ -121,6 +124,7 @@ jobs:
             exit 0
           fi
 
+          git checkout -- scripts/generate-daily-history.mjs
           git config user.name "odyomuh-content-bot"
           git config user.email "actions@users.noreply.github.com"
           git add -- data/current-updates.js data/current-updates-*.js public/generated-daily
