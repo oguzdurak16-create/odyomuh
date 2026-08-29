@@ -1,3 +1,4 @@
+# One-time recovery workflow. Delete after successful backfill.
 name: One-time Daily Backfill 2026-08-27 28
 
 on:
