@@ -1,4 +1,4 @@
-import { dailyTurkishPosts as previousTurkishPosts, dailyEnglishPosts as previousEnglishPosts } from './current-updates-2026-08-26.js';
+import { dailyTurkishPosts as previousTurkishPosts, dailyEnglishPosts as previousEnglishPosts } from './current-updates-2026-08-28.js';
 
 const turkishPost = {
   id: "tr-orman-yanginlarinin-uzun-hikayesi",
