@@ -68,7 +68,7 @@ jobs:
           node-version-file: package.json
           package-manager-cache: false
 
-      - name: Apply economical generation limits
+      - name: Apply economical and editorial generation limits
         shell: bash
         run: |
           python - <<'PY'
@@ -83,11 +83,38 @@ jobs:
               'return status === 408 || status === 409 || status === 429 || status >= 500;': 'return status === 408 || status === 409 || status >= 500;',
               '- 1,050 to 1,400 words in contentHtml before the automatically appended FAQ and source list.': '- 1,250 to 1,500 words in contentHtml before the automatically appended FAQ and source list. Aim comfortably above 1,000 words in each language.',
               'if (wordCount(html) < 1000) errors.push(`${language} article is below 1000 words (${wordCount(html)})`);': 'if (wordCount(html) < 850) errors.push(`${language} article is below 850 words (${wordCount(html)})`);',
+              "text: 'You are the senior bilingual history editor and fact-checker for ODYOMUH. Use web search actively. Select a genuinely relevant current search trend, connect it to a defensible historical angle, verify claims with authoritative sources, and produce publication-ready Turkish and English long-form articles. Never invent sources, quotations, discoveries, dates or URLs.'": "text: 'You are the senior bilingual history editor and fact-checker for ODYOMUH. Use web search actively. ODYOMUH is first and foremost a history, archaeology, cultural-heritage and historical-mystery publication; current news is only a hook when the historical subject remains dominant. Verify claims with primary, official, academic, museum, university and reputable agency sources. Never use Wikipedia, other wikis, forums, social-media posts, AI-generated pages or content farms as cited sources. Never invent sources, quotations, discoveries, dates or URLs.'",
+              '2. The historical connection must be natural and substantial. Do not force a historical angle onto a celebrity scandal, live tragedy, betting topic or disposable meme.': '2. The historical connection must be natural and substantial, and the historical subject must remain the main subject of the article. Do not force a historical angle onto a celebrity scandal, live tragedy, betting topic, disposable meme, stock listing, corporate campaign, bank promotion or short-lived financial news item.',
+              '3. If none of the supplied trend candidates supports a strong article, use web search to find a currently trending archaeology discovery, historical anniversary, museum event, cultural heritage issue or major research development. Record the trend source honestly.': '3. If none of the supplied trend candidates supports a strong history-first article, use web search to find a currently trending archaeology discovery, historical anniversary, museum event, cultural heritage issue, archival finding or major research development. Prefer evergreen historical value over generic current-affairs traffic. Record the trend source honestly.',
+              '5. Use at least four distinct, working source URLs. Prefer primary excavation pages, universities, museums, government heritage bodies, peer-reviewed research and major reputable news agencies. At least two sources should be primary, official or academic whenever available.': '5. Use at least four distinct, working source URLs. Prefer primary excavation pages, universities, museums, government heritage bodies, peer-reviewed research and major reputable news agencies. At least two sources must be primary, official or academic whenever available. Do not cite Wikipedia, other wikis, forums, social media, AI-generated pages or content farms. Return clean canonical source URLs without utm_*, gclid, fbclid or similar tracking parameters.',
           }
           for old, new in replacements.items():
               if old not in source:
-                  raise SystemExit(f'Economy patch target missing: {old}')
+                  raise SystemExit(f'Generation patch target missing: {old}')
               source = source.replace(old, new)
+
+          old_safe_url = """function safeUrl(value = '') {
+            const url = new URL(String(value));
+            if (!['http:', 'https:'].includes(url.protocol)) throw new Error(`Unsupported source URL: ${value}`);
+            return url.toString();
+          }"""
+          new_safe_url = """function safeUrl(value = '') {
+            const url = new URL(String(value));
+            if (!['http:', 'https:'].includes(url.protocol)) throw new Error(`Unsupported source URL: ${value}`);
+            const host = url.hostname.toLowerCase().replace(/^www\./, '');
+            const blockedHosts = ['wikipedia.org', 'wikimedia.org', 'fandom.com'];
+            if (blockedHosts.some((blocked) => host === blocked || host.endsWith(`.${blocked}`))) {
+              throw new Error(`Blocked low-authority source URL: ${value}`);
+            }
+            for (const key of [...url.searchParams.keys()]) {
+              if (/^(utm_|gclid$|fbclid$|mc_cid$|mc_eid$)/i.test(key)) url.searchParams.delete(key);
+            }
+            url.hash = '';
+            return url.toString();
+          }"""
+          if old_safe_url not in source:
+              raise SystemExit('Source URL policy patch target missing')
+          source = source.replace(old_safe_url, new_safe_url)
           path.write_text(source)
           PY
 
