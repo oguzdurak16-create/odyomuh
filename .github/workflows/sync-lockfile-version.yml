@@ -1,0 +1,45 @@
+name: Sync lockfile version
+
+on:
+  push:
+    paths:
+      - '.github/workflows/sync-lockfile-version.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Sync package version metadata only
+        shell: python
+        run: |
+          import json
+          from pathlib import Path
+
+          package_path = Path('package.json')
+          lock_path = Path('package-lock.json')
+          package = json.loads(package_path.read_text(encoding='utf-8'))
+          lock = json.loads(lock_path.read_text(encoding='utf-8'))
+          version = package['version']
+          lock['version'] = version
+          lock.setdefault('packages', {}).setdefault('', {})['version'] = version
+          lock_path.write_text(json.dumps(lock, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
+      - name: Commit exact metadata sync
+        run: |
+          if git diff --quiet -- package-lock.json; then
+            echo "Lockfile already synchronized."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add package-lock.json
+          git commit -m "Sync package-lock version with release 2.8.0"
+          git push
