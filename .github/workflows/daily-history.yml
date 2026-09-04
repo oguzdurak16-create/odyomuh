@@ -134,8 +134,10 @@ jobs:
       - name: Generate Turkish and English history articles
         run: node scripts/generate-daily-history.mjs
 
-      - name: Validate generated source quality before cover
-        run: node scripts/check-daily-source-quality.mjs
+      - name: Validate generated text before cover
+        run: |
+          node scripts/check-daily-source-quality.mjs
+          node scripts/check-daily-editorial-quality.mjs
 
       - name: Generate independent AI cover
         run: node scripts/generate-daily-cover.mjs
