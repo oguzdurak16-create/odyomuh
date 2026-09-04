@@ -1,10 +1,10 @@
-import { dailyTurkishPosts, dailyEnglishPosts } from '../data/current-updates.js';
+import { currentTurkishPosts, currentEnglishPosts } from '../data/current-updates.js';
 
 const STRICT_SINCE = '2026-09-05';
 
 const posts = [
-  { language: 'tr', post: dailyTurkishPosts?.[0] },
-  { language: 'en', post: dailyEnglishPosts?.[0] },
+  { language: 'tr', post: currentTurkishPosts?.[0] },
+  { language: 'en', post: currentEnglishPosts?.[0] },
 ].filter(({ post }) => post);
 
 if (!posts.length) {
