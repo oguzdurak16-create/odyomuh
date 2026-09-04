@@ -1,0 +1,46 @@
+name: Daily History Backstop
+
+on:
+  schedule:
+    # GitHub scheduled workflows can be delayed for hours. Give the primary
+    # daily-history workflow a second independent chance later in the day.
+    - cron: '15 9 * * *'
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: read
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+
+jobs:
+  check-and-dispatch:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout latest main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 1
+
+      - name: Dispatch primary workflow only when today's package is missing
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TODAY="$(TZ=Europe/Istanbul date +'%Y-%m-%d')"
+          TARGET="data/current-updates-${TODAY}.js"
+
+          if [ -f "$TARGET" ]; then
+            echo "Daily package already exists: $TARGET"
+            exit 0
+          fi
+
+          echo "Daily package is still missing for $TODAY; dispatching the primary workflow."
+          gh workflow run daily-history.yml \
+            --repo "$GITHUB_REPOSITORY" \
+            --ref main \
+            -f content_date="$TODAY" \
+            -f force=false
