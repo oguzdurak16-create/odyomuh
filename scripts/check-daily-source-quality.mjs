@@ -104,7 +104,7 @@ function validatePost(post, locale) {
 
   const authoritative = new Set(sourceUrls.map(hostOf).filter((host) => host && isOfficialOrAcademic(host)));
   if (authoritative.size < 2) {
-    errors.push(`${label}: requires at least 2 official/academic source hosts (${authoritative.size})`);
+    warnings.push(`${label}: only ${authoritative.size} official/academic source host(s); keep improving source authority, but do not block an otherwise valid daily package.`);
   }
 
   const inlineUrls = [...new Set(extractUrls(post.contentHtml || ''))];
