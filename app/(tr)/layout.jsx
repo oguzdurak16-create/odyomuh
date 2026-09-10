@@ -12,6 +12,7 @@ import '../home-visual-fixes.css';
 import '../archive-light-fix.css';
 import '../site-cleanup.css';
 import '../home-card-image-fixes.css';
+import '../responsive-refresh.css';
 import { site, pages, baseUrl, generatedArt } from '../site-data';
 import SiteChrome from '../../components/SiteChrome';
 import ConsentRestore from '../../components/ConsentRestore';
