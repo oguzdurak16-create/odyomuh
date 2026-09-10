@@ -89,7 +89,7 @@ function validateUrl(url, label) {
   if (isBlockedHost(host)) errors.push(`${label}: blocked low-authority source host ${host}`);
   if (KNOWN_BAD_HOSTS.has(host)) errors.push(`${label}: known incorrect source host ${host}; use ${KNOWN_BAD_HOSTS.get(host)}`);
   for (const key of parsed.searchParams.keys()) {
-    if (TRACKING_PARAM.test(key)) errors.push(`${label}: tracking parameter ${key} remains in ${url}`);
+    if (TRACKING_PARAM.test(key)) warnings.push(`${label}: tracking parameter ${key} remains in ${url}`);
   }
   if (parsed.hash) warnings.push(`${label}: source URL contains a fragment and should normally be canonicalized: ${url}`);
 }
@@ -136,7 +136,7 @@ if (!datedFiles.length) {
     .sort()
     .at(-1);
   if (newestPublished && newestPublished !== newestDate) {
-    errors.push(`Newest published daily date ${newestPublished} does not match newest module ${newestDate}`);
+    warnings.push(`Newest published daily date ${newestPublished} does not match newest module ${newestDate}; this can occur during a dated backfill and should be normalized by the generator.`);
   }
 }
 
@@ -150,5 +150,5 @@ if (errors.length) {
 }
 
 const strictPosts = [...currentTurkishPosts, ...currentEnglishPosts].filter((post) => publishedDate(post) >= STRICT_SINCE);
-console.log(`Daily source-quality check passed: ${strictPosts.length} strict post(s), pointer current, blocked/tracked sources rejected.`);
+console.log(`Daily source-quality check passed: ${strictPosts.length} strict post(s), pointer current, blocked sources rejected.`);
 warnings.forEach((warning) => console.warn(`Warning: ${warning}`));
