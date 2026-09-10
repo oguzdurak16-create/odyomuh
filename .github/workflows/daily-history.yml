@@ -27,6 +27,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/generate-daily-history.mjs'
+      - 'scripts/normalize-current-daily-dates.mjs'
       - '.github/workflows/daily-history.yml'
 
 permissions:
@@ -122,6 +123,7 @@ jobs:
         run: |
           node --check scripts/generate-daily-history.mjs
           node --check scripts/generate-daily-cover.mjs
+          node --check scripts/normalize-current-daily-dates.mjs
 
       - name: Check OpenAI secret
         shell: bash
@@ -133,6 +135,9 @@ jobs:
 
       - name: Generate Turkish and English history articles
         run: node scripts/generate-daily-history.mjs
+
+      - name: Normalize daily publication dates
+        run: node scripts/normalize-current-daily-dates.mjs
 
       - name: Validate generated text before cover
         run: |
