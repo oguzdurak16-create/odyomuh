@@ -71,7 +71,7 @@ export default function ProfessionalHome() {
   const archive = orderedUniquePosts(allTurkishPosts());
   const articles = orderedUniquePosts([...current, ...archive]);
   const lead = current[0] || articles[0];
-  const latest = articles.filter((post) => post.primaryPath !== lead?.primaryPath).slice(0, 6);
+  const latest = articles.slice(0, 6);
   const leadDateTime = lead ? publicationDateTime(lead) : '';
   const priorityPaths = [
     '/2025/10/antik-uygarliklarin-kaybolan-teknolojileri-modern-dunyaya-isik-tutan-sirlar.html',
