@@ -13,6 +13,7 @@ import '../archive-light-fix.css';
 import '../site-cleanup.css';
 import '../home-card-image-fixes.css';
 import '../responsive-refresh.css';
+import '../neo-ui.css';
 import { site, pages, baseUrl, generatedArt } from '../site-data';
 import SiteChrome from '../../components/SiteChrome';
 import ConsentRestore from '../../components/ConsentRestore';
@@ -24,7 +25,7 @@ const siteUrl = baseUrl || 'https://www.odyomuh.net';
 const siteDescription = site.settings?.blog_meta_description || site.description || 'Tarih, arkeoloji, mitoloji ve kadim uygarlıklar üzerine kaynak odaklı dijital arşiv.';
 const themeBootstrap = `(function(){try{localStorage.setItem('odyomuh-theme','dark');document.documentElement.setAttribute('data-theme','dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`;
 
-export const viewport = { width: 'device-width', initialScale: 1, colorScheme: 'dark', themeColor: '#120d09' };
+export const viewport = { width: 'device-width', initialScale: 1, colorScheme: 'dark', themeColor: '#07090d' };
 
 export const metadata = {
   metadataBase: new URL(siteUrl), applicationName: site.name,
