@@ -5,6 +5,7 @@ import '../audit.css';
 import '../home-visual-fixes.css';
 import '../site-cleanup.css';
 import '../neo-ui.css';
+import '../theme-balance.css';
 import { site, baseUrl, generatedArt } from '../site-data';
 import SiteChrome from '../../components/SiteChrome';
 import ConsentRestore from '../../components/ConsentRestore';
@@ -13,9 +14,9 @@ import AdSlot from '../../components/AdSlot';
 
 const siteUrl = baseUrl || 'https://www.odyomuh.net';
 const siteDescription = 'Evidence-led history, archaeology, ancient texts and historical mysteries for readers around the world.';
-const themeBootstrap = `(function(){try{localStorage.setItem('odyomuh-theme','dark');document.documentElement.setAttribute('data-theme','dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`;
+const themeBootstrap = `(function(){try{var saved=localStorage.getItem('odyomuh-theme');var theme=saved==='light'?'light':'dark';document.documentElement.setAttribute('data-theme',theme);document.documentElement.style.colorScheme=theme;}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`;
 
-export const viewport = { width: 'device-width', initialScale: 1, colorScheme: 'dark', themeColor: '#07090d' };
+export const viewport = { width: 'device-width', initialScale: 1, colorScheme: 'light dark', themeColor: '#121923' };
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
