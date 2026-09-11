@@ -1,4 +1,4 @@
-import { dailyTurkishPosts, dailyEnglishPosts } from './current-updates-2026-09-10.js';
+import { dailyTurkishPosts, dailyEnglishPosts } from './current-updates-2026-09-11.js';
 
 function dailyDateFromImage(item) {
   return String(item?.image || '').match(/^\/generated-daily\/(\d{4}-\d{2}-\d{2})-/)?.[1] || null;
