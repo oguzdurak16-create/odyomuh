@@ -1,8 +1,8 @@
 import EnglishDynamicPage from '../[slug]/page';
 
 const canonical = '/en/how-cuneiform-was-deciphered-behistun-inscription';
-const title = 'How Cuneiform Was Deciphered: The Behistun Inscription Explained';
-const description = 'How did scholars decipher cuneiform? See how Rawlinson and other researchers used the multilingual Behistun inscription to unlock Old Persian, Elamite and Babylonian writing.';
+const title = 'Behistun Inscription: How Cuneiform Was Deciphered';
+const description = 'How was cuneiform deciphered? Follow Rawlinson and the multilingual Behistun inscription through Old Persian, Elamite and Babylonian, with the evidence and museum context explained.';
 
 export const metadata = {
   title,
