@@ -6,8 +6,8 @@ const slug = [
   'orun-ve-ulus-nedir-ilk-turk-devletlerinde-mevki-ve-pay-sistemi-ders-notu.html',
 ];
 const canonical = '/2025/12/orun-ve-ulus-nedir-ilk-turk-devletlerinde-mevki-ve-pay-sistemi-ders-notu.html';
-const title = 'Orun ve Ülüş Nedir? İlk Türk Devletlerinde Kısa Anlatım';
-const description = 'Orun, kurultay ve toyda mevki ve oturma sırasını; ülüş ise pay ve hisseyi ifade eder. İlk Türk devletlerinde anlamını kısa örneklerle öğrenin.';
+const title = 'Orun ve Ülüş Nedir? İlk Türk Devletlerinde Mevki ve Pay Sistemi';
+const description = 'Orun ve ülüş ne demek? İlk Türk devletlerinde orun; mevki ve oturma düzenini, ülüş ise pay ve hisse sistemini ifade eder. Kısa tanım, farklar ve örneklerle öğrenin.';
 
 export const metadata = {
   title,
@@ -34,13 +34,13 @@ export const metadata = {
   },
   openGraph: {
     type: 'article',
-    title: 'Orun ve Ülüş Nedir? İlk Türklerde Mevki ve Pay',
+    title,
     description,
     url: canonical,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Orun ve Ülüş Nedir? İlk Türklerde Mevki ve Pay',
+    title,
     description,
   },
 };
