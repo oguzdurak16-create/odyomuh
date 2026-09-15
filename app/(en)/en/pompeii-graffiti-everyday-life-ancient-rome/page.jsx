@@ -8,11 +8,13 @@ const post = {
   primaryPath: rawPost.primaryPath || `/en/${rawPost.slug}`,
 };
 const siteUrl = baseUrl || 'https://www.odyomuh.net';
+const seoTitle = 'Pompeii Graffiti: What Ancient Romans Wrote on Walls';
+const seoDescription = 'What did ancient Romans write as graffiti in Pompeii? Explore election notices, names, jokes, love messages and what wall writing reveals about everyday life.';
 
 export const metadata = {
-  title: post.seoTitle || post.title,
-  description: post.metaDescription || post.description,
-  keywords: post.labels,
+  title: seoTitle,
+  description: seoDescription,
+  keywords: [...post.labels, 'ancient Roman graffiti', 'Pompeii graffiti', 'Roman wall inscriptions'],
   alternates: {
     canonical: post.primaryPath,
     languages: {
@@ -22,11 +24,12 @@ export const metadata = {
       'x-default': post.primaryPath,
     },
   },
+  robots: { index: true, follow: true },
   openGraph: {
     type: 'article',
     locale: 'en_US',
-    title: post.title,
-    description: post.description,
+    title: seoTitle,
+    description: seoDescription,
     url: `${siteUrl}${post.primaryPath}`,
     images: [{ url: post.image, width: 1672, height: 941, alt: post.title }],
     publishedTime: post.published,
@@ -34,8 +37,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: post.title,
-    description: post.description,
+    title: seoTitle,
+    description: seoDescription,
     images: [post.image],
   },
 };
