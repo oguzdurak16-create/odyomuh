@@ -3,6 +3,7 @@ import ShareButtons from './ShareButtons';
 import SourceList from './SourceList';
 import { applyContentOverride } from '../data/seo-overrides';
 import { applyTrafficOverride } from '../data/traffic-overrides';
+import { applyAuthorityOverride } from '../data/authority-overrides';
 
 function plainText(html = '') {
   return String(html).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
@@ -21,7 +22,7 @@ function formatDate(value, locale) {
 }
 
 export default function DailyArticlePage({ post, locale = 'tr', siteUrl = 'https://www.odyomuh.net' }) {
-  const article = applyTrafficOverride(applyContentOverride(post));
+  const article = applyAuthorityOverride(applyTrafficOverride(applyContentOverride(post)));
   const english = locale === 'en';
   const url = `${siteUrl}${article.primaryPath}`;
   const schemaType = article.newsArticle ? 'NewsArticle' : 'Article';
