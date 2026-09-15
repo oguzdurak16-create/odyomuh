@@ -1,7 +1,7 @@
 import { allItems, baseUrl } from './site-data';
 import { englishTopics } from '../data/en-topics';
 import { englishPolicyPages } from '../data/en-pages';
-import { allTurkishPosts, allEnglishPosts, turkishLabelStats, latestDate } from '../lib/content-collections';
+import { allTurkishPosts, allEnglishPosts, latestDate } from '../lib/content-collections';
 
 const siteUrl = baseUrl || 'https://www.odyomuh.net';
 const absolute = (path) => `${siteUrl}${path === '/' ? '' : path}`;
@@ -32,7 +32,6 @@ export default function sitemap() {
   const turkishLatest = latestDate(turkishPosts);
   const englishLatest = latestDate(englishPosts);
   const pages = allItems().filter((item) => item.type === 'PAGE');
-  const indexableLabels = turkishLabelStats().filter((item) => item.count >= 2);
 
   const entries = [
     {
@@ -44,7 +43,7 @@ export default function sitemap() {
       images: [absolute('/generated-history/explorer-desk.webp')],
     },
     { url: absolute('/arsiv'), lastModified: turkishLatest || undefined, changeFrequency: 'weekly', priority: 0.9, images: [absolute('/generated-history/ancient-library-desk.webp')] },
-    { url: absolute('/etiketler'), lastModified: turkishLatest || undefined, changeFrequency: 'weekly', priority: 0.8, images: [absolute('/generated-global/cuneiform-decipherment.webp')] },
+    { url: absolute('/etiketler'), lastModified: turkishLatest || undefined, changeFrequency: 'weekly', priority: 0.7, images: [absolute('/generated-global/cuneiform-decipherment.webp')] },
     {
       url: absolute('/gundem/orta-dogu'),
       lastModified: latestDate(turkishPosts.filter((post) => post.articleSection === 'Orta Doğu Gündemi' || (post.labels || []).includes('Orta Doğu Gündemi'))) || turkishLatest || undefined,
@@ -76,12 +75,6 @@ export default function sitemap() {
       url: absolute(`/en/${page.slug}`),
       changeFrequency: 'yearly',
       priority: page.slug === 'about' || page.slug === 'sources-and-fact-checking' ? 0.6 : 0.4,
-    })),
-    ...indexableLabels.map(({ label, latest }) => ({
-      url: absolute(`/label/${encodeURIComponent(label)}`),
-      lastModified: latest || undefined,
-      changeFrequency: 'weekly',
-      priority: 0.6,
     })),
     ...englishPosts.map((post) => ({
       url: absolute(post.primaryPath),
