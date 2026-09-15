@@ -1,6 +1,34 @@
-const AUTHORITY_UPDATED_AT = '2026-09-15T22:40:00.000Z';
+const AUTHORITY_UPDATED_AT = '2026-09-15T23:05:00.000Z';
 
 export const authorityOverrides = {
+  '/2025/11/anunnakiler-kimdir-mitolojik-kokenlerden-bilimsel-konsensuse-kadar-kapsamli-rehber.html': {
+    updated: AUTHORITY_UPDATED_AT,
+    sources: [
+      'ORACC / Ancient Mesopotamian Gods and Goddesses — Anunna (Anunnaku, Anunnaki): https://oracc.museum.upenn.edu/amgg/listofdeities/anunna/',
+      'ORACC / Ancient Mesopotamian Gods and Goddesses — Igigi/Igigu: https://oracc.museum.upenn.edu/amgg/listofdeities/igigi/',
+    ],
+  },
+  '/2025/11/akad-ve-babil-de-anunnaki-igigi-ayrimi-ve-yeralti-tanrilari.html': {
+    updated: AUTHORITY_UPDATED_AT,
+    sources: [
+      'ORACC / Ancient Mesopotamian Gods and Goddesses — Anunna (Anunnaku, Anunnaki): https://oracc.museum.upenn.edu/amgg/listofdeities/anunna/',
+      'ORACC / Ancient Mesopotamian Gods and Goddesses — Igigi/Igigu: https://oracc.museum.upenn.edu/amgg/listofdeities/igigi/',
+    ],
+  },
+  '/2025/11/gobeklitepe-de-anunnaki-izleri-mi-var-12-bin-yillik-t-seklinde-sutunlarin-sok-edici-sirri.html': {
+    updated: AUTHORITY_UPDATED_AT,
+    sources: [
+      'UNESCO World Heritage Centre — Göbekli Tepe: https://whc.unesco.org/en/list/1572',
+      'ORACC / Ancient Mesopotamian Gods and Goddesses — Anunna (Anunnaku, Anunnaki): https://oracc.museum.upenn.edu/amgg/listofdeities/anunna/',
+    ],
+  },
+  '/2026/06/sumer-kral-listesi-28-800-yil-yasayan-krallar-gercek-mi.html': {
+    updated: AUTHORITY_UPDATED_AT,
+    sources: [
+      'ORACC / ePSD2 — The Sumerian King List (Q000371): https://oracc.museum.upenn.edu/epsd2/Q000371.125',
+      'ETCSL / University of Oxford — The Sumerian King List, line 1 onward: https://etcsl.orinst.ox.ac.uk/edition2/etcslgloss.php?lookup=c211.6&sn=ON',
+    ],
+  },
   '/en/who-were-the-anunnaki-mesopotamian-gods-explained': {
     title: 'Who Were the Anunnaki? Mesopotamian Gods Explained',
     seoTitle: 'Who Were the Anunnaki? Scholarly Mesopotamian Overview',
@@ -43,6 +71,11 @@ export const authorityOverrides = {
       'ORACC / Ancient Mesopotamian Gods and Goddesses — Anunna (Anunnaku, Anunnaki): https://oracc.museum.upenn.edu/amgg/listofdeities/anunna/',
     ],
   },
+  '/en/catalhoyuk-rooftop-city-neolithic-life': {
+    sources: [
+      'UNESCO World Heritage Centre — Neolithic Site of Çatalhöyük: https://whc.unesco.org/en/list/1405',
+    ],
+  },
   '/en/how-cuneiform-was-deciphered-behistun-inscription': {
     sources: [
       'UNESCO World Heritage Centre — Bisotun: https://whc.unesco.org/en/list/1222',
@@ -57,6 +90,18 @@ export const authorityOverrides = {
   '/en/indus-script-why-it-has-not-been-deciphered': {
     sources: [
       'Cambridge University Press / Antiquity — The Indus Script Deciphered?: https://www.cambridge.org/core/journals/antiquity/article/abs/indus-script-deciphered/5925D9F64530FD9EB3B0393B6BB33159',
+    ],
+  },
+  '/en/pompeii-graffiti-everyday-life-ancient-rome': {
+    sources: [
+      'Archaeological Park of Pompeii — “Bruits de couloir”: Shedding New Light on Ancient Graffiti: https://pompeiisites.org/e-journal-degli-scavi-di-pompei/bruits-de-couloir-shedding-new-light-on-ancient-graffiti/',
+      'Archaeological Park of Pompeii — “Hic et ubique”: voices and lives in the Black Hall: https://pompeiisites.org/e-journal-degli-scavi-di-pompei/hic-et-ubique-voci-e-vite-nel-salone-nero-regio-ix-insula-10/',
+    ],
+  },
+  '/en/tartessos-bronze-votive-chariot-casas-del-turunuelo': {
+    sources: [
+      'Construyendo Tarteso research project — Casas del Turuñuelo: https://construyendotarteso.com/yacimientos/casas-del-turunuelo/',
+      'Construyendo Tarteso — EL CARRO, monograph on Casas del Turuñuelo: https://construyendotarteso.com/publicacion/el-carro-monografico-sobre-tarteso-en-comunidad-y-el-yacimiento-de-casas-del-turunuelo/',
     ],
   },
 };
