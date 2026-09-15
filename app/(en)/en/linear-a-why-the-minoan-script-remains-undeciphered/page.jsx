@@ -1,8 +1,8 @@
 import EnglishDynamicPage from '../[slug]/page';
 
 const canonical = '/en/linear-a-why-the-minoan-script-remains-undeciphered';
-const title = 'Linear A: Why It Remains Undeciphered';
-const description = 'Why is Linear A still undeciphered? Learn what scholars can read, how it differs from Linear B, and why the unknown Minoan language remains the key problem.';
+const title = 'Why Is Linear A Still Undeciphered?';
+const description = 'Why is Linear A undeciphered? The signs are partly known, but the Minoan language is not. Learn what Linear B reveals and what evidence is still missing.';
 
 export const metadata = {
   title,
