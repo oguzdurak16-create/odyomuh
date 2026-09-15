@@ -20,7 +20,7 @@ export async function generateMetadata({ params }) {
     title: `${label} yazıları`,
     description,
     alternates: { canonical },
-    robots: { index: items.length >= 2, follow: true },
+    robots: { index: false, follow: true },
     openGraph: {
       title: `${label} yazıları | ODYOMUH`,
       description,
