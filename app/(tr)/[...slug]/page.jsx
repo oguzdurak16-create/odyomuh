@@ -10,6 +10,7 @@ import { allItems, baseUrl, posts, site, generatedArt, metaDescription, normaliz
 import { englishPathForTurkishPath } from '../../../data/en-posts';
 import { currentTurkishPosts } from '../../../data/current-updates';
 import { applyContentOverride } from '../../../data/seo-overrides';
+import { applyTrafficOverride } from '../../../data/traffic-overrides';
 import { allTurkishPosts } from '../../../lib/content-collections';
 import { notFound, permanentRedirect } from 'next/navigation';
 
@@ -48,6 +49,10 @@ function findRoutableByPath(path) {
   return routableItems().find((item) => item.primaryPath === normalized || item.routes?.includes(normalized));
 }
 
+function editorialItem(item) {
+  return applyTrafficOverride(applyContentOverride(item));
+}
+
 function formatDate(value) {
   if (!value) return '';
   return new Intl.DateTimeFormat('tr-TR', { day: '2-digit', month: 'long', year: 'numeric' }).format(new Date(value));
@@ -71,7 +76,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
-  const item = applyContentOverride(findRoutableByPath(pathFromParams(resolvedParams)));
+  const item = editorialItem(findRoutableByPath(pathFromParams(resolvedParams)));
   if (!item) return {};
 
   const canonicalPath = item.primaryPath;
@@ -129,7 +134,7 @@ export async function generateMetadata({ params }) {
 export default async function ContentPage({ params }) {
   const resolvedParams = await params;
   const requestedPath = pathFromParams(resolvedParams);
-  const item = applyContentOverride(findRoutableByPath(requestedPath));
+  const item = editorialItem(findRoutableByPath(requestedPath));
   if (!item) notFound();
   if (requestedPath !== item.primaryPath) permanentRedirect(item.primaryPath);
 
@@ -237,7 +242,27 @@ export default async function ContentPage({ params }) {
           </div>
           {item.labels?.length ? <div className="post-labels top-labels">{item.labels.map((label) => <a key={label} href={`/label/${encodeURIComponent(label)}`}>{label}</a>)}</div> : null}
           <HtmlContent html={item.contentHtml} imageAlt={item.title} />
+
+          {item.faq?.length ? (
+            <section className="article-faq" aria-labelledby="article-faq-title">
+              <h2 id="article-faq-title">Sık sorulan sorular</h2>
+              {item.faq.map((entry) => (
+                <div className="article-faq-item" key={entry.question}>
+                  <h3>{entry.question}</h3>
+                  <p>{entry.answer}</p>
+                </div>
+              ))}
+            </section>
+          ) : null}
+
           <SourceList sources={item.sources} locale="tr" />
+          {item.type === 'POST' ? (
+            <nav className="article-next-actions" aria-label="Okumaya devam et">
+              <a href="/p/tarih-kronolojisi.html">Tarih kronolojisini aç</a>
+              <a href="/p/ders-notlari.html">Ders notlarına git</a>
+              <a href="/arsiv">Tüm araştırmaları gör</a>
+            </nav>
+          ) : null}
           {item.type === 'POST' ? <ShareButtons title={item.title} url={url} /> : null}
         </div>
       </article>
