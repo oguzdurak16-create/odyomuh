@@ -79,8 +79,17 @@ if (!robots.includes('news-sitemap.xml')) errors.push('News sitemap is not decla
 
 const sitemap = read('app/sitemap.js');
 if (!sitemap.includes('images:')) errors.push('Sitemap does not expose article images');
-if (!sitemap.includes('turkishLabelStats')) errors.push('Sitemap does not filter thin label archives');
 if (sitemap.includes('const now = new Date()')) errors.push('Sitemap resets every lastModified value on each build');
+
+const labelPage = read('app/(tr)/label/[label]/page.jsx');
+const labelArchivesNoindex = /robots:\s*\{\s*index:\s*false,\s*follow:\s*true\s*\}/.test(labelPage);
+const sitemapBuildsLabelUrls = /absolute\(`\/label\//.test(sitemap) || /absolute\(['"]\/label\//.test(sitemap);
+if (!sitemap.includes('turkishLabelStats') && !labelArchivesNoindex) {
+  errors.push('Label archives are neither quality-filtered for sitemap inclusion nor explicitly noindexed');
+}
+if (labelArchivesNoindex && sitemapBuildsLabelUrls) {
+  errors.push('Noindexed label archives must not be emitted in sitemap');
+}
 
 for (const layout of ['app/(tr)/layout.jsx', 'app/(en)/layout.jsx']) {
   const source = read(layout);
@@ -117,7 +126,7 @@ if (new Set(enPaths).size !== enPaths.length) errors.push('Duplicate English can
 
 const labelCounts = new Map();
 for (const post of trPosts) for (const label of post.labels || []) labelCounts.set(label, (labelCounts.get(label) || 0) + 1);
-if (![...labelCounts.values()].some((count) => count >= 2)) errors.push('No indexable Turkish label clusters found');
+if (![...labelCounts.values()].some((count) => count >= 2)) errors.push('No Turkish topic clusters found');
 
 if (errors.length) {
   console.error(`Site audit failed with ${errors.length} error(s):`);
@@ -125,5 +134,5 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`Site audit passed: ${trPosts.length} Turkish posts, ${enPaths.length} English posts, ${labelCounts.size} Turkish labels.`);
+console.log(`Site audit passed: ${trPosts.length} Turkish posts, ${enPaths.length} English posts, ${labelCounts.size} Turkish labels. Label archive strategy: ${labelArchivesNoindex ? 'noindex/follow' : 'filtered indexable clusters'}.`);
 warnings.forEach((warning) => console.warn(`Warning: ${warning}`));
