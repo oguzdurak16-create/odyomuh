@@ -313,6 +313,94 @@
   margin-top: 34px;
 }
 
+.traffic-intent-summary {
+  margin: 10px 0 30px;
+  overflow-x: auto;
+}
+
+.traffic-intent-summary > p:first-of-type {
+  margin-top: 12px;
+}
+
+.traffic-intent-summary table {
+  width: 100%;
+  min-width: 520px;
+  margin: 18px 0;
+  border-collapse: collapse;
+  font-family: var(--font-inter), sans-serif;
+  font-size: .92rem;
+}
+
+.traffic-intent-summary th,
+.traffic-intent-summary td {
+  padding: 12px 14px;
+  border: 1px solid rgba(201,164,107,.25);
+  text-align: left;
+  vertical-align: top;
+}
+
+.traffic-intent-summary th {
+  background: rgba(201,164,107,.12);
+  color: var(--text);
+}
+
+.article-faq {
+  margin: 42px 0 30px;
+  padding: clamp(22px, 4vw, 34px);
+  border: 1px solid rgba(201,164,107,.2);
+  border-radius: 20px;
+  background: rgba(201,164,107,.055);
+}
+
+.article-faq > h2 {
+  margin: 0 0 18px;
+}
+
+.article-faq-item + .article-faq-item {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(201,164,107,.14);
+}
+
+.article-faq-item h3 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+}
+
+.article-faq-item p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+.article-next-actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 10px;
+  margin: 30px 0 8px;
+}
+
+.article-next-actions a {
+  display: flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 14px;
+  border: 1px solid rgba(201,164,107,.24);
+  border-radius: 13px;
+  background: rgba(201,164,107,.07);
+  color: var(--text);
+  font-family: var(--font-inter), sans-serif;
+  font-size: .88rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.article-next-actions a:hover {
+  border-color: rgba(201,164,107,.5);
+  background: rgba(201,164,107,.13);
+}
+
 .lessons-layout {
   max-width: 1180px;
 }
@@ -399,5 +487,13 @@
 
   .article-page-shell .article-body {
     padding: 28px 20px;
+  }
+
+  .traffic-intent-summary table {
+    min-width: 460px;
+  }
+
+  .article-next-actions {
+    grid-template-columns: 1fr;
   }
 }
