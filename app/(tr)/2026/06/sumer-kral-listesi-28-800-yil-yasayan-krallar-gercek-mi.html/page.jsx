@@ -6,8 +6,8 @@ const slug = [
   'sumer-kral-listesi-28-800-yil-yasayan-krallar-gercek-mi.html',
 ];
 const canonical = '/2026/06/sumer-kral-listesi-28-800-yil-yasayan-krallar-gercek-mi.html';
-const title = 'Sümer Kral Listesi: Krallar Neden Binlerce Yıl Hüküm Sürdü?';
-const description = 'Sümer Kral Listesi’nde krallar neden 28.800 yıl hüküm sürüyor? Tufan öncesi hükümdarları, sayı sistemini ve tarih ile mit arasındaki farkı inceleyin.';
+const title = 'Sümer Kral Listesi: Krallar Neden Binlerce Yıl Yaşıyor?';
+const description = 'Sümer Kral Listesi neden 28.800 ve 36.000 yıllık hükümdarlıklar yazar? Tufan öncesi krallar, sayı sistemi ve tarihsel kanıtları kısa ve açık biçimde inceleyin.';
 
 export const metadata = {
   title,
@@ -18,6 +18,7 @@ export const metadata = {
     'tufan öncesi krallar',
     'Alulim',
     'Sümer sayı sistemi',
+    '28800 yıl Sümer',
   ],
   alternates: { canonical },
   robots: {
