@@ -30,19 +30,33 @@ export default function TimelineExperience({ data }) {
   return (
     <section className="special-page timeline-page" aria-labelledby="timeline-title">
       <header className="special-hero timeline-hero-new">
-        <img src="/generated-history/explorer-desk.webp" alt="Eski harita ve pusula ile tarih kronolojisi" width="1672" height="941" />
+        <img src="/generated-history/explorer-desk.webp" alt="Eski harita ve pusula ile dünya tarihi kronolojisi" width="1672" height="941" />
         <div className="special-hero-overlay" />
         <div className="special-hero-content">
           <p className="eyebrow">ODYOMUH ARAŞTIRMA ARACI</p>
-          <h1 id="timeline-title">Tarih Kronolojisi</h1>
-          <p>MÖ 9600’den günümüze uzanan 51 önemli olay. Dönem filtresi ve anahtar kelime aramasıyla tarihsel kırılmaları tek akışta incele.</p>
+          <h1 id="timeline-title">Dünya Tarihi Kronolojisi</h1>
+          <p>MÖ 9600’den günümüze uzanan 51 önemli olay. Tarih öncesinden modern çağa kadar dönemleri filtreleyin, isim veya olay arayın ve tarihsel kırılmaları tek akışta inceleyin.</p>
           <div className="special-hero-stats">
             <span><strong>51</strong> olay</span>
-            <span><strong>5</strong> çağ</span>
+            <span><strong>5</strong> dönem</span>
             <span><strong>10.000+</strong> yıl</span>
           </div>
         </div>
       </header>
+
+      <section className="timeline-seo-intro" aria-labelledby="timeline-guide-title">
+        <p className="eyebrow">KISA REHBER</p>
+        <h2 id="timeline-guide-title">Tarih çağları hangi sırayla gelir?</h2>
+        <p>Bu kronoloji, insanlık tarihini tek bir çizgide ezberletmek yerine olayları dönemlerine ve birbirleriyle ilişkilerine göre görmenizi sağlar. Başlangıç tarihleri coğrafyaya göre değişebilse de genel çalışma sırası tarih öncesi dönemler, Antik Çağ, Orta Çağ, Erken Modern Dönem ve Modern Dönem olarak düşünülebilir.</p>
+        <div className="timeline-era-summary-grid">
+          <a href="#timeline-stream" onClick={() => setActiveEra('prehistoric')}><strong>Tarih Öncesi</strong><span>Yazı öncesi toplumlar, ilk yerleşimler ve tarım</span></a>
+          <a href="#timeline-stream" onClick={() => setActiveEra('ancient')}><strong>Antik Çağ</strong><span>Mezopotamya, Mısır, Yunan, Roma ve büyük imparatorluklar</span></a>
+          <a href="#timeline-stream" onClick={() => setActiveEra('medieval')}><strong>Orta Çağ</strong><span>Yeni devletler, ticaret ağları ve dinî-siyasi dönüşümler</span></a>
+          <a href="#timeline-stream" onClick={() => setActiveEra('early-modern')}><strong>Erken Modern</strong><span>Keşifler, matbaa, imparatorluklar ve bilimsel dönüşüm</span></a>
+          <a href="#timeline-stream" onClick={() => setActiveEra('modern')}><strong>Modern Dönem</strong><span>Sanayileşme, dünya savaşları ve çağdaş düzen</span></a>
+        </div>
+        <p className="timeline-guide-links">Konu çalışıyorsanız <a href="/p/ders-notlari.html">Ders Notları</a> bölümüne geçebilir, öğrendiklerinizi <a href="/p/tarih-quiz.html">Tarih Quiz</a> ile test edebilirsiniz.</p>
+      </section>
 
       <section className="timeline-controls" aria-label="Kronoloji filtreleri">
         <div className="timeline-search-new">
@@ -56,7 +70,7 @@ export default function TimelineExperience({ data }) {
           />
         </div>
         <div className="timeline-filter-row" role="group" aria-label="Çağ filtreleri">
-          <button type="button" className={activeEra === 'all' ? 'active' : ''} onClick={() => setActiveEra('all')}>Tüm çağlar</button>
+          <button type="button" className={activeEra === 'all' ? 'active' : ''} onClick={() => setActiveEra('all')}>Tüm dönemler</button>
           {ERA_ORDER.map((era) => (
             <button
               type="button"
@@ -72,7 +86,7 @@ export default function TimelineExperience({ data }) {
       </section>
 
       {grouped.length ? (
-        <div className="timeline-stream">
+        <div className="timeline-stream" id="timeline-stream">
           {grouped.map((group) => (
             <section className="timeline-era" key={group.era}>
               <header className="timeline-era-heading">
@@ -101,10 +115,17 @@ export default function TimelineExperience({ data }) {
       ) : (
         <div className="empty-state">
           <h2>Sonuç bulunamadı</h2>
-          <p>Aramayı değiştir veya tüm çağlar filtresine dön.</p>
+          <p>Aramayı değiştir veya tüm dönemler filtresine dön.</p>
           <button type="button" onClick={() => { setActiveEra('all'); setQuery(''); }}>Filtreleri temizle</button>
         </div>
       )}
+
+      <section className="article-faq timeline-faq" aria-labelledby="timeline-faq-title">
+        <h2 id="timeline-faq-title">Tarih kronolojisi hakkında sık sorulanlar</h2>
+        <div className="article-faq-item"><h3>Dünya tarihi kronolojisi nereden başlar?</h3><p>Tek bir evrensel başlangıç tarihi yoktur. İnsanlık tarihi tarih öncesi dönemlerden başlar; yazılı tarih ise farklı bölgelerde yazının kullanılmaya başlamasıyla farklı tarihlerde başlatılır.</p></div>
+        <div className="article-faq-item"><h3>Tarih çağları nelerdir?</h3><p>Okul ve genel tarih anlatılarında yaygın olarak İlk Çağ, Orta Çağ, Yeni Çağ ve Yakın Çağ gibi ayrımlar kullanılır. Akademik tarihçilikte ise dönemlendirme konuya ve coğrafyaya göre değişebilir.</p></div>
+        <div className="article-faq-item"><h3>Kronoloji ne işe yarar?</h3><p>Kronoloji olayların sırasını, eş zamanlı gelişmeleri ve neden-sonuç ilişkilerini görmeye yardımcı olur. Özellikle sınav çalışırken olayları tek tek ezberlemek yerine bağlam kurmayı kolaylaştırır.</p></div>
+      </section>
     </section>
   );
 }
