@@ -4,8 +4,8 @@ import { baseUrl } from '../../../site-data';
 
 const post = dailyEnglishPosts.find((item) => item.id === 'en-daily-20260721-tartessos-bronze-chariot');
 const siteUrl = baseUrl || 'https://www.odyomuh.net';
-const seoTitle = 'Casas del Turuñuelo Bronze Chariot: The Tartessos Discovery Explained';
-const seoDescription = 'Explore the bronze ceremonial chariot from Casas del Turuñuelo, its Tartessos-era archaeological context, dating and what the find reveals about ritual and elite culture.';
+const seoTitle = 'Tartessos Bronze Chariot at Casas del Turuñuelo';
+const seoDescription = 'What is the Casas del Turuñuelo bronze chariot? See the Tartessos find, its archaeological context, likely ritual significance and what remains uncertain.';
 
 export const metadata = {
   title: seoTitle,
