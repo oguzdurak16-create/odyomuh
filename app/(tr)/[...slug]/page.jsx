@@ -11,6 +11,7 @@ import { englishPathForTurkishPath } from '../../../data/en-posts';
 import { currentTurkishPosts } from '../../../data/current-updates';
 import { applyContentOverride } from '../../../data/seo-overrides';
 import { applyTrafficOverride } from '../../../data/traffic-overrides';
+import { applyAuthorityOverride } from '../../../data/authority-overrides';
 import { allTurkishPosts } from '../../../lib/content-collections';
 import { notFound, permanentRedirect } from 'next/navigation';
 
@@ -50,7 +51,7 @@ function findRoutableByPath(path) {
 }
 
 function editorialItem(item) {
-  return applyTrafficOverride(applyContentOverride(item));
+  return applyAuthorityOverride(applyTrafficOverride(applyContentOverride(item)));
 }
 
 function formatDate(value) {
