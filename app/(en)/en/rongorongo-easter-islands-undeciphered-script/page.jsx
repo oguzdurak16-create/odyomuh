@@ -1,8 +1,8 @@
 import EnglishDynamicPage from '../[slug]/page';
 
 const canonical = '/en/rongorongo-easter-islands-undeciphered-script';
-const title = 'Rongorongo: Why Easter Island’s Script Is Still Undeciphered';
-const description = 'What is Rongorongo and why has it not been deciphered? Examine the surviving Rapa Nui tablets, reading direction, proposed interpretations and the evidence scholars still lack.';
+const title = 'Rongorongo: Why Is the Rapa Nui Script Undeciphered?';
+const description = 'Why is Rongorongo still undeciphered? See the surviving Rapa Nui tablets, reverse-boustrophedon reading order, limited corpus and missing bilingual key.';
 
 export const metadata = {
   title,
