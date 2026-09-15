@@ -9,8 +9,6 @@ on:
       - 'scripts/generate-daily-cover.mjs'
       - 'scripts/backfill-daily-covers.mjs'
       - '.github/workflows/daily-cover.yml'
-  schedule:
-    - cron: '15 6 * * *'
   workflow_dispatch:
     inputs:
       force:
