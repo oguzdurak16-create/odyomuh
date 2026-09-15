@@ -1,0 +1,96 @@
+.timeline-seo-intro {
+  margin: 28px 0 30px;
+  padding: clamp(24px, 4vw, 38px);
+  border: 1px solid rgba(201,164,107,.22);
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(201,164,107,.08), rgba(18,13,9,.92));
+  box-shadow: 0 16px 42px rgba(0,0,0,.22);
+}
+
+.timeline-seo-intro h2 {
+  margin: 6px 0 12px;
+  font-family: var(--font-cinzel), serif;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  line-height: 1.2;
+}
+
+.timeline-seo-intro > p {
+  max-width: 900px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.timeline-era-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  margin: 24px 0 18px;
+}
+
+.timeline-era-summary-grid a {
+  display: flex;
+  min-height: 128px;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 17px;
+  border: 1px solid rgba(201,164,107,.2);
+  border-radius: 15px;
+  background: rgba(255,255,255,.025);
+  color: var(--text);
+  text-decoration: none;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.timeline-era-summary-grid a:hover {
+  transform: translateY(-2px);
+  border-color: rgba(201,164,107,.5);
+  background: rgba(201,164,107,.09);
+}
+
+.timeline-era-summary-grid strong {
+  font-family: var(--font-inter), sans-serif;
+  font-size: .96rem;
+}
+
+.timeline-era-summary-grid span {
+  color: var(--text-secondary);
+  font-family: var(--font-inter), sans-serif;
+  font-size: .8rem;
+  line-height: 1.55;
+}
+
+.timeline-guide-links {
+  margin-top: 18px;
+}
+
+.timeline-guide-links a {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.timeline-faq {
+  max-width: 980px;
+  margin: 44px auto 0;
+}
+
+@media (max-width: 980px) {
+  .timeline-era-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .timeline-seo-intro {
+    padding: 22px 18px;
+    border-radius: 18px;
+  }
+
+  .timeline-era-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-era-summary-grid a {
+    min-height: 0;
+  }
+}
