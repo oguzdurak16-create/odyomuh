@@ -1,5 +1,5 @@
-import { baseUrl, generatedArt, canonicalLabel, site } from '../../../site-data';
-import { allTurkishLabels, postsForTurkishLabel } from '../../../../lib/content-collections';
+import { baseUrl, generatedArt, site } from '../../../site-data';
+import { allTurkishLabels, normalizeTurkishLabel, postsForTurkishLabel } from '../../../../lib/content-collections';
 import PostCard from '../../../../components/PostCard';
 import { redirect } from 'next/navigation';
 
@@ -12,7 +12,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
   const rawLabel = decodeURIComponent(resolvedParams.label);
-  const label = canonicalLabel(rawLabel);
+  const label = normalizeTurkishLabel(rawLabel);
   const canonical = `/label/${encodeURIComponent(label)}`;
   const items = postsForTurkishLabel(label);
   const description = `${label} etiketiyle yayınlanan ${items.length} ODYOMUH tarih, mitoloji, arkeoloji ve uygarlık yazısı.`;
@@ -33,7 +33,7 @@ export async function generateMetadata({ params }) {
 export default async function LabelPage({ params }) {
   const resolvedParams = await params;
   const rawLabel = decodeURIComponent(resolvedParams.label);
-  const label = canonicalLabel(rawLabel);
+  const label = normalizeTurkishLabel(rawLabel);
   if (label !== rawLabel) redirect(`/label/${encodeURIComponent(label)}`);
 
   const items = postsForTurkishLabel(label);
