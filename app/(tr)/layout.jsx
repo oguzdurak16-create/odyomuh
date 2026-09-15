@@ -15,6 +15,7 @@ import '../home-card-image-fixes.css';
 import '../responsive-refresh.css';
 import '../neo-ui.css';
 import '../theme-balance.css';
+import '../timeline-seo.css';
 import { site, pages, baseUrl, generatedArt } from '../site-data';
 import SiteChrome from '../../components/SiteChrome';
 import ConsentRestore from '../../components/ConsentRestore';
