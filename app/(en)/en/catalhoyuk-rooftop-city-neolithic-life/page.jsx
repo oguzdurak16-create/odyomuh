@@ -5,11 +5,13 @@ import { baseUrl } from '../../../site-data';
 const rawPost = dailyEnglishPosts.find((item) => item.id === 'en-catalhoyuk-rooftop-city');
 const post = {
   ...rawPost,
+  title: 'Why Did Çatalhöyük Have Rooftop Entrances and No Streets?',
+  description: 'Çatalhöyük was a densely packed Neolithic settlement where many houses had no street-facing doors. People probably moved across roofs and entered homes by ladder.',
   primaryPath: rawPost.primaryPath || `/en/${rawPost.slug}`,
 };
 const siteUrl = baseUrl || 'https://www.odyomuh.net';
-const seoTitle = 'Çatalhöyük Houses: Rooftop Entrances and Neolithic Life';
-const seoDescription = 'Why did Çatalhöyük have no streets? See how rooftop entrances, linked mudbrick houses, ovens, burials and daily life worked at the Neolithic settlement.';
+const seoTitle = 'Çatalhöyük Houses: Why Were There No Streets?';
+const seoDescription = 'Why did Çatalhöyük have no regular streets? Learn how rooftop entrances, tightly packed houses, burials and daily life shaped this Neolithic settlement.';
 
 export const metadata = {
   title: seoTitle,
