@@ -29,13 +29,38 @@ const consolidatedPostRedirects = [
     permanent: true,
   },
   {
+    source: '/2025/12/anunnaki-nedir-sumer-tanrilari-ve-antik-uzayli-teorisi-tarih-ve-gizem.html',
+    destination: '/2025/11/anunnakiler-kimdir-mitolojik-kokenlerden-bilimsel-konsensuse-kadar-kapsamli-rehber.html',
+    permanent: true,
+  },
+  {
     source: '/2026/06/anunnaki-nedir-sumer-tanrilari-mi-uzayli-efsanesi-mi.html',
-    destination: '/2025/12/anunnaki-nedir-sumer-tanrilari-ve-antik-uzayli-teorisi-tarih-ve-gizem.html',
+    destination: '/2025/11/anunnakiler-kimdir-mitolojik-kokenlerden-bilimsel-konsensuse-kadar-kapsamli-rehber.html',
+    permanent: true,
+  },
+  {
+    source: '/2026/01/gobekli-tepe-nedir-dunyanin-en-eski-tapinagi-ve-gizemleri-tarih-ve-arkeoloji.html',
+    destination: '/2026/08/gobekli-tepe-ilk-tapinak-neolitik-devrim.html',
     permanent: true,
   },
   {
     source: '/2026/06/gobekli-tepe-sirri-12-bin-yillik-tapinak-gercekten-ne-anlatiyor.html',
-    destination: '/2026/01/gobekli-tepe-nedir-dunyanin-en-eski-tapinagi-ve-gizemleri-tarih-ve-arkeoloji.html',
+    destination: '/2026/08/gobekli-tepe-ilk-tapinak-neolitik-devrim.html',
+    permanent: true,
+  },
+  {
+    source: '/2026/06/catalhoyuk-sokaksiz-damdan-girilen-9000-yillik-kent.html',
+    destination: '/2026/07/catalhoyuk-evleri-sokaksiz-neolitik-kent.html',
+    permanent: true,
+  },
+  {
+    source: '/2026/06/antikythera-mekanizmasi-antik-dunyanin-disli-bilgisayari.html',
+    destination: '/2026/08/antikythera-mekanizmasi-antik-cag-bilgisayari.html',
+    permanent: true,
+  },
+  {
+    source: '/2025/12/anadolu-nun-en-karanlik-sirri-kimsenin-bilmedigi-yeralti-sehri.html',
+    destination: '/2026/06/derinkuyu-yeralti-sehri-kimler-neden-yapti.html',
     permanent: true,
   },
   {
