@@ -1,10 +1,6 @@
 name: Daily History Backstop
 
 on:
-  schedule:
-    # GitHub scheduled workflows can be delayed for hours. Give the primary
-    # daily-history workflow a second independent chance later in the day.
-    - cron: '15 9 * * *'
   workflow_dispatch:
 
 permissions:
@@ -38,7 +34,7 @@ jobs:
             exit 0
           fi
 
-          echo "Daily package is still missing for $TODAY; dispatching the primary workflow."
+          echo "Daily package is missing for $TODAY; manually dispatching the primary workflow."
           gh workflow run daily-history.yml \
             --repo "$GITHUB_REPOSITORY" \
             --ref main \
