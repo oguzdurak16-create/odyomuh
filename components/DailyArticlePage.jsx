@@ -2,6 +2,7 @@ import HtmlContent from './HtmlContent';
 import ShareButtons from './ShareButtons';
 import SourceList from './SourceList';
 import { applyContentOverride } from '../data/seo-overrides';
+import { applyTrafficOverride } from '../data/traffic-overrides';
 
 function plainText(html = '') {
   return String(html).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
@@ -20,7 +21,7 @@ function formatDate(value, locale) {
 }
 
 export default function DailyArticlePage({ post, locale = 'tr', siteUrl = 'https://www.odyomuh.net' }) {
-  const article = applyContentOverride(post);
+  const article = applyTrafficOverride(applyContentOverride(post));
   const english = locale === 'en';
   const url = `${siteUrl}${article.primaryPath}`;
   const schemaType = article.newsArticle ? 'NewsArticle' : 'Article';
@@ -84,7 +85,25 @@ export default function DailyArticlePage({ post, locale = 'tr', siteUrl = 'https
           <div className="post-meta-info"><time dateTime={article.published}>{formatDate(article.published, english ? 'en-US' : 'tr-TR')}</time><span>{readingTime(article.contentHtml)} {english ? 'min read' : 'dk okuma'}</span><span>{article.labels?.[0]}</span></div>
           <div className="post-labels top-labels">{article.labels?.map((label) => english ? <span key={label}>{label}</span> : <a key={label} href={`/label/${encodeURIComponent(label)}`}>{label}</a>)}</div>
           <HtmlContent html={article.contentHtml} imageAlt={article.title} className={english ? 'english-content' : undefined} />
+
+          {article.faq?.length ? (
+            <section className="article-faq" aria-labelledby="daily-article-faq-title">
+              <h2 id="daily-article-faq-title">{english ? 'Frequently asked questions' : 'Sık sorulan sorular'}</h2>
+              {article.faq.map((entry) => (
+                <div className="article-faq-item" key={entry.question}>
+                  <h3>{entry.question}</h3>
+                  <p>{entry.answer}</p>
+                </div>
+              ))}
+            </section>
+          ) : null}
+
           <SourceList sources={article.sources} locale={english ? 'en' : 'tr'} />
+          <nav className="article-next-actions" aria-label={english ? 'Keep exploring' : 'Okumaya devam et'}>
+            {english ? <a href="/en/archive">Browse the archive</a> : <a href="/p/tarih-kronolojisi.html">Tarih kronolojisini aç</a>}
+            {english ? <a href="/en">English history hub</a> : <a href="/p/ders-notlari.html">Ders notlarına git</a>}
+            {english ? <a href="/en/sources-and-fact-checking">Fact-checking method</a> : <a href="/arsiv">Tüm araştırmaları gör</a>}
+          </nav>
           <ShareButtons title={article.title} url={url} />
         </div>
       </article>
