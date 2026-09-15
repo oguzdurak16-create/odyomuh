@@ -1,8 +1,8 @@
 import EnglishDynamicPage from '../[slug]/page';
 
 const canonical = '/en/anunnaki-vs-igigi-what-is-the-difference';
-const title = 'Anunnaki vs Igigi: What’s the Difference?';
-const description = 'Anunnaki and Igigi were distinct but overlapping groups of Mesopotamian gods. See what ancient texts actually say and where modern claims go wrong.';
+const title = 'Anunnaki vs Igigi: What Is the Difference?';
+const description = 'Anunnaki vs Igigi explained: compare their roles in Mesopotamian texts, the Atrahasis rebellion, where the groups overlap and what modern claims get wrong.';
 
 export const metadata = {
   title,
