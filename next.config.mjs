@@ -29,6 +29,11 @@ const consolidatedPostRedirects = [
     permanent: true,
   },
   {
+    source: '/2025/11/anunnakilerin-gizli-mirasi-insanlik-tanrilarin-unuttugu-teknolojiyi-mi-yeniden-kesfediyor.html',
+    destination: '/2025/11/anunnakiler-kimdir-mitolojik-kokenlerden-bilimsel-konsensuse-kadar-kapsamli-rehber.html',
+    permanent: true,
+  },
+  {
     source: '/2025/12/anunnaki-nedir-sumer-tanrilari-ve-antik-uzayli-teorisi-tarih-ve-gizem.html',
     destination: '/2025/11/anunnakiler-kimdir-mitolojik-kokenlerden-bilimsel-konsensuse-kadar-kapsamli-rehber.html',
     permanent: true,
