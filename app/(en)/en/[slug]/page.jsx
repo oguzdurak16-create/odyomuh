@@ -3,6 +3,7 @@ import { englishPosts, findEnglishPost } from '../../../../data/en-posts';
 import { englishPolicyPages, findEnglishPolicyPage } from '../../../../data/en-pages';
 import { findEnglishTopic } from '../../../../data/en-topics';
 import { applyContentOverride } from '../../../../data/seo-overrides';
+import { applyTrafficOverride } from '../../../../data/traffic-overrides';
 import { baseUrl, site, metaDescription } from '../../../site-data';
 import { allEnglishPosts } from '../../../../lib/content-collections';
 import HtmlContent from '../../../../components/HtmlContent';
@@ -23,6 +24,10 @@ function findEnglishContent(slug) {
     || (post.routes || []).includes(`/en/${normalized}`)
     || post.primaryPath === `/en/${normalized}`
   )) || findEnglishPost(normalized);
+}
+
+function editorialPost(item) {
+  return applyTrafficOverride(applyContentOverride(item));
 }
 
 function formatDate(value) {
@@ -61,7 +66,7 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  const post = applyContentOverride(findEnglishContent(slug));
+  const post = editorialPost(findEnglishContent(slug));
   if (!post) return {};
   const canonical = post.primaryPath;
   const seoTitle = post.seoTitle || post.title;
@@ -129,7 +134,7 @@ export default async function EnglishDynamicPage({ params }) {
   if (policyPage) return <EnglishPolicyPage page={policyPage} />;
 
   const requestedPath = `/en/${decodeURIComponent(String(slug || '')).replace(/^\/+|\/+$/g, '')}`;
-  const post = applyContentOverride(findEnglishContent(slug));
+  const post = editorialPost(findEnglishContent(slug));
   if (!post) notFound();
   if (requestedPath !== post.primaryPath) permanentRedirect(post.primaryPath);
 
@@ -213,11 +218,26 @@ export default async function EnglishDynamicPage({ params }) {
           </div>
           <div className="post-labels top-labels">{post.labels.map((label) => <span key={label}>{label}</span>)}</div>
           <HtmlContent html={post.contentHtml} imageAlt={post.title} className="english-content" />
+
+          {post.faq?.length ? (
+            <section className="article-faq" aria-labelledby="article-faq-title">
+              <h2 id="article-faq-title">Frequently asked questions</h2>
+              {post.faq.map((entry) => (
+                <div className="article-faq-item" key={entry.question}>
+                  <h3>{entry.question}</h3>
+                  <p>{entry.answer}</p>
+                </div>
+              ))}
+            </section>
+          ) : null}
+
           <SourceList sources={post.sources} locale="en" />
 
           <div className="english-article-end">
-            <p><strong>How this page is handled:</strong> Evidence, interpretation and modern speculation are separated. Material corrections are reflected in the article date.</p>
+            <p><strong>Keep exploring:</strong> Use the topic hub for closely related articles or browse the full archive instead of starting a new search.</p>
             <div>
+              <a href={`/en/topic/${post.topic}`}>Explore this topic</a>
+              <a href="/en/archive">Open the archive</a>
               <a href="/en/sources-and-fact-checking">Fact-checking method</a>
               <a href="/en/corrections">Report a correction</a>
             </div>
