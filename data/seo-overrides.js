@@ -17,11 +17,11 @@ export const contentOverrides = {
   },
   '/2025/11/akad-ve-babil-de-anunnaki-igigi-ayrimi-ve-yeralti-tanrilari.html': {
     title: 'İgigi Kimdir? Anunnaki ile Farkı ve İgigi İsyanı',
-    seoTitle: 'İgigi Kimdir? Anunnaki–İgigi Farkı ve İsyan Efsanesi',
+    seoTitle: 'Anunnaki ve İgigi Nedir? Farkları ve İgigi İsyanı',
     description: 'İgigi kimdir, Anunnakilerden farkları nedir ve Atrahasis Destanı’ndaki İgigi isyanı insanın yaratılışıyla nasıl ilişkilendirilir?',
-    metaDescription: 'İgigi kimdir? Anunnaki ile İgigi arasındaki farkı, Atrahasis Destanı’ndaki İgigi isyanını ve insanın yaratılışı anlatısını inceleyin.',
+    metaDescription: 'Anunnaki ve İgigi arasındaki fark nedir? İgigi kimdir, Atrahasis’te neden isyan eder ve iki tanrı grubu Mezopotamya metinlerinde nasıl ayrılır?',
     updated: UPDATED_AT,
-    searchAliases: ['igigi', 'igigiler', 'igigiler kimdir', 'igigi gods', 'igigi and anunnaki', 'anunnaki igigi', 'anunnakiler ve igigiler'],
+    searchAliases: ['igigi', 'igigiler', 'igigiler kimdir', 'anunnaki igigi farkı', 'anunnaki ve igigi farkı', 'anunnaki vs igigi', 'anunnaki efsanesi', 'igigi gods', 'igigi and anunnaki', 'anunnaki igigi', 'anunnakiler ve igigiler'],
     introHtml: `<div class="odyomuh-note search-intent-summary"><strong>Kısa cevap:</strong> İgigi, Akadca mitolojik metinlerde özellikle göksel tanrılar veya ağır işlerde çalışan genç tanrılar için kullanılan bir addır. Atrahasis anlatısında İgigilerin isyanı, insanların tanrıların işini üstlenmek üzere yaratılmasıyla sonuçlanır. Genel Anunnaki çerçevesi için <a href="/2025/11/anunnakiler-kimdir-mitolojik-kokenlerden-bilimsel-konsensuse-kadar-kapsamli-rehber.html">Anunnakiler kimdir?</a> rehberine bakabilirsiniz.</div>`,
     faq: [
       { question: 'İgigi kimdir?', answer: 'İgigi, Akad ve Babil metinlerinde göksel veya genç tanrılar topluluğu için kullanılan bir addır.' },
