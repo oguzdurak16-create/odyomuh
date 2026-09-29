@@ -3,9 +3,9 @@ const TRAFFIC_UPDATED_AT = '2026-09-15T22:15:00.000Z';
 export const trafficOverrides = {
   '/2025/12/orun-ve-ulus-nedir-ilk-turk-devletlerinde-mevki-ve-pay-sistemi-ders-notu.html': {
     title: 'Orun ve Ülüş Nedir? İlk Türklerde Mevki ve Pay Sistemi',
-    seoTitle: 'Orun ve Ülüş Nedir? Kısa Tanım, Farkı ve Örnekleri',
+    seoTitle: 'Orun ve Ülüş Nedir? İlk Türklerde Anlamı ve Farkı',
     description: 'Orun, ilk Türk devletlerinde mevki ve oturma düzenini; ülüş ise pay ve bölüşüm hakkını anlatır. İki kavramın farkını tablo ve sınavlık örneklerle öğrenin.',
-    metaDescription: 'Orun ve ülüş nedir? Orun = mevki/oturma yeri, ülüş = pay/bölüşüm hakkı. İlk Türk devletlerinde kullanımını kısa tablo ve örneklerle öğrenin.',
+    metaDescription: 'Orun ve ülüş nedir? Orun mevki ve oturma düzenini, ülüş pay ve bölüşüm hakkını anlatır. İlk Türklerdeki anlamını ve farkını kısa örneklerle görün.',
     updated: TRAFFIC_UPDATED_AT,
     searchAliases: ['orun nedir', 'ülüş nedir', 'orun ve ülüş nedir', 'orun ulus nedir', 'ilk türklerde orun ülüş', 'orun ülüş farkı'],
     introHtml: `<section class="odyomuh-note traffic-intent-summary"><strong>30 saniyelik cevap:</strong><p><b>Orun</b>, hükümdar çevresindeki siyasi-sosyal mevkiyi ve buna bağlı oturma yerini; <b>ülüş</b> ise şölen, ganimet veya ekonomik kaynaklardan düşen payı ifade eder. Kısaca “orun = yer/mevki, ülüş = pay” diye hatırlanabilir.</p><table><thead><tr><th>Kavram</th><th>Kısa anlamı</th><th>Akılda tutma</th></tr></thead><tbody><tr><td>Orun</td><td>Mevki ve oturma düzeni</td><td>Yer</td></tr><tr><td>Ülüş</td><td>Pay ve bölüşüm hakkı</td><td>Pay</td></tr></tbody></table><p><a href="/p/ders-notlari.html">Tarih ders notlarına</a> veya <a href="/p/tarih-kronolojisi.html">dünya tarihi kronolojisine</a> geçebilirsiniz.</p></section>`,
@@ -30,8 +30,8 @@ export const trafficOverrides = {
     ],
   },
   '/2025/12/ongun-turk-boylarinin-kutsal-damgalari-ve-totem-hayvanlari.html': {
-    seoTitle: 'Ongun Nedir? Türk Boylarında Ongun, Damga ve Totem Farkı',
-    metaDescription: 'Ongun nedir? Eski Türklerde boylarla ilişkilendirilen kutsal/koruyucu hayvanları, damga ile farkını ve “totem” sözcüğünün neden tam karşılık olmadığını öğrenin.',
+    seoTitle: 'Ongun Ne Demek? Eski Türklerde Ongun ve Örnekleri',
+    metaDescription: 'Ongun, eski Türklerde bir boyla ilişkilendirilen koruyucu veya kutsal hayvan ve semboller için kullanılan terimdir. Damga ve totem farkını örneklerle görün.',
     updated: TRAFFIC_UPDATED_AT,
     searchAliases: ['ongun nedir', 'ongun tarih', 'türklerde ongun', 'ongun damga farkı', 'ongun totem farkı'],
   },

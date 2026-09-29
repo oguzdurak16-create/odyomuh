@@ -24,7 +24,7 @@ import HomeImageDeduplicator from '../../components/HomeImageDeduplicator';
 import AdSlot from '../../components/AdSlot';
 
 const siteUrl = baseUrl || 'https://www.odyomuh.net';
-const siteDescription = site.settings?.blog_meta_description || site.description || 'Tarih, arkeoloji, mitoloji ve kadim uygarlıklar üzerine kaynak odaklı dijital arşiv.';
+const siteDescription = 'Kaynak odaklı tarih, arkeoloji, mitoloji ve kadim uygarlıklar arşivi; kısa cevaplar, kronoloji, ders notları ve araştırma dosyaları.';
 const themeBootstrap = `(function(){try{var saved=localStorage.getItem('odyomuh-theme');var theme=saved==='light'?'light':'dark';document.documentElement.setAttribute('data-theme',theme);document.documentElement.style.colorScheme=theme;}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`;
 
 export const viewport = { width: 'device-width', initialScale: 1, colorScheme: 'light dark', themeColor: '#121923' };
@@ -33,8 +33,7 @@ export const metadata = {
   metadataBase: new URL(siteUrl), applicationName: site.name,
   title: { default: 'ODYOMUH | Tarih, Arkeoloji ve Kadim Uygarlıklar', template: `%s | ${site.name}` },
   description: siteDescription,
-  keywords: ['tarih', 'arkeoloji', 'mitoloji', 'kadim uygarlıklar', 'antik tarih', 'Türk tarihi', 'tarihsel araştırma'],
-  authors: [{ name: site.name, url: siteUrl }], creator: site.name, publisher: site.name, category: 'history',
+  authors: [{ name: site.name, url: `${siteUrl}/p/hakkimizda.html` }], creator: site.name, publisher: site.name, category: 'history',
   alternates: { canonical: '/', languages: { 'tr-TR': '/', en: '/en', 'x-default': '/en' } },
   manifest: '/site.webmanifest', icons: { icon: '/favicon.ico', apple: '/img/logo-512x512.png' },
   openGraph: { locale: 'tr_TR', type: 'website', siteName: site.name, title: 'ODYOMUH | Tarih, Arkeoloji ve Kadim Uygarlıklar', description: siteDescription, url: siteUrl, images: [{ url: generatedArt.explorerDesk, width: 1672, height: 941, alt: 'ODYOMUH tarih ve arkeoloji arşivi' }] },
@@ -49,7 +48,7 @@ export default function TurkishRootLayout({ children }) {
   const websiteId = `${siteUrl}/#website`;
   const jsonLd = { '@context': 'https://schema.org', '@graph': [
     { '@type': 'Organization', '@id': organizationId, name: site.name, url: siteUrl, logo: { '@type': 'ImageObject', url: `${siteUrl}/img/logo-512x512.png`, width: 512, height: 512 }, sameAs: ['https://www.facebook.com/profile.php?id=61554477900461','https://instagram.com/tarihdedektifi0','https://www.youtube.com/@tarihdedektifi0'] },
-    { '@type': 'WebSite', '@id': websiteId, url: siteUrl, name: site.name, description: siteDescription, inLanguage: 'tr-TR', publisher: { '@id': organizationId }, potentialAction: { '@type': 'SearchAction', target: `${siteUrl}/search?q={search_term_string}`, 'query-input': 'required name=search_term_string' } },
+    { '@type': 'WebSite', '@id': websiteId, url: siteUrl, name: site.name, description: siteDescription, inLanguage: 'tr-TR', publisher: { '@id': organizationId } },
   ]};
 
   return <html lang="tr" suppressHydrationWarning style={{ '--font-cinzel': '"Cinzel", Georgia, serif', '--font-merriweather': '"Merriweather", Georgia, serif', '--font-inter': '"Inter", Arial, sans-serif' }}>

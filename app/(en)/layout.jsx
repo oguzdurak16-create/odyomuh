@@ -23,7 +23,6 @@ export const metadata = {
   applicationName: `${site.name} English`,
   title: { default: 'History, Archaeology and Ancient Mysteries | ODYOMUH English', template: '%s | ODYOMUH English' },
   description: siteDescription,
-  keywords: ['history', 'archaeology', 'ancient texts', 'ancient civilizations', 'historical mysteries', 'evidence-led history'],
   authors: [{ name: site.name, url: `${siteUrl}/en/about` }], creator: site.name, publisher: site.name, category: 'history',
   alternates: { canonical: '/en', languages: { en: '/en', 'tr-TR': '/', 'x-default': '/en' } },
   icons: { icon: '/favicon.ico', apple: '/img/logo-512x512.png' }, manifest: '/site.webmanifest',
@@ -37,7 +36,7 @@ export default function EnglishRootLayout({ children }) {
   const websiteId = `${siteUrl}/en/#website`;
   const jsonLd = { '@context': 'https://schema.org', '@graph': [
     { '@type': 'Organization', '@id': organizationId, name: site.name, url: siteUrl, logo: { '@type': 'ImageObject', url: `${siteUrl}/img/logo-512x512.png`, width: 512, height: 512 }, sameAs: ['https://www.facebook.com/profile.php?id=61554477900461','https://instagram.com/tarihdedektifi0','https://www.youtube.com/@tarihdedektifi0'] },
-    { '@type': 'WebSite', '@id': websiteId, url: `${siteUrl}/en`, name: `${site.name} English`, description: siteDescription, inLanguage: 'en', publisher: { '@id': organizationId }, potentialAction: { '@type': 'SearchAction', target: `${siteUrl}/en/search?q={search_term_string}`, 'query-input': 'required name=search_term_string' } },
+    { '@type': 'WebSite', '@id': websiteId, url: `${siteUrl}/en`, name: `${site.name} English`, description: siteDescription, inLanguage: 'en', publisher: { '@id': organizationId } },
   ]};
 
   return <html lang="en" suppressHydrationWarning style={{ '--font-cinzel': '"Cinzel", Georgia, serif', '--font-merriweather': '"Merriweather", Georgia, serif', '--font-inter': '"Inter", Arial, sans-serif' }}>

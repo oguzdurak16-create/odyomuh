@@ -79,7 +79,6 @@ export async function generateMetadata({ params }) {
   const canonical = post.primaryPath;
   const seoTitle = post.seoTitle || post.title;
   const description = metaDescription(post.metaDescription || post.description);
-  const keywords = [...new Set([...(post.labels || []), ...(post.searchAliases || [])])];
   const languages = post.turkishPath
     ? { en: canonical, 'tr-TR': post.turkishPath, 'x-default': canonical }
     : { en: canonical, 'x-default': canonical };
@@ -87,7 +86,6 @@ export async function generateMetadata({ params }) {
   return {
     title: seoTitle,
     description,
-    keywords,
     alternates: { canonical, languages },
     robots: {
       index: true,
@@ -179,7 +177,6 @@ export default async function EnglishDynamicPage({ params }) {
     inLanguage: 'en',
     isAccessibleForFree: true,
     wordCount: words,
-    keywords: [...new Set([...(post.labels || []), ...(post.searchAliases || [])])].join(', '),
     articleSection: topic?.name || post.labels[0],
     isPartOf: { '@type': 'WebSite', '@id': `${siteUrl}/en/#website`, name: `${site.name} English`, url: `${siteUrl}/en` },
     author: { '@type': 'Organization', name: site.name, url: `${siteUrl}/en/about` },
@@ -187,15 +184,6 @@ export default async function EnglishDynamicPage({ params }) {
     citation: post.sources,
     speakable: post.newsArticle ? { '@type': 'SpeakableSpecification', cssSelector: ['.article-title', '.article-summary', '.odyomuh-note'] } : undefined,
   };
-  const faqSchema = post.faq?.length ? {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: post.faq.map((item) => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: { '@type': 'Answer', text: item.answer },
-    })),
-  } : null;
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -210,7 +198,6 @@ export default async function EnglishDynamicPage({ params }) {
     <div className="english-edition english-article-page" lang="en">
       <article className="post article-detail english-article-detail" itemScope itemType={`https://schema.org/${schemaType}`}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-        {faqSchema ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} /> : null}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
         <img className="article-cover" src={post.image} alt={post.title} width="1672" height="941" fetchPriority="high" decoding="async" />
         <div className="post-body article-body">
@@ -222,7 +209,8 @@ export default async function EnglishDynamicPage({ params }) {
           <h1 className="article-title" itemProp="headline">{post.title}</h1>
           <p className="article-summary" itemProp="description">{post.description}</p>
           <div className="post-meta-info">
-            <time dateTime={post.published}>{formatDate(post.published)}</time>
+            {post.published ? <time dateTime={post.published}>Published {formatDate(post.published)}</time> : null}
+            {post.updated && post.updated !== post.published ? <time dateTime={post.updated}>Updated {formatDate(post.updated)}</time> : null}
             <span>{readingTime(post.contentHtml)} min read</span>
             <a href={`/en/topic/${post.topic}`}>{topic?.shortName || post.labels[0]}</a>
           </div>
