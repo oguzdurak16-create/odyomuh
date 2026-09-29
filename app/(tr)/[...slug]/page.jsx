@@ -19,6 +19,8 @@ import { connection } from 'next/server';
 const siteUrl = baseUrl || 'https://www.odyomuh.net';
 const TIMELINE_PATH = '/p/tarih-kronolojisi.html';
 
+export const dynamic = 'force-dynamic';
+
 function pathFromParams(params) {
   const slug = params?.slug || [];
   return '/' + slug.join('/');
