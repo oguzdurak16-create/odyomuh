@@ -46,6 +46,14 @@ function readingTime(value) {
   return Math.max(1, Math.ceil(wordCount(value) / 220));
 }
 
+function hasEmbeddedFaq(value = '') {
+  return /<h2[^>]*>\s*(?:Frequently\s+Asked\s+Questions|Sık\s+Sorulan\s+Sorular)\s*<\/h2>/i.test(String(value));
+}
+
+function hasEmbeddedSources(value = '') {
+  return /<h2[^>]*>\s*(?:Sources(?:\s+and\s+further\s+reading)?|References|Selected\s+sources(?:\s+and\s+research\s+starting\s+points)?|Kaynaklar|Kaynakça)\s*<\/h2>/i.test(String(value));
+}
+
 export function generateStaticParams() {
   const slugs = [
     ...allEnglishPosts().map(resolvedSlug),
@@ -155,6 +163,8 @@ export default async function EnglishDynamicPage({ params }) {
   const url = `${siteUrl}${post.primaryPath}`;
   const description = metaDescription(post.metaDescription || post.description);
   const words = wordCount(post.contentHtml);
+  const embeddedFaq = hasEmbeddedFaq(post.contentHtml);
+  const embeddedSources = hasEmbeddedSources(post.contentHtml);
   const schemaType = post.newsArticle ? 'NewsArticle' : 'Article';
   const articleSchema = {
     '@context': 'https://schema.org',
@@ -219,7 +229,7 @@ export default async function EnglishDynamicPage({ params }) {
           <div className="post-labels top-labels">{post.labels.map((label) => <span key={label}>{label}</span>)}</div>
           <HtmlContent html={post.contentHtml} imageAlt={post.title} className="english-content" />
 
-          {post.faq?.length ? (
+          {post.faq?.length && !embeddedFaq ? (
             <section className="article-faq" aria-labelledby="article-faq-title">
               <h2 id="article-faq-title">Frequently asked questions</h2>
               {post.faq.map((entry) => (
@@ -231,7 +241,7 @@ export default async function EnglishDynamicPage({ params }) {
             </section>
           ) : null}
 
-          <SourceList sources={post.sources} locale="en" />
+          {!embeddedSources ? <SourceList sources={post.sources} locale="en" /> : null}
 
           <div className="english-article-end">
             <p><strong>Keep exploring:</strong> Use the topic hub for closely related articles or browse the full archive instead of starting a new search.</p>
