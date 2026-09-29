@@ -71,6 +71,14 @@ function readingTime(value) {
   return Math.max(1, Math.ceil(wordCount(value) / 210));
 }
 
+function hasEmbeddedFaq(value = '') {
+  return /<h2[^>]*>\s*(?:Sık\s+Sorulan\s+Sorular|Frequently\s+Asked\s+Questions)\s*<\/h2>/i.test(String(value));
+}
+
+function hasEmbeddedSources(value = '') {
+  return /<h2[^>]*>\s*(?:Kaynaklar(?:\s+ve\s+ileri\s+okuma)?|Kaynakça|Seçili\s+kaynaklar(?:\s+ve\s+araştırma\s+başlangıçları)?|Sources|References)\s*<\/h2>/i.test(String(value));
+}
+
 export function generateStaticParams() {
   return routableItems().map((item) => ({ slug: item.primaryPath.split('/').filter(Boolean) }));
 }
@@ -142,6 +150,8 @@ export default async function ContentPage({ params }) {
   const url = `${siteUrl}${item.primaryPath}`;
   const description = metaDescription(item.metaDescription || item.description);
   const englishPath = item.englishPath || englishPathForTurkishPath(item.primaryPath);
+  const embeddedFaq = hasEmbeddedFaq(item.contentHtml);
+  const embeddedSources = hasEmbeddedSources(item.contentHtml);
 
   if (item.primaryPath === TIMELINE_PATH) return <TimelineExperience data={timelineData} />;
   if (item.title === 'Tarih Quiz') return <QuizExperience questions={quizQuestions} />;
@@ -244,7 +254,7 @@ export default async function ContentPage({ params }) {
           {item.labels?.length ? <div className="post-labels top-labels">{item.labels.map((label) => <a key={label} href={`/label/${encodeURIComponent(label)}`}>{label}</a>)}</div> : null}
           <HtmlContent html={item.contentHtml} imageAlt={item.title} />
 
-          {item.faq?.length ? (
+          {item.faq?.length && !embeddedFaq ? (
             <section className="article-faq" aria-labelledby="article-faq-title">
               <h2 id="article-faq-title">Sık sorulan sorular</h2>
               {item.faq.map((entry) => (
@@ -256,7 +266,7 @@ export default async function ContentPage({ params }) {
             </section>
           ) : null}
 
-          <SourceList sources={item.sources} locale="tr" />
+          {!embeddedSources ? <SourceList sources={item.sources} locale="tr" /> : null}
           {item.type === 'POST' ? (
             <nav className="article-next-actions" aria-label="Okumaya devam et">
               <a href="/p/tarih-kronolojisi.html">Tarih kronolojisini aç</a>
