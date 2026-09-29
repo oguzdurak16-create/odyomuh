@@ -14,11 +14,10 @@ import { applyTrafficOverride } from '../../../data/traffic-overrides';
 import { applyAuthorityOverride } from '../../../data/authority-overrides';
 import { allTurkishPosts } from '../../../lib/content-collections';
 import { notFound, permanentRedirect } from 'next/navigation';
+import { connection } from 'next/server';
 
 const siteUrl = baseUrl || 'https://www.odyomuh.net';
 const TIMELINE_PATH = '/p/tarih-kronolojisi.html';
-
-export const revalidate = 1;
 
 function pathFromParams(params) {
   const slug = params?.slug || [];
@@ -86,6 +85,7 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
+  await connection();
   const resolvedParams = await params;
   const item = editorialItem(findRoutableByPath(pathFromParams(resolvedParams)));
   if (!item) return {};
