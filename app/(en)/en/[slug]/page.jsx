@@ -79,7 +79,6 @@ export async function generateMetadata({ params }) {
   const canonical = post.primaryPath;
   const seoTitle = post.seoTitle || post.title;
   const description = metaDescription(post.metaDescription || post.description);
-  const keywords = [...new Set([...(post.labels || []), ...(post.searchAliases || [])])];
   const languages = post.turkishPath
     ? { en: canonical, 'tr-TR': post.turkishPath, 'x-default': canonical }
     : { en: canonical, 'x-default': canonical };
