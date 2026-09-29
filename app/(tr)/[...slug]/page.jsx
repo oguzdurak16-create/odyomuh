@@ -106,8 +106,6 @@ export async function generateMetadata({ params }) {
   return {
     title: seoTitle,
     description,
-    keywords: [...(item.labels || []), ...(item.searchAliases || [])],
-    other: item.newsArticle ? { news_keywords: [...(item.labels || []), ...(item.searchAliases || [])].join(', ') } : undefined,
     alternates: { canonical: canonicalPath, languages },
     robots: {
       index: true,
@@ -191,12 +189,11 @@ export default async function ContentPage({ params }) {
     isAccessibleForFree: true,
     wordCount: item.type === 'POST' ? wordCount(item.contentHtml) : undefined,
     articleSection: item.articleSection || item.labels?.[0] || undefined,
-    keywords: [...(item.labels || []), ...(item.searchAliases || [])].join(', '),
     about: (item.about || item.labels || []).map((name) => ({ '@type': 'Thing', name })),
     citation: item.sources || undefined,
     speakable: item.newsArticle ? { '@type': 'SpeakableSpecification', cssSelector: ['.article-title', '.article-summary', '.odyomuh-note'] } : undefined,
     isPartOf: { '@type': 'WebSite', '@id': `${siteUrl}/#website`, name: site.name, url: siteUrl },
-    author: { '@type': 'Organization', name: site.name, url: siteUrl },
+    author: { '@type': 'Organization', name: site.name, url: `${siteUrl}/p/hakkimizda.html` },
     publisher: {
       '@type': 'Organization',
       '@id': `${siteUrl}/#organization`,
@@ -214,22 +211,12 @@ export default async function ContentPage({ params }) {
       { '@type': 'ListItem', position: 3, name: item.title, item: url },
     ],
   };
-  const faqSchema = item.faq?.length ? {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: item.faq.map((entry) => ({
-      '@type': 'Question',
-      name: entry.question,
-      acceptedAnswer: { '@type': 'Answer', text: entry.answer },
-    })),
-  } : null;
 
   return (
     <div className="article-page-shell">
       <article className="post article-detail" itemScope itemType={item.type === 'POST' ? `https://schema.org/${schemaType}` : 'https://schema.org/WebPage'}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-        {faqSchema ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} /> : null}
         {item.image ? <img className="article-cover" src={item.image} alt={item.title} width="1672" height="941" fetchPriority="high" decoding="async" /> : null}
         <div className="post-body article-body">
           <nav className="breadcrumb-nav" aria-label="Sayfa yolu">
@@ -247,7 +234,8 @@ export default async function ContentPage({ params }) {
           <p className="article-summary" itemProp="description">{item.description}</p>
           {item.newsArticle ? <div className="current-affairs-status"><strong>Güncel dosya</strong><span>Son kontrol: {formatDate(item.updated || item.published)}</span><em>Askerî ve diplomatik durum değişebilir.</em></div> : null}
           <div className="post-meta-info">
-            <time dateTime={item.published}>{formatDate(item.published)}</time>
+            {item.published ? <time dateTime={item.published}>Yayınlandı {formatDate(item.published)}</time> : null}
+            {item.updated && item.updated !== item.published ? <time dateTime={item.updated}>Güncellendi {formatDate(item.updated)}</time> : null}
             <span>{readingTime(item.contentHtml)} dk okuma</span>
             {item.labels?.[0] ? <span>{item.labels[0]}</span> : null}
           </div>
