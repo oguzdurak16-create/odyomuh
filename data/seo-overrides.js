@@ -1,6 +1,22 @@
 const UPDATED_AT = '2026-08-20T12:00:00.000Z';
 
 export const contentOverrides = {
+  '/2025/11/saturn-siyah-kup-ve-kabe-gercekligi-manipule-eden-kadim-tarikatin-gizemi.html': {
+    title: 'Satürn ve Siyah Küp İddiası: Kabe ile Tarihsel Bir Bağlantı Var mı?',
+    seoTitle: 'Satürn, Siyah Küp ve Kabe İddiası: Kanıt Ne Söylüyor?',
+    description: 'Satürn, siyah küp sembolizmi ve Kabe arasında kurulan popüler bağlantıları tarihsel kaynaklar, sembol tarihi ve kanıt sınırları üzerinden inceleyin.',
+    metaDescription: 'Satürn ve siyah küp iddialarının Kabe ile tarihsel bağlantısı var mı? Popüler teorileri kaynak, kronoloji ve kanıt sınırlarıyla değerlendirin.',
+    updated: UPDATED_AT,
+    searchAliases: ['satürn siyah küp', 'kabe satürn iddiası', 'siyah küp sembolizmi', 'satürn kabe bağlantısı'],
+  },
+  '/2025/11/sumerlerin-gizemli-turk-kokeni-sakli-kalan-bin-yillik-kadim-tarih.html': {
+    title: 'Sümerler Türk mü? Dil, Köken ve Tarihsel Kanıtlar Ne Söylüyor?',
+    seoTitle: 'Sümerler Türk mü? Dilbilim ve Tarihsel Kanıtlar',
+    description: 'Sümerlerin Türk kökenli olduğu iddiasını dilbilim, kronoloji, arkeoloji ve modern tarihçilikteki kanıtlar üzerinden değerlendirin.',
+    metaDescription: 'Sümerler Türk mü? Sümerce-Türkçe benzerlik iddialarını, dilbilimsel yöntemleri, kronolojiyi ve tarihsel kanıtların sınırlarını inceleyin.',
+    updated: UPDATED_AT,
+    searchAliases: ['sümerler türk mü', 'sümer türk bağlantısı', 'sümerce türkçe benzerlik', 'sümerlerin kökeni'],
+  },
   '/2025/11/anunnakiler-kimdir-mitolojik-kokenlerden-bilimsel-konsensuse-kadar-kapsamli-rehber.html': {
     title: 'Anunnakiler Kimdir? Sümer Tabletleri, İgigi ve Uzaylı İddiası',
     seoTitle: 'Anunnakiler Kimdir? Sümer Tabletlerinde Gerçekte Ne Yazıyor?',
