@@ -85,6 +85,7 @@ const uniqueRedirects = [...new Map(redirects.map((item) => [item.source, item])
 
 const nextConfig = {
   poweredByHeader: false,
+  htmlLimitedBots: /.*/,
   compress: true,
   async redirects() {
     return [
