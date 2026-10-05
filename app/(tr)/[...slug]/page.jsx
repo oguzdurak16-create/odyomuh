@@ -18,7 +18,7 @@ import { notFound, permanentRedirect } from 'next/navigation';
 const siteUrl = baseUrl || 'https://www.odyomuh.net';
 const TIMELINE_PATH = '/p/tarih-kronolojisi.html';
 
-export const revalidate = 1;
+export const revalidate = 86400;
 
 function pathFromParams(params) {
   const slug = params?.slug || [];

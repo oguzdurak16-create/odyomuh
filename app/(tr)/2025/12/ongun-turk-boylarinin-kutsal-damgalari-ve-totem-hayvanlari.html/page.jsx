@@ -6,8 +6,8 @@ const slug = [
   'ongun-turk-boylarinin-kutsal-damgalari-ve-totem-hayvanlari.html',
 ];
 const canonical = '/2025/12/ongun-turk-boylarinin-kutsal-damgalari-ve-totem-hayvanlari.html';
-const title = 'Ongun Nedir? Türk Boylarında Ongun, Damga ve Totem Farkı';
-const description = 'Ongun nedir? Eski Türklerde boylarla ilişkilendirilen kutsal veya koruyucu hayvanları, damga ile farkını ve “totem” sözcüğünün neden tam karşılık olmadığını öğrenin.';
+const title = 'Ongun Ne Demek? Tarihte Ongun Nedir? (KPSS Kısa Not)';
+const description = 'Tarihte ongun ne demek? Eski Türklerde boylarla ilişkilendirilen kutsal veya koruyucu hayvan simgesini, damga ve totemden farkını KPSS için kısa ve net öğrenin.';
 
 export const metadata = {
   title,
