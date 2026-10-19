@@ -3,9 +3,9 @@ const TRAFFIC_UPDATED_AT = '2026-09-15T22:15:00.000Z';
 export const trafficOverrides = {
   '/2025/12/orun-ve-ulus-nedir-ilk-turk-devletlerinde-mevki-ve-pay-sistemi-ders-notu.html': {
     title: 'Orun ve Ülüş Nedir? İlk Türklerde Mevki ve Pay Sistemi',
-    seoTitle: 'Orun ve Ülüş Nedir? İlk Türklerde Anlamı ve Farkı',
+    seoTitle: 'Orun ve Ülüş Ne Demek? Anlamları, Farkları ve Örnekler',
     description: 'Orun, ilk Türk devletlerinde mevki ve oturma düzenini; ülüş ise pay ve bölüşüm hakkını anlatır. İki kavramın farkını tablo ve sınavlık örneklerle öğrenin.',
-    metaDescription: 'Orun ve ülüş nedir? Orun mevki ve oturma düzenini, ülüş pay ve bölüşüm hakkını anlatır. İlk Türklerdeki anlamını ve farkını kısa örneklerle görün.',
+    metaDescription: 'Orun = yer ve mevki, ülüş = pay. İlk Türk devletlerinde orun ve ülüş ne demek? İki kavramın farkını karşılaştırmalı tablo ve kısa örneklerle öğrenin.',
     updated: TRAFFIC_UPDATED_AT,
     searchAliases: ['orun nedir', 'ülüş nedir', 'orun ve ülüş nedir', 'orun ulus nedir', 'ilk türklerde orun ülüş', 'orun ülüş farkı'],
     introHtml: `<section class="odyomuh-note traffic-intent-summary"><strong>30 saniyelik cevap:</strong><p><b>Orun</b>, hükümdar çevresindeki siyasi-sosyal mevkiyi ve buna bağlı oturma yerini; <b>ülüş</b> ise şölen, ganimet veya ekonomik kaynaklardan düşen payı ifade eder. Kısaca “orun = yer/mevki, ülüş = pay” diye hatırlanabilir.</p><table><thead><tr><th>Kavram</th><th>Kısa anlamı</th><th>Akılda tutma</th></tr></thead><tbody><tr><td>Orun</td><td>Mevki ve oturma düzeni</td><td>Yer</td></tr><tr><td>Ülüş</td><td>Pay ve bölüşüm hakkı</td><td>Pay</td></tr></tbody></table><p><a href="/p/ders-notlari.html">Tarih ders notlarına</a> veya <a href="/p/tarih-kronolojisi.html">dünya tarihi kronolojisine</a> geçebilirsiniz.</p></section>`,
@@ -30,8 +30,8 @@ export const trafficOverrides = {
     ],
   },
   '/2025/12/ongun-turk-boylarinin-kutsal-damgalari-ve-totem-hayvanlari.html': {
-    seoTitle: 'Ongun Ne Demek? Eski Türklerde Ongun ve Örnekleri',
-    metaDescription: 'Ongun, eski Türklerde bir boyla ilişkilendirilen koruyucu veya kutsal hayvan ve semboller için kullanılan terimdir. Damga ve totem farkını örneklerle görün.',
+    seoTitle: 'Ongun Ne Demek? Tarihteki Anlamı ve Türk Boylarından Örnekler',
+    metaDescription: 'Ongun ne demek? Eski Türklerde boylarla ilişkilendirilen kutsal hayvan ve sembolleri, ongunun damga ve totemden farkını örneklerle öğrenin.',
     updated: TRAFFIC_UPDATED_AT,
     searchAliases: ['ongun nedir', 'ongun tarih', 'türklerde ongun', 'ongun damga farkı', 'ongun totem farkı'],
   },
@@ -79,9 +79,9 @@ export const trafficOverrides = {
   },
   '/en/catalhoyuk-rooftop-city-neolithic-life': {
     title: 'Çatalhöyük: Why People Entered Houses Through the Roof',
-    seoTitle: 'Çatalhöyük Houses: Why Were They Entered Through the Roof?',
+    seoTitle: 'Çatalhöyük Rooftop City: Houses, Roof Entrances and Daily Life',
     description: 'Çatalhöyük had tightly packed mudbrick houses with few street-like gaps. See how roof access worked, what archaeologists found inside homes and why “rooftop city” is useful but imperfect.',
-    metaDescription: 'Why did Çatalhöyük houses have roof entrances? See the settlement plan, roof access, wall paintings, burials and what archaeology reveals about daily life.',
+    metaDescription: 'Explore Çatalhöyük’s rooftop city: why houses had roof entrances, how ladders connected homes, and what wall paintings and burials reveal about daily life.',
     updated: TRAFFIC_UPDATED_AT,
     searchAliases: ['catalhoyuk houses', 'çatalhöyük houses', 'catal huyuk definition', 'catalhoyuk rooftop city', 'catalhoyuk roof entrance'],
     introHtml: `<section class="odyomuh-note traffic-intent-summary"><strong>Quick answer:</strong><p>At Çatalhöyük, houses were built directly against one another with very little open space between them. Many rooms were entered from openings in the roof, reached by ladders. Roofs therefore functioned as part of the settlement’s circulation system, while domestic life, craft work and burials took place inside the houses.</p><p>Explore the broader sequence in the <a href="/en">English history hub</a> or compare it with <a href="/en/mohenjo-daro-what-happened-to-the-indus-city">Mohenjo-daro</a>.</p></section>`,

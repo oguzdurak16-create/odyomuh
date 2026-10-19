@@ -60,6 +60,7 @@ export default function SiteChrome({ site, pages, labels, children }) {
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', light ? 'light' : 'dark');
+    document.documentElement.style.colorScheme = light ? 'light' : 'dark';
     window.localStorage.setItem('odyomuh-theme', light ? 'light' : 'dark');
   }, [light]);
 

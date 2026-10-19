@@ -376,3 +376,10 @@ html[data-theme='dark'] .english-hero-copy {
 
 .clean-home .clean-hero-copy, .clean-home .clean-lead { min-height:420px !important; }
 @media(max-width:680px) { .clean-home .clean-hero-copy { min-height:0 !important; } .clean-home .clean-lead { min-height:300px !important; } }
+
+/* Use a single contrast pair for actions in both languages and themes. */
+html[data-theme='light'] { --theme-action:#805215; --theme-on-action:#fff9ef; }
+html[data-theme='dark'] { --theme-action:#d7ad68; --theme-on-action:#17100a; }
+html[data-theme] :is(.clean-primary-button,.home-primary-action,.clean-search button,.modern-page-tools button,.footer-search button,.archive-pagination .is-current) {
+ background:var(--theme-action) !important; border-color:var(--theme-action) !important; color:var(--theme-on-action) !important;
+}
