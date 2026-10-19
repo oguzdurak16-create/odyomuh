@@ -1,7 +1,8 @@
 import Image from 'next/image';
+import { sanitizeContent } from '../lib/sanitize-content';
 
 function stripHtml(value = '') { return String(value).replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim(); }
-function readingTime(post) { const text = stripHtml(post.contentHtml || post.description || ''); return Math.max(1, Math.ceil(text.split(/\s+/).filter(Boolean).length / 210)); }
+function readingTime(post) { const text = stripHtml(sanitizeContent(post.contentHtml || post.description || '')); return Math.max(1, Math.ceil(text.split(/\s+/).filter(Boolean).length / 210)); }
 function formatDate(value) { if (!value) return ''; return new Intl.DateTimeFormat('tr-TR', { day: '2-digit', month: 'short', year: 'numeric', timeZone: 'Europe/Istanbul' }).format(new Date(value)); }
 
 export default function PostCard({ post }) {
