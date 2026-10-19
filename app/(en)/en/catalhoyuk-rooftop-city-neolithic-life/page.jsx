@@ -1,3 +1,4 @@
+import { trafficOverrides } from '../../../../data/traffic-overrides';
 import { dailyEnglishPosts } from '../../../../data/current-updates-2026-07-22';
 import DailyArticlePage from '../../../../components/DailyArticlePage';
 import { baseUrl } from '../../../site-data';
@@ -10,8 +11,8 @@ const post = {
   primaryPath: rawPost.primaryPath || `/en/${rawPost.slug}`,
 };
 const siteUrl = baseUrl || 'https://www.odyomuh.net';
-const seoTitle = 'Çatalhöyük Houses: Why Were They Entered Through the Roof?';
-const seoDescription = 'Why did Çatalhöyük houses have roof entrances? See the settlement plan, roof access, wall paintings, burials and what archaeology reveals about daily life.';
+const seoTitle = trafficOverrides[post.primaryPath].seoTitle;
+const seoDescription = trafficOverrides[post.primaryPath].metaDescription;
 
 export const metadata = {
   title: seoTitle,

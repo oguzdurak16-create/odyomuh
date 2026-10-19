@@ -1,3 +1,4 @@
+import { trafficOverrides } from '../../../../../data/traffic-overrides';
 import ContentPage from '../../../[...slug]/page';
 
 const slug = [
@@ -6,8 +7,8 @@ const slug = [
   'orun-ve-ulus-nedir-ilk-turk-devletlerinde-mevki-ve-pay-sistemi-ders-notu.html',
 ];
 const canonical = '/2025/12/orun-ve-ulus-nedir-ilk-turk-devletlerinde-mevki-ve-pay-sistemi-ders-notu.html';
-const title = 'Orun ve Ülüş Ne Demek? Tarihte Nedir? (KPSS Kısa Not)';
-const description = 'Tarihte orun ve ülüş ne demek? Orun mevki/oturma yeri, ülüş pay/bölüşüm hakkıdır. İlk Türk devletlerinde kullanımını KPSS için kısa örneklerle öğrenin.';
+const title = trafficOverrides[canonical].seoTitle;
+const description = trafficOverrides[canonical].metaDescription;
 
 export const metadata = {
   title,
