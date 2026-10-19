@@ -362,3 +362,17 @@ html[data-theme='dark'] .english-hero-copy {
 @media (prefers-reduced-motion: reduce) {
   body { transition: none !important; }
 }
+
+/* Keep article titles and search usable before decorative imagery. */
+.article-page-shell .article-body > .article-cover { display:block; width:100%; height:auto !important; max-height:340px; aspect-ratio:16/7 !important; object-fit:cover; margin:24px 0; border-radius:12px; }
+.clean-home .clean-hero-copy { padding:clamp(24px,3vw,44px) !important; }
+.clean-home .clean-hero-copy h1 { font-size:clamp(2rem,3.6vw,3.5rem) !important; }
+@media(max-width:680px) {
+ .article-page-shell .article-body > .article-cover { max-height:220px; aspect-ratio:16/9 !important; }
+ .clean-home .clean-hero-copy { padding:24px 20px !important; }
+ .clean-home .clean-search { flex-wrap:wrap; }
+ .clean-home .clean-search input { min-width:0; }
+}
+
+.clean-home .clean-hero-copy, .clean-home .clean-lead { min-height:420px !important; }
+@media(max-width:680px) { .clean-home .clean-hero-copy { min-height:0 !important; } .clean-home .clean-lead { min-height:300px !important; } }

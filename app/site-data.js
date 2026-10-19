@@ -139,7 +139,7 @@ function hashCode(value = '') {
 }
 
 function chooseGeneratedImage(item) {
-  const haystack = normalizeSearchText(`${item.title} ${(item.labels || []).join(' ')} ${item.description || ''} ${item.contentHtml || ''}`);
+  const haystack = normalizeSearchText(`${item.title} ${(item.labels || []).join(' ')} ${item.description || ''}`);
 
   if (includesAny(haystack, ['bermuda', 'deniz', 'okyanus', 'gemi', 'denizcilik', 'pasifik', 'sefer', 'ucgen', 'üçgen'])) {
     return generatedArt.maritimeChart;
@@ -189,8 +189,15 @@ function decorate(item) {
   return {
     ...item,
     labels: canonicalLabels(item.labels || []),
+    ...(item.primaryPath?.includes('/10-kasim-') ? {
+      description: 'Atatürk’ün 10 Kasım 1938’deki vefatı, 09.05 anmaları ve Cumhuriyetin modernleşme mirası üzerine tarihsel bir değerlendirme.',
+      metaDescription: 'Atatürk’ün 10 Kasım 1938’deki vefatı, 09.05 anmaları ve Cumhuriyetin modernleşme mirası üzerine tarihsel bir değerlendirme.',
+      labels: ['Atatürk', 'Türkiye Yakın Tarihi'],
+      sources: ['https://atam.gov.tr/10-kasim-ataturku-anma-gunu/'],
+      contentHtml: item.contentHtml.replace('Saat tam 09:05’te Türkiye genelinde sirenler çalmış, tüm halk iki dakikalık saygı duruşunda bulunmuştur.', '').replace('<p><span style="font-size: medium;">Atatürk, Osmanlı', '<h2>Atatürk ve Cumhuriyetin modernleşmesi</h2><p><span style="font-size: medium;">Atatürk, Osmanlı').replace('<p><span style="font-size: medium;">Her 10 Kasım', '<h2>10 Kasım anmaları ve ortak hafıza</h2><p><span style="font-size: medium;">Her 10 Kasım'),
+    } : {}),
     originalImage: item.image || null,
-    image: item.themeImage || chooseGeneratedImage(item),
+    image: item.themeImage || item.image || chooseGeneratedImage(item),
   };
 }
 

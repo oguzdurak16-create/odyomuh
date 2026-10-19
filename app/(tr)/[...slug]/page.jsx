@@ -1,3 +1,5 @@
+import { relatedScore } from '../../../lib/relevance';
+import { sanitizeContent } from '../../../lib/sanitize-content';
 import HtmlContent from '../../../components/HtmlContent';
 import TimelineExperience from '../../../components/TimelineExperience';
 import QuizExperience from '../../../components/QuizExperience';
@@ -66,7 +68,7 @@ function plainText(value = '') {
 }
 
 function wordCount(value = '') {
-  return plainText(value).split(/\s+/).filter(Boolean).length;
+  return plainText(sanitizeContent(value)).replace(/&(?:[a-z]+|#\d+);/gi, ' ').split(/\s+/).filter(Boolean).length;
 }
 
 function readingTime(value) {
@@ -169,8 +171,7 @@ export default async function ContentPage({ params }) {
     .filter((post) => post.id !== item.id)
     .map((post) => ({
       post,
-      score: ((post.labels || []).filter((label) => item.labels?.includes(label)).length * 3)
-        + ((post.searchAliases || []).filter((alias) => item.searchAliases?.includes(alias)).length * 5),
+      score: relatedScore(item, post),
     }))
     .filter(({ score }) => score > 0)
     .sort((a, b) => b.score - a.score)
@@ -219,7 +220,6 @@ export default async function ContentPage({ params }) {
       <article className="post article-detail" itemScope itemType={item.type === 'POST' ? `https://schema.org/${schemaType}` : 'https://schema.org/WebPage'}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-        {item.image ? <img className="article-cover" src={item.image} alt={item.title} width="1672" height="941" fetchPriority="high" decoding="async" /> : null}
         <div className="post-body article-body">
           <nav className="breadcrumb-nav" aria-label="Sayfa yolu">
             <ol className="breadcrumb-list">
@@ -242,6 +242,7 @@ export default async function ContentPage({ params }) {
             {item.labels?.[0] ? <span>{item.labels[0]}</span> : null}
           </div>
           {item.labels?.length ? <div className="post-labels top-labels">{item.labels.map((label) => <a key={label} href={`/label/${encodeURIComponent(label)}`}>{label}</a>)}</div> : null}
+        {item.image ? <img className="article-cover" src={item.image} alt={item.title} width="1672" height="941" fetchPriority="high" decoding="async" /> : null}
           <HtmlContent html={item.contentHtml} imageAlt={item.title} />
 
           {item.faq?.length && !embeddedFaq ? (

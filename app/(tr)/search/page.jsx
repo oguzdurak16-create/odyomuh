@@ -1,4 +1,4 @@
-import { normalizeSearchText } from '../../site-data';
+import { searchScore } from '../../../lib/relevance';
 import { allTurkishPosts } from '../../../lib/content-collections';
 import PostCard from '../../../components/PostCard';
 
@@ -12,10 +12,9 @@ export const metadata = {
 export default async function SearchPage({ searchParams }) {
   const resolved = await searchParams;
   const q = String(resolved?.q || '').trim();
-  const normalized = normalizeSearchText(q);
   const allPosts = allTurkishPosts();
   const results = q
-    ? allPosts.filter((post) => normalizeSearchText(`${post.title} ${post.description} ${(post.labels || []).join(' ')} ${(post.searchAliases || []).join(' ')} ${String(post.contentHtml || '').replace(/<[^>]+>/g, ' ')}`).includes(normalized))
+    ? allPosts.map(post => ({ post, score: searchScore(post, q) })).filter(item => item.score > 0).sort((a, b) => b.score - a.score).map(item => item.post)
     : allPosts.slice(0, 12);
 
   return (
