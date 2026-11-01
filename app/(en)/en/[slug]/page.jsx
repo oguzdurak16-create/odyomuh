@@ -7,6 +7,7 @@ import { applyTrafficOverride } from '../../../../data/traffic-overrides';
 import { baseUrl, site, metaDescription } from '../../../site-data';
 import { allEnglishPosts } from '../../../../lib/content-collections';
 import HtmlContent from '../../../../components/HtmlContent';
+import ImageCredit from '../../../../components/ImageCredit';
 import SourceList from '../../../../components/SourceList';
 import EnglishPostCard from '../../../../components/EnglishPostCard';
 
@@ -104,7 +105,7 @@ export async function generateMetadata({ params }) {
       title: seoTitle,
       description,
       url: canonical,
-      images: [{ url: post.image, width: 1672, height: 941, alt: post.title }],
+      images: [{ url: post.image, width: post.imageWidth || 1672, height: post.imageHeight || 941, alt: post.imageAlt || post.title }],
       publishedTime: post.published,
       modifiedTime: post.updated || post.published,
       authors: [site.name],
@@ -200,7 +201,8 @@ export default async function EnglishDynamicPage({ params }) {
       <article className="post article-detail english-article-detail" itemScope itemType={`https://schema.org/${schemaType}`}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-        <img className="article-cover" src={post.image} alt={post.title} width="1672" height="941" fetchPriority="high" decoding="async" />
+        <img className="article-cover" src={post.image} alt={post.imageAlt || post.title} width={post.imageWidth || 1672} height={post.imageHeight || 941} fetchPriority="high" decoding="async" />
+        <ImageCredit credit={post.imageCredit} english />
         <div className="post-body article-body">
           <nav className="english-breadcrumb" aria-label="Breadcrumb">
             <a href="/en">English Edition</a><span>›</span><a href={topicHref}>{topic?.shortName || 'Archive'}</a><span>›</span><span>{post.title}</span>

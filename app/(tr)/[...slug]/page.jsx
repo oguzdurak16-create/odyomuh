@@ -1,6 +1,7 @@
 import { relatedScore } from '../../../lib/relevance';
 import { sanitizeContent } from '../../../lib/sanitize-content';
 import HtmlContent from '../../../components/HtmlContent';
+import ImageCredit from '../../../components/ImageCredit';
 import TimelineExperience from '../../../components/TimelineExperience';
 import QuizExperience from '../../../components/QuizExperience';
 import DersNotlariExperience from '../../../components/DersNotlariExperience';
@@ -102,7 +103,7 @@ export async function generateMetadata({ params }) {
     : item.title === 'Tarih Quiz' || item.title === 'Ders Notları'
       ? generatedArt.ancientLibraryDesk
       : item.image;
-  const image = specialImage ? [{ url: specialImage, width: 1672, height: 941, alt: item.title }] : [];
+  const image = specialImage ? [{ url: specialImage, width: item.imageWidth || 1672, height: item.imageHeight || 941, alt: item.imageAlt || item.title }] : [];
   const languages = englishPath
     ? { 'tr-TR': canonicalPath, en: englishPath, 'x-default': englishPath }
     : { 'tr-TR': canonicalPath };
@@ -242,7 +243,8 @@ export default async function ContentPage({ params }) {
             {item.labels?.[0] ? <span>{item.labels[0]}</span> : null}
           </div>
           {item.labels?.length ? <div className="post-labels top-labels">{item.labels.map((label) => <a key={label} href={`/label/${encodeURIComponent(label)}`}>{label}</a>)}</div> : null}
-        {item.image ? <img className="article-cover" src={item.image} alt={item.title} width="1672" height="941" fetchPriority="high" decoding="async" /> : null}
+        {item.image ? <img className="article-cover" src={item.image} alt={item.imageAlt || item.title} width={item.imageWidth || 1672} height={item.imageHeight || 941} fetchPriority="high" decoding="async" /> : null}
+          <ImageCredit credit={item.imageCredit} />
           <HtmlContent html={item.contentHtml} imageAlt={item.title} />
 
           {item.faq?.length && !embeddedFaq ? (

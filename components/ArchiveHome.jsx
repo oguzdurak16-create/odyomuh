@@ -4,6 +4,7 @@ import { evergreenGuides } from '../lib/evergreen';
 import { allTurkishPosts, allEnglishPosts } from '../lib/content-collections';
 import { englishTopics } from '../data/en-topics';
 import styles from './ArchiveHome.module.css';
+import ImageCredit from './ImageCredit';
 
 const turkishTopics = [
   { title: 'Arkeoloji', href: '/label/Arkeoloji' },
@@ -49,9 +50,10 @@ export default function ArchiveHome({ language = 'tr' }) {
     <section className={styles.featureSection} aria-labelledby="feature-title">
       <div className={styles.heading}><h2 id="feature-title">{en ? 'A good place to start' : 'Okumaya buradan başla'}</h2><a href={en ? '/en/archive' : '/rehberler'}>{en ? 'All guides' : 'Tüm rehberler'} <Arrow /></a></div>
       {lead ? <a className={styles.feature} href={lead.primaryPath} aria-label={lead.title}>
-        <div className={styles.featureImage}><Image src={lead.image || generatedArt.explorerDesk} alt={lead.title} fill sizes="(max-width: 600px) 120px, (max-width: 900px) 46vw, 55vw" priority /></div>
+        <div className={styles.featureImage}><Image src={lead.image || generatedArt.explorerDesk} alt={lead.imageAlt || lead.title} fill sizes="(max-width: 600px) 120px, (max-width: 900px) 46vw, 55vw" priority /></div>
         <div className={styles.featureCopy}><span className={styles.label}>{lead.labels?.[0] || (en ? 'HISTORY & ARCHAEOLOGY' : 'TARİH & ARKEOLOJİ')}</span><h3>{leadTitle}</h3><p>{lead.description}</p><strong>{en ? 'Read the story' : 'Yazıyı keşfet'} <Arrow /></strong></div>
       </a> : null}
+      <ImageCredit credit={lead?.imageCredit} english={en} />
     </section>
 
     <section className={styles.utilities} aria-label={en ? 'Explore the archive' : 'Tarih araçları'}>{tools.map((tool) => <a href={tool.href} key={tool.href}><span className={styles.utilityMark}>{tool.mark}</span><span><strong>{tool.title}</strong><small>{tool.note}</small></span><Arrow /></a>)}</section>

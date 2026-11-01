@@ -83,3 +83,6 @@ html { -webkit-text-size-adjust:100%; text-size-adjust:100%; }
 @media(max-width:980px) {
  .mobile-menu-drawer { height:var(--visual-viewport-height,100dvh)!important; min-height:0!important; max-height:var(--visual-viewport-height,100dvh)!important; top:var(--visual-viewport-top,0px)!important; bottom:auto!important; }
 }
+.image-credit { margin:8px 0 0!important; color:var(--neo-muted)!important; font:12px/1.5 var(--font-inter),Arial,sans-serif!important; text-align:right; }
+.image-credit a { color:inherit; text-decoration:underline; text-underline-offset:3px; }
+.desktop-nav-language { display:none!important; }
