@@ -4,6 +4,7 @@ import { useViewportMetrics } from '../lib/useViewportMetrics';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Script from 'next/script';
+import { applyTheme, readStoredTheme, THEME_STORAGE_KEY } from '../lib/theme';
 
 const LEGAL_TITLES = ['KVKK Aydınlatma Metni', 'Çerez Politikası', 'Kullanım Şartları', 'Gizlilik Politikası'];
 const AUX_TITLES = ['Hakkımızda', 'İletişim'];
@@ -51,15 +52,25 @@ export default function SiteChrome({ site, pages, labels, children }) {
   const notesPage = findPageByTitle(primaryPages, 'Ders Notları');
 
   useEffect(() => {
-    setLight(document.documentElement.dataset.theme !== 'dark');
+    // Also repairs a restored page or a load where the head script did not run.
+    const restoreTheme = () => setLight(applyTheme(readStoredTheme()) === 'light');
+    const onStorage = (event) => {
+      if (event.key === THEME_STORAGE_KEY || event.key === null) restoreTheme();
+    };
+    restoreTheme();
+    window.addEventListener('pageshow', restoreTheme);
+    window.addEventListener('storage', onStorage);
+    return () => {
+      window.removeEventListener('pageshow', restoreTheme);
+      window.removeEventListener('storage', onStorage);
+    };
   }, []);
 
   const toggleTheme = () => {
     const nextLight = document.documentElement.dataset.theme === 'dark';
     const theme = nextLight ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', theme);
-    document.documentElement.style.colorScheme = theme;
-    try { window.localStorage.setItem('odyomuh-theme-v2', theme); } catch { /* The theme also works without storage. */ }
+    applyTheme(theme);
+    try { window.localStorage.setItem(THEME_STORAGE_KEY, theme); } catch { /* The theme also works without storage. */ }
     setLight(nextLight);
   };
 

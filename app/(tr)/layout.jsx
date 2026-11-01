@@ -19,13 +19,13 @@ import '../reading-chrome.css';
 import '../timeline-seo.css';
 import { site, pages, baseUrl, generatedArt } from '../site-data';
 import SiteChrome from '../../components/SiteChrome';
+import { themeBootstrap } from '../../lib/theme';
 import ConsentRestore from '../../components/ConsentRestore';
 import AnalyticsBootstrap from '../../components/AnalyticsBootstrap';
 import AdSlot from '../../components/AdSlot';
 
 const siteUrl = baseUrl || 'https://www.odyomuh.net';
 const siteDescription = 'Kaynak odaklı tarih, arkeoloji, mitoloji ve kadim uygarlıklar arşivi; kısa cevaplar, kronoloji, ders notları ve araştırma dosyaları.';
-const themeBootstrap = `(function(){try{var saved=localStorage.getItem('odyomuh-theme-v2');var consent=localStorage.getItem('odyomuh-cookie-consent');if(consent==='accepted'||consent==='rejected')document.documentElement.dataset.consentKnown='true';var theme=saved==='dark'?'dark':'light';document.documentElement.setAttribute('data-theme',theme);document.documentElement.style.colorScheme=theme;}catch(e){document.documentElement.setAttribute('data-theme','light');}})();`;
 
 export const viewport = { width: 'device-width', initialScale: 1, colorScheme: 'light dark', themeColor: '#fbfaf7' };
 
@@ -51,7 +51,7 @@ export default function TurkishRootLayout({ children }) {
     { '@type': 'WebSite', '@id': websiteId, url: siteUrl, name: site.name, description: siteDescription, inLanguage: 'tr-TR', publisher: { '@id': organizationId } },
   ]};
 
-  return <html data-scroll-behavior="smooth" lang="tr" suppressHydrationWarning style={{ '--font-cinzel': '"Cinzel", Georgia, serif', '--font-merriweather': '"Merriweather", Georgia, serif', '--font-inter': '"Inter", Arial, sans-serif' }}>
+  return <html data-theme="light" data-scroll-behavior="smooth" lang="tr" suppressHydrationWarning style={{ '--font-cinzel': '"Cinzel", Georgia, serif', '--font-merriweather': '"Merriweather", Georgia, serif', '--font-inter': '"Inter", Arial, sans-serif' }}>
     <head><script dangerouslySetInnerHTML={{ __html: themeBootstrap }} /><script id="odyomuh-consent-default-head" src="/consent-default.js" /><script id="odyomuh-adsense-script" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4491868887846507" crossOrigin="anonymous" /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" /><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" /><link rel="alternate" type="application/rss+xml" title="ODYOMUH Türkçe RSS" href="/feed.xml" /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} /></head>
     <body><AnalyticsBootstrap /><SiteChrome site={{ name: site.name, description: siteDescription }} pages={pageLinks} labels={labelLinks}><ConsentRestore />{children}<AdSlot slot={process.env.NEXT_PUBLIC_ADSENSE_CONTENT_SLOT} afterSelector=".post-meta-info" /></SiteChrome></body>
   </html>;
