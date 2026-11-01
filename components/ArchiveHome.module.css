@@ -1,0 +1,86 @@
+.root { --archive-accent: #366a54; --archive-soft: #eaf1e9; width: min(1180px, calc(100% - 48px)); margin: 0 auto; padding: 34px 0 56px; color: var(--neo-text); font-family: var(--font-inter), Arial, sans-serif; }
+:global(html[data-theme='dark']) .root { --archive-accent: #abd3bb; --archive-soft: #243d32; }
+.introduction { display: flex; justify-content: space-between; gap: 36px; align-items: center; }
+.introduction h1 { margin: 0; color: var(--neo-text); font-family: Georgia, 'Times New Roman', serif; font-size: clamp(32px, 3.7vw, 47px); line-height: 1.15; letter-spacing: -.035em; }
+.introduction p { margin: 8px 0 0; color: var(--neo-muted); font-size: 15px; line-height: 1.6; }
+.search { display: flex; align-items: center; gap: 10px; flex: 0 1 430px; min-width: 0; min-height: 52px; padding: 5px 6px 5px 15px; background: var(--neo-panel-solid); border: 1px solid var(--neo-border-strong); border-radius: 10px; }
+.search:focus-within { outline: 2px solid var(--archive-accent); outline-offset: 2px; }
+.search > svg { flex: 0 0 auto; color: var(--neo-muted); }
+.search input { width: 100%; min-width: 0; height: 40px; padding: 0; border: 0; outline: 0; color: var(--neo-text); background: transparent; font: inherit; font-size: 16px; }
+.search input::placeholder { color: var(--neo-muted); opacity: 1; }
+.search button { min-height: 42px; padding: 8px 18px; flex: 0 0 auto; border: 0; border-radius: 7px; background: var(--archive-accent); color: #fff; font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; }
+:global(html[data-theme='dark']) .search button { color: #15251b; }
+.topics { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--neo-border); }
+.topics a { display: inline-flex; align-items: center; min-height: 40px; padding: 7px 14px; border: 1px solid var(--neo-border); border-radius: 8px; background: var(--neo-panel-solid); color: var(--neo-soft); text-decoration: none; font-size: 13px; font-weight: 600; line-height: 1.4; }
+.topics a:hover { color: var(--archive-accent); border-color: var(--archive-accent); }
+.featureSection { padding-top: 22px; }
+.heading { min-height: 44px; display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
+.heading h2 { color: var(--neo-text); font-size: 20px; line-height: 1.35; font-weight: 700; letter-spacing: -.02em; }
+.heading > a { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; color: var(--archive-accent); text-decoration: none; font-size: 13px; font-weight: 650; white-space: nowrap; }
+.feature { display: grid; grid-template-columns: 1.15fr 1fr; min-width: 0; min-height: 340px; overflow: hidden; border: 1px solid var(--neo-border); border-radius: 16px; background: var(--neo-panel-solid); color: var(--neo-text); text-decoration: none; }
+.feature:hover h3 { color: var(--archive-accent); }
+.featureImage { position: relative; min-width: 0; min-height: 100%; background: var(--neo-panel-2); }
+.featureImage img { object-fit: cover; }
+.featureCopy { align-self: center; padding: 32px; }
+.label { display: block; color: var(--archive-accent); font-size: 11px; font-weight: 700; letter-spacing: .055em; line-height: 1.5; }
+.featureCopy h3 { margin: 14px 0 12px; color: var(--neo-text); font: 700 clamp(27px, 2.8vw, 37px)/1.18 Georgia, serif; letter-spacing: -.025em; }
+.featureCopy p { color: var(--neo-muted); font-size: 15px; line-height: 1.75; }
+.featureCopy > strong { display: inline-flex; align-items: center; gap: 20px; margin-top: 22px; color: var(--archive-accent); font-size: 14px; }
+.utilities { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; margin: 24px 0 38px; }
+.utilities > a { display: flex; align-items: center; gap: 14px; min-height: 90px; padding: 18px; border: 1px solid var(--neo-border); border-radius: 12px; background: var(--archive-soft); color: var(--neo-text); text-decoration: none; }
+.utilityMark { color: var(--archive-accent); font-size: 12px; font-weight: 750; }
+.utilities > a > span:nth-child(2) { flex: 1; }
+.utilities strong { display: block; font-size: 15px; line-height: 1.35; }
+.utilities small { display: block; margin-top: 4px; color: var(--neo-muted); font-size: 12px; line-height: 1.5; }
+.utilities > a > span:last-child { color: var(--archive-accent); }
+.storyGrid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; }
+.story { min-width: 0; border-bottom: 1px solid var(--neo-border); padding-bottom: 22px; }
+.storyImage { position: relative; display: block; width: 100%; aspect-ratio: 16 / 10; background: var(--neo-panel-2); overflow: hidden; border-radius: 12px; }
+.storyImage img { object-fit: cover; }
+.storyCopy { padding-top: 16px; }
+.storyCopy h3 { margin: 9px 0; color: var(--neo-text); font-family: Georgia, serif; font-size: 23px; line-height: 1.3; letter-spacing: -.015em; }
+.storyCopy h3 a { color: inherit; text-decoration: none; }
+.storyCopy h3 a:hover { color: var(--archive-accent); }
+.storyCopy p { color: var(--neo-muted); font-size: 14px; line-height: 1.75; }
+.readLink { display: inline-flex; align-items: center; gap: 18px; margin-top: 14px; min-height: 44px; color: var(--archive-accent); text-decoration: none; font-size: 13px; font-weight: 650; }
+.archiveLink { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 28px; margin-top: 36px; border-radius: 14px; background: var(--archive-soft); }
+.archiveLink strong { color: var(--neo-text); font-family: Georgia, serif; font-size: 24px; line-height: 1.3; }
+.archiveLink p { margin-top: 8px; color: var(--neo-muted); font-size: 14px; line-height: 1.6; }
+.archiveLink > a { display: inline-flex; align-items: center; justify-content: center; gap: 16px; min-height: 46px; padding: 10px 18px; flex: 0 0 auto; border: 1px solid var(--archive-accent); border-radius: 9px; color: var(--archive-accent); text-decoration: none; font-size: 14px; font-weight: 650; }
+@media(max-width:900px) { .introduction { align-items: stretch; flex-direction: column; gap: 18px; } .search { flex: 0 0 auto; width: 100%; } .feature { min-height: 280px; } .featureCopy { padding: 24px; } .storyGrid { grid-template-columns: repeat(2,minmax(0,1fr)); } .utilities { gap: 9px; } .utilities > a { padding: 14px; gap: 10px; } }
+@media(max-width:600px) {
+ .root { width: calc(100% - 32px); padding-top: 20px; padding-bottom: 32px; }
+ .introduction { gap: 16px; }
+ .introduction h1 { font-size: 31px; }
+ .introduction p { font-size: 14px; margin-top: 5px; }
+ .search { min-height: 50px; }
+ .search button { min-height: 42px; padding-inline: 14px; }
+ .topics { flex-wrap: nowrap; overflow-x: auto; gap: 7px; margin-top: 16px; padding-bottom: 16px; scrollbar-width: thin; }
+ .topics a { flex: 0 0 auto; min-height: 40px; padding-inline: 11px; font-size: 12px; }
+ .featureSection { padding-top: 10px; }
+ .heading { gap: 8px; margin-bottom: 8px; }
+ .heading h2 { font-size: 17px; }
+ .heading > a { gap: 7px; font-size: 12px; }
+ .feature { grid-template-columns: minmax(0,1fr) 116px; min-height: 164px; border-radius: 12px; }
+ .featureCopy { order: 1; padding: 18px 14px; }
+ .featureImage { order: 2; }
+ .featureCopy h3 { font-size: 23px; margin: 9px 0 0; line-height: 1.17; }
+ .featureCopy p { display: none; }
+ .featureCopy > strong { margin-top: 14px; font-size: 12px; gap: 10px; }
+ .label { font-size: 10px; line-height: 1.5; letter-spacing: .035em; }
+ .utilities { margin: 16px 0 26px; gap: 7px; }
+ .utilities > a { display: block; min-height: 82px; padding: 12px 9px; border-radius: 10px; }
+ .utilities strong { font-size: 12px; }
+ .utilities small { display: none; }
+ .utilityMark { display: block; margin-bottom: 7px; font-size: 11px; }
+ .utilities > a > span:last-child { display: none; }
+ .storyGrid { grid-template-columns: 1fr; gap: 0; }
+ .story { display: grid; grid-template-columns: 96px minmax(0,1fr); gap: 16px; padding: 16px 0; }
+ .storyImage { aspect-ratio: auto; min-height: 108px; max-height: 140px; border-radius: 9px; }
+ .storyCopy { min-width: 0; padding: 0; }
+ .storyCopy h3 { font-size: 18px; margin-top: 7px; line-height: 1.35; }
+ .storyCopy p, .readLink { display: none; }
+ .archiveLink { display: block; padding: 22px; margin-top: 24px; }
+ .archiveLink strong { font-size: 23px; }
+ .archiveLink > a { margin-top: 16px; }
+}

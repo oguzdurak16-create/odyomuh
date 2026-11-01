@@ -1,5 +1,6 @@
 "use client";
 
+import { useViewportMetrics } from '../lib/useViewportMetrics';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Script from 'next/script';
@@ -19,12 +20,13 @@ function findPageByTitle(pages, title) {
 }
 
 export default function SiteChrome({ site, pages, labels, children }) {
+  useViewportMetrics();
   const pathname = usePathname();
   const isEnglish = pathname?.startsWith('/en');
   const [menuOpen, setMenuOpen] = useState(false);
   const menuButtonRef = useRef(null);
   const drawerRef = useRef(null);
-  const [light, setLight] = useState(false);
+  const [light, setLight] = useState(true);
   const [showTop, setShowTop] = useState(false);
   const [consent, setConsent] = useState('unset');
   const year = new Date().getFullYear();
@@ -49,22 +51,23 @@ export default function SiteChrome({ site, pages, labels, children }) {
   const notesPage = findPageByTitle(primaryPages, 'Ders Notları');
 
   useEffect(() => {
-    const saved = window.localStorage.getItem('odyomuh-theme');
-    const isLight = saved === 'light';
-    setLight(isLight);
-    document.documentElement.setAttribute('data-theme', isLight ? 'light' : 'dark');
+    setLight(document.documentElement.dataset.theme !== 'dark');
   }, []);
+
+  const toggleTheme = () => {
+    const nextLight = document.documentElement.dataset.theme === 'dark';
+    const theme = nextLight ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', theme);
+    document.documentElement.style.colorScheme = theme;
+    try { window.localStorage.setItem('odyomuh-theme-v2', theme); } catch { /* The theme also works without storage. */ }
+    setLight(nextLight);
+  };
 
   useEffect(() => {
     const savedConsent = window.localStorage.getItem('odyomuh-cookie-consent');
     setConsent(savedConsent === 'accepted' || savedConsent === 'rejected' ? savedConsent : 'unset');
   }, []);
 
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', light ? 'light' : 'dark');
-    document.documentElement.style.colorScheme = light ? 'light' : 'dark';
-    window.localStorage.setItem('odyomuh-theme', light ? 'light' : 'dark');
-  }, [light]);
 
   useEffect(() => {
     const onScroll = () => setShowTop(window.scrollY > 450);
@@ -138,9 +141,7 @@ export default function SiteChrome({ site, pages, labels, children }) {
     ? 'An independent history archive. Archaeology, ancient worlds and historical mysteries.'
     : 'Dijital tarih arşivi. Antik dünya, savaşlar, uygarlıklar ve gizem dosyaları.';
   const kicker = isEnglish ? 'Digital History Archive · English Edition' : 'Dijital Tarih Arşivi';
-  const description = isEnglish
-    ? 'History, archaeology and historical mysteries for readers around the world.'
-    : (site.description || 'Tarihin derinliklerinde bir yolculuk');
+  const description = isEnglish ? 'History, archaeology & culture.' : 'Tarih, arkeoloji ve kültür.';
 
   const englishTopics = [
     { href: '/en/topic/middle-east', label: 'Middle East' },
@@ -225,7 +226,7 @@ export default function SiteChrome({ site, pages, labels, children }) {
         </div>
       </div>
 
-      <header id="header-wrapper">
+      <header id="header-wrapper" data-home={pathname === '/' || pathname === '/en' ? 'true' : undefined}>
         <div id="header" className="container antique-header-main">
           <a className="brand-lockup" href={homeHref} aria-label={site.name}>
             <img className="brand-mark" src="/theme/odyomuh-mark.svg" alt="ODYOMUH" width="220" height="220" />
@@ -237,11 +238,12 @@ export default function SiteChrome({ site, pages, labels, children }) {
           </a>
 
           <div className="header-actions-desktop">
+            <a className="header-mobile-search" href={isEnglish ? '/en/search' : '/search'} aria-label={isEnglish ? 'Search the archive' : 'Arşivde ara'}><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m16 16 5 5" /></svg></a>
             <a className="header-language-link" href={isEnglish ? '/' : '/en'} aria-label={isEnglish ? 'Türkçe siteye geç' : 'Switch to English'}>
               <span>{isEnglish ? 'TR' : 'EN'}</span>
               <small>{isEnglish ? 'Türkçe' : 'English'}</small>
             </a>
-            <button className="header-theme-button" type="button" aria-label={isEnglish ? 'Change theme' : 'Tema değiştir'} onClick={() => setLight((v) => !v)}>
+            <button className="header-theme-button" type="button" aria-label={isEnglish ? 'Change theme' : 'Tema değiştir'} onClick={toggleTheme}>
               <span className="header-theme-icon" aria-hidden="true">{light ? '☾' : '☀'}</span>
               <span className="header-theme-label">{light ? (isEnglish ? 'Dark' : 'Koyu') : (isEnglish ? 'Light' : 'Açık')}</span>
             </button>
@@ -410,7 +412,20 @@ export default function SiteChrome({ site, pages, labels, children }) {
         </div>
       </aside>
 
-      <main id="main-content" className="container content-wrapper">{children}</main>
+      {consent === 'unset' ? (
+        <aside className="cookie-consent" role="region" aria-label={isEnglish ? 'Cookie preferences' : 'Çerez tercihleri'}>
+          <div>
+            <strong>{isEnglish ? 'Cookie preferences' : 'Çerez tercihleri'}</strong>
+            <p>{isEnglish ? 'Analytics and ad cookies need your permission.' : 'Analitik ve reklam çerezleri izninle açılır.'}</p>
+          </div>
+          <div className="cookie-consent-actions">
+            <button type="button" className="cookie-reject" onClick={() => updateConsent('rejected')}>{isEnglish ? 'Reject' : 'Reddet'}</button>
+            <button type="button" className="cookie-accept" onClick={() => updateConsent('accepted')}>{isEnglish ? 'Accept' : 'Kabul et'}</button>
+          </div>
+        </aside>
+      ) : null}
+
+      <main id="main-content" className={`container content-wrapper ${pathname === '/' || pathname === '/en' ? 'home-canvas' : ''}`}>{children}</main>
 
       <footer id="footer">
         <div className="footer-top-glow" aria-hidden="true" />
@@ -472,20 +487,9 @@ export default function SiteChrome({ site, pages, labels, children }) {
         </div>
       </footer>
 
-      {consent === 'unset' ? (
-        <aside className="cookie-consent" role="dialog" aria-label={isEnglish ? 'Cookie preferences' : 'Çerez tercihleri'}>
-          <div>
-            <strong>{isEnglish ? 'Cookie preferences' : 'Çerez tercihleri'}</strong>
-            <p>{isEnglish ? 'Analytics and advertising scripts load only after your permission.' : 'Analitik ve reklam komut dosyaları yalnızca izin verdiğinde yüklenir.'}</p>
-          </div>
-          <div className="cookie-consent-actions">
-            <button type="button" className="cookie-reject" onClick={() => updateConsent('rejected')}>{isEnglish ? 'Reject' : 'Reddet'}</button>
-            <button type="button" className="cookie-accept" onClick={() => updateConsent('accepted')}>{isEnglish ? 'Accept' : 'Kabul et'}</button>
-          </div>
-        </aside>
-      ) : null}
 
-      <button className="dark-mode-toggle" type="button" aria-label={isEnglish ? 'Change theme' : 'Tema değiştir'} onClick={() => setLight((v) => !v)}>{light ? '☾' : '☀'}</button>
+
+      <button className="dark-mode-toggle" type="button" aria-label={isEnglish ? 'Change theme' : 'Tema değiştir'} onClick={toggleTheme}>{light ? '☾' : '☀'}</button>
       <button id="backTop" className={showTop ? 'show' : ''} type="button" aria-label={isEnglish ? 'Back to top' : 'Yukarı çık'} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>↑</button>
     </>
   );
