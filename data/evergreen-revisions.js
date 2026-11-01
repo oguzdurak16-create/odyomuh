@@ -1,3 +1,4 @@
+import { priorityGuideRevisions } from './priority-guide-revisions.js';
 // Substantive revisions: preserve the original URL and publication timestamp.
 const updated = '2026-11-01T00:00:00Z';
 export const evergreenRevisions = {
@@ -98,6 +99,6 @@ export const evergreenRevisions = {
 };
 
 export function applyEvergreenRevision(item) {
-  const revision = item && evergreenRevisions[item.primaryPath];
+  const revision = item && (priorityGuideRevisions[item.primaryPath] || evergreenRevisions[item.primaryPath]);
   return revision ? { ...item, ...revision } : item;
 }

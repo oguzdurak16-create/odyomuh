@@ -10,6 +10,8 @@ for (const [locale, posts] of [['tr', allTurkishPosts()], ['en', allEnglishPosts
   assert.equal(new Set(evergreenPaths[locale]).size, guides.length, `${locale}: duplicate selected guide`);
   for (const guide of guides) {
     assert.ok(!guide.newsArticle, `${locale}: news must not enter the evergreen selection: ${guide.primaryPath}`);
+    assert.ok(guide.sources?.length >= 2 && guide.sources.every((source) => /https:\/\/[^\s]+/.test(source)), `Selected guide needs linked, inspectable references: ${guide.primaryPath}`);
+    assert.ok(!/Building an evidence map|How archaeology turns a site into an argument|From impressive object to engineering explanation|Konuyu daha derin okumak|data-personalized/.test(guide.contentHtml), `Generic appendix leaked into selected guide: ${guide.primaryPath}`);
     assert.ok(guide.title && guide.description && guide.contentHtml, `${locale}: guide must have actual content: ${guide.primaryPath}`);
   }
 }
