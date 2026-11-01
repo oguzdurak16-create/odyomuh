@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Script from 'next/script';
 
@@ -22,6 +22,8 @@ export default function SiteChrome({ site, pages, labels, children }) {
   const pathname = usePathname();
   const isEnglish = pathname?.startsWith('/en');
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuButtonRef = useRef(null);
+  const drawerRef = useRef(null);
   const [light, setLight] = useState(false);
   const [showTop, setShowTop] = useState(false);
   const [consent, setConsent] = useState('unset');
@@ -74,11 +76,22 @@ export default function SiteChrome({ site, pages, labels, children }) {
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
     if (!menuOpen) return undefined;
+    // Wait for the drawer's visibility transition to start before moving focus.
+    let focusFrame = window.requestAnimationFrame(() => {
+      focusFrame = window.requestAnimationFrame(() => drawerRef.current?.querySelector('.mobile-menu-close')?.focus({ preventScroll: true }));
+    });
     const onKeyDown = (event) => {
-      if (event.key === 'Escape') setMenuOpen(false);
+      if (event.key === 'Escape') { setMenuOpen(false); menuButtonRef.current?.focus(); }
+      if (event.key === 'Tab') {
+        const items = [...(drawerRef.current?.querySelectorAll('a[href],button:not([disabled]),input:not([disabled])') || [])].filter((node) => node.getClientRects().length);
+        const first = items[0], last = items[items.length - 1];
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+      }
     };
     window.addEventListener('keydown', onKeyDown);
     return () => {
+      window.cancelAnimationFrame(focusFrame);
       document.body.style.overflow = '';
       window.removeEventListener('keydown', onKeyDown);
     };
@@ -88,7 +101,7 @@ export default function SiteChrome({ site, pages, labels, children }) {
     setMenuOpen(false);
   }, [pathname]);
 
-  const closeMenu = () => setMenuOpen(false);
+  const closeMenu = () => { setMenuOpen(false); menuButtonRef.current?.focus(); };
   const updateConsent = (value) => {
     window.localStorage.setItem('odyomuh-cookie-consent', value);
     setConsent(value);
@@ -233,6 +246,7 @@ export default function SiteChrome({ site, pages, labels, children }) {
               <span className="header-theme-label">{light ? (isEnglish ? 'Dark' : 'Koyu') : (isEnglish ? 'Light' : 'Açık')}</span>
             </button>
             <button
+              ref={menuButtonRef}
               className={menuOpen ? 'mobile-menu-button is-open' : 'mobile-menu-button'}
               type="button"
               aria-label={menuOpen ? (isEnglish ? 'Close menu' : 'Menüyü kapat') : (isEnglish ? 'Open menu' : 'Menüyü aç')}
@@ -313,7 +327,7 @@ export default function SiteChrome({ site, pages, labels, children }) {
       </nav>
 
       <button type="button" className={menuOpen ? 'mobile-menu-backdrop is-open' : 'mobile-menu-backdrop'} aria-label={isEnglish ? 'Close menu' : 'Menüyü kapat'} tabIndex={menuOpen ? 0 : -1} onClick={closeMenu} />
-      <aside id="mobile-menu-drawer" className={menuOpen ? 'mobile-menu-drawer is-open' : 'mobile-menu-drawer'} aria-hidden={!menuOpen} aria-label={isEnglish ? 'Mobile menu' : 'Mobil menü'}>
+      <aside ref={drawerRef} role="dialog" aria-modal={menuOpen ? true : undefined} inert={!menuOpen} id="mobile-menu-drawer" className={menuOpen ? 'mobile-menu-drawer is-open' : 'mobile-menu-drawer'} aria-hidden={!menuOpen} aria-label={isEnglish ? 'Mobile menu' : 'Mobil menü'}>
         <div className="mobile-menu-head">
           <a className="mobile-menu-brand" href={homeHref} onClick={closeMenu}>
             <img src="/theme/odyomuh-mark.svg" alt="" width="46" height="46" />

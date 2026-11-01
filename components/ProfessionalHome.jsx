@@ -79,8 +79,8 @@ export default function ProfessionalHome() {
     <section className="clean-hero">
       <div className="clean-hero-copy">
         <span className="clean-kicker">ODYOMUH · kaynaklı tarih cevapları ve araçları</span>
-        <h1>Tarih ve arkeoloji sorularına kaynaklı cevaplar.</h1>
-        <p>Kısa cevabı başta gör; ayrıntı gerektiğinde kaynaklara, karşılaştırmalara ve kronolojiye devam et. Arkeoloji, Türk tarihi, Mezopotamya ve tarihsel gizemler tek arşivde.</p>
+        <h1>Tarih sorularına <span>kaynaklı cevaplar.</span></h1>
+        <p>Arkeoloji, Türk tarihi ve antik uygarlıklar. Kısa cevaptan başlayın, kanıtları ve farklı yorumları kaynaklarıyla inceleyin.</p>
         <form className="clean-search" action="/search" method="get" role="search"><input name="q" type="search" placeholder="Örn. Orun nedir, Sümer Kral Listesi, Anunnaki..." aria-label="Arşivde ara" /><button type="submit">Cevabı bul</button></form>
         <div className="clean-hero-actions"><a className="clean-primary-button" href="#hizli-cevaplar">Kısa cevaplar</a><a className="clean-secondary-button" href="/p/tarih-kronolojisi.html">Kronolojiyi aç</a></div>
         <div className="clean-stat-row"><span><strong>{articles.length}</strong> araştırma dosyası</span><span><strong>{tools.length}</strong> ücretsiz araç</span><span><strong>{topics.length}</strong> ana alan</span></div>
