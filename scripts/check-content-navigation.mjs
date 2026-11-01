@@ -3,7 +3,7 @@ import { registerHooks } from 'node:module';
 import { allTurkishPosts, allEnglishPosts } from '../lib/content-collections.js';
 import { internalArticleAliases, englishTopicAliases } from '../lib/internal-link-aliases.js';
 import { findEnglishTopic, englishTopicHref } from '../data/en-topics.js';
-import { stripLegacyAppendices } from '../lib/legacy-appendices.js';
+import { stripLegacyAppendices, cleanEditorialLanguage } from '../lib/legacy-appendices.js';
 import { priorityGuideRevisions } from '../data/priority-guide-revisions.js';
 // Node requires explicit JSON import attributes; Next handles this source import itself.
 registerHooks({ load(url, context, next) {
@@ -30,6 +30,7 @@ for (const post of en) {
 }
 for (const post of [...tr, ...en]) {
   const html = sanitizeContent(post.contentHtml);
+  assert.ok(!/SEO açısından neden güçlü|Neden hâlâ arama alır|Kavramları karıştırmamak neden SEO|Quick glossary for search readers|tarih ve güncelleme notu değiştirilmelidir/.test(html), `Internal editorial instructions rendered: ${post.primaryPath}`);
   assert.ok(!/Building an evidence map from the tablets|How archaeology turns a site into an argument|From impressive object to engineering explanation|Konuyu daha derin okumak|data-personalized/.test(html), `Legacy appendix rendered: ${post.primaryPath}`);
 }
 for (const [path, revision] of Object.entries(priorityGuideRevisions)) {
@@ -42,3 +43,8 @@ assert.ok(cleaned.includes('Original argument') && cleaned.includes('Specific an
 assert.equal(stripLegacyAppendices(cleaned), cleaned, 'Appendix removal must be idempotent');
 assert.equal(stripLegacyAppendices('<h2>How archaeology works</h2><p>Original research</p>'), '<h2>How archaeology works</h2><p>Original research</p>');
 console.log(`Content/navigation checks passed: ${tr.length + en.length} resolved articles, ${Object.keys(priorityGuideRevisions).length} source-reviewed revisions, no rendered legacy appendices, valid translation/topic destinations.`);
+
+const editorial = '<h2>SEO açısından neden güçlü?</h2><p>Internal traffic instructions</p><h2>Sources</h2><p>Original reference</p>';
+assert.equal(cleanEditorialLanguage(editorial), '<h2>Sources</h2><p>Original reference</p>');
+assert.equal(cleanEditorialLanguage('<h2>Quick glossary for search readers</h2><p>Definition</p>'), '<h2>Quick glossary</h2><p>Definition</p>');
+assert.equal(cleanEditorialLanguage('<h2>Historical search for a lost city</h2><p>Original fieldwork</p>'), '<h2>Historical search for a lost city</h2><p>Original fieldwork</p>');

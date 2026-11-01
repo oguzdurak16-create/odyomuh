@@ -256,5 +256,197 @@ export const priorityGuideRevisions = {
       "NASA — Hypothetical Planet X: https://science.nasa.gov/solar-system/planet-x/",
       "Nicole Brisch, ORACC — Marduk and astral associations: https://oracc.museum.upenn.edu/amgg/listofdeities/marduk/"
     ]
+  },
+  "/2026/06/1518-dans-salgini-strasbourg-halki-neden-dans-etti.html": {
+    "updated": "2026-11-01T00:00:00Z",
+    "newsArticle": false,
+    "contentHtml": "<div class=\"odyomuh-note search-intent-summary\"><strong>Kısa cevap:</strong> 1518’de Strasbourg’da başlayan toplu dans olayı tarihsel kayıtlarda yer alır; ancak tek ve kesin bir neden kanıtlanmış değildir. Modern yorumlar yoğun toplumsal stres, inançlar ve psikojenik etkenleri tartışır. Dönemin daha geniş çerçevesi için <a href=\"/p/tarih-kronolojisi.html\">dünya tarihi kronolojisine</a>, Orta Çağ toplum düzeninin arka planı için <a href=\"/2025/12/feodalite-nedir-feodal-sistem-ve-ozellikleri-ders-notu.html\">feodalite rehberine</a> geçebilirsiniz.</div><div class=\"odyomuh-note\"><strong>Dosya Özeti:</strong> 1518 yazında Strasbourg sokaklarında yüzlerce insanın istemsiz biçimde dans ettiği anlatılır. Olayın kaynakları, olası nedenleri ve efsaneyle gerçeğin ayrıldığı noktalar bu dosyada inceleniyor.</div>\n<p>Temmuz 1518'de Strasbourg'da bir kadın sokağa çıktı ve dans etmeye başladı. Günler geçmesine rağmen durmadı. Kısa süre içinde ona başkaları katıldı. Dönemin kronikleri ve şehir kayıtları, olayın büyüyerek yüzlerce kişiyi etkilediğini ve haftalarca sürdüğünü aktarır. Bu garip kriz, bugün “1518 Dans Salgını” adıyla bilinir.</p>\n<h2>Yetkililerin ilk tepkisi neden ters tepti?</h2>\n<p>Şehir yöneticileri başlangıçta dans edenlerin hareket ederek rahatsızlıklarından kurtulacağını düşündü. Bu nedenle müzisyenler ve dans alanları sağlandığına dair kayıtlar vardır. Fakat bu yaklaşım, olayın yatışması yerine daha görünür hâle gelmesine katkıda bulunmuş olabilir. Daha sonra müzik yasaklandı ve dans edenlerin dini bir şifa merkezine götürüldüğü anlatıldı.</p>\n<p>Kaynaklarda ölümlerden söz edilse de sayıların ne kadar güvenilir olduğu tartışmalıdır. Olayın en sağlam kısmı, Strasbourg yönetiminin gerçekten de kitlesel ve kontrol edilemeyen bir dans krizine müdahale etmek zorunda kaldığıdır.</p>\n<h2>Çavdar mahmuzu zehirlenmesi mi?</h2>\n<p>En bilinen açıklamalardan biri, çavdarda gelişen ergot mantarının halüsinasyon ve kasılmalara yol açmış olabileceğidir. Ancak ergot zehirlenmesi ağır ağrı, dolaşım bozukluğu ve kasılma yaratabilir; insanların günler boyunca düzenli biçimde dans etmesini tek başına açıklamakta yetersiz kalır. Bu nedenle günümüzde birçok araştırmacı, olayı yalnızca gıda zehirlenmesine bağlamaz.</p>\n<h2>Kitlesel psikojenik rahatsızlık</h2>\n<p>Daha güçlü görülen açıklama, aşırı toplumsal stres altında gelişen kitlesel psikojenik rahatsızlıktır. Strasbourg halkı kıtlık, hastalık, yüksek tahıllı gıda fiyatları ve dinsel korkuların baskısı altındaydı. Aziz Vitus'un laneti gibi inanışlar, insanların korkularını belirli bir bedensel davranış biçiminde dışa vurmasına zemin hazırlamış olabilir.</p>\n<div class=\"odyomuh-fact\"><strong>Önemli ayrım:</strong> “Psikojenik” sözcüğü olayın sahte olduğu anlamına gelmez. İnsan bedeni, yoğun korku ve toplumsal baskı altında gerçek ve kontrol edilmesi zor belirtiler gösterebilir.</div>\n<h2>Neden dans?</h2>\n<p>Her toplumun korkuları ve sembolleri farklıdır. Erken modern Avrupa'da dans, hem dini törenlerle hem de günah, trans ve kutsal cezalandırma düşünceleriyle bağlantılıydı. İnsanlar bir lanetin kendilerini dans etmeye zorlayabileceğine inanıyorsa, kriz de bu beklentiye uygun bir biçim alabilirdi.</p>\n<h2>Efsane ne kadar büyüdü?</h2>\n<p>Olay, yüzyıllar içinde dramatik ayrıntılarla süslendi. Her gün onlarca kişinin öldüğü gibi kesin ifadeler dikkatle ele alınmalıdır. Yine de yerel kayıtların varlığı, bunun tamamen sonradan uydurulmuş bir efsane olmadığını gösterir. Asıl bilinmezlik, krizin tam mekanizması ve katılımcıların deneyimlerinin ne kadar benzer olduğudur.</p>\n<p>1518 Dans Salgını, geçmiş insanların “mantıksızlığına” dair basit bir hikâye değildir. Toplumsal stresin, ortak inançların ve bedenin birbirini nasıl etkileyebildiğine dair çarpıcı bir tarihsel örnektir.</p>\n<h2>Bir açıklama ile kesin teşhisi ayırın</h2><p>John Waller’ın iki incelemesi, olayı tarihsel kayıtlar ve toplu davranış yorumları üzerinden ele alır. Bunlar 1518’deki her katılımcıya yapılmış çağdaş klinik muayeneler değildir. Psikojenik açıklamayı güçlü bir yorum olarak tartışmak, bütün kişilerin aynı nedenle etkilendiğini veya kesin bir ölüm sayısını kanıtlamakla aynı şey değildir.</p>",
+    "sources": [
+      "John Waller — A forgotten plague: making sense of dancing mania, The Lancet, 2009: https://pubmed.ncbi.nlm.nih.gov/19238695/",
+      "John C. Waller — In a spin: the mysterious dancing epidemic of 1518, Endeavour, 2008: https://pubmed.ncbi.nlm.nih.gov/18602695/"
+    ],
+    "faq": [
+      {
+        "question": "1518 dans krizinin kesin nedeni biliniyor mu?",
+        "answer": "Hayır. Psikojenik açıklamalar ve tarihsel koşullar tartışılır; her katılımcıya ait çağdaş klinik kayıtlar yoktur."
+      },
+      {
+        "question": "Kesin bir ölüm sayısı verilebilir mi?",
+        "answer": "Kaynakların niteliği ve sonradan eklenen anlatılar kontrol edilmeden kesin sayılar verilmemelidir."
+      }
+    ]
+  },
+  "/2025/10/antik-uygarliklarin-kaybolan-teknolojileri-modern-dunyaya-isik-tutan-sirlar.html": {
+    "updated": "2026-11-01T00:00:00Z",
+    "newsArticle": false,
+    "contentHtml": "<div class=\"odyomuh-note\"><strong>Kısa cevap:</strong> Antik teknoloji hakkında iyi bir başlangıç kitabı, bir nesnenin nasıl tarihlendiğini, hangi parçalarının bulunduğunu ve hangi işlevlerin yeniden kurulduğunu gösterir. “Kayıp” sözcüğü, tek başına açıklanamayan bir üstün teknoloji bulunduğu anlamına gelmez.</div>\n<h2>Hangi kitapla başlanabilir?</h2><p>John Peter Oleson’ın editörlüğündeki <em>The Oxford Handbook of Engineering and Technology in the Classical World</em>, klasik dünyanın üretim, malzeme, ulaşım ve ölçüm teknolojilerine genel bir çerçeve sunar. Tek bir aygıta yoğunlaşmak isteyenler için Alexander Jones’un <em>A Portable Cosmos</em> kitabı Antikythera Mekanizması üzerinden astronomi ve alet yapımını tartışır. Aşağıdaki katalog bağlantısı kitabın kimliğini doğrular; kitabın bütün argümanının yerine geçmez.</p>\n<h2>Kitap ile araştırma makalesinin görevleri</h2><p>Bir el kitabı konuyu ve literatürü tanıtır. Kazı raporu buluntunun bağlamını kaydeder. Bir mühendislik modeli ise eldeki parçalarla belirli bir düzenin çalışıp çalışamayacağını sınar. Bu üç türü aynı kanıt gibi kullanmamak gerekir. Antikythera’nın 2021 tarihli rekonstrüksiyonu, kayıp ön gösterge için bir model önerir; bütün model parçalarının batıktan çıktığı anlamına gelmez.</p>\n<table><thead><tr><th>Okuma sorusu</th><th>Başlangıç kaynağı</th><th>Kontrol edilmesi gereken sınır</th></tr></thead><tbody><tr><td>Antik mühendisliğin genel kapsamı neydi?</td><td>Oleson’ın editörlüğündeki Oxford el kitabı</td><td>Farklı dönem ve bölgeleri tek teknoloji düzeyi saymayın.</td></tr><tr><td>Antikythera nasıl yorumlanır?</td><td>Jones’un kitabı ve Freeth ekibinin makalesi</td><td>Korunmuş parçayı önerilen mekanizmadan ayırın.</td></tr><tr><td>Roma betonunun dayanıklılığı nasıl araştırılır?</td><td>Sıcak karıştırma üzerine 2023 çalışması</td><td>İncelenen karışımı bütün Roma yapılarına genellemeyin.</td></tr></tbody></table>\n<h2>“Modern bilim açıklayamıyor” cümlesini sınayın</h2><p>Önce neyin açıklanamadığını belirleyin: kesin atölye mi, taşıma düzeninin bir ayrıntısı mı, malzemenin kimyası mı? Bir ayrıntının tartışmalı olması bütün üretim sürecinin bilinmediğini göstermez. Benzer biçimde, eski bir yapının bugüne ulaşması bütün çağdaş yapılardan üstün olduğunu kanıtlamaz; başarısız veya korunmamış örnekler de hesaba katılmalıdır.</p>\n<h2>Bağlamı görülebilen örneklerle ilerleyin</h2><p><a href=\"/2026/08/antikythera-mekanizmasi-antik-cag-bilgisayari.html\">Antikythera rehberi</a>, buluntu ile model arasındaki fark için bir başlangıçtır. <a href=\"/2026/06/baalbek-taslari-dev-bloklar-nasil-tasindi.html\">Baalbek taşları</a> yazısında da ocakta bırakılan blokla yapıya yerleştirilen blok ayrılır. Bu karşılaştırma, bir iddianın hangi nesneye dayandığını açık tutar. Her görkemli buluntuyu başka bir gizli uygarlığın işi saymadan önce, üretildiği toplumun bilinen becerileri ve kullanılan kaynağın ayrıntıları incelenmelidir.</p>",
+    "sources": [
+      "John Peter Oleson, ed. — The Oxford Handbook of Engineering and Technology in the Classical World: https://doi.org/10.1093/oxfordhb/9780199734856.001.0001",
+      "Alexander Jones — A Portable Cosmos, Royal Museums Greenwich kütüphane kaydı: https://www.rmg.co.uk/collections/library/rmgl-154104",
+      "Freeth ve diğerleri — A Model of the Cosmos in the ancient Greek Antikythera Mechanism, 2021: https://doi.org/10.1038/s41598-021-84310-w",
+      "Seymour ve diğerleri — Hot mixing: Mechanistic insights into the durability of ancient Roman concrete, 2023: https://pmc.ncbi.nlm.nih.gov/articles/PMC9821858/"
+    ],
+    "faq": [
+      {
+        "question": "Kaybolan antik teknolojiler tek bir kitabın adı mı?",
+        "answer": "Bu ifade çoğunlukla genel bir konu aramasıdır. Eser seçerken yazar, tam başlık, yayınevi ve ele alınan teknoloji açıkça belirlenmelidir."
+      },
+      {
+        "question": "Bir ayrıntının bilinmemesi ileri bir gizli teknoloji kanıtı mı?",
+        "answer": "Hayır. Eksik bilgi ile belirli bir alternatif açıklamayı destekleyen kanıt farklıdır."
+      }
+    ]
+  },
+  "/2026/06/nazca-cizgileri-uzaylilar-icin-mi-yapildi-antik-peru-nun-dev-jeoglifleri.html": {
+    "updated": "2026-11-01T00:00:00Z",
+    "newsArticle": false,
+    "contentHtml": "<div class=\"odyomuh-note\"><strong>Dosya Özeti:</strong> Nazca Çizgileri, havadan görülebilen dev şekilleriyle antik astronot teorilerinin en sevdiği örneklerinden biridir. Fakat arkeolojik açıklama çok daha sağlamdır.</div>\n<h2>Nazca Çizgileri neden gizemli görünüyor?</h2>\n<p>Peru’daki Nazca Çizgileri, çöl yüzeyine işlenmiş uzun çizgiler, geometrik şekiller ve hayvan figürlerinden oluşur. Kuş, maymun ve örümcek gibi figürlerin havadan belirgin görünmesi, modern izleyicide “bunu kim, neden yaptı?” sorusunu uyandırır.</p>\n<p>Bu görsel etki, antik astronot teorilerinin ilgisini çekti. Bazı popüler yorumcular çizgileri uzaylılar için iniş pisti ya da göksel işaretler olarak sundu. Ancak bu tür yorumlar arkeolojik kanıtların önüne geçtiğinde alanın gerçek kültürel değeri gölgelenir.</p>\n<h2>Çizgiler nasıl yapılmış olabilir?</h2>\n<p>Nazca Çizgileri’nin tekniği aslında karmaşık ama imkansız değildir. Koyu renkli yüzey taşları kaldırıldığında alttaki daha açık renkli zemin ortaya çıkar. Kurak iklim ve düşük erozyon, bu işaretlerin uzun süre korunmasını sağlar.</p>\n<p>Büyük ölçekli figürler ip, kazık, ölçüm ve tekrarlanan iş gücüyle üretilebilir. Bunun için uzaylı teknolojisi gerekmez; planlama, topluluk emeği ve ritüel amaç yeterli açıklama sunabilir.</p>\n<h2>Ne amaçla yapılmıştı?</h2>\n<p>Kesin cevap yoktur. Araştırmacılar çizgileri ritüel yürüyüş yolları, su ve bereketle ilişkili tören alanları, astronomik yönelimler veya topluluk kimliğiyle bağlantılı işaretler olarak yorumlamıştır. Muhtemelen tek bir amaç yerine birden çok işlev vardı.</p>\n<div class=\"odyomuh-fact\"><strong>Kısa cevap:</strong>  Nazca Çizgileri uzaylı iniş pisti olarak kanıtlanmış değildir. Bugünkü güçlü açıklama, onları Nazca ve Paracas kültürlerinin ritüel ve peyzaj düzenlemeleri içinde okumaktır.</div>\n\n<h2>Bulgu, aday görüntü ve yorum farklıdır</h2><p>UNESCO kaydı alanın kültürel peyzajını açıklar. 2024 tarihli PNAS çalışması ise yapay zekâ yardımıyla önerilen adayların arkeolog değerlendirmesi ve saha araştırmasıyla sınanmasını anlatır. Bir görüntüde biçim seçmek tek başına yeni bir jeoglifin doğrulanması değildir; figürün bulunması da bütün çizgilerin tek bir amaçla yapıldığını göstermez.</p>",
+    "sources": [
+      "UNESCO — Lines and Geoglyphs of Nasca and Palpa: https://whc.unesco.org/en/list/700/",
+      "Sakai ve diğerleri — AI-accelerated Nazca survey, PNAS, 2024: https://doi.org/10.1073/pnas.2407652121"
+    ],
+    "faq": [
+      {
+        "question": "Nazca çizgileri uzaylı iniş pisti mi?",
+        "answer": "Böyle bir işlev arkeolojik kanıtlarla doğrulanmış değildir. Çizgiler kendi kültürel ve peyzaj bağlamında incelenir."
+      },
+      {
+        "question": "Yapay zekânın seçtiği her görüntü yeni jeoglif mi?",
+        "answer": "Hayır. Adaylar arkeolog değerlendirmesi ve saha araştırmasıyla doğrulanmalıdır."
+      }
+    ]
+  },
+  "/2026/06/piri-reis-haritasi-antarktika-yi-gosteriyor-mu-populer-iddia-ve-gercekler.html": {
+    "updated": "2026-11-01T00:00:00Z",
+    "newsArticle": false,
+    "contentHtml": "<div class=\"odyomuh-note\"><strong>Dosya Özeti:</strong> Piri Reis Haritası, Osmanlı denizcilik tarihinin en etkileyici belgelerinden biridir. Ancak Antarktika iddiası haritanın gerçek değerini çoğu zaman gölgeler.</div>\n<h2>Piri Reis Haritası neden bu kadar tartışılıyor?</h2>\n<p>1513 tarihli Piri Reis Haritası, hem Osmanlı hem dünya haritacılığı açısından olağanüstü bir belgedir. Günümüze yalnızca bir bölümü ulaşmıştır ve Topkapı Sarayı’nda korunur. Haritada Atlantik çevresi, Afrika’nın batısı ve Amerika kıyılarına ilişkin erken dönem bilgiler bulunur.</p>\n<p>Popüler tartışmanın ana nedeni ise şudur: Haritanın güney kısmının Antarktika’yı buzsuz halde gösterdiği iddia edilir. Bu iddia, kayıp uygarlıklar ve antik ileri teknoloji anlatılarıyla birleşince büyük ilgi çeker.</p>\n<h2>Haritanın gerçek önemi ne?</h2>\n<p>Piri Reis’in haritası bir portolan haritasıdır. Yani modern enlem-boylam ağına dayalı bir dünya haritasından çok, denizcilerin yön ve mesafe bilgisiyle kullandığı navigasyon geleneğinin parçasıdır. Üzerinde pusula gülleri, yön ağları ve açıklama notları bulunur.</p>\n<p>Haritanın değeri, Piri Reis’in farklı kaynakları bir araya getirmesinde yatar. Kolomb sonrası Amerika bilgileri, Akdeniz portolan geleneği ve İslam haritacılık birikimi aynı belgede görünür.</p>\n<h2>Antarktika iddiası neden sorunlu?</h2>\n<p>Antarktika yorumu, haritanın alt bölümündeki kara parçasının Güney Amerika devamı yerine buzsuz Antarktika kıyısı olduğu varsayımına dayanır. Ancak ana akım harita tarihçiliğinde bu iddia kabul görmez. Haritadaki şekiller, erken modern haritalardaki hatalar, kaynak birleşimleri ve hayali güney kara tasarımlarıyla daha iyi açıklanır.</p>\n<div class=\"odyomuh-fact\"><strong>Kısa cevap:</strong>  Piri Reis Haritası çok değerlidir; fakat onu değerli yapan şey Antarktika’yı göstermesi değil, 16. yüzyıl başında farklı coğrafi bilgilerin Osmanlı denizcilik çevresinde nasıl derlendiğini göstermesidir.</div>\n<h2>Bu konu nasıl anlatılmalı?</h2>\n<p>İyi bir Piri Reis içeriği iki şeyi birlikte yapar: önce popüler Antarktika iddiasını görünür kılar, sonra haritanın gerçek tarihsel bağlamını açıklar. Böylece hem arama niyeti yakalanır hem de içerik güvenilir kalır.</p>\n<p>Piri Reis dosyası, Osmanlı denizciliği, Kitab-ı Bahriye, portolan haritalar ve erken Amerika bilgisinin aktarımı için güçlü bir başlangıç yazısıdır.</p>\n<h2>Antarktika iddiası nasıl sınanır?</h2><p>Bir kıyı çizgisini başka bir coğrafyaya benzetmek için yalnız görüntü yetmez. Ölçek, yönelim, projeksiyon ve çizimdeki açıklamalar birlikte karşılaştırılmalıdır. Kurum kayıtları haritanın tarihî önemini gösterir; güney bölümünün buzsuz Antarktika’nın ölçülmüş haritası olduğunu kendiliğinden kanıtlamaz. Haritanın değeri böyle bir iddiaya bağlı değildir.</p>",
+    "sources": [
+      "UNESCO Memory of the World — The Piri Reis World Map (1513): https://www.unesco.org/en/memory-world/piri-reis-world-map-1513",
+      "Kültür ve Turizm Bakanlığı — Map of Piri Reis: https://www.ktb.gov.tr/EN-113854/map-of-piri-reis.html"
+    ],
+    "faq": [
+      {
+        "question": "Piri Reis haritasının buzsuz Antarktika’yı gösterdiği kanıtlandı mı?",
+        "answer": "Bu, kurum kayıtlarıyla doğrulanmış bir özellik değildir. Görsel benzerlik; ölçek, projeksiyon ve belge bağlamının yerini tutmaz."
+      },
+      {
+        "question": "Haritanın önemi Antarktika iddiasına mı bağlı?",
+        "answer": "Hayır. 1513 haritası, erken Atlantik haritacılığı ve Osmanlı denizcilik tarihi açısından bağımsız bir öneme sahiptir."
+      }
+    ]
+  },
+  "/2026/06/truva-hazinesi-nerede-schliemannin-tartismali-mirasi.html": {
+    "updated": "2026-11-01T00:00:00Z",
+    "newsArticle": false,
+    "contentHtml": "<div class=\"odyomuh-note\"><strong>Dosya Özeti:</strong> “Truva Hazinesi” adıyla ünlü buluntular, yalnızca altın ve mücevher hikâyesi değildir. Aynı zamanda kazı yöntemleri, eser kaçırma, mülkiyet ve arkeolojik tarihleme tartışmalarının merkezindedir.</div>\n<h2>Truva Hazinesi denince ne anlaşılmalı?</h2>\n<p>19. yüzyılda Heinrich Schliemann’ın Hisarlık’taki kazılarında ortaya çıkardığı altın, gümüş ve başka değerli nesneler uzun süre “Priamos Hazinesi” adıyla tanıtıldı. Bu ad, Homeros’un destanındaki Truva kralına gönderme yaptığı için kamuoyunda çok güçlü bir etki yarattı.</p>\n<p>Fakat arkeoloji, romantik başlıklardan daha sabırlıdır. Buluntuların geldiği tabaka ve tarihleme çalışmaları, hazinenin geleneksel Truva Savaşı için önerilen dönemden çok daha eski olabileceğini gösterir. Yani eserler çok değerli olsa da “Kral Priamos’un kişisel hazinesi” olarak okunmaları güvenli değildir.</p>\n<h2>Schliemann neden tartışmalı?</h2>\n<p>Schliemann, Truva’yı popülerleştiren en önemli isimlerden biridir; ancak kazı yöntemleri bugün ciddi eleştiri alır. Erken dönem kazılarında üst tabakaların zarar görmesi, kayıt standartlarının yetersizliği ve buluntuların Osmanlı topraklarından izinsiz çıkarılması, onun mirasını karmaşık hale getirir.</p>\n<p>Bu nedenle hikâye iki uçtan biri değildir: Ne Schliemann tek başına “Truva’yı bulan kahraman”dır ne de bütün katkısı yok sayılmalıdır. Arkeolojinin nasıl daha bilimsel ve korumacı yöntemlere yöneldiğini anlatan önemli bir dönüm noktasıdır.</p>\n<h2>Hazine bugün nerede?</h2>\n<p>Buluntuların yolu Osmanlı coğrafyasından Avrupa’ya, oradan savaş sonrası dönemin siyasi çalkantılarına uzanır. Koleksiyonun bazı parçaları Berlin’de sergilendi; İkinci Dünya Savaşı sonrasında önemli bölümü Sovyetler Birliği’ne taşındı ve günümüzde Moskova’daki Puşkin Devlet Güzel Sanatlar Müzesiyle ilişkilendirilir. Eserlerin mülkiyeti ve iadesi konusu ise uzun süredir tartışmalıdır.</p>\n<div class=\"odyomuh-fact\"><strong>Kısa cevap:</strong> “Truva Hazinesi” gerçektir; ancak Priamos’a ait olduğu kesin değildir. Asıl büyük hikâye, eserlerin nasıl bulunduğu, nasıl taşındığı ve bugün neden hâlâ tartışıldığıdır.</div>\n<h2>Neden arama açısından güçlü bir konu?</h2>\n<p>Truva, Homeros, Schliemann ve altın hazine kelimeleri aynı başlıkta birleştiğinde hem mitoloji hem Anadolu tarihi hem de güncel kültürel miras tartışmaları buluşur. Güçlü bir yazı, efsaneyi satmak yerine okuyucuya eserlerin gerçek yolculuğunu gösterir.</p>\n<h2>Müzedeki konum ile mülkiyet aynı soru değildir</h2><p>Pushkin Müzesi koleksiyonun Moskova’daki mevcut konumunu açıklar; UNESCO kaydı ise Türkiye’deki arkeolojik yerleşimi belgelendirir. Bir nesnenin bugün hangi müzede bulunduğu, sahiplik tartışmasını kendiliğinden sonuçlandırmaz. “Priamos’un Hazinesi” tarihsel bir addır; nesnelerin hangi tabakaya ve döneme ait olduğunun yerine geçmez.</p>",
+    "sources": [
+      "Pushkin State Museum of Fine Arts — Troy and Heinrich Schliemann’s Excavations: https://pushkinmuseum.art/museum/buildings/main/floor1/3_troy/index.php?lang=en",
+      "UNESCO — Archaeological Site of Troy: https://whc.unesco.org/en/list/849/"
+    ],
+    "faq": [
+      {
+        "question": "Priamos’un Hazinesi bugün nerede?",
+        "answer": "Burada ele alınan koleksiyon Pushkin Müzesi’nin Moskova’daki kaydında yer alır; mevcut konum, mülkiyet tartışmasını tek başına sonuçlandırmaz."
+      },
+      {
+        "question": "Hazinenin adı, Homeros’un Priamos’una ait olduğunu kanıtlar mı?",
+        "answer": "Hayır. Geleneksel adlandırma ile nesnelerin arkeolojik tabaka ve tarihlemesi farklı sorulardır."
+      }
+    ]
+  },
+  "/2026/06/karahan-tepe-ve-tas-tepeler-gobekli-tepe-den-sonra-tarih-yeniden-mi-yaziliyor.html": {
+    "updated": "2026-11-01T00:00:00Z",
+    "newsArticle": false,
+    "contentHtml": "<div class=\"odyomuh-note\"><strong>Dosya Özeti:</strong> Karahan Tepe ve Taş Tepeler, Göbekli Tepe’yi tekil bir istisna olmaktan çıkarıp geniş bir erken Neolitik ağın parçası haline getiriyor.</div>\n<h2>Göbekli Tepe yalnız değil</h2>\n<p>Uzun süre popüler anlatı Göbekli Tepe’yi tek başına “tarihin sıfır noktası” gibi sundu. Fakat Şanlıurfa çevresindeki Karahan Tepe, Harbetsuvan, Sayburç ve diğer Taş Tepeler alanları bu tabloyu genişletti. Artık soru şudur: Bu bölgede tek bir anıtsal merkez mi vardı, yoksa birbirine bağlı erken topluluklar ağı mı?</p>\n<p>Karahan Tepe bu yüzden son yıllarda güçlü bir arama başlığına dönüştü. T biçimli dikmeler, özel yapılar ve insan-hayvan sembolizmi, Göbekli Tepe ile paralel ama aynı zamanda kendine özgü bir dünya sunar.</p>\n<h2>Karahan Tepe neden önemli?</h2>\n<p>Karahan Tepe, Göbekli Tepe ile aynı kültürel bölgenin parçası kabul edilir. Burada da anıtsal mimari ve sembolik öğeler dikkat çeker. Ancak her alanı aynı kalıba sokmak hatalı olur; farklı yapı tipleri, farklı kullanım biçimleri ve farklı yerel ritüel düzenler olabilir.</p>\n<p>Bu, erken Neolitik toplumların sanılandan daha karmaşık olduğunu gösterir. Avcı-toplayıcı veya erken yerleşik toplulukların yalnızca basit barınaklar kurmadığı; emek planlaması, taş işçiliği ve ortak sembol dünyası geliştirdiği anlaşılır.</p>\n<h2>Taş Tepeler ne anlatıyor?</h2>\n<p>Taş Tepeler projesi, Güneydoğu Anadolu’daki erken Neolitik merkezleri birlikte ele alma çabasıdır. Böyle bakınca Göbekli Tepe tek bir mucize olmaktan çıkar; bölgesel bir kültürel dönüşümün en bilinen vitrini olur.</p>\n<div class=\"odyomuh-fact\"><strong>Kısa cevap:</strong>  Karahan Tepe ve Taş Tepeler, “Göbekli Tepe’den önce ne vardı?” ve “yerleşik hayat nasıl başladı?” sorularını daha geniş bir coğrafyaya taşır.</div>\n\n<h2>Tek yapıdan bütün bölgeye genelleme yapmayın</h2><p>Necmi Karul’un kazı yayını, Karahantepe’deki gömülü yapıları inceler. Göbekli Tepe UNESCO kaydı başka bir alan için karşılaştırma çerçevesi sunar. Benzer dikilitaşlar bütün yapıların aynı işleve sahip olduğunu veya bütün yerleşimlerin tek olayla terk edildiğini kanıtlamaz. Yapı evresi, buluntu ve dolgu ilişkisi ayrı değerlendirilmelidir.</p>",
+    "sources": [
+      "Necmi Karul — Buried Buildings at Pre-Pottery Neolithic Karahantepe, 2021: https://dergipark.org.tr/en/pub/arkeolojiveetnografya/article/909296",
+      "UNESCO — Göbekli Tepe, regional comparative context: https://whc.unesco.org/en/list/1572/"
+    ],
+    "faq": [
+      {
+        "question": "Karahantepe ile Göbekli Tepe aynı yer mi?",
+        "answer": "Hayır. Aynı bölgesel araştırma çerçevesinde karşılaştırılan farklı yerleşimlerdir."
+      },
+      {
+        "question": "Gömülü yapılar tek bir felaketin kanıtı mı?",
+        "answer": "Böyle bir genelleme yapılamaz. Her yapının evreleri, dolgusu ve buluntuları birlikte incelenmelidir."
+      }
+    ]
+  },
+  "/2026/06/baalbek-taslari-dev-bloklar-nasil-tasindi.html": {
+    "updated": "2026-11-01T00:00:00Z",
+    "newsArticle": false,
+    "contentHtml": "<div class=\"odyomuh-note\"><strong>Dosya Özeti:</strong> Lübnan’daki Baalbek kompleksi, dev taş bloklarıyla antik mühendisliğin en çarpıcı örneklerinden biridir. Yapım yöntemi tüm ayrıntılarıyla bilinmese de, olağanüstü işçilik tek başına “bilinmeyen teknoloji” kanıtı değildir.</div>\n<h2>Baalbek neden bu kadar büyük bir gizem gibi görünüyor?</h2>\n<p>Baalbek’teki Roma dönemi anıtsal kompleksinin bazı temel blokları, insanın ölçü duygusunu zorlayacak büyüklüktedir. Özellikle Trilithon adı verilen üç blok, çok büyük tonajları nedeniyle internette sık sık “bu taşlar insan gücüyle taşınamazdı” iddiasıyla paylaşılır.</p>\n<p>Bu tepki anlaşılırdır. Modern bir kamyonun, vincin ve yol altyapısının olmadığı çağlarda böylesi ağır blokların hazırlanmış olması gerçekten etkileyicidir. Fakat etkileyici olması, açıklanamaz olduğu anlamına gelmez.</p>\n<h2>Taşlar nereden geldi?</h2>\n<p>Baalbek çevresindeki taş ocakları, yapı alanına yakın konumdadır. Ocakta bırakılmış dev monolitler, işin yalnızca taşıma değil, kesme ve planlama boyutunun da ne kadar büyük olduğunu gösterir. Ağırlık tahminleri kaynaklara göre değişse de bazı bloklar yüzlerce ton düzeyindedir.</p>\n<p>Yakın ocak ile yapı alanı arasındaki eğim de önemlidir. Antik mühendislikte taşın yönünü, zemini, kızakları, silindirleri, ahşap iskeleleri, toprak rampaları ve insan-hayvan gücünü birlikte düşünmek gerekir. Tek bir “sihirli yöntem” yerine, uzun süreli organizasyon daha gerçekçi açıklamadır.</p>\n<h2>Nasıl taşınmış olabilirler?</h2>\n<p>Kesin bir uygulama kılavuzu elimizde yoktur. Ancak arkeoloji ve mühendislik tarihindeki karşılaştırmalar, taşların kontrollü rampalar, kızak sistemleri, kaldırma düzenekleri ve çok sayıda işçinin eşgüdümüyle hareket ettirilebileceğini gösterir. Taşın ocaktan biraz daha yüksek kotta olması, bazı aşamalarda işi kolaylaştırmış olabilir.</p>\n<p>Asıl mesele “bir insan tek başına kaldırabilir miydi?” değildir. Antik devletlerin büyük projelerde iş gücünü nasıl topladığı, malzemeyi nasıl yönettiği ve uzun zamanlı lojistik planı nasıl kurduğudur.</p>\n<div class=\"odyomuh-fact\"><strong>Kısa cevap:</strong> Baalbek bloklarının tam uygulama sırası tartışılabilir; fakat onları açıklamak için uzaylılar ya da kayıp ileri uygarlık varsaymak gerekmez. Bilinen antik mühendislik yöntemleri ve büyük ölçekli örgütlenme güçlü açıklamalardır.</div>\n<h2>“Megalit” kelimesi neden yanıltıcı olabilir?</h2>\n<p>Megalit, büyük taş demektir; otomatik olarak çok eski veya gizemli bir uygarlığı işaret etmez. Baalbek’teki yapıların Roma dönemi bağlamı, mimari düzeni ve çevredeki arkeolojik kanıtları vardır. Bu bağlam, taşların bir “tekil mucize” değil, büyük bir anıtsal inşa programının parçası olduğunu gösterir.</p>\n<h2>Ocakta bırakılan taş ile taşınmış taşı ayırın</h2><p>DAI’nin taş ocağı araştırması, çıkarma ve taşıma tekniklerine ilişkin izleri araştırır; ocakta bırakılmış çok büyük bir bloğu da belgeler. Bu blok, aynı büyüklükteki bir taşın yapıya taşındığının kanıtı değildir. Trilithon ile ocak monolitlerini ayrı karşılaştırmak, ağırlık ve taşıma tartışmasındaki en önemli başlangıç kontrolüdür.</p>",
+    "sources": [
+      "UNESCO — Baalbek: https://whc.unesco.org/en/list/294/",
+      "German Archaeological Institute — Baalbek quarry research: https://publications.dainst.org/journals/efb/1635"
+    ],
+    "faq": [
+      {
+        "question": "Ocakta bulunan en büyük blok yapıya taşınmış mıydı?",
+        "answer": "Ocakta bırakılmış bir bloğu, yapıya yerleştirilmiş Trilithon taşlarıyla aynı nesne gibi değerlendirmemek gerekir."
+      },
+      {
+        "question": "Bütün taşıma işleminin kesin uygulama sırası biliniyor mu?",
+        "answer": "Bütün ayrıntılar kesin değildir. Araştırma olası teknikleri ve fiziksel izleri karşılaştırır; belirsizlik tek başına uzaylı teknolojisi kanıtı değildir."
+      }
+    ]
+  },
+  "/2026/06/nibiru-ve-12-gezegen-iddiasi-anunnaki-efsanesinin-populer-koku.html": {
+    "updated": "2026-11-01T00:00:00Z",
+    "newsArticle": false,
+    "contentHtml": "<div class=\"odyomuh-note\"><strong>Dosya Özeti:</strong> Nibiru iddiası, Anunnaki anlatısını uzaylı teorisine dönüştüren modern popüler zincirin en güçlü halkasıdır. Eski metin, modern yorum ve bilimsel itirazlar ayrılmadan konu anlaşılamaz.</div>\n<h2>Nibiru neden sürekli Anunnaki ile birlikte aranıyor?</h2>\n<p>İnternette Anunnaki arayan kişi genellikle kısa süre sonra Nibiru, 12. gezegen, altın madeni ve insanlığın yaratılışı gibi başlıklara ulaşır. Bunun nedeni, modern antik astronot anlatılarının bu kelimeleri tek bir hikaye zincirine bağlamasıdır.</p>\n<p>Bu zincire göre Nibiru uzak ve gizli bir gezegendir; Anunnaki de bu gezegenden gelen gelişmiş varlıklardır. Ancak bu anlatı, eski Mezopotamya metinlerinin doğrudan ve akademik okuması değil, 20. yüzyılda popülerleşmiş spekülatif bir yorumdur.</p>\n<h2>12. gezegen fikrinin modern kaynağı</h2>\n<p>Zecharia Sitchin, Sümer ve Mezopotamya metinlerini farklı bir gözle yorumlayarak Anunnaki’yi Nibiru’dan gelen varlıklar olarak sundu. Bu anlatı kitaplar, televizyon programları ve internet forumlarıyla büyük kitlelere ulaştı.</p>\n<p>Sitchin’in iddiaları, hem dilbilimsel çeviriler hem de astronomik varsayımlar açısından akademik çevrelerde ciddi biçimde eleştirildi. Özellikle Nibiru’nun düzenli yörüngeli gizli bir gezegen olduğu iddiası modern astronomide doğrulanmış bir bilgi değildir.</p>\n<h2>Bilimsel açıdan sorun nerede?</h2>\n<p>Bir gezegenin Güneş Sistemi içinde devasa ve düzenli bir yörüngeye sahip olup Dünya’ya periyodik olarak yaklaşması, gözlemsel izler bırakırdı. Modern astronomi, dış Güneş Sistemi’nde yeni cisimler arar; ancak popüler Nibiru anlatısındaki gibi Dünya tarihini yöneten gizli bir gezegen için güvenilir kanıt yoktur.</p>\n<div class=\"odyomuh-fact\"><strong>Kısa cevap:</strong>  Nibiru iddiası popüler kültürde güçlüdür ama tarih, dilbilim ve astronomi açısından kanıtlanmış bir model değildir.</div>\n<h2>Bu konuyu nasıl okumalı?</h2>\n<p>Nibiru başlığı tamamen değersiz değildir; çünkü modern insanın antik metinlerden nasıl büyük anlatılar kurduğunu gösterir. Asıl ilginç nokta, Sümerlerin gerçekten ne yazdığı kadar, modern toplumun bu metinleri neden uzaylılar, kayıp gezegenler ve gizli tarih fikriyle yeniden yorumladığıdır.</p>\n<p>Bu yüzden Nibiru dosyasını iki ayrı rafta tutmak gerekir: biri Mezopotamya mitolojisi, diğeri modern komplo ve antik astronot kültürü. İki alan karıştırıldığında içerik viral olur ama tarihsel netlik kaybolur.</p>\n<h2>Planet Nine hipotezi farklı bir konudur</h2><p>NASA’nın uzak bir gezegen hipotezini tartışması, Dünya’ya yaklaşan Nibiru veya belirli bir çarpışma tarihi iddiasını doğrulamaz. ORACC’nin Marduk incelemesi ise antik dinî ve göksel adlandırmaları anlamak için bağlam sağlar. Modern bir yörünge hipotezini eski bir tanrı adıyla özdeşleştirmek için bağımsız kanıt gerekir.</p>",
+    "sources": [
+      "NASA — Hypothetical Planet X: https://science.nasa.gov/solar-system/planet-x/",
+      "Nicole Brisch, ORACC — Marduk and astral associations: https://oracc.museum.upenn.edu/amgg/listofdeities/marduk/"
+    ],
+    "faq": [
+      {
+        "question": "Nibiru ile Planet Nine aynı şey mi?",
+        "answer": "Hayır. Modern bir uzak gezegen hipotezi ile eski dinî/astronomik adlandırmalar ve modern Nibiru iddiaları birbirinden ayrılmalıdır."
+      },
+      {
+        "question": "NASA’nın gezegen araştırması Nibiru çarpışma tarihlerini doğrular mı?",
+        "answer": "Hayır. Böyle bir araştırma, belirli bir çarpışma tarihinin veya Mezopotamya tanrılarının geldiği gezegenin kanıtı değildir."
+      }
+    ]
+  },
+  "/2026/06/phaistos-diski-giritin-cozulemeyen-yazisi.html": {
+    "updated": "2026-11-01T00:00:00Z",
+    "newsArticle": false,
+    "contentHtml": "<div class=\"odyomuh-note\"><strong>Dosya Özeti:</strong> Phaistos Diski, Girit’te bulunan ve iki yüzünde spiral halinde işaretler taşıyan pişmiş kil bir nesnedir. İşaretleri görüyoruz, fakat metnin dili, amacı ve okuma yönü konusunda kesin bir çözüm yoktur.</div>\n<h2>Phaistos Diski neden bu kadar merak uyandırıyor?</h2>\n<p>Bir nesnenin gizemli olması için mutlaka devasa ya da altınla kaplı olması gerekmez. Phaistos Diski bunun iyi örneğidir. Avuç içine sığabilecek büyüklükteki bu kil disk, yüzeyine tek tek basılmış semboller nedeniyle arkeoloji ile kriptografi merakının kesiştiği yerde durur.</p>\n<p>Disk 1908’de Girit’teki Phaistos saray alanında bulundu. Üzerinde spiral düzen içinde toplam 241 işaret, bunların içinde de 45 farklı sembol sayılır. İnsan başları, hayvanlar, araçlar ve soyut biçimler gibi görünen işaretler, sıradan bir bezeme değil, düzenli bir ileti sistemi izlenimi verir.</p>\n<h2>Bu işaretler gerçekten yazı mı?</h2>\n<p>Kesin olarak bilmiyoruz. Araştırmacıların çoğu diski bir tür yazı ya da notasyon sistemi olarak ele alır; ancak hangi dil ailesine bağlanacağı, soldan sağa mı yoksa dıştan içe mi okunacağı ve işaretlerin ses mi, hece mi, kelime mi temsil ettiği belirsizdir.</p>\n<p>İşaretlerin tekrarlanması, bölümlere ayrılması ve spiral düzeni, rastgele bir resim dizisinden daha sistemli bir yapı olduğunu düşündürür. Buna rağmen çözüm denemelerinin hiçbiri geniş kabul görmedi. Bir metni çözmek için yalnızca sembolleri görmek yetmez; aynı dili taşıyan başka örnekler veya iki dilli bir anahtar gerekir.</p>\n<h2>Neden “antik çağın baskısı” deniyor?</h2>\n<p>İşaretler kazınmak yerine yumuşak kile damga benzeri araçlarla basılmış görünür. Bu teknik, diski sıradan tabletlerden ayırır. Yine de bunu modern matbaanın doğrudan atası gibi sunmak doğru olmaz. Buradaki asıl değer, sembollerin standart kalıplarla tekrarlanmış olmasıdır.</p>\n<div class=\"odyomuh-fact\"><strong>Kısa cevap:</strong> Phaistos Diski çözüldü kabul edilmez. İnternetteki “kesin çeviri” iddiaları, akademik dünyada ortak kabul görmüş bir okuma değildir.</div>\n<h2>Olası açıklamalar neler?</h2>\n<p>Disk için ilahi, ritüel metni, şarkı, takvim, oyun düzeni veya idari kayıt gibi farklı öneriler vardır. Bunların her biri diskteki spiral düzeni başka biçimde yorumlar. Sorun, hiçbir hipotezin bütün işaretleri ve arkeolojik bağlamı tek başına ikna edici biçimde açıklayamamasıdır.</p>\n<p>Bu yüzden Phaistos Diski, “bilinmeyen şeylere istediğimizi yakıştırma” örneği değil; belirsizliğin bilimsel olarak nasıl yönetildiğinin iyi bir örneğidir. En dürüst sonuç, hâlâ bilmiyoruz demektir.</p>\n<h2>İşaret sayısını çeviri kanıtı saymayın</h2><p>Müze kayıtlarında 241 baskı ve 45 farklı işaret türü açıklanır. Bu sayılar nesnenin düzenini betimler; dilin ne olduğunu veya tek bir çevirinin doğruluğunu göstermez. Bir çözüm önerisi, seçilmiş birkaç benzerlik yerine bütün diziyi ve karşılaştırılabilir kanıtları açıklamalıdır. Yeni bir iddiada müzenin nesne kaydını, akademik öneriyi ve popüler haberi ayrı okuyun.</p>",
+    "sources": [
+      "Heraklion Archaeological Museum — The Phaistos Disc: https://www.heraklionmuseum.gr/en/exhibit/the-phaistos-disc/",
+      "Hellenic Heritage — The Phaistos Disc: An eternal enigma: https://www.hh.gr/en/story/to-aionio-ainigma-tou-diskou-tis-faistou/"
+    ],
+    "faq": [
+      {
+        "question": "Phaistos Diski çözüldü mü?",
+        "answer": "Geniş kabul gören, doğrulanmış bir çözüm bulunmamaktadır; bir önerinin duyurulması akademik uzlaşı anlamına gelmez."
+      },
+      {
+        "question": "241 işaret ile 45 sembol aynı sayı mı?",
+        "answer": "Hayır. 241 toplam baskıyı, 45 ise tekrar eden farklı işaret türlerini ifade eder."
+      }
+    ]
+  },
+  "/2026/06/536-gunesin-soldugu-kisin-bitmedigi-karanlik-yil.html": {
+    "updated": "2026-11-01T00:00:00Z",
+    "newsArticle": false,
+    "contentHtml": "<div class=\"odyomuh-note\"><strong>Dosya Özeti:</strong> MS 536 yılı, tarihsel kayıtlar ve iklim verilerinin kesiştiği büyük bir çevresel kriz dönemidir. Güneşin aylarca soluk görünmesi, soğuma ve ürün kayıpları muhtemelen büyük volkanik patlamalarla bağlantılıydı.</div>\n<p>Bizanslı tarihçi Prokopios, 536 yılında Güneş'in parlaklığını kaybettiğini ve ışığını Ay gibi verdiğini yazdı. Akdeniz'den Avrupa'nın kuzeyine ve Asya'ya uzanan farklı kayıtlar, gökyüzündeki olağandışı pusun ve mevsim dışı soğukların geniş bir coğrafyada hissedildiğini gösterir.</p>\n<h2>Güneş gerçekten kayboldu mu?</h2>\n<p>Güneş fiziksel olarak kaybolmadı. Atmosferin üst katmanlarına ulaşan büyük miktarda sülfat aerosolu, güneş ışığının bir bölümünü uzaya geri yansıtmış olabilir. Bu durum, gökyüzünde uzun süre kalan bir pus oluşturur ve yeryüzüne ulaşan enerjiyi azaltarak sıcaklıkların düşmesine yol açar.</p>\n<p>Buz çekirdeklerinde tespit edilen volkanik maddeler ve ağaç halkalarındaki daralma, 536 civarında önemli bir soğuma yaşandığını destekler. Araştırmalar, 540 ve 547 yıllarında meydana gelen başka patlamaların da soğuk dönemi uzattığını gösteriyor.</p>\n<h2>Hasatlar ve açlık</h2>\n<p>Yaz sıcaklıklarının düşmesi, özellikle kısa büyüme sezonuna sahip bölgelerde tarımı doğrudan etkiledi. İrlanda yıllıkları ekmek kıtlıklarından söz ederken, Çin kayıtlarında yaz aylarında kar yağışı ve ürün zararları anlatılır. Her bölge aynı ölçüde etkilenmedi; ancak kriz, birbirine bağlı tarım toplumlarının kırılganlığını ortaya çıkardı.</p>\n<div class=\"odyomuh-fact\"><strong>Tek bir felaket değildi:</strong> 536, 540 ve 547 civarındaki volkanik olayların birleşik etkisi, Kuzey Yarımküre'de uzun süreli bir soğuma dönemine katkıda bulunmuş olabilir.</div>\n<h2>Justinianus Vebası ile bağlantı</h2>\n<p>541 yılında başlayan Justinianus Vebası, Akdeniz dünyasını ağır biçimde etkiledi. İklim şokunun hastalığı doğrudan başlattığını söylemek doğru değildir. Ancak kötü hasatlar, beslenme sorunları, göç ve ticaret ağlarındaki değişimler toplumların salgın karşısındaki dayanıklılığını azaltmış olabilir.</p>\n<h2>“Tarihin en kötü yılı” mı?</h2>\n<p>536 yılı bazen “yaşamak için en kötü yıl” şeklinde tanıtılır. Bu çarpıcı ifade, dönemin ağırlığını anlatmak için kullanışlı olsa da tüm dünya için tek ve ölçülebilir bir sıralama değildir. Kriz bölgesel farklılıklar gösterdi ve insanların deneyimleri coğrafyaya, ekonomik yapıya ve toplumsal konuma göre değişti.</p>\n<h2>İklim arşivleri tarihi nasıl değiştiriyor?</h2>\n<p>Bu dönem hakkındaki bilgimiz yalnızca yazılı kaynaklara dayanmaz. Buz tabakaları atmosferdeki kimyasal izleri, ağaç halkaları büyüme koşullarını, göl tortulları ise çevresel değişimleri kaydeder. Böylece tarihçiler ve iklim bilimciler, kroniklerdeki karanlık gökyüzü anlatılarını fiziksel kanıtlarla karşılaştırabilir.</p>\n<p>536'nın önemi, tek bir gizemli yıldan daha büyüktür. Doğal olayların imparatorlukları otomatik olarak yıkmadığını; ancak mevcut savaş, hastalık ve ekonomik baskılarla birleştiğinde tarihin yönünü etkileyebildiğini gösterir.</p>\n<h2>İklim verisi ile tarihsel sonucu ayırın</h2><p>2015 tarihli çalışma volkanik olayların tarihlemesini, 2016 tarihli çalışma ise 536’dan itibaren uzun süreli soğuma ve toplumsal değişim tartışmasını ele alır. Farklı kayıtların birlikte değerlendirilmesi önemlidir; tek bir buz çekirdeği bir salgının nedenini veya bir imparatorluğun yıkılışını tek başına açıklamaz. “En kötü yıl” ifadesi bütün insan deneyimlerini ölçen bir sıralama değildir.</p>",
+    "sources": [
+      "Büntgen ve diğerleri — Cooling and societal change during the Late Antique Little Ice Age, Nature Geoscience, 2016: https://doi.org/10.1038/ngeo2652",
+      "Sigl ve diğerleri — Timing and climate forcing of volcanic eruptions for the past 2,500 years, Nature, 2015: https://doi.org/10.1038/nature14565"
+    ],
+    "faq": [
+      {
+        "question": "536’da Güneş fiziksel olarak kayboldu mu?",
+        "answer": "Hayır. Tartışılan olay, atmosferik pus ve iklim koşullarıyla yeryüzüne ulaşan ışığın azalmasıdır."
+      },
+      {
+        "question": "Volkanik kayıtlar bir salgının nedenini tek başına kanıtlar mı?",
+        "answer": "Hayır. İklim kayıtları ile salgın, ekonomi veya siyasî değişim arasında ayrıca tarihsel nedensellik araştırması gerekir."
+      }
+    ]
   }
 };
