@@ -1,7 +1,7 @@
 import { notFound, permanentRedirect } from 'next/navigation';
 import { englishPosts, findEnglishPost } from '../../../../data/en-posts';
 import { englishPolicyPages, findEnglishPolicyPage } from '../../../../data/en-pages';
-import { findEnglishTopic } from '../../../../data/en-topics';
+import { findEnglishTopic, englishTopicHref } from '../../../../data/en-topics';
 import { applyContentOverride } from '../../../../data/seo-overrides';
 import { applyTrafficOverride } from '../../../../data/traffic-overrides';
 import { baseUrl, site, metaDescription } from '../../../site-data';
@@ -145,6 +145,7 @@ export default async function EnglishDynamicPage({ params }) {
   if (requestedPath !== post.primaryPath) permanentRedirect(post.primaryPath);
 
   const topic = findEnglishTopic(post.topic);
+  const topicHref = englishTopicHref(post.topic);
   const related = allEnglishPosts()
     .filter((item) => item.id !== post.id)
     .map((item) => ({
@@ -189,7 +190,7 @@ export default async function EnglishDynamicPage({ params }) {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'English Edition', item: `${siteUrl}/en` },
-      { '@type': 'ListItem', position: 2, name: topic?.shortName || 'Archive', item: `${siteUrl}/en/topic/${post.topic}` },
+      { '@type': 'ListItem', position: 2, name: topic?.shortName || 'Archive', item: `${siteUrl}${topicHref}` },
       { '@type': 'ListItem', position: 3, name: post.title, item: url },
     ],
   };
@@ -202,7 +203,7 @@ export default async function EnglishDynamicPage({ params }) {
         <img className="article-cover" src={post.image} alt={post.title} width="1672" height="941" fetchPriority="high" decoding="async" />
         <div className="post-body article-body">
           <nav className="english-breadcrumb" aria-label="Breadcrumb">
-            <a href="/en">English Edition</a><span>›</span><a href={`/en/topic/${post.topic}`}>{topic?.shortName || 'Archive'}</a><span>›</span><span>{post.title}</span>
+            <a href="/en">English Edition</a><span>›</span><a href={topicHref}>{topic?.shortName || 'Archive'}</a><span>›</span><span>{post.title}</span>
           </nav>
           {post.turkishPath ? <a className="english-original-link" href={post.turkishPath} hrefLang="tr">Turkish edition available →</a> : null}
           {post.newsArticle ? <div className="current-affairs-status"><strong>Current affairs file</strong><span>Last reviewed: {formatDate(post.updated || post.published)}</span><em>Military and diplomatic conditions may change.</em></div> : null}
@@ -212,7 +213,7 @@ export default async function EnglishDynamicPage({ params }) {
             {post.published ? <time dateTime={post.published}>Published {formatDate(post.published)}</time> : null}
             {post.updated && post.updated !== post.published ? <time dateTime={post.updated}>Updated {formatDate(post.updated)}</time> : null}
             <span>{readingTime(post.contentHtml)} min read</span>
-            <a href={`/en/topic/${post.topic}`}>{topic?.shortName || post.labels[0]}</a>
+            <a href={topicHref}>{topic?.shortName || post.labels[0]}</a>
           </div>
           <div className="post-labels top-labels">{post.labels.map((label) => <span key={label}>{label}</span>)}</div>
           <HtmlContent html={post.contentHtml} imageAlt={post.title} className="english-content" />
@@ -234,7 +235,7 @@ export default async function EnglishDynamicPage({ params }) {
           <div className="english-article-end">
             <p><strong>Keep exploring:</strong> Use the topic hub for closely related articles or browse the full archive instead of starting a new search.</p>
             <div>
-              <a href={`/en/topic/${post.topic}`}>Explore this topic</a>
+              <a href={topicHref}>Explore this topic</a>
               <a href="/en/archive">Open the archive</a>
               <a href="/en/sources-and-fact-checking">Fact-checking method</a>
               <a href="/en/corrections">Report a correction</a>
@@ -247,7 +248,7 @@ export default async function EnglishDynamicPage({ params }) {
         <section className="english-related-section">
           <div className="home-section-heading">
             <div><p className="eyebrow">Continue the cluster</p><h2>Related English articles</h2></div>
-            <a className="section-text-link" href={`/en/topic/${post.topic}`}>Open topic page →</a>
+            <a className="section-text-link" href={topicHref}>Open topic page →</a>
           </div>
           <div className="english-post-grid english-related-grid">
             {related.map((item) => <EnglishPostCard post={item} key={item.id} />)}

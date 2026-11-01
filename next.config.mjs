@@ -1,4 +1,5 @@
 import { readFileSync } from 'node:fs';
+import { internalArticleAliases, englishTopicAliases } from './lib/internal-link-aliases.js';
 
 /** @type {import('next').NextConfig} */
 const securityHeaders = [
@@ -80,7 +81,11 @@ const consolidatedPostRedirects = [
   },
 ];
 
-const redirects = [...migratedRouteRedirects, ...consolidatedPostRedirects];
+const repairedLinkRedirects = [
+  ...Object.entries(internalArticleAliases).map(([source, destination]) => ({ source, destination, permanent: true })),
+  ...Object.entries(englishTopicAliases).map(([source, destination]) => ({ source: `/en/topic/${source}`, destination: `/en/topic/${destination}`, permanent: true })),
+];
+const redirects = [...migratedRouteRedirects, ...consolidatedPostRedirects, ...repairedLinkRedirects];
 const uniqueRedirects = [...new Map(redirects.map((item) => [item.source, item])).values()];
 
 const nextConfig = {

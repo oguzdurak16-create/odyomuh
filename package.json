@@ -11,7 +11,7 @@
     "vercel-build": "npm run site:audit && npm run content:check && next build",
     "start": "next start",
     "check": "npm run site:audit && npm run content:check && npm run build",
-    "site:audit": "node scripts/check-site-integrity.mjs && node scripts/check-evergreen-content.mjs",
+    "site:audit": "node scripts/check-site-integrity.mjs && node scripts/check-evergreen-content.mjs && node scripts/check-content-navigation.mjs",
     "daily:source-quality": "node scripts/check-daily-source-quality.mjs",
     "daily:editorial-quality": "node scripts/check-daily-editorial-quality.mjs",
     "daily:quality": "npm run daily:source-quality && npm run daily:editorial-quality",

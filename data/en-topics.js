@@ -57,3 +57,9 @@ export const englishTopics = [
 export function findEnglishTopic(slug) {
   return englishTopics.find((topic) => topic.slug === slug);
 }
+
+// Unknown/missing taxonomy values must never become broken topic URLs.
+export function englishTopicHref(slug) {
+  const topic = findEnglishTopic(slug);
+  return topic ? `/en/topic/${topic.slug}` : "/en/archive";
+}
