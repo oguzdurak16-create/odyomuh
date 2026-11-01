@@ -36,7 +36,7 @@ export default function sitemap() {
   const entries = [
     {
       url: siteUrl,
-      lastModified: turkishLatest || undefined,
+      lastModified: '2026-11-01T00:00:00Z',
       changeFrequency: 'weekly',
       priority: 1,
       alternates: { languages: { 'tr-TR': siteUrl, en: absolute('/en'), 'x-default': absolute('/en') } },

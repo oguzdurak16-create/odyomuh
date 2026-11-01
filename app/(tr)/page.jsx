@@ -2,8 +2,8 @@ import { generatedArt } from '../site-data';
 import ProfessionalHome from '../../components/ProfessionalHome';
 
 export const metadata = {
-  title: 'Tarih, Arkeoloji ve Kadim Uygarlıklar',
-  description: 'Tarih, arkeoloji, mitoloji, antik teknoloji ve güncel olayların tarihsel arka planını kaynak odaklı dosyalarla keşfedin.',
+  title: { absolute: 'Tarih ve Arkeoloji: Kaynaklı Kısa Cevaplar | ODYOMUH' },
+  description: 'Türk tarihi, Sümerler, Göbekli Tepe ve antik uygarlıklar hakkında kaynaklı cevaplar bulun. Kronoloji, ders notları ve araştırma dosyalarıyla konuyu derinleştirin.',
   alternates: { canonical: '/', languages: { 'tr-TR': '/', en: '/en', 'x-default': '/en' } },
   openGraph: {
     type: 'website',

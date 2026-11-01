@@ -89,10 +89,10 @@ export default function ProfessionalHome() {
     <section className="clean-hero">
       <div className="clean-hero-copy">
         <span className="clean-kicker">ODYOMUH · kaynaklı tarih cevapları ve araçları</span>
-        <h1>Aradığın tarih cevabını bul, sonra kanıta in.</h1>
+        <h1>Tarih ve arkeoloji sorularına kaynaklı cevaplar.</h1>
         <p>Kısa cevabı başta gör; ayrıntı gerektiğinde kaynaklara, karşılaştırmalara ve kronolojiye devam et. Arkeoloji, Türk tarihi, Mezopotamya ve tarihsel gizemler tek arşivde.</p>
-        <form className="clean-search" action="/search" method="get"><input name="q" type="search" placeholder="Örn. Orun nedir, Sümer Kral Listesi, Anunnaki..." aria-label="Arşivde ara" /><button type="submit">Cevabı bul</button></form>
-        <div className="clean-hero-actions"><a className="clean-primary-button" href="#hizli-cevaplar">Popüler cevaplar</a><a className="clean-secondary-button" href="/p/tarih-kronolojisi.html">Kronolojiyi aç</a></div>
+        <form className="clean-search" action="/search" method="get" role="search"><input name="q" type="search" placeholder="Örn. Orun nedir, Sümer Kral Listesi, Anunnaki..." aria-label="Arşivde ara" /><button type="submit">Cevabı bul</button></form>
+        <div className="clean-hero-actions"><a className="clean-primary-button" href="#hizli-cevaplar">Kısa cevaplar</a><a className="clean-secondary-button" href="/p/tarih-kronolojisi.html">Kronolojiyi aç</a></div>
         <div className="clean-stat-row"><span><strong>{articles.length}</strong> araştırma dosyası</span><span><strong>{tools.length}</strong> ücretsiz araç</span><span><strong>{topics.length}</strong> ana alan</span></div>
       </div>
       {lead ? <a className="clean-lead" href={lead.primaryPath} aria-label={`Öne çıkan cevap: ${lead.title}`}>
@@ -103,10 +103,10 @@ export default function ProfessionalHome() {
 
     <section className="clean-section" aria-labelledby="araclar-baslik"><div className="clean-section-head"><div><span className="clean-kicker">Siteyi kullan</span><h2 id="araclar-baslik">Tarih araçları</h2></div><p>Sadece yazı okumayın; kronolojide gezin, ders notuna geçin veya bilginizi test edin.</p></div><div className="clean-tools">{tools.map((tool)=><a className="clean-tool" href={tool.href} key={tool.title}><strong>{tool.title}</strong><p>{tool.text}</p><span aria-hidden="true">→</span></a>)}</div></section>
 
-    {highIntent.length ? <section className="clean-section" id="hizli-cevaplar" aria-labelledby="hizli-cevaplar-baslik"><div className="clean-section-head"><div><span className="clean-kicker">Doğrudan cevap</span><h2 id="hizli-cevaplar-baslik">En çok aranan tarih soruları</h2></div><p>Önce sonucu öğrenin; sonra kaynak, örnek ve ayrıntıya inin.</p></div><div className="clean-article-grid">{highIntent.map((post,index)=><ArticleCard post={post} priority={index===0} key={post.primaryPath} />)}</div></section> : null}
+    {highIntent.length ? <section className="clean-section" id="hizli-cevaplar" aria-labelledby="hizli-cevaplar-baslik"><div className="clean-section-head"><div><span className="clean-kicker">Doğrudan cevap</span><h2 id="hizli-cevaplar-baslik">Türk tarihi ve antik uygarlıklar hakkında sorular</h2></div><p>Önce sonucu öğrenin; sonra kaynak, örnek ve ayrıntıya inin.</p></div><div className="clean-article-grid">{highIntent.map((post,index)=><ArticleCard post={post} priority={false} key={post.primaryPath} />)}</div></section> : null}
 
     <section className="clean-section" aria-labelledby="konular-baslik"><div className="clean-section-head"><div><span className="clean-kicker">Konuya göre keşfet</span><h2 id="konular-baslik">Araştırma alanları</h2></div><p>Dağınık arama sonuçları yerine ilgili dosyaları aynı konu altında bulun.</p></div><div className="clean-topics">{topics.map((topic,index)=><a className="clean-topic" href={topic.href} key={topic.title}><span>{String(index+1).padStart(2,'0')}</span><h3>{topic.title}</h3><p>{topic.text}</p></a>)}</div></section>
 
-    <section className="clean-section" id="son-yazilar" aria-labelledby="son-yazilar-baslik"><div className="clean-section-head clean-section-head-action"><div><span className="clean-kicker">Yeni eklenenler</span><h2 id="son-yazilar-baslik">Son yayımlanan araştırmalar</h2></div><a className="clean-section-link" href="/arsiv">Tüm yazılar <span aria-hidden="true">→</span></a></div><div className="clean-article-grid">{latest.map((post,index)=><ArticleCard post={post} priority={index===0} key={post.primaryPath} />)}</div></section>
+    <section className="clean-section" id="son-yazilar" aria-labelledby="son-yazilar-baslik"><div className="clean-section-head clean-section-head-action"><div><span className="clean-kicker">Yeni eklenenler</span><h2 id="son-yazilar-baslik">Son yayımlanan araştırmalar</h2></div><a className="clean-section-link" href="/arsiv">Tüm yazılar <span aria-hidden="true">→</span></a></div><div className="clean-article-grid">{latest.map((post,index)=><ArticleCard post={post} priority={false} key={post.primaryPath} />)}</div></section>
   </div>;
 }
