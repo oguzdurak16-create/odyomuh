@@ -42,6 +42,7 @@ export default function sitemap() {
       alternates: { languages: { 'tr-TR': siteUrl, en: absolute('/en'), 'x-default': absolute('/en') } },
       images: [absolute('/generated-history/explorer-desk.webp')],
     },
+    { url: absolute('/rehberler'), lastModified: '2026-11-01', changeFrequency: 'monthly', priority: 0.9 },
     { url: absolute('/arsiv'), lastModified: turkishLatest || undefined, changeFrequency: 'weekly', priority: 0.9, images: [absolute('/generated-history/ancient-library-desk.webp')] },
     { url: absolute('/etiketler'), lastModified: turkishLatest || undefined, changeFrequency: 'weekly', priority: 0.7, images: [absolute('/generated-global/cuneiform-decipherment.webp')] },
     {
@@ -54,7 +55,7 @@ export default function sitemap() {
     },
     {
       url: absolute('/en'),
-      lastModified: englishLatest || undefined,
+      lastModified: '2026-11-01T00:00:00Z',
       changeFrequency: 'weekly',
       priority: 1,
       alternates: { languages: { en: absolute('/en'), 'tr-TR': siteUrl, 'x-default': absolute('/en') } },

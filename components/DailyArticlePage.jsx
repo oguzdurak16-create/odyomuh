@@ -82,9 +82,10 @@ export default function DailyArticlePage({ post, locale = 'tr', siteUrl = 'https
           {article.englishPath ? <a className="english-original-link" href={article.englishPath} hrefLang="en">Read this article in English →</a> : null}
           <h1 className="article-title" itemProp="headline">{article.title}</h1>
           <p className="article-summary" itemProp="description">{article.description}</p>
-          <div className="current-affairs-status"><strong>{english ? 'Research update' : 'Güncel araştırma'}</strong><span>{formatDate(article.updated || article.published, english ? 'en-US' : 'tr-TR')}</span></div>
+          <div className="current-affairs-status"><strong>{article.newsArticle ? (english ? 'Dated research archive' : 'Tarihli araştırma arşivi') : (english ? 'Research guide' : 'Araştırma rehberi')}</strong><span>{formatDate(article.updated || article.published, english ? 'en-US' : 'tr-TR')}</span></div>
           <div className="post-meta-info"><time dateTime={article.published}>{formatDate(article.published, english ? 'en-US' : 'tr-TR')}</time><span>{readingTime(article.contentHtml)} {english ? 'min read' : 'dk okuma'}</span><span>{article.labels?.[0]}</span></div>
           <div className="post-labels top-labels">{article.labels?.map((label) => english ? <span key={label}>{label}</span> : <a key={label} href={`/label/${encodeURIComponent(label)}`}>{label}</a>)}</div>
+          {article.newsArticle ? <p className="odyomuh-note">{english ? 'This article describes the evidence and events at its publication date. It is not a live news feed; later findings or events may change the picture.' : 'Bu yazı yayımlandığı tarihteki kanıt ve olayları anlatır. Canlı haber akışı değildir; sonraki bulgular veya gelişmeler değerlendirmeyi değiştirebilir.'}</p> : null}
           <HtmlContent html={article.contentHtml} imageAlt={article.title} className={english ? 'english-content' : undefined} />
 
           {article.faq?.length ? (

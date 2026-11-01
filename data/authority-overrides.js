@@ -1,3 +1,5 @@
+import { applyEvergreenRevision } from './evergreen-revisions.js';
+
 const AUTHORITY_UPDATED_AT = '2026-09-15T23:05:00.000Z';
 
 export const authorityOverrides = {
@@ -113,11 +115,11 @@ export function applyAuthorityOverride(item) {
   const sources = [...new Set([...(item.sources || []), ...(override.sources || [])])];
   const html = String(item.contentHtml || '');
   const intro = override.introHtml && !html.includes('traffic-intent-summary') ? override.introHtml : '';
-  return {
+  return applyEvergreenRevision({
     ...item,
     ...override,
     searchAliases: aliases,
     sources,
     contentHtml: `${intro}${html}`,
-  };
+  });
 }

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { generatedArt } from '../app/site-data';
-import { currentTurkishPosts } from '../data/current-updates';
+import { evergreenGuides } from '../lib/evergreen';
 import { allTurkishPosts } from '../lib/content-collections';
 
 const topics = [
@@ -9,23 +9,14 @@ const topics = [
   { title: 'Anadolu Tarihi', text: 'Anadolu’nun kültürleri, kentleri ve imparatorlukları', href: '/label/Anadolu%20Tarihi' },
   { title: 'Antik Teknoloji', text: 'Eski dünyanın mühendisliği ve üretim bilgisi', href: '/label/Antik%20Teknoloji' },
   { title: 'Tarihsel Gizemler', text: 'Çözülemeyen metinler, yapılar ve tartışmalı kanıtlar', href: '/label/%C3%87%C3%B6z%C3%BClmemi%C5%9F%20Gizemler' },
-  { title: 'Orta Doğu Gündemi', text: 'Güncel gelişmelerin tarihsel arka planı', href: '/gundem/orta-dogu' },
+  { title: 'Tarih Ders Notları', text: 'Temel kavramlar, karşılaştırmalar ve konu özetleri', href: '/p/ders-notlari.html' },
 ];
 
 const tools = [
   { title: 'Tarih Kronolojisi', text: 'Dönemleri ve önemli kırılma noktalarını tek akışta inceleyin.', href: '/p/tarih-kronolojisi.html' },
   { title: 'Ders Notları', text: 'Kısa konu özetleri ve sınava yönelik net cevaplar.', href: '/p/ders-notlari.html' },
   { title: 'Tarih Quiz', text: 'Bilginizi kısa testlerle ölçün ve eksik konuyu bulun.', href: '/p/tarih-quiz.html' },
-  { title: 'Tüm Yazılar', text: 'Arşivdeki bütün araştırma dosyalarını konu konu tarayın.', href: '/arsiv' },
-];
-
-const highIntentPaths = [
-  '/2025/12/orun-ve-ulus-nedir-ilk-turk-devletlerinde-mevki-ve-pay-sistemi-ders-notu.html',
-  '/2025/12/ongun-turk-boylarinin-kutsal-damgalari-ve-totem-hayvanlari.html',
-  '/2026/06/sumer-kral-listesi-28-800-yil-yasayan-krallar-gercek-mi.html',
-  '/2025/11/anunnakiler-kimdir-mitolojik-kokenlerden-bilimsel-konsensuse-kadar-kapsamli-rehber.html',
-  '/2025/12/feodalite-nedir-feodal-sistem-ve-ozellikleri-ders-notu.html',
-  '/2026/06/derinkuyu-yeralti-sehri-kimler-neden-yapti.html',
+  { title: 'Kalıcı Rehberler', text: 'Tarih ve arkeoloji sorularına tekrar başvurabileceğiniz açıklamalar.', href: '/rehberler' },
 ];
 
 function publicationDateKey(post) {
@@ -76,12 +67,11 @@ function ArticleCard({ post, priority = false }) {
 }
 
 export default function ProfessionalHome() {
-  const current = orderedUniquePosts(currentTurkishPosts);
-  const archive = orderedUniquePosts(allTurkishPosts());
-  const articles = orderedUniquePosts([...current, ...archive]);
-  const highIntent = highIntentPaths.map((path) => articles.find((post) => post.primaryPath === path)).filter(Boolean);
+  const articles = orderedUniquePosts(allTurkishPosts());
+  const guides = evergreenGuides(articles);
+  const highIntent = guides.slice(0, 6);
   const lead = highIntent[0] || articles[0];
-  const latest = articles.slice(0, 6);
+  const latest = guides.slice(6);
   const leadDateTime = lead ? publicationDateTime(lead) : '';
 
   return <div className="clean-home">
@@ -107,6 +97,6 @@ export default function ProfessionalHome() {
 
     <section className="clean-section" aria-labelledby="konular-baslik"><div className="clean-section-head"><div><span className="clean-kicker">Konuya göre keşfet</span><h2 id="konular-baslik">Araştırma alanları</h2></div><p>Dağınık arama sonuçları yerine ilgili dosyaları aynı konu altında bulun.</p></div><div className="clean-topics">{topics.map((topic,index)=><a className="clean-topic" href={topic.href} key={topic.title}><span>{String(index+1).padStart(2,'0')}</span><h3>{topic.title}</h3><p>{topic.text}</p></a>)}</div></section>
 
-    <section className="clean-section" id="son-yazilar" aria-labelledby="son-yazilar-baslik"><div className="clean-section-head clean-section-head-action"><div><span className="clean-kicker">Yeni eklenenler</span><h2 id="son-yazilar-baslik">Son yayımlanan araştırmalar</h2></div><a className="clean-section-link" href="/arsiv">Tüm yazılar <span aria-hidden="true">→</span></a></div><div className="clean-article-grid">{latest.map((post,index)=><ArticleCard post={post} priority={false} key={post.primaryPath} />)}</div></section>
+    <section className="clean-section" id="son-yazilar" aria-labelledby="son-yazilar-baslik"><div className="clean-section-head clean-section-head-action"><div><span className="clean-kicker">Kalıcı okuma listesi</span><h2 id="son-yazilar-baslik">Türk tarihi, mitoloji ve antik yaşam rehberleri</h2></div><a className="clean-section-link" href="/rehberler">Tüm rehberler <span aria-hidden="true">→</span></a></div><div className="clean-article-grid">{latest.map((post,index)=><ArticleCard post={post} priority={false} key={post.primaryPath} />)}</div></section>
   </div>;
 }

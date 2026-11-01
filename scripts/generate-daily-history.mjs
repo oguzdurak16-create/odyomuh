@@ -1,6 +1,7 @@
 import { access, mkdir, readFile, rename, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { evergreenGenerationPolicy, evergreenTitleIssues } from '../lib/evergreen-generation-policy.js';
 
 const ROOT = process.cwd();
 const DATA_DIR = path.join(ROOT, 'data');
@@ -506,6 +507,7 @@ function validatePackage(content, existingPaths, existingTitles) {
     if (article.faq.length < 4) errors.push(`${language} needs at least four FAQ entries`);
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(article.slug)) errors.push(`${language} slug is invalid: ${article.slug}`);
     errors.push(...validateHtml(article.contentHtml, language));
+    errors.push(...evergreenTitleIssues(article, new Date().getUTCFullYear()));
   }
   if (content.turkish.slug === content.english.slug) errors.push('Turkish and English slugs must be independently localized');
   const trTitleKey = content.turkish.title.toLocaleLowerCase('tr-TR');
@@ -557,6 +559,8 @@ Article requirements for BOTH languages:
 Cover brief:
 - Describe one specific, historically plausible, text-free, cinematic 16:9 editorial scene tied to the article.
 - It must have a distinct focal object, location, camera angle and action, not a generic ruin, bust, scroll, library or treasure chest.
+
+${evergreenGenerationPolicy}
 
 Return only the requested JSON structure.${validationFeedback.length ? `\n\nThe previous draft failed validation. Correct every issue:\n- ${validationFeedback.join('\n- ')}` : ''}`;
 }

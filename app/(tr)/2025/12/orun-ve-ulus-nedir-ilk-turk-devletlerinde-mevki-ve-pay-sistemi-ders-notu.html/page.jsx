@@ -1,4 +1,4 @@
-import { trafficOverrides } from '../../../../../data/traffic-overrides';
+import { evergreenRevisions } from '../../../../../data/evergreen-revisions';
 import ContentPage from '../../../[...slug]/page';
 
 const slug = [
@@ -7,8 +7,8 @@ const slug = [
   'orun-ve-ulus-nedir-ilk-turk-devletlerinde-mevki-ve-pay-sistemi-ders-notu.html',
 ];
 const canonical = '/2025/12/orun-ve-ulus-nedir-ilk-turk-devletlerinde-mevki-ve-pay-sistemi-ders-notu.html';
-const title = trafficOverrides[canonical].seoTitle;
-const description = trafficOverrides[canonical].metaDescription;
+const title = evergreenRevisions[canonical].seoTitle;
+const description = evergreenRevisions[canonical].metaDescription;
 
 export const metadata = {
   title,
