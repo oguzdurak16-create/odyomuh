@@ -34,6 +34,7 @@ export default function sitemap() {
   const pages = allItems().filter((item) => item.type === 'PAGE');
 
   const entries = [
+    { url: absolute('/araclar/tarih-araligi-hesaplama'), lastModified: '2026-11-03', changeFrequency: 'monthly', priority: 0.75 },
     {
       url: siteUrl,
       lastModified: '2026-11-01T00:00:00Z',

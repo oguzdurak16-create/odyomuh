@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import { historicalInterval, historicalYear } from '../lib/historical-years.js';
+assert.equal(historicalInterval(500,'bce',500,'ce').years,999);
+assert.equal(historicalInterval(44,'bce',14,'ce').years,57);
+assert.equal(historicalInterval(1,'bce',1,'ce').years,1);
+assert.equal(historicalInterval(100,'ce',101,'ce').firstCentury,1);
+assert.equal(historicalInterval(100,'ce',101,'ce').lastCentury,2);
+assert.equal(historicalInterval(500,'ce',500,'bce').reverse,true);
+assert.equal(historicalInterval(20,'bce',20,'bce').years,0);
+for (const args of [[0,'ce'],[1.2,'bce'],[1,'invalid']]) assert.throws(()=>historicalYear(...args),RangeError);
+console.log('Historical year-zero boundary, reverse order and century checks passed.');

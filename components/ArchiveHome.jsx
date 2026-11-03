@@ -7,6 +7,7 @@ import styles from './ArchiveHome.module.css';
 import ImageCredit from './ImageCredit';
 
 const turkishTopics = [
+  { title: 'MÖ/MS tarih hesabı', href: '/araclar/tarih-araligi-hesaplama' },
   { title: 'Arkeoloji', href: '/label/Arkeoloji' },
   { title: 'Antik Uygarlıklar', href: '/label/Antik%20Uygarlıklar' },
   { title: 'Anadolu Tarihi', href: '/label/Anadolu%20Tarihi' },

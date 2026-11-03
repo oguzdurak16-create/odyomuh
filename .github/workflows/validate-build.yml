@@ -58,5 +58,8 @@ jobs:
       - name: Validate English content
         run: npm run content:check
 
+      - name: Verify calculator formulas
+        run: npm run test:calculations
+
       - name: Production build
         run: npm run build

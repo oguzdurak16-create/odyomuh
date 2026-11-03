@@ -15,7 +15,8 @@
     "daily:source-quality": "node scripts/check-daily-source-quality.mjs",
     "daily:editorial-quality": "node scripts/check-daily-editorial-quality.mjs",
     "daily:quality": "npm run daily:source-quality && npm run daily:editorial-quality",
-    "content:check": "node scripts/check-english-content.mjs && npm run daily:quality"
+    "content:check": "node scripts/check-english-content.mjs && npm run daily:quality",
+    "test:calculations": "node --experimental-strip-types scripts/check-historical-years.mjs"
   },
   "dependencies": {
     "next": "16.4.3",
