@@ -1,13 +1,10 @@
 import { priorityGuideRevisions } from './priority-guide-revisions.js';
 // Substantive revisions: preserve the original URL and publication timestamp.
+// Keep the established page titles and search snippets when revising article bodies.
 const updated = '2026-11-01T00:00:00Z';
 export const evergreenRevisions = {
   '/2025/12/orun-ve-ulus-nedir-ilk-turk-devletlerinde-mevki-ve-pay-sistemi-ders-notu.html': {
     updated, newsArticle: false,
-    title: 'Orun ve Ülüş Nedir? Mevki ve Payın Farkı',
-    seoTitle: 'Orun ve Ülüş Nedir? Farkları, Örnekler ve Kaynaklar',
-    description: 'Orun yer ve mevkiyi, ülüş payı anlatır. Oğuznâme geleneği, şölen düzeni ve siyasî kullanım arasındaki farkı akademik kaynaklarla inceleyin.',
-    metaDescription: 'Orun ve ülüşün farkı nedir? Mevki ve pay kavramlarını örneklerle ayırın; kaynakların hangi dönem ve bağlamı anlattığını görün.',
     contentHtml: `<div class="odyomuh-note"><strong>Kısa cevap:</strong> Orun, bir topluluk içindeki yer ve mevkiyi; ülüş ise payı anlatır. Oğuznâme geleneğinde oturma düzeni ve şölen paylarının ilişkisini açıklamak için birlikte kullanılırlar.</div>
 <h2>Orun ile ülüşün farkı</h2>
 <p>Bir toplantıda kişinin nerede oturacağını sormak orunla, bölüşümden ne alacağını sormak ülüşle ilgilidir. Kürşat Koçak’ın <a href="https://dergipark.org.tr/tr/pub/ijoess/article/105976">araştırması</a> bu düzenlemeyi hükümdarlık otoritesi ve tören protokolü bağlamında ele alır. Kavramları yalnızca günlük sözlük anlamlarıyla okumak, statüyle ilişkilerini gözden kaçırır.</p>
@@ -30,10 +27,6 @@ export const evergreenRevisions = {
   },
   '/2025/12/ongun-turk-boylarinin-kutsal-damgalari-ve-totem-hayvanlari.html': {
     updated, newsArticle: false,
-    title: 'Ongun Nedir? Damga, Kuş Simgesi ve Totem Ayrımı',
-    seoTitle: 'Ongun Nedir? Damga ile Farkı ve Kaynaklı Örnek',
-    description: 'Ongun veya onkun ile damga aynı şey değildir. Oğuz boylarına ilişkin kaynaklarda kuş simgesi, işaret ve ülüşün nasıl ayrıldığını öğrenin.',
-    metaDescription: 'Ongun, onkun ve damga ne demek? Çavuldur örneği, kaynakların sınırları ve modern logolarla kurulan benzerliklerin neden kanıt olmadığı.',
     contentHtml: `<div class="odyomuh-note"><strong>Kısa cevap:</strong> Ongun veya onkun, Oğuz boylarına ilişkin anlatılarda boyla ilişkilendirilen hayvanı, özellikle kuşu anlatır. Damga ise bir işarettir. İkisini aynı şey saymak, kaynaklardaki ayrı bilgileri birbirine karıştırır.</div>
 <h2>Ongun, damga ve ülüş nasıl ayrılır?</h2>
 <p>Faruk Sümer’in <a href="https://islamansiklopedisi.org.tr/cavuldur">Çavuldur maddesi</a> somut bir karşılaştırma sunar: Reşîdüddin’in anlatısında boyun kuşu, şölen payı ve damgası ayrı ayrı verilir. Bu, her bir başlığın başka bir bilgi türünü taşıdığını gösterir. Bir kuş tasvirini görmek, onun aynı zamanda belirli bir boyun damgası olduğunu tek başına kanıtlamaz.</p>

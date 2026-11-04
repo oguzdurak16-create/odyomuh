@@ -1,4 +1,4 @@
-import { evergreenRevisions } from '../../../../../data/evergreen-revisions';
+import { trafficOverrides } from '../../../../../data/traffic-overrides';
 import ContentPage from '../../../[...slug]/page';
 
 const slug = [
@@ -7,8 +7,8 @@ const slug = [
   'ongun-turk-boylarinin-kutsal-damgalari-ve-totem-hayvanlari.html',
 ];
 const canonical = '/2025/12/ongun-turk-boylarinin-kutsal-damgalari-ve-totem-hayvanlari.html';
-const title = evergreenRevisions[canonical].seoTitle;
-const description = evergreenRevisions[canonical].metaDescription;
+const title = trafficOverrides[canonical].seoTitle;
+const description = trafficOverrides[canonical].metaDescription;
 
 export const metadata = {
   title,
