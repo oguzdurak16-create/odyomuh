@@ -83,6 +83,15 @@ export const authorityOverrides = {
       'UNESCO World Heritage Centre — Bisotun: https://whc.unesco.org/en/list/1222',
     ],
   },
+  '/en/linear-a-why-the-minoan-script-remains-undeciphered': {
+    // Direct access to academic research and primary inscription records.
+    // Preserve existing bibliography; applyAuthorityOverride merges these sources.
+    sources: [
+      'Ester Salgarella — Writing in Bronze Age Crete: Minoan Linear A (Cambridge University Press, 2025): https://www.cambridge.org/core/elements/abs/writing-in-bronze-age-crete/5D5094CF9E6B118C94AD0554E3D9762A',
+      'SigLA — The Signs of Linear A, open-access inscription database (Ester Salgarella and Simon Castellan): https://sigla.phis.me/',
+      'John Younger — Linear A texts, transcriptions and commentary (University of Kansas): https://people.ku.edu/~jyounger/LinearA/',
+    ],
+  },
   '/en/rongorongo-easter-islands-undeciphered-script': {
     sources: [
       'British Museum — Rongorongo tablet Oc1903,-.150: https://www.britishmuseum.org/collection/object/E_Oc1903-150',
