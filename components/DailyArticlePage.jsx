@@ -25,6 +25,10 @@ export default function DailyArticlePage({ post, locale = 'tr', siteUrl = 'https
   const article = applyAuthorityOverride(applyTrafficOverride(applyContentOverride(post)));
   const english = locale === 'en';
   const url = `${siteUrl}${article.primaryPath}`;
+  // Some editorial articles already contain a complete FAQ section in their HTML.
+  // Do not repeat the questions or emit structured data for a second, duplicate block.
+  const hasEmbeddedFaq = /<h2[^>]*>\s*(?:Frequently\s+Asked\s+Questions|Sık\s+Sorulan\s+Sorular)\s*<\/h2>/i.test(String(article.contentHtml || ''));
+  const showAdditionalFaq = Boolean(article.faq?.length) && !hasEmbeddedFaq;
   const schemaType = article.newsArticle ? 'NewsArticle' : 'Article';
   const articleSchema = {
     '@context': 'https://schema.org',
@@ -52,7 +56,7 @@ export default function DailyArticlePage({ post, locale = 'tr', siteUrl = 'https
     publisher: { '@type': 'Organization', '@id': `${siteUrl}/#organization`, name: 'ODYOMUH', url: siteUrl, logo: { '@type': 'ImageObject', url: `${siteUrl}/img/logo-512x512.png`, width: 512, height: 512 } },
     speakable: article.newsArticle ? { '@type': 'SpeakableSpecification', cssSelector: ['.article-title', '.article-summary', '.odyomuh-note'] } : undefined,
   };
-  const faqSchema = article.faq?.length ? {
+  const faqSchema = showAdditionalFaq ? {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: article.faq.map((entry) => ({ '@type': 'Question', name: entry.question, acceptedAnswer: { '@type': 'Answer', text: entry.answer } })),
@@ -88,7 +92,7 @@ export default function DailyArticlePage({ post, locale = 'tr', siteUrl = 'https
           {article.newsArticle ? <p className="odyomuh-note">{english ? 'This article describes the evidence and events at its publication date. It is not a live news feed; later findings or events may change the picture.' : 'Bu yazı yayımlandığı tarihteki kanıt ve olayları anlatır. Canlı haber akışı değildir; sonraki bulgular veya gelişmeler değerlendirmeyi değiştirebilir.'}</p> : null}
           <HtmlContent html={article.contentHtml} imageAlt={article.title} className={english ? 'english-content' : undefined} />
 
-          {article.faq?.length ? (
+          {showAdditionalFaq ? (
             <section className="article-faq" aria-labelledby="daily-article-faq-title">
               <h2 id="daily-article-faq-title">{english ? 'Frequently asked questions' : 'Sık sorulan sorular'}</h2>
               {article.faq.map((entry) => (
