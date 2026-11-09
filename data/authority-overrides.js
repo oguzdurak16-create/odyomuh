@@ -76,6 +76,8 @@ export const authorityOverrides = {
   '/en/catalhoyuk-rooftop-city-neolithic-life': {
     sources: [
       'UNESCO World Heritage Centre — Neolithic Site of Çatalhöyük: https://whc.unesco.org/en/list/1405',
+      'Çatalhöyük Research Project — Research Portal, excavation archives and bibliography: https://www.catalhoyuk.com/research',
+      'Çatalhöyük Research Project — The Site, settlement evidence: https://www.catalhoyuk.com/site',
     ],
   },
   '/en/how-cuneiform-was-deciphered-behistun-inscription': {

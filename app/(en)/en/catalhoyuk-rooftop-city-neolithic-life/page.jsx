@@ -9,6 +9,7 @@ const post = {
   title: 'Çatalhöyük: Why People Entered Houses Through the Roof',
   description: 'Çatalhöyük had tightly packed mudbrick houses with few street-like gaps. See how roof access worked, what archaeologists found inside homes and how daily life was organized.',
   primaryPath: rawPost.primaryPath || `/en/${rawPost.slug}`,
+  updated: trafficOverrides[rawPost.primaryPath || `/en/${rawPost.slug}`].updated || rawPost.updated,
 };
 const siteUrl = baseUrl || 'https://www.odyomuh.net';
 const seoTitle = trafficOverrides[post.primaryPath].seoTitle;

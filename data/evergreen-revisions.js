@@ -4,7 +4,7 @@ import { priorityGuideRevisions } from './priority-guide-revisions.js';
 const updated = '2026-11-01T00:00:00Z';
 export const evergreenRevisions = {
   '/2025/12/orun-ve-ulus-nedir-ilk-turk-devletlerinde-mevki-ve-pay-sistemi-ders-notu.html': {
-    updated, newsArticle: false,
+    updated: '2026-11-09T00:00:00Z', newsArticle: false,
     contentHtml: `<div class="odyomuh-note"><strong>Kısa cevap:</strong> Orun, bir topluluk içindeki yer ve mevkiyi; ülüş ise payı anlatır. Oğuznâme geleneğinde oturma düzeni ve şölen paylarının ilişkisini açıklamak için birlikte kullanılırlar.</div>
 <h2>Orun ile ülüşün farkı</h2>
 <p>Bir toplantıda kişinin nerede oturacağını sormak orunla, bölüşümden ne alacağını sormak ülüşle ilgilidir. Kürşat Koçak’ın <a href="https://dergipark.org.tr/tr/pub/ijoess/article/105976">araştırması</a> bu düzenlemeyi hükümdarlık otoritesi ve tören protokolü bağlamında ele alır. Kavramları yalnızca günlük sözlük anlamlarıyla okumak, statüyle ilişkilerini gözden kaçırır.</p>
@@ -13,6 +13,11 @@ export const evergreenRevisions = {
 <p>Ebru Birkan Akhan’ın <a href="https://dergipark.org.tr/en/pub/mahder/article/582547">Oğuznâmeler incelemesi</a>, anlatıların hem sözlü geleneğin hem de yazıya geçirildikleri dönemlerin izlerini taşıdığını vurgular. Bu yüzden destandaki bir düzenlemeyi, bütün Türk topluluklarında aynı biçimde uygulanmış yazılı kanun gibi sunmak doğru değildir.</p>
 <h2>Ülüş, devletin mülk olarak bölünmesi mi demektir?</h2>
 <p>Her durumda değil. Osman Gazi Özgüdenli’nin <a href="https://islamansiklopedisi.org.tr/ulus">TDV İslâm Ansiklopedisi’ndeki Ülüş maddesi</a>, şölen payı anlamıyla siyasî-idarî kullanımları ayırır. Hanedan üyelerinin bir bölgenin idaresiyle görevlendirilmesini, otomatik olarak ülkenin bağımsız mülkiyet parçalarına ayrılmasıyla eşitlememek gerektiğine dikkat çeker. Dönemi ve kullanılan metni belirtmek, tek cümlelik ezberden daha güvenli bir açıklama sağlar.</p>
+<h2>Orun hakkı neden sadece oturma yeri değildi?</h2>
+<p>Abdülkadir İnan’ın <a href="https://makale.isam.org.tr/items/5b90a548-41a7-485e-a3df-ca4603a9088a">orun hukuku incelemesi</a>, boy ve kabilelerin büyük toplantılarda ve ziyafetlerde oturacağı yerin töreyle belirlenmesini anlatır. Yani burada yalnızca sofra düzeni değil, diğer topluluklar karşısındaki kabul edilmiş mevki de söz konusudur. Şölende ayrılan payı bu yer düzeninden ayrı bir rastgele ikram gibi okumamak gerekir.</p>
+<h2>Kaynaklar hangi yönü açıklıyor?</h2>
+<table><thead><tr><th>Kaynak</th><th>Öne çıkardığı konu</th><th>Okurken dikkat edilmesi gereken</th></tr></thead><tbody><tr><td>Abdülkadir İnan, Orun Hukuku</td><td>Meclis ve ziyafetteki mevki kuralları</td><td>Töre ile aktarılan düzenin dönemi ve topluluğu</td></tr><tr><td>Kürşat Koçak, 2011</td><td>Protokolün hükümdar otoritesiyle ilişkisi</td><td>Kuralların siyasî anlamını yalnızca kelime tanımına indirgememek</td></tr><tr><td>Ebru Birkan Akhan, 2019</td><td>Oğuznâmelerde mevki ve payın anlatımı</td><td>Destanî anlatı ile belgelendirilmiş uygulamayı ayırmak</td></tr><tr><td>TDV Ülüş maddesi</td><td>Payın şölen ve idarî kullanımları</td><td>Farklı tarihsel anlamları birbirine karıştırmamak</td></tr></tbody></table>
+<p>Bu karşılaştırma, “orun = mevki, ülüş = pay” kısa tanımının neden başlangıç noktası olduğunu gösterir: tarihsel bağlamda iki kavram birlikte sosyal sıralama ve paylaşım hakkında bilgi verir. Örneğin Oğuznâmelerde bir boyun yerine veya payına dair anlatım bulunması, aynı düzenlemenin bütün Türk devletlerinde değişmeden yürürlükte kaldığını kanıtlamaz.</p>
 <h2>Kavramı örnek üzerinde kontrol edin</h2>
 <p>Bir soruda oturma sırası anlatılıyorsa önce mevki ilişkisini; dağıtılan bir hisse anlatılıyorsa önce pay ilişkisini araştırın. Ardından örneğin hangi topluluk, dönem ve kaynaktan geldiğini sorun. Buradaki tablo bir öğrenme aracıdır; bütün tarihsel uygulamaların ayrıntılı dökümü değildir. <a href="/p/ders-notlari.html">Diğer tarih kavramlarına</a> geçerken de aynı bağlam kontrolünü kullanabilirsiniz.</p>`,
     faq: [
@@ -23,14 +28,19 @@ export const evergreenRevisions = {
       'Kürşat Koçak — İslamiyet’ten Önceki Türk Devlet Geleneklerine Göre Orun ve Ülüş, 2011: https://dergipark.org.tr/tr/pub/ijoess/article/105976',
       'Ebru Birkan Akhan — Oğuznâmelerde Orun ve Ülüş Paylaşımı, 2019: https://dergipark.org.tr/en/pub/mahder/article/582547',
       'Osman Gazi Özgüdenli — Ülüş, TDV İslâm Ansiklopedisi: https://islamansiklopedisi.org.tr/ulus',
+      'Abdülkadir İnan — Orun ve Ülüş Meselesi I: Mevki-Orun Hukuku (TTK, 1968): https://makale.isam.org.tr/items/5b90a548-41a7-485e-a3df-ca4603a9088a',
     ],
   },
   '/2025/12/ongun-turk-boylarinin-kutsal-damgalari-ve-totem-hayvanlari.html': {
-    updated, newsArticle: false,
+    updated: '2026-11-09T00:00:00Z', newsArticle: false,
     contentHtml: `<div class="odyomuh-note"><strong>Kısa cevap:</strong> Ongun veya onkun, Oğuz boylarına ilişkin anlatılarda boyla ilişkilendirilen hayvanı, özellikle kuşu anlatır. Damga ise bir işarettir. İkisini aynı şey saymak, kaynaklardaki ayrı bilgileri birbirine karıştırır.</div>
 <h2>Ongun, damga ve ülüş nasıl ayrılır?</h2>
 <p>Faruk Sümer’in <a href="https://islamansiklopedisi.org.tr/cavuldur">Çavuldur maddesi</a> somut bir karşılaştırma sunar: Reşîdüddin’in anlatısında boyun kuşu, şölen payı ve damgası ayrı ayrı verilir. Bu, her bir başlığın başka bir bilgi türünü taşıdığını gösterir. Bir kuş tasvirini görmek, onun aynı zamanda belirli bir boyun damgası olduğunu tek başına kanıtlamaz.</p>
 <table><thead><tr><th>Terim</th><th>İncelenen bilgi</th></tr></thead><tbody><tr><td>Ongun / onkun</td><td>Boyla ilişkilendirilen hayvan veya kuş</td></tr><tr><td>Damga / tamga</td><td>Tanımlayıcı simgesel işaret</td></tr><tr><td>Ülüş</td><td>Pay ve bölüşüm ilişkisi</td></tr></tbody></table>
+<h2>Döğer boyu örneğinde ongun, damga ve ülüş</h2>
+<p>Faruk Sümer’in <a href="https://islamansiklopedisi.org.tr/doger">Döğer maddesi</a>, Reşîdüddin’in kaydından hareketle aynı boy için üç ayrı bilgi verir: <strong>onkun olarak kartal</strong>, şölen payı yani ülüş olarak “aşığlu” ve bunlardan ayrı bir damga şekli. Bu, hayvan simgesinin damganın kendisi veya yiyecek payı olmadığını somut biçimde gösterir. Kaydın tarihsel bir metnin aktarımı olduğu unutulmamalı; bütün Oğuz boyları için tek bir simge veya tek bir inanç biçimi varmış gibi genellenmemelidir.</p>
+<table><thead><tr><th>Döğer kaydında</th><th>Verilen bilgi</th><th>Karıştırılmaması gereken</th></tr></thead><tbody><tr><td>Ongun / onkun</td><td>Kartal (boyla ilişkilendirilen kuş)</td><td>Damganın çizimi değildir</td></tr><tr><td>Damga / tamga</td><td>Boyu tanıtan ayrı işaret</td><td>Kuşun adı değildir</td></tr><tr><td>Ülüş</td><td>Şölen etinden ayrılan pay</td><td>Boyun hayvan sembolü değildir</td></tr></tbody></table>
+<p>TDV İslâm Ansiklopedisi’nin <a href="https://islamansiklopedisi.org.tr/damga">Damga maddesi</a>, damgaların hayvanları işaretleme, sahipliği belirleme ve hanedan alameti olarak kullanımını örneklerle ele alır. Bu nedenle bir taş üzerindeki geometrik işareti kuş tasvirinden veya modern bir logodan bağımsız olarak belge ve dönemine göre yorumlamak gerekir.</p>
 <h2>Damgalar nerelerde kullanılır?</h2>
 <p>Nesrin Güllüdağ’ın <a href="https://dergipark.org.tr/tr/pub/avrasyad/article/175248">damga geleneği araştırması</a>, simgesel işaretlerin hayvanlar, mezar taşları, dokumalar ve başka nesneler üzerindeki kullanımını ele alır. Bir motifi değerlendirmek için yalnız biçim benzerliğine değil; bulunduğu yere, döneme ve karşılaştırılabilir örneklere bakılmalıdır.</p>
 <h2>“Totem” sözcüğü bütün inançları açıklar mı?</h2>
@@ -44,6 +54,8 @@ export const evergreenRevisions = {
     sources: [
       'Faruk Sümer — Çavuldur, TDV İslâm Ansiklopedisi: https://islamansiklopedisi.org.tr/cavuldur',
       'Nesrin Güllüdağ — Türklerde Damga Geleneği ve Nogay Türklerinin Damgaları Üzerine Bir İnceleme, 2015: https://dergipark.org.tr/tr/pub/avrasyad/article/175248',
+      'Faruk Sümer — Döğer, TDV İslâm Ansiklopedisi: https://islamansiklopedisi.org.tr/doger',
+      'Yusuf Halaçoğlu — Damga, TDV İslâm Ansiklopedisi: https://islamansiklopedisi.org.tr/damga',
     ],
   },
   '/2025/12/feodalite-nedir-feodal-sistem-ve-ozellikleri-ders-notu.html': {
