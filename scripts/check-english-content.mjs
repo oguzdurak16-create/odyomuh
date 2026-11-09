@@ -7,6 +7,14 @@ const slugs = [...source.matchAll(/^\s*slug:\s*`([^`]+)`/gm)].map((match) => mat
 const topics = [...source.matchAll(/^\s*topic:\s*`([^`]+)`/gm)].map((match) => match[1]);
 const validTopics = new Set([...topicSource.matchAll(/^\s*slug:\s*'([^']+)'/gm)].map((match) => match[1]));
 const errors = [];
+// Reject recurring editorial boilerplate; each article should contain
+// topic-specific evidence rather than an interchangeable conclusion.
+for (const phrase of [
+  'The most useful conclusion from',
+  'This approach protects curiosity from becoming credulity',
+]) {
+  if (source.includes(phrase)) errors.push(`Templated English conclusion reintroduced: ${phrase}`);
+}
 
 function parseContentBlocks(text) {
   const blocks = [];
