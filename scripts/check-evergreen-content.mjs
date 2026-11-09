@@ -21,7 +21,11 @@ for (const path of Object.keys(evergreenRevisions)) {
   assert.ok(article, `Revised article must stay routable: ${path}`);
   assert.ok(article.sources.length >= 2, `Revised article must have an inspectable source trail: ${path}`);
   assert.ok(!/data-personalized|font-claude-response-body/.test(article.contentHtml), `Legacy filler leaked into revised article: ${path}`);
-  assert.equal(article.updated, '2026-11-01T00:00:00Z');
+  const reviewedOnNov9 = new Set([
+    '/2025/12/orun-ve-ulus-nedir-ilk-turk-devletlerinde-mevki-ve-pay-sistemi-ders-notu.html',
+    '/2025/12/ongun-turk-boylarinin-kutsal-damgalari-ve-totem-hayvanlari.html',
+  ]);
+  assert.equal(article.updated, reviewedOnNov9.has(path) ? '2026-11-09T00:00:00Z' : '2026-11-01T00:00:00Z');
 }
 const year = new Date().getUTCFullYear();
 assert.equal(evergreenTitleIssues({ title: 'Göbekli Tepe Nedir? Kanıtlar ve Yorumlar' }, year).length, 0);
