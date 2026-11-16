@@ -3,6 +3,8 @@ import { allTurkishPosts, allEnglishPosts } from '../lib/content-collections.js'
 import { evergreenPaths, evergreenGuides } from '../lib/evergreen.js';
 import { evergreenTitleIssues } from '../lib/evergreen-generation-policy.js';
 import { evergreenRevisions } from '../data/evergreen-revisions.js';
+import { recoveryRevisions } from '../data/recovery-revisions.js';
+import { factcheckRevisions } from '../data/factcheck-revisions.js';
 
 for (const [locale, posts] of [['tr', allTurkishPosts()], ['en', allEnglishPosts()]]) {
   const guides = evergreenGuides(posts, locale);
@@ -21,11 +23,8 @@ for (const path of Object.keys(evergreenRevisions)) {
   assert.ok(article, `Revised article must stay routable: ${path}`);
   assert.ok(article.sources.length >= 2, `Revised article must have an inspectable source trail: ${path}`);
   assert.ok(!/data-personalized|font-claude-response-body/.test(article.contentHtml), `Legacy filler leaked into revised article: ${path}`);
-  const reviewedOnNov9 = new Set([
-    '/2025/12/orun-ve-ulus-nedir-ilk-turk-devletlerinde-mevki-ve-pay-sistemi-ders-notu.html',
-    '/2025/12/ongun-turk-boylarinin-kutsal-damgalari-ve-totem-hayvanlari.html',
-  ]);
-  assert.equal(article.updated, reviewedOnNov9.has(path) ? '2026-11-09T00:00:00Z' : '2026-11-01T00:00:00Z');
+  const expectedUpdated = recoveryRevisions[path]?.updated || factcheckRevisions[path]?.updated || evergreenRevisions[path].updated;
+  assert.equal(article.updated, expectedUpdated, `Last updated date must match the actual reviewed revision: ${path}`);
 }
 const year = new Date().getUTCFullYear();
 assert.equal(evergreenTitleIssues({ title: 'Göbekli Tepe Nedir? Kanıtlar ve Yorumlar' }, year).length, 0);
