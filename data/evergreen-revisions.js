@@ -280,6 +280,15 @@ const editorialSourceAdditions20261116 = {
 export function applyEvergreenRevision(item) {
   const revision = item && (editorialAuditBatch20261116[item.primaryPath] || legacyFactcheckRevisions[item.primaryPath] || recoveryRevisions[item.primaryPath] || factcheckRevisions[item.primaryPath] || priorityGuideRevisions[item.primaryPath] || evergreenRevisions[item.primaryPath]);
   const supplementalSources = item && editorialSourceAdditions20261116[item.primaryPath];
-  if (!revision && !supplementalSources) return item;
-  return { ...item, ...(revision || {}), sources: [...new Set([...(item.sources || []), ...(revision?.sources || []), ...(supplementalSources || [])])], ...(supplementalSources && !revision ? { updated: '2026-11-16T00:00:00Z' } : {}) };
+  if (supplementalSources) {
+    return {
+      ...item,
+      ...(revision || {}),
+      sources: [...new Set([...(revision?.sources || item.sources || []), ...supplementalSources])],
+      updated: revision?.updated || '2026-11-16T00:00:00Z',
+    };
+  }
+  // A reviewed guide replaces its previous bibliography. Do not reinsert old
+  // source-free notes: the canonical-guide CI requires inspectable URLs.
+  return revision ? { ...item, ...revision } : item;
 }
