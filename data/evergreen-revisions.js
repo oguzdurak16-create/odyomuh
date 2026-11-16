@@ -1,6 +1,7 @@
 import { priorityGuideRevisions } from './priority-guide-revisions.js';
 import { recoveryRevisions } from './recovery-revisions.js';
 import { factcheckRevisions } from './factcheck-revisions.js';
+import { legacyFactcheckRevisions } from './legacy-factcheck-revisions.js';
 // Substantive revisions: preserve the original URL and publication timestamp.
 // Keep the established page titles and search snippets when revising article bodies.
 const updated = '2026-11-01T00:00:00Z';
@@ -106,6 +107,6 @@ export const evergreenRevisions = {
 };
 
 export function applyEvergreenRevision(item) {
-  const revision = item && (recoveryRevisions[item.primaryPath] || factcheckRevisions[item.primaryPath] || priorityGuideRevisions[item.primaryPath] || evergreenRevisions[item.primaryPath]);
+  const revision = item && (legacyFactcheckRevisions[item.primaryPath] || recoveryRevisions[item.primaryPath] || factcheckRevisions[item.primaryPath] || priorityGuideRevisions[item.primaryPath] || evergreenRevisions[item.primaryPath]);
   return revision ? { ...item, ...revision } : item;
 }
