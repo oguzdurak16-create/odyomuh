@@ -72,6 +72,8 @@ export async function generateMetadata({ params }) {
       title: policyPage.title,
       description: policyPage.description,
       alternates: { canonical, languages: { en: canonical, 'x-default': canonical } },
+      openGraph: { title: policyPage.title, description: policyPage.description, url: `${siteUrl}${canonical}`, locale: 'en_US', type: 'website' },
+      twitter: { title: policyPage.title, description: policyPage.description },
     };
   }
 
