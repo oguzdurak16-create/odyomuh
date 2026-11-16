@@ -61,5 +61,19 @@ jobs:
       - name: Verify calculator formulas
         run: npm run test:calculations
 
+      - name: Rank legacy article evidence risks
+        run: node scripts/audit-evidence-risk.mjs | tee evidence-risk.log
+
+      - name: Upload editorial evidence report
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: evidence-risk-report-${{ github.run_id }}
+          path: |
+            evidence-risk-report.json
+            evidence-risk.log
+          if-no-files-found: ignore
+          retention-days: 14
+
       - name: Production build
         run: npm run build
